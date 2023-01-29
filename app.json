@@ -1,0 +1,660 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "tesla.power.connect",
+  "version": "1.4.4",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Tesla Wall Connector"
+  },
+  "description": {
+    "en": "The most convenient charging solution"
+  },
+  "category": [
+    "energy"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Rune Værnes",
+    "email": "vaernes@gmail.com"
+  },
+  "brandColor": "#cc0000",
+  "source": "https://github.com/vaernes/homeytwc",
+  "homepage": "https://github.com/vaernes/",
+  "support": "https://community.homey.app/t/app-pro-tesla-wall-connector/75554",
+  "bugs": {
+    "url": "https://github.com/vaernes/homeytwc/issues"
+  },
+  "contributors": {
+    "developers": []
+  },
+  "homeyCommunityTopicId": 75554,
+  "flow": {
+    "triggers": [
+      {
+        "id": "charger_status_changed",
+        "title": {
+          "en": "Charger status changed",
+          "sv": "Laddarens status ändrades"
+        },
+        "titleFormatted": {
+          "en": "Charger status changed",
+          "sv": "Laddarens status ändrades"
+        },
+        "tokens": [
+          {
+            "name": "status",
+            "type": "string",
+            "title": {
+              "en": "Charger status",
+              "sv": "Laddarens status"
+            },
+            "example": {
+              "en": "Car connected",
+              "sv": "Car connected"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=charger"
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "chargerStatus",
+        "title": {
+          "en": "Charger status is !{{|not}}"
+        },
+        "titleFormatted": {
+          "en": "Charger status is !{{|not}} [[status]]"
+        },
+        "args": [
+          {
+            "name": "status",
+            "type": "autocomplete",
+            "title": {
+              "en": "Status"
+            }
+          },
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=charger"
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "TWC Gen3"
+      },
+      "class": "other",
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "images": {
+        "small": "/drivers/twc/assets/images/small.png",
+        "large": "/drivers/twc/assets/images/large.png",
+        "xlarge": "/drivers/twc/assets/images/xlarge.png"
+      },
+      "capabilities": [
+        "measure_current.vehicle",
+        "measure_twc_power.vehicle",
+        "meter_power.vehicle",
+        "alarm_twc_state.evse",
+        "alarm_twc_state.contactor",
+        "measure_temperature.handle",
+        "measure_temperature.charger",
+        "measure_temperature.pcba",
+        "measure_temperature.mcu",
+        "measure_current.a",
+        "measure_twc_voltage.a",
+        "measure_current.b",
+        "measure_twc_voltage.b",
+        "measure_current.c",
+        "measure_twc_voltage.c",
+        "measure_current.n",
+        "measure_twc_voltage.grid",
+        "measure_frequency.grid",
+        "measure_twc_voltage.relay_coil_v",
+        "measure_twc_voltage.prox_v",
+        "measure_twc_voltage.pilot_high_v",
+        "measure_twc_voltage.pilot_low_v"
+      ],
+      "capabilitiesOptions": {
+        "measure_twc_voltage.relay_coil_v": {
+          "title": {
+            "en": "Relay Coil Voltage"
+          }
+        },
+        "measure_twc_voltage.prox_v": {
+          "title": {
+            "en": "Prox Voltage"
+          }
+        },
+        "measure_twc_voltage.pilot_high_v": {
+          "title": {
+            "en": "Pilot High Voltage"
+          }
+        },
+        "measure_twc_voltage.pilot_low_v": {
+          "title": {
+            "en": "Pilot Low Voltage"
+          }
+        },
+        "alarm_twc_state.evse": {
+          "title": {
+            "en": "Charging Status"
+          }
+        },
+        "alarm_twc_state.contactor": {
+          "title": {
+            "en": "Contactor"
+          }
+        },
+        "measure_temperature.handle": {
+          "title": {
+            "en": "Temperature Handle"
+          }
+        },
+        "measure_temperature.charger": {
+          "title": {
+            "en": "Temperature Charger"
+          }
+        },
+        "measure_temperature.pcba": {
+          "title": {
+            "en": "Temperature PCBA"
+          }
+        },
+        "measure_temperature.mcu": {
+          "title": {
+            "en": "Temperature MCU"
+          }
+        },
+        "measure_current.a": {
+          "title": {
+            "en": "Current A"
+          }
+        },
+        "measure_current.b": {
+          "title": {
+            "en": "Current B"
+          }
+        },
+        "measure_current.c": {
+          "title": {
+            "en": "Current C"
+          }
+        },
+        "measure_current.n": {
+          "title": {
+            "en": "Current N"
+          }
+        },
+        "measure_twc_voltage.a": {
+          "title": {
+            "en": "Voltage A"
+          }
+        },
+        "measure_twc_voltage.b": {
+          "title": {
+            "en": "Voltage B"
+          }
+        },
+        "measure_twc_voltage.c": {
+          "title": {
+            "en": "Voltage C"
+          }
+        },
+        "measure_twc_voltage.grid": {
+          "title": {
+            "en": "Voltage Grid"
+          }
+        },
+        "measure_frequency.grid": {
+          "title": {
+            "en": "Frequency Grid"
+          }
+        },
+        "measure_twc_power.vehicle": {
+          "title": {
+            "en": "Vehicle Session Power"
+          }
+        },
+        "meter_power.vehicle": {
+          "title": {
+            "en": "Vehicle Session Energy"
+          }
+        },
+        "measure_current.vehicle": {
+          "title": {
+            "en": "Vehicle Session Current"
+          },
+          "desc": {
+            "en": "Current amp setting in the car."
+          }
+        }
+      },
+      "pair": [
+        {
+          "id": "ip_view"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "twc",
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Settings"
+          },
+          "children": [
+            {
+              "id": "polling_interval",
+              "type": "number",
+              "label": {
+                "en": "Update Frequency"
+              },
+              "value": 60,
+              "min": 10,
+              "max": 120,
+              "units": {
+                "en": "seconds"
+              },
+              "hint": {
+                "en": "60 is recommended."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Wi-Fi Status"
+          },
+          "children": [
+            {
+              "id": "wifi_connected",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "Connected"
+              }
+            },
+            {
+              "id": "internet",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "Connected to Internet"
+              }
+            },
+            {
+              "id": "wifi_infra_ip",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "Local IP Address"
+              }
+            },
+            {
+              "id": "wifi_mac",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "MAC Address"
+              }
+            },
+            {
+              "id": "wifi_ssid",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "SSID"
+              }
+            },
+            {
+              "id": "wifi_signal_strength",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "Signal Strength"
+              }
+            },
+            {
+              "id": "wifi_rssi",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "RSSI"
+              }
+            },
+            {
+              "id": "wifi_snr",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "SNR"
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Vitals"
+          },
+          "children": [
+            {
+              "id": "session_s",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "Contactor Cycles"
+              }
+            },
+            {
+              "id": "uptime_s",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "Uptime"
+              }
+            },
+            {
+              "id": "evse_state",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "Connection State"
+              }
+            },
+            {
+              "id": "config_status",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "Config Status"
+              }
+            },
+            {
+              "id": "current_alerts",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "Current Alerts"
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Lifetime"
+          },
+          "children": [
+            {
+              "id": "contactor_cycles",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "Contactor Cycles"
+              }
+            },
+            {
+              "id": "contactor_cycles_loaded",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "Contactor Cycles Loaded"
+              }
+            },
+            {
+              "id": "connector_cycles",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "Connector Cycles"
+              }
+            },
+            {
+              "id": "charge_starts",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "Charge Starts"
+              }
+            },
+            {
+              "id": "thermal_foldbacks",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "Thermal Foldbacks"
+              }
+            },
+            {
+              "id": "avg_startup_temp",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "Average Startup Temperature"
+              }
+            },
+            {
+              "id": "energy_wh",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "Total Energy"
+              }
+            },
+            {
+              "id": "uptime_s",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "Total Uptime"
+              }
+            },
+            {
+              "id": "charging_time_s",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "Total Charging Time"
+              }
+            },
+            {
+              "id": "alert_count",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "Alert Count"
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Version"
+          },
+          "children": [
+            {
+              "id": "firmware_version",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "Firmware Version"
+              }
+            },
+            {
+              "id": "part_number",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "Part Number"
+              }
+            },
+            {
+              "id": "serial_number",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "Serial Number"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "capabilities": {
+    "alarm_twc_state": {
+      "type": "string",
+      "title": {
+        "en": "Status"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/charging.svg"
+    },
+    "measure_frequency": {
+      "type": "number",
+      "decimals": 2,
+      "title": {
+        "en": "Frequency",
+        "no": "Frekvens"
+      },
+      "units": {
+        "en": "Hz"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/frequency.svg"
+    },
+    "measure_twc_power": {
+      "type": "number",
+      "title": {
+        "en": "Power",
+        "nl": "Vermogen",
+        "de": "Leistung",
+        "fr": "Puissance",
+        "it": "Potenza",
+        "sv": "Effekt",
+        "no": "Effekt",
+        "es": "Potencia",
+        "da": "Effekt",
+        "ru": "Электроэнергия",
+        "pl": "Moc"
+      },
+      "units": {
+        "en": "W",
+        "ru": "Вт"
+      },
+      "insights": true,
+      "desc": {
+        "en": "Power in watt (W)",
+        "nl": "Vermogen in watt (W)",
+        "de": "Leistung in Watt (W)",
+        "fr": "Puissance  en watt (W)",
+        "it": "Potenza in watt (W)",
+        "sv": "Effekt i watt (W)",
+        "no": "Effekt i watt (W)",
+        "es": "Potencia en vatios (W)",
+        "da": "Effekt i watt (W)",
+        "ru": "Электроэнергия (Вт)",
+        "pl": "Moc w watach (W)"
+      },
+      "options": {
+        "isApproximated": {
+          "type": "boolean",
+          "default": false,
+          "desc": {
+            "en": "This flag is used to determine that the device itself has no power measurement functionality, but that the driver calculates the energy use.",
+            "ru": "Этот флаг используется для определения того, что само устройство не имеет функции измерения электроэнергии, но драйвер рассчитывает потребление энергии.",
+            "pl": "Flaga oznacza, że samo urządzenie nie ma funkcji pomiaru mocy, ale sterownik oblicza zużycie energii."
+          }
+        }
+      },
+      "icon": "/assets/power.svg",
+      "chartType": "stepLine",
+      "decimals": 2,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    },
+    "measure_twc_voltage": {
+      "type": "number",
+      "title": {
+        "en": "Voltage",
+        "nl": "Voltage",
+        "de": "Spannung",
+        "fr": "Voltage",
+        "it": "Voltaggio",
+        "sv": "Spänning",
+        "no": "Spenning",
+        "es": "Tensión",
+        "da": "Elektrisk spænding",
+        "ru": "Вольтаж",
+        "pl": "Napięcie"
+      },
+      "units": {
+        "en": "V",
+        "ru": "Вольт"
+      },
+      "desc": {
+        "en": "Voltage (V)",
+        "nl": "Voltage (V)",
+        "de": "Spannung (V)",
+        "fr": "Voltage (V)",
+        "it": "Voltaggio (V)",
+        "sv": "Spänning (V)",
+        "no": "Spenning (V)",
+        "es": "Tensión (V)",
+        "da": "Volt (V)",
+        "ru": "Вольтаж (Вольт)",
+        "pl": "Napięcie (V)"
+      },
+      "icon": "/assets/voltage.svg",
+      "insights": true,
+      "chartType": "stepLine",
+      "decimals": 2,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor"
+    }
+  }
+}

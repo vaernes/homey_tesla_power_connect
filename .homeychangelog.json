@@ -1,0 +1,50 @@
+{
+  "1.0.0": {
+    "en": "First release"
+  },
+  "1.1.0": {
+    "en": "Added more data from the TWC."
+  },
+  "1.2.0": {
+    "en": "Added better icons"
+  },
+  "1.2.1": {
+    "en": "Better icon for charger and added settings for poll interval."
+  },
+  "1.2.2": {
+    "en": "Added more detailed icons"
+  },
+  "1.2.3": {
+    "en": "Added better images for the app and descriptions."
+  },
+  "1.2.4": {
+    "en": "When car a is not connected, consumption is set to 0."
+  },
+  "1.3.0": {
+    "en": "Added lifetime, wifi status and version information to the settings panel on the device."
+  },
+  "1.3.1": {
+    "en": "Added lifetime, wifi status and version information to the settings panel on the device. Change the device name to TWC Gen3 and update the description."
+  },
+  "1.3.2": {
+    "en": "Change the power calculations in respect to single phase and three phases( line-to-line and line-to-neutral)."
+  },
+  "1.3.3": {
+    "en": "Small change to power calculation. "
+  },
+  "1.4.0": {
+    "en": "Changed the capabilities to work with the status indicators."
+  },
+  "1.4.1": {
+    "en": "Changed capabilities to function with the status indicator. Please remove and add the device again to make the new capabilities and indicators work."
+  },
+  "1.4.2": {
+    "en": "Decoded SSID. For 1.4.x please remove and add the device again to get the new capabilities and indicators to work correctly. "
+  },
+  "1.4.3": {
+    "en": "Added more data from the TWC."
+  },
+  "1.4.4": {
+    "en": "Fixed minor bugs, move to github"
+  }
+}

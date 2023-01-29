@@ -1,0 +1,266 @@
+[
+    {
+        "type": "group",
+        "label": {
+            "en": "Settings"
+        },
+        "children": [
+            {
+                "id": "polling_interval",
+                "type": "number",
+                "label": {
+                    "en": "Update Frequency"
+                },
+                "value": 60,
+                "min": 10,
+                "max": 120,
+                "units": {
+                    "en": "seconds"
+                },
+                "hint": {
+                    "en": "60 is recommended."
+                }
+            }
+        ]
+    },
+    {
+        "type": "group",
+        "label": {
+            "en": "Wi-Fi Status"
+        },
+        "children": [
+            {
+                "id": "wifi_connected",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "Connected"
+                }
+            },
+            {
+                "id": "internet",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "Connected to Internet"
+                }
+            },
+            {
+                "id": "wifi_infra_ip",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "Local IP Address"
+                }
+            },
+            {
+                "id": "wifi_mac",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "MAC Address"
+                }
+            },
+            {
+                "id": "wifi_ssid",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "SSID"
+                }
+            },
+            {
+                "id": "wifi_signal_strength",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "Signal Strength"
+                }
+            },
+            {
+                "id": "wifi_rssi",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "RSSI"
+                }
+            },
+            {
+                "id": "wifi_snr",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "SNR"
+                }
+            }
+        ]
+    },
+    {
+        "type": "group",
+        "label": {
+            "en": "Vitals"
+        },
+        "children": [
+            {
+                "id": "session_s",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "Contactor Cycles"
+                }
+            },
+            {
+                "id": "uptime_s",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "Uptime"
+                }
+            },
+            {
+                "id": "evse_state",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "Connection State"
+                }
+            },
+            {
+                "id": "config_status",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "Config Status"
+                }
+            },
+            {
+                "id": "current_alerts",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "Current Alerts"
+                }
+            }
+        ]
+    },
+    {
+        "type": "group",
+        "label": {
+            "en": "Lifetime"
+        },
+        "children": [
+            {
+                "id": "contactor_cycles",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "Contactor Cycles"
+                }
+            },
+            {
+                "id": "contactor_cycles_loaded",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "Contactor Cycles Loaded"
+                }
+            },
+            {
+                "id": "connector_cycles",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "Connector Cycles"
+                }
+            },
+            {
+                "id": "charge_starts",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "Charge Starts"
+                }
+            },
+            {
+                "id": "thermal_foldbacks",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "Thermal Foldbacks"
+                }
+            },
+            {
+                "id": "avg_startup_temp",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "Average Startup Temperature"
+                }
+            },
+            {
+                "id": "energy_wh",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "Total Energy"
+                }
+            },
+            {
+                "id": "uptime_s",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "Total Uptime"
+                }
+            },
+            {
+                "id": "charging_time_s",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "Total Charging Time"
+                }
+            },
+            {
+                "id": "alert_count",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "Alert Count"
+                }
+            }
+        ]
+    },
+    {
+        "type": "group",
+        "label": {
+            "en": "Version"
+        },
+        "children": [
+            {
+                "id": "firmware_version",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "Firmware Version"
+                }
+            },
+            {
+                "id": "part_number",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "Part Number"
+                }
+            },
+            {
+                "id": "serial_number",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "Serial Number"
+                }
+            }
+        ]
+    }
+]

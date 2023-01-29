@@ -1,0 +1,23 @@
+{
+    "id": "chargerStatus",
+    "title": {
+        "en": "Charger status is !{{|not}}"
+    },
+    "titleFormatted": {
+        "en": "Charger status is !{{|not}} [[status]]"
+    },
+    "args": [
+        {
+            "name": "status",
+            "type": "autocomplete",
+            "title": {
+                "en": "Status"
+            }
+        },
+        {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=charger"
+        }
+    ]
+}

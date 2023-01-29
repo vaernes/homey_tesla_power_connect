@@ -1,0 +1,39 @@
+{
+  "id": "tesla.wall.connector",
+  "version": "1.4.4",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Tesla Power Connect"
+  },
+  "description": {
+    "en": "Monitor the power to your car."
+  },
+  "category": [
+    "energy"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Rune Værnes",
+    "email": "vaernes+homeytpc@gmail.com"
+  },
+  "brandColor": "#cc0000",
+  "source": "https://github.com/vaernes/homey_tesla_power_connect",
+  "homepage": "https://github.com/vaernes/",
+  "support": "https://community.homey.app/t/app-pro-tesla-wall-connector/75554",
+  "bugs": {
+    "url": "https://github.com/vaernes/homey_tesla_power_connect/issues"
+  },
+  "contributors": {
+    "developers": []
+  },
+  "homeyCommunityTopicId": 75554
+}

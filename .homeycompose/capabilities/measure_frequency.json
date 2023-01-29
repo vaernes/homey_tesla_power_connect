@@ -1,0 +1,15 @@
+{
+  "type": "number",
+  "decimals": 2,
+  "title": {
+    "en": "Frequency",
+    "no": "Frekvens"
+  },
+  "units": {
+    "en": "Hz"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/frequency.svg"
+}

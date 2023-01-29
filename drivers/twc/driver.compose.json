@@ -1,0 +1,172 @@
+{
+  "name": {
+    "en": "TWC Gen3"
+  },
+  "class": "other",
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "lan"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  },
+  "capabilities": [
+    "measure_current.vehicle",
+    "measure_twc_power.vehicle",
+    "meter_power.vehicle",
+    "alarm_twc_state.evse",
+    "alarm_twc_state.contactor",
+    "measure_temperature.handle",
+    "measure_temperature.charger",
+    "measure_temperature.pcba",
+    "measure_temperature.mcu",
+    "measure_current.a",
+    "measure_twc_voltage.a",
+    "measure_current.b",
+    "measure_twc_voltage.b",
+    "measure_current.c",
+    "measure_twc_voltage.c",
+    "measure_current.n",
+    "measure_twc_voltage.grid",
+    "measure_frequency.grid",
+    "measure_twc_voltage.relay_coil_v",
+    "measure_twc_voltage.prox_v",
+    "measure_twc_voltage.pilot_high_v",
+    "measure_twc_voltage.pilot_low_v"
+  ],
+  "capabilitiesOptions": {
+    "measure_twc_voltage.relay_coil_v": {
+      "title": {
+        "en": "Relay Coil Voltage"
+      }
+    },
+    "measure_twc_voltage.prox_v": {
+      "title": {
+        "en": "Prox Voltage"
+      }
+    },
+    "measure_twc_voltage.pilot_high_v": {
+      "title": {
+        "en": "Pilot High Voltage"
+      }
+    },
+    "measure_twc_voltage.pilot_low_v": {
+      "title": {
+        "en": "Pilot Low Voltage"
+      }
+    },
+    "alarm_twc_state.evse": {
+      "title": {
+        "en": "Charging Status"
+      }
+    },
+    "alarm_twc_state.contactor": {
+      "title": {
+        "en": "Contactor"
+      }
+    },
+    "measure_temperature.handle": {
+      "title": {
+        "en": "Temperature Handle"
+      }
+    },
+    "measure_temperature.charger": {
+      "title": {
+        "en": "Temperature Charger"
+      }
+    },
+    "measure_temperature.pcba": {
+      "title": {
+        "en": "Temperature PCBA"
+      }
+    },
+    "measure_temperature.mcu": {
+      "title": {
+        "en": "Temperature MCU"
+      }
+    },
+    "measure_current.a": {
+      "title": {
+        "en": "Current A"
+      }
+    },
+    "measure_current.b": {
+      "title": {
+        "en": "Current B"
+      }
+    },
+    "measure_current.c": {
+      "title": {
+        "en": "Current C"
+      }
+    },
+    "measure_current.n": {
+      "title": {
+        "en": "Current N"
+      }
+    },
+    "measure_twc_voltage.a": {
+      "title": {
+        "en": "Voltage A"
+      }
+    },
+    "measure_twc_voltage.b": {
+      "title": {
+        "en": "Voltage B"
+      }
+    },
+    "measure_twc_voltage.c": {
+      "title": {
+        "en": "Voltage C"
+      }
+    },
+    "measure_twc_voltage.grid": {
+      "title": {
+        "en": "Voltage Grid"
+      }
+    },
+    "measure_frequency.grid": {
+      "title": {
+        "en": "Frequency Grid"
+      }
+    },
+    "measure_twc_power.vehicle": {
+      "title": {
+        "en": "Vehicle Session Power"
+      }
+    },
+    "meter_power.vehicle": {
+      "title": {
+        "en": "Vehicle Session Energy"
+      }
+    },
+    "measure_current.vehicle": {
+      "title": {
+        "en": "Vehicle Session Current"
+      },
+      "desc": {
+        "en": "Current amp setting in the car."
+      }
+    }
+  },
+  "pair": [
+    {
+      "id": "ip_view"
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+    "type": "number",
+    "title": {
+      "en": "Power",
+      "nl": "Vermogen",
+      "de": "Leistung",
+      "fr": "Puissance",
+      "it": "Potenza",
+      "sv": "Effekt",
+      "no": "Effekt",
+      "es": "Potencia",
+      "da": "Effekt",
+      "ru": "Электроэнергия",
+      "pl": "Moc"
+    },
+    "units": {
+      "en": "W",
+      "ru": "Вт"
+    },
+    "insights": true,
+    "desc": {
+      "en": "Power in watt (W)",
+      "nl": "Vermogen in watt (W)",
+      "de": "Leistung in Watt (W)",
+      "fr": "Puissance  en watt (W)",
+      "it": "Potenza in watt (W)",
+      "sv": "Effekt i watt (W)",
+      "no": "Effekt i watt (W)",
+      "es": "Potencia en vatios (W)",
+      "da": "Effekt i watt (W)",
+      "ru": "Электроэнергия (Вт)",
+      "pl": "Moc w watach (W)"
+    },
+    "options": {
+      "isApproximated": {
+        "type": "boolean",
+        "default": false,
+        "desc": {
+          "en": "This flag is used to determine that the device itself has no power measurement functionality, but that the driver calculates the energy use.",
+          "ru": "Этот флаг используется для определения того, что само устройство не имеет функции измерения электроэнергии, но драйвер рассчитывает потребление энергии.",
+          "pl": "Flaga oznacza, że samo urządzenie nie ma funkcji pomiaru mocy, ale sterownik oblicza zużycie energii."
+        }
+      }
+    },
+    "icon": "/assets/power.svg",
+    "chartType": "stepLine",
+    "decimals": 2,
+    "getable": true,
+    "setable": false,
+    "uiComponent": "sensor"
+  }

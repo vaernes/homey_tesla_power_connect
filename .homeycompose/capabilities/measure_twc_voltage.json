@@ -1,0 +1,40 @@
+{
+    "type": "number",
+    "title": {
+      "en": "Voltage",
+      "nl": "Voltage",
+      "de": "Spannung",
+      "fr": "Voltage",
+      "it": "Voltaggio",
+      "sv": "Spänning",
+      "no": "Spenning",
+      "es": "Tensión",
+      "da": "Elektrisk spænding",
+      "ru": "Вольтаж",
+      "pl": "Napięcie"
+    },
+    "units": {
+      "en": "V",
+      "ru": "Вольт"
+    },
+    "desc": {
+      "en": "Voltage (V)",
+      "nl": "Voltage (V)",
+      "de": "Spannung (V)",
+      "fr": "Voltage (V)",
+      "it": "Voltaggio (V)",
+      "sv": "Spänning (V)",
+      "no": "Spenning (V)",
+      "es": "Tensión (V)",
+      "da": "Volt (V)",
+      "ru": "Вольтаж (Вольт)",
+      "pl": "Napięcie (V)"
+    },
+    "icon": "/assets/voltage.svg",
+    "insights": true,
+    "chartType": "stepLine",
+    "decimals": 2,
+    "getable": true,
+    "setable": false,
+    "uiComponent": "sensor"
+  }
