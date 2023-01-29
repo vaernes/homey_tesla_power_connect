@@ -1,6 +1,6 @@
 Connect directly to your Tesla Wall Connector, create flows, take control and monitor the energy usage. Check the chargers state, diagnose issues and check that everything is working.
 
-The device settings list lifetime data, Wi-Fi status and version information.
+This App is under development.
 
 Only works for Tesla Wall Connector Generation 3.
 Recommended to 'MAC and IP Address Bind' the Tesla Wall Connector's IP in your network router. 

@@ -28,7 +28,7 @@
   "brandColor": "#cc0000",
   "source": "https://github.com/vaernes/homey_tesla_power_connect",
   "homepage": "https://github.com/vaernes/",
-  "support": "https://community.homey.app/t/app-pro-tesla-wall-connector/75554",
+  "support": "https://community.homey.app/t/75554",
   "bugs": {
     "url": "https://github.com/vaernes/homey_tesla_power_connect/issues"
   },
