@@ -41,7 +41,7 @@ export class TWCDevice extends Homey.Device {
 
     return hours + "h " + minutes + "m " + seconds + "s";
   }
-  
+
   calculatePower(car_a: number, grid_v: number, a_v: number, b_v: number, c_v: number): number {
     let a = Math.floor(a_v) == 0 ? 0 : 1;
     let b = Math.floor(b_v) == 0 ? 0 : 1;
@@ -66,6 +66,17 @@ export class TWCDevice extends Homey.Device {
     }
   }
 
+  decodeSsid(encoded: string): string {
+    try {
+      if (encoded != null && encoded.length != 0) {
+        return Buffer.from(encoded, 'base64').toString('binary'):
+      }
+    } catch (e) {
+      this.error(e);
+    }
+    return "";
+  }
+  
   async getChargerState() {
     const self = this;
     if (self.api == null) {
@@ -73,9 +84,8 @@ export class TWCDevice extends Homey.Device {
     }
     const wifi = (await self.api.getWifiStatus());
     if (wifi != null) {
-      const decode = (str: string):string => Buffer.from(str, 'base64').toString('binary');
       self.setSettings({
-        wifi_ssid: decode(wifi.wifi_ssid),
+        wifi_ssid: this.decodeSsid(wifi.wifi_ssid),
         wifi_signal_strength: wifi.wifi_signal_strength.toString() + "%",
         wifi_rssi: wifi.wifi_rssi.toString() + "dB",
         wifi_snr: wifi.wifi_snr.toString() + "dB",
@@ -162,9 +172,9 @@ export class TWCDevice extends Homey.Device {
         session_s: self.toHoursAndMinutes(vit.session_s),
         uptime_s: self.toHoursAndMinutes(vit.uptime_s),
         evse_state: vit.evse_state.toString(),
-        config_status:vit.config_status.toString(),
-        current_alerts:self.toString(vit.current_alerts)
-      }).catch(res => self.log("Error setting Vitals")); 
+        config_status: vit.config_status.toString(),
+        current_alerts: self.toString(vit.current_alerts)
+      }).catch(res => self.log("Error setting Vitals"));
     }
   }
 }
