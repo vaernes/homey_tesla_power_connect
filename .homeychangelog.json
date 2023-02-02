@@ -49,5 +49,8 @@
   },
   "1.4.5": {
     "en": "Rename the app, change to royalty free images and text to be complient with GPLv3. Moved to GitHub."
+  },
+  "1.4.6": {
+    "en": "Fixed issue with hidden ssid."
   }
 }
