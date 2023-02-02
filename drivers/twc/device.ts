@@ -69,14 +69,14 @@ export class TWCDevice extends Homey.Device {
   decodeSsid(encoded: string): string {
     try {
       if (encoded != null && encoded.length != 0) {
-        return Buffer.from(encoded, 'base64').toString('binary'):
+        return Buffer.from(encoded, 'base64').toString('binary');
       }
     } catch (e) {
       this.error(e);
     }
     return "";
   }
-  
+
   async getChargerState() {
     const self = this;
     if (self.api == null) {
