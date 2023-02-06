@@ -52,5 +52,8 @@
   },
   "1.4.6": {
     "en": "Fixed issue with hidden ssid."
+  },
+  "1.4.7": {
+    "en": "Changed the power calculations."
   }
 }
