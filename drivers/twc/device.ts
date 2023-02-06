@@ -1,5 +1,6 @@
 import Homey from 'homey';
 import { TWC } from '../../lib/twc';
+import { vitals } from '../../lib/vitals';
 
 export class TWCDevice extends Homey.Device {
 
@@ -42,16 +43,25 @@ export class TWCDevice extends Homey.Device {
     return hours + "h " + minutes + "m " + seconds + "s";
   }
 
-  calculatePower(car_a: number, grid_v: number, a_v: number, b_v: number, c_v: number): number {
-    let a = Math.floor(a_v) == 0 ? 0 : 1;
-    let b = Math.floor(b_v) == 0 ? 0 : 1;
-    let c = Math.floor(c_v) == 0 ? 0 : 1;
+  calculatePower( vit: vitals ): number {
+
+    let a = Math.floor(vit.voltageA_v) == 0 ? 0 : 1;
+    let b = Math.floor(vit.voltageB_v) == 0 ? 0 : 1;
+    let c = Math.floor(vit.voltageC_v) == 0 ? 0 : 1;
     let numberOfLines = a + b + c;
     let powerFactor = 1;
     if (numberOfLines >= 2) {
       powerFactor = 1.732;
     }
-    return car_a * grid_v * powerFactor;
+    
+    let aW = vit.currentA_a*vit.voltageA_v;
+    let bW = vit.currentB_a*vit.voltageB_v;
+    let cW = vit.currentC_a*vit.voltageC_v;
+    this.log('aW='+aW.toString());
+    this.log('bW='+bW.toString());
+    this.log('cW='+cW.toString());
+    return ((aW+bW+cW)/numberOfLines)*powerFactor;
+    //return vit.vehicle_current_a  * vit.grid_v * powerFactor;
   }
 
   toString(arr: string[]): string {
@@ -148,7 +158,7 @@ export class TWCDevice extends Homey.Device {
         switch (vit.evse_state) {
           case 11:
             state = "Charging";
-            self.setCapabilityValue('measure_twc_power.vehicle', self.calculatePower(vit.vehicle_current_a, vit.grid_v, vit.voltageA_v, vit.voltageB_v, vit.voltageC_v)).catch(e => self.log("Error setting measure_twc_power.vehicle"));
+            self.setCapabilityValue('measure_twc_power.vehicle', self.calculatePower(vit)).catch(e => self.log("Error setting measure_twc_power.vehicle"));
             break;
           case 9:
             state = "Connected"; //Ready, Waiting for vehicle
