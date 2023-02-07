@@ -45,6 +45,10 @@ export class TWCDevice extends Homey.Device {
 
   calculatePower( vit: vitals ): number {
 
+    let bugFixVoltage=0;
+    if( this.getSetting("firmware_version") == "22.41.2+gdb42f98c0aafdd"){
+      bugFixVoltage=10;
+    }
     let a = Math.floor(vit.voltageA_v) == 0 ? 0 : 1;
     let b = Math.floor(vit.voltageB_v) == 0 ? 0 : 1;
     let c = Math.floor(vit.voltageC_v) == 0 ? 0 : 1;
@@ -54,14 +58,14 @@ export class TWCDevice extends Homey.Device {
       powerFactor = 1.732;
     }
     
-    let aW = vit.currentA_a*vit.voltageA_v;
+   /* let aW = vit.currentA_a*vit.voltageA_v;
     let bW = vit.currentB_a*vit.voltageB_v;
     let cW = vit.currentC_a*vit.voltageC_v;
     this.log('aW='+aW.toString());
     this.log('bW='+bW.toString());
     this.log('cW='+cW.toString());
-    return ((aW+bW+cW)/numberOfLines)*powerFactor;
-    //return vit.vehicle_current_a  * vit.grid_v * powerFactor;
+    return ((aW+bW+cW)/numberOfLines)*powerFactor;*/
+    return vit.vehicle_current_a  * (vit.grid_v+bugFixVoltage) * powerFactor;
   }
 
   toString(arr: string[]): string {
