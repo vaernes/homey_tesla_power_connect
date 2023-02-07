@@ -55,5 +55,8 @@
   },
   "1.4.7": {
     "en": "Changed the power calculations."
+  },
+  "1.4.8": {
+    "en": "Added bug fix for voltage in firmware 22.41.2+gdb42f98c0aafdd"
   }
 }
