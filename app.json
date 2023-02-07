@@ -293,6 +293,22 @@
               "hint": {
                 "en": "60 is recommended."
               }
+            },
+            {
+              "id": "voltage_adjustment",
+              "type": "number",
+              "label": {
+                "en": "Fixed voltage adjustment"
+              },
+              "value": 0,
+              "min": 0,
+              "max": 200,
+              "units": {
+                "en": "voltage"
+              },
+              "hint": {
+                "en": "Correct voltage readings with a fixed value adjustment, if the TWC reports are inaccurate."
+              }
             }
           ]
         },

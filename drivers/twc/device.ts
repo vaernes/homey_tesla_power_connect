@@ -31,6 +31,9 @@ export class TWCDevice extends Homey.Device {
       this.log('Change poll interval ' + event.newSettings.polling_interval);
       this.pollIntervals.push(setInterval(() => { this.getChargerState(); }, event.newSettings.polling_interval * 1000));
     }
+    if (event.changedKeys.indexOf("voltage_adjustment") > -1) {
+      this.getChargerState();
+    }
   }
 
   toHoursAndMinutes(totalSeconds: number): string {
@@ -43,12 +46,17 @@ export class TWCDevice extends Homey.Device {
     return hours + "h " + minutes + "m " + seconds + "s";
   }
 
+  getVoltageAdjustment() : number{
+    try{
+      return this.getSetting('voltage_adjustment');
+    }catch(e){
+      this.log(e);
+      return 0;
+    }
+  }
+
   calculatePower( vit: vitals ): number {
 
-    let bugFixVoltage=0;
-    if( this.getSetting("firmware_version") == "22.41.2+gdb42f98c0aafdd"){
-      bugFixVoltage=10;
-    }
     let a = Math.floor(vit.voltageA_v) == 0 ? 0 : 1;
     let b = Math.floor(vit.voltageB_v) == 0 ? 0 : 1;
     let c = Math.floor(vit.voltageC_v) == 0 ? 0 : 1;
@@ -57,15 +65,7 @@ export class TWCDevice extends Homey.Device {
     if (numberOfLines >= 2) {
       powerFactor = 1.732;
     }
-    
-   /* let aW = vit.currentA_a*vit.voltageA_v;
-    let bW = vit.currentB_a*vit.voltageB_v;
-    let cW = vit.currentC_a*vit.voltageC_v;
-    this.log('aW='+aW.toString());
-    this.log('bW='+bW.toString());
-    this.log('cW='+cW.toString());
-    return ((aW+bW+cW)/numberOfLines)*powerFactor;*/
-    return vit.vehicle_current_a  * (vit.grid_v+bugFixVoltage) * powerFactor;
+    return vit.vehicle_current_a  * (vit.grid_v+this.getVoltageAdjustment()) * powerFactor;
   }
 
   toString(arr: string[]): string {
@@ -145,14 +145,14 @@ export class TWCDevice extends Homey.Device {
         self.setCapabilityValue('measure_current.b', vit.currentB_a).catch(e => self.log("Error setting measure_current.b"));
         self.setCapabilityValue('measure_current.c', vit.currentC_a).catch(e => self.log("Error setting measure_current.c"));
         self.setCapabilityValue('measure_current.n', vit.currentN_a).catch(e => self.log("Error setting measure_current.n"));
-        self.setCapabilityValue('measure_twc_voltage.a', vit.voltageA_v).catch(e => self.log("Error setting measure_twc_voltage.a"));
-        self.setCapabilityValue('measure_twc_voltage.b', vit.voltageB_v).catch(e => self.log("Error setting measure_twc_voltage.b"));
-        self.setCapabilityValue('measure_twc_voltage.c', vit.voltageC_v).catch(e => self.log("Error setting measure_twc_voltage.c"));
+        self.setCapabilityValue('measure_twc_voltage.a', vit.voltageA_v+this.getVoltageAdjustment()).catch(e => self.log("Error setting measure_twc_voltage.a"));
+        self.setCapabilityValue('measure_twc_voltage.b', vit.voltageB_v+this.getVoltageAdjustment()).catch(e => self.log("Error setting measure_twc_voltage.b"));
+        self.setCapabilityValue('measure_twc_voltage.c', vit.voltageC_v+this.getVoltageAdjustment()).catch(e => self.log("Error setting measure_twc_voltage.c"));
         self.setCapabilityValue('measure_temperature.handle', vit.handle_temp_c).catch(e => self.log("Error setting measure_temperature.handle"));
         self.setCapabilityValue('measure_temperature.mcu', vit.mcu_temp_c).catch(e => self.log("Error setting measure_temperature.mcu"));
         self.setCapabilityValue('measure_temperature.pcba', vit.pcba_temp_c).catch(e => self.log("Error setting measure_temperature.pcba"));
         self.setCapabilityValue('measure_temperature.charger', (vit.mcu_temp_c + vit.pcba_temp_c) / 2).catch(e => self.log("Error setting measure_temperature.charger"));
-        self.setCapabilityValue('measure_twc_voltage.grid', vit.grid_v).catch(e => self.log("Error setting measure_twc_voltage.grid"));
+        self.setCapabilityValue('measure_twc_voltage.grid', vit.grid_v+this.getVoltageAdjustment()).catch(e => self.log("Error setting measure_twc_voltage.grid"));
         self.setCapabilityValue('measure_frequency.grid', vit.grid_hz).catch(e => self.log("Error setting measure_frequency.grid"));
         self.setCapabilityValue('measure_twc_voltage.relay_coil_v', vit.relay_coil_v).catch(e => self.log("Error setting measure_twc_voltage.relay_coil_v"));
         self.setCapabilityValue('measure_twc_voltage.prox_v', vit.prox_v).catch(e => self.log("Error setting measure_twc_voltage.prox_v"));
