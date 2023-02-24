@@ -96,8 +96,10 @@ export class TWCDevice extends Homey.Device {
     if (self.api == null) {
       return;
     }
+    
     const wifi = (await self.api.getWifiStatus());
     if (wifi != null) {
+      self.setAvailable();
       self.setSettings({
         wifi_ssid: this.decodeSsid(wifi.wifi_ssid),
         wifi_signal_strength: wifi.wifi_signal_strength.toString() + "%",
@@ -108,10 +110,13 @@ export class TWCDevice extends Homey.Device {
         internet: wifi.internet ? "Yes" : "No",
         wifi_mac: wifi.wifi_mac
       }).catch(res => self.log("Error setting WiFi"));
+    }else{
+      self.setUnavailable('Could not connect to'+ self.getName() + ', check the device IP address!' );
     }
 
     const life = (await self.api.getLifetime());
     if (life != null) {
+      self.setAvailable();
       self.setSettings({
         contactor_cycles: life.contactor_cycles.toString(),
         contactor_cycles_loaded: life.contactor_cycles_loaded.toString(),
@@ -125,19 +130,25 @@ export class TWCDevice extends Homey.Device {
         charging_time_s: self.toHoursAndMinutes(life.charging_time_s)
 
       }).catch(res => self.log("Error setting Lifetime"));
+    }else{
+      self.setUnavailable('Could not connect to'+ self.getName() + ', check the device IP address!' );
     }
 
     const ver = (await self.api.getVersion());
     if (ver != null) {
+      self.setAvailable();
       self.setSettings({
         firmware_version: ver.firmware_version,
         part_number: ver.part_number,
         serial_number: ver.serial_number
       }).catch(res => self.log("Error setting Version"));
+    }else{
+      self.setUnavailable('Could not connect to'+ self.getName() + ', check the device IP address' );
     }
 
     const vit = (await self.api.getVitals());
     if (vit != null) {
+      self.setAvailable();
       try {
         self.setCapabilityValue('meter_power.vehicle', vit.session_energy_wh / 1000).catch(e => self.log("Error setting meter_power.vehicle"));
         self.setCapabilityValue('measure_current.vehicle', vit.vehicle_current_a).catch(e => self.log("Error setting measure_current.vehicle"));
@@ -189,6 +200,8 @@ export class TWCDevice extends Homey.Device {
         config_status: vit.config_status.toString(),
         current_alerts: self.toString(vit.current_alerts)
       }).catch(res => self.log("Error setting Vitals"));
+    }else{
+      self.setUnavailable('Could not connect to'+ self.getName() + ', check the device IP address' );
     }
   }
 }
