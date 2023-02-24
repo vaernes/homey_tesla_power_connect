@@ -61,5 +61,8 @@
   },
   "1.4.9": {
     "en": "Added a fixed value adjustment in the settings for the voltage reported from the TWC."
+  },
+  "1.4.10": {
+    "en": "Added check for device availability."
   }
 }
