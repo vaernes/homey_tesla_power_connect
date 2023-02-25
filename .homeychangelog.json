@@ -64,5 +64,8 @@
   },
   "1.4.10": {
     "en": "Added check for device availability."
+  },
+  "1.4.11": {
+    "en": "Better parsing of the json from the TWC3"
   }
 }
