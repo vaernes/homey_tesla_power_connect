@@ -20,6 +20,9 @@ export class TWCDevice extends Homey.Device {
     const settings = this.getSettings();
     this.pollIntervals = [];
     this.pollIntervals.push(setInterval(() => { this.getChargerState(); }, settings.polling_interval * 1000));
+    if (this.hasCapability('meter_power.total') === false) {
+      await this.addCapability('meter_power.total');
+    }
   }
 
   async onSettings(event: { oldSettings: {}, newSettings: any, changedKeys: string[] }): Promise<string | void> {
