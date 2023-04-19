@@ -67,5 +67,8 @@
   },
   "1.4.11": {
     "en": "Better parsing of the json from the TWC3"
+  },
+  "1.4.12": {
+    "en": "Added total used energy as a capability."
   }
 }
