@@ -70,5 +70,8 @@
   },
   "1.4.12": {
     "en": "Added total used energy as a capability."
+  },
+  "1.4.13": {
+    "en": "Added new total used energy as a capability to paired devices"
   }
 }
