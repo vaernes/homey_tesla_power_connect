@@ -40,26 +40,19 @@
   "flow": {
     "triggers": [
       {
-        "id": "charger_status_changed",
+        "id": "charging_status_changed",
         "title": {
-          "en": "Charger status changed",
-          "sv": "Laddarens status ändrades"
-        },
-        "titleFormatted": {
-          "en": "Charger status changed",
-          "sv": "Laddarens status ändrades"
+          "en": "Charging status changed"
         },
         "tokens": [
           {
             "name": "status",
             "type": "string",
             "title": {
-              "en": "Charger status",
-              "sv": "Laddarens status"
+              "en": "Status"
             },
             "example": {
-              "en": "Car connected",
-              "sv": "Car connected"
+              "en": "Charging,Connected,Disconnected"
             }
           }
         ],
@@ -67,32 +60,7 @@
           {
             "type": "device",
             "name": "device",
-            "filter": "driver_id=charger"
-          }
-        ]
-      }
-    ],
-    "conditions": [
-      {
-        "id": "chargerStatus",
-        "title": {
-          "en": "Charger status is !{{|not}}"
-        },
-        "titleFormatted": {
-          "en": "Charger status is !{{|not}} [[status]]"
-        },
-        "args": [
-          {
-            "name": "status",
-            "type": "autocomplete",
-            "title": {
-              "en": "Status"
-            }
-          },
-          {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=charger"
+            "filter": "driver_id=twc"
           }
         ]
       }

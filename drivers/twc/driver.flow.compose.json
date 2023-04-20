@@ -1,0 +1,16 @@
+{
+  "triggers": [
+    {
+      "id": "charging_status_changed",
+      "title": { "en": "Charging status changed" },
+      "tokens": [
+          {
+            "name": "status",
+            "type": "string",
+            "title": { "en": "Status" },
+            "example": { "en": "Charging,Connected,Disconnected" }
+          }
+        ]
+    }
+  ]
+}

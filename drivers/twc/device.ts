@@ -6,6 +6,7 @@ export class TWCDevice extends Homey.Device {
 
   private api!: TWC | null;
   private pollIntervals: any;
+  private charging_status_changed : any;
 
   async onDeleted() {
     if (this.pollIntervals) {
@@ -23,6 +24,7 @@ export class TWCDevice extends Homey.Device {
     if (this.hasCapability('meter_power.total') === false) {
       await this.addCapability('meter_power.total');
     }
+    this.charging_status_changed = this.homey.flow.getDeviceTriggerCard('charging_status_changed');
   }
 
   async onSettings(event: { oldSettings: {}, newSettings: any, changedKeys: string[] }): Promise<string | void> {
@@ -197,6 +199,13 @@ export class TWCDevice extends Homey.Device {
           default:
             state = "Unknown";
             self.setCapabilityValue('measure_twc_power.vehicle', 0).catch(e => self.log("Error setting measure_twc_power.vehicle"));
+        }
+       
+        if( self.getCapabilityValue('alarm_twc_state.evse') !== state ){
+          const tokens = {
+            status: state
+          };
+          this.charging_status_changed.trigger(this, tokens );
         }
         self.setCapabilityValue('alarm_twc_state.evse', state).catch(e => self.log("Error setting alarm_twc_state.evse"));
         self.setCapabilityValue('alarm_twc_state.contactor', vit.getContactorClosed() ? "Closed" : "Open").catch(e => self.log("Error setting alarm_twc_state.contactor"));
