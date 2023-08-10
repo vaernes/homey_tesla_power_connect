@@ -116,7 +116,7 @@ export class TWCDevice extends Homey.Device {
         wifi_mac: wifi.getWifiMac()
       }).catch(res => self.log("Error setting WiFi"));
     }else{
-      self.setUnavailable('Could not connect to'+ self.getName() + ', check the device IP address!' );
+      self.setUnavailable('Could not connect to'+ self.getData().ip + ', check the device IP address!' );
     }
 
     const life = (await self.api.getLifetime());
@@ -139,7 +139,7 @@ export class TWCDevice extends Homey.Device {
       self.setCapabilityValue('meter_power.total', total).catch(e => self.log(e));
         
     }else{
-      self.setUnavailable('Could not connect to'+ self.getName() + ', check the device IP address!' );
+      self.setUnavailable('Could not connect to'+ self.getData().ip + ', check the device IP address!' );
     }
 
     const ver = (await self.api.getVersion());
@@ -151,7 +151,7 @@ export class TWCDevice extends Homey.Device {
         serial_number: ver.getSerialNumber()
       }).catch(res => self.log("Error setting Version"));
     }else{
-      self.setUnavailable('Could not connect to'+ self.getName() + ', check the device IP address' );
+      self.setUnavailable('Could not connect to'+ self.getData().ip + ', check the device IP address' );
     }
 
     const vit = (await self.api.getVitals());
@@ -220,7 +220,7 @@ export class TWCDevice extends Homey.Device {
         current_alerts: self.toString(vit.getCurrentAlerts())
       }).catch(res => self.log("Error setting Vitals"));
     }else{
-      self.setUnavailable('Could not connect to'+ self.getName() + ', check the device IP address' );
+      self.setUnavailable('Could not connect to'+ self.getData().ip + ', check the device IP address' );
     }
   }
 }
