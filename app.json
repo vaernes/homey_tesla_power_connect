@@ -40,9 +40,12 @@
   "flow": {
     "triggers": [
       {
-        "id": "charging_status_changed",
+        "id": "charger_status_changed",
         "title": {
-          "en": "Charging status changed"
+          "en": "Charger status changed"
+        },
+        "titleFormatted": {
+          "en": "Charger status changed"
         },
         "tokens": [
           {
@@ -56,6 +59,27 @@
             }
           }
         ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=twc"
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "is_charging",
+        "title": {
+          "en": "!{{Is|Isn't}} charging"
+        },
+        "titleFormatted": {
+          "en": "!{{Is|Isn't}} charging"
+        },
+        "hint": {
+          "en": "Checks if the charger is charging"
+        },
         "args": [
           {
             "type": "device",

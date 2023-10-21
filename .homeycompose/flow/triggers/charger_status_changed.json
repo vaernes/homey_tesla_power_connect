@@ -1,0 +1,25 @@
+{
+    "id": "charger_status_changed",
+    "title": {
+        "en": "Charger status changed"
+    },
+    "titleFormatted": {
+        "en": "Charger status changed"
+    },
+    "tokens": [
+        {
+            "name": "status",
+            "type": "string",
+            "title": {
+                "en": "Status"
+            },
+            "example": { "en": "Charging,Connected,Disconnected" }
+        }],
+    "args": [
+        {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=twc"
+        }
+    ]
+}

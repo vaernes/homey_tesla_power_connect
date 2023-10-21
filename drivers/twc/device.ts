@@ -1,13 +1,13 @@
 import Homey from 'homey';
 import { TWC } from '../../lib/twc';
 import { vitals } from '../../lib/vitals';
+import { ArgumentAutocompleteResults } from 'homey/lib/FlowCard';
 
 export class TWCDevice extends Homey.Device {
 
   private api!: TWC | null;
   private pollIntervals: any;
-  private charging_status_changed : any;
-
+  private _charging_status_changed!: Homey.FlowCardTriggerDevice | null;
   async onDeleted() {
     if (this.pollIntervals) {
       this.homey.clearInterval(this.pollIntervals);
@@ -17,6 +17,7 @@ export class TWCDevice extends Homey.Device {
 
   async onInit() {
     this.api = new TWC(this.getData().ip);
+    const self = this;
     this.getChargerState();
     const settings = this.getSettings();
     this.pollIntervals = [];
@@ -24,7 +25,13 @@ export class TWCDevice extends Homey.Device {
     if (this.hasCapability('meter_power.total') === false) {
       await this.addCapability('meter_power.total');
     }
-    this.charging_status_changed = this.homey.flow.getDeviceTriggerCard('charging_status_changed');
+    const chargingCondition = this.homey.flow.getConditionCard('is_charging');
+    chargingCondition.registerRunListener(async (args, state) => {
+      const status = args.device.getCapabilityValue('alarm_twc_state.evse')
+      return status === 'Charging';
+    });
+
+    this._charging_status_changed = this.homey.flow.getDeviceTriggerCard('charger_status_changed');
   }
 
   async onSettings(event: { oldSettings: {}, newSettings: any, changedKeys: string[] }): Promise<string | void> {
@@ -51,16 +58,16 @@ export class TWCDevice extends Homey.Device {
     return hours + "h " + minutes + "m " + seconds + "s";
   }
 
-  getVoltageAdjustment() : number{
-    try{
+  getVoltageAdjustment(): number {
+    try {
       return this.getSetting('voltage_adjustment');
-    }catch(e){
+    } catch (e) {
       this.log(e);
       return 0;
     }
   }
 
-  calculatePower( vit: vitals ): number {
+  calculatePower(vit: vitals): number {
 
     let a = Math.floor(vit.getVoltageA_v()) == 0 ? 0 : 1;
     let b = Math.floor(vit.getVoltageB_v()) == 0 ? 0 : 1;
@@ -70,9 +77,19 @@ export class TWCDevice extends Homey.Device {
     if (numberOfLines >= 2) {
       powerFactor = 1.732;
     }
-    return vit.getVehicleCurrentA()  * (vit.getGridV()+this.getVoltageAdjustment()) * powerFactor;
+    return vit.getVehicleCurrentA() * (vit.getGridV() + this.getVoltageAdjustment()) * powerFactor;
   }
 
+  async isCharging(): Promise<boolean> {
+    if (this.api != null) {
+      const vit = await this.api.getVitals();
+      if (vit != null) {
+        return 11 == vit.getEvseState();
+      }
+    }
+    return false;
+
+  }
   toString(arr: string[]): string {
     try {
       if (arr != null && arr.length != 0) {
@@ -96,15 +113,40 @@ export class TWCDevice extends Homey.Device {
     return "";
   }
 
+  getEvseState(vit: vitals) {
+    let state = 'Unknown';
+    switch (vit.getEvseState()) {
+      case 11:
+        state = "Charging";
+        this.setCapabilityValue('measure_twc_power.vehicle', this.calculatePower(vit)).catch(e => this.log("Error setting measure_twc_power.vehicle"));
+        break;
+      case 9:
+        state = "Connected"; //Ready, Waiting for vehicle
+        this.setCapabilityValue('measure_twc_power.vehicle', 0).catch(e => this.log("Error setting measure_twc_power.vehicle"));
+        break;
+      case 4:
+        state = "Connected"; //Ready, Connected
+        this.setCapabilityValue('measure_twc_power.vehicle', 0).catch(e => this.log("Error setting measure_twc_power.vehicle"));
+        break;
+      case 1:
+        state = "Disconnected";
+        this.setCapabilityValue('measure_twc_power.vehicle', 0).catch(e => this.log("Error setting measure_twc_power.vehicle"));
+        break;
+      default:
+        state = "Unknown";
+        this.setCapabilityValue('measure_twc_power.vehicle', 0).catch(e => this.log("Error setting measure_twc_power.vehicle"));
+    }
+    return state;
+  }
+
   async getChargerState() {
     const self = this;
     if (self.api == null) {
       return;
     }
-    
+
     const wifi = (await self.api.getWifiStatus());
     if (wifi != null) {
-      self.setAvailable();
       self.setSettings({
         wifi_ssid: this.decodeSsid(wifi.getWifiSsid()),
         wifi_signal_strength: wifi.getWifiSignalStrength() + "%",
@@ -115,13 +157,12 @@ export class TWCDevice extends Homey.Device {
         internet: wifi.getInternet() ? "Yes" : "No",
         wifi_mac: wifi.getWifiMac()
       }).catch(res => self.log("Error setting WiFi"));
-    }else{
-      self.setUnavailable('Could not connect to'+ self.getData().ip + ', check the device IP address!' );
+    } else {
+      self.log('Could not connect to' + self.getData().ip + ', check the device IP address!');
     }
 
     const life = (await self.api.getLifetime());
     if (life != null) {
-      self.setAvailable();
       const total = life.getEnergyWh() / 1000;
       self.setSettings({
         contactor_cycles: life.getContactorCycles(),
@@ -137,26 +178,24 @@ export class TWCDevice extends Homey.Device {
 
       }).catch(res => self.log("Error setting Lifetime " + res));
       self.setCapabilityValue('meter_power.total', total).catch(e => self.log(e));
-        
-    }else{
-      self.setUnavailable('Could not connect to'+ self.getData().ip + ', check the device IP address!' );
+
+    } else {
+      self.log('Could not connect to' + self.getData().ip + ', check the device IP address!');
     }
 
     const ver = (await self.api.getVersion());
     if (ver != null) {
-      self.setAvailable();
       self.setSettings({
         firmware_version: ver.getFirmwareVersion(),
         part_number: ver.getPartNumber(),
         serial_number: ver.getSerialNumber()
       }).catch(res => self.log("Error setting Version"));
-    }else{
-      self.setUnavailable('Could not connect to'+ self.getData().ip + ', check the device IP address' );
+    } else {
+      self.log('Could not connect to' + self.getData().ip + ', check the device IP address');
     }
 
     const vit = (await self.api.getVitals());
     if (vit != null) {
-      self.setAvailable();
       try {
         self.setCapabilityValue('meter_power.vehicle', vit.getSessionEnergyWh() / 1000).catch(e => self.log("Error setting meter_power.vehicle"));
         self.setCapabilityValue('measure_current.vehicle', vit.getVehicleCurrentA()).catch(e => self.log("Error setting measure_current.vehicle"));
@@ -164,51 +203,33 @@ export class TWCDevice extends Homey.Device {
         self.setCapabilityValue('measure_current.b', vit.getCurrentB_a()).catch(e => self.log("Error setting measure_current.b"));
         self.setCapabilityValue('measure_current.c', vit.getCurrentC_a()).catch(e => self.log("Error setting measure_current.c"));
         self.setCapabilityValue('measure_current.n', vit.getCurrentN_a()).catch(e => self.log("Error setting measure_current.n"));
-        self.setCapabilityValue('measure_twc_voltage.a', vit.getVoltageA_v()+this.getVoltageAdjustment()).catch(e => self.log("Error setting measure_twc_voltage.a"));
-        self.setCapabilityValue('measure_twc_voltage.b', vit.getVoltageB_v()+this.getVoltageAdjustment()).catch(e => self.log("Error setting measure_twc_voltage.b"));
-        self.setCapabilityValue('measure_twc_voltage.c', vit.getVoltageC_v()+this.getVoltageAdjustment()).catch(e => self.log("Error setting measure_twc_voltage.c"));
+        self.setCapabilityValue('measure_twc_voltage.a', vit.getVoltageA_v() + this.getVoltageAdjustment()).catch(e => self.log("Error setting measure_twc_voltage.a"));
+        self.setCapabilityValue('measure_twc_voltage.b', vit.getVoltageB_v() + this.getVoltageAdjustment()).catch(e => self.log("Error setting measure_twc_voltage.b"));
+        self.setCapabilityValue('measure_twc_voltage.c', vit.getVoltageC_v() + this.getVoltageAdjustment()).catch(e => self.log("Error setting measure_twc_voltage.c"));
         self.setCapabilityValue('measure_temperature.handle', vit.getHandleTempC()).catch(e => self.log("Error setting measure_temperature.handle"));
         self.setCapabilityValue('measure_temperature.mcu', vit.getMcuTempC()).catch(e => self.log("Error setting measure_temperature.mcu"));
         self.setCapabilityValue('measure_temperature.pcba', vit.getPcbaTempC()).catch(e => self.log("Error setting measure_temperature.pcba"));
         self.setCapabilityValue('measure_temperature.charger', (vit.getMcuTempC() + vit.getPcbaTempC()) / 2).catch(e => self.log("Error setting measure_temperature.charger"));
-        self.setCapabilityValue('measure_twc_voltage.grid', vit.getGridV()+this.getVoltageAdjustment()).catch(e => self.log("Error setting measure_twc_voltage.grid"));
+        self.setCapabilityValue('measure_twc_voltage.grid', vit.getGridV() + this.getVoltageAdjustment()).catch(e => self.log("Error setting measure_twc_voltage.grid"));
         self.setCapabilityValue('measure_frequency.grid', vit.getGridHz()).catch(e => self.log("Error setting measure_frequency.grid"));
         self.setCapabilityValue('measure_twc_voltage.relay_coil_v', vit.getRelayCoilV()).catch(e => self.log("Error setting measure_twc_voltage.relay_coil_v"));
         self.setCapabilityValue('measure_twc_voltage.prox_v', vit.getProxV()).catch(e => self.log("Error setting measure_twc_voltage.prox_v"));
         self.setCapabilityValue('measure_twc_voltage.pilot_high_v', vit.getPilotHighV()).catch(e => self.log("Error setting measure_twc_voltage.pilot_high_v"));
         self.setCapabilityValue('measure_twc_voltage.pilot_low_v', vit.getPilotLowV()).catch(e => self.log("Error setting measure_twc_voltage.pilot_low_v"));
-        
-        let state = 'Unknown';
-        switch (vit.getEvseState()) {
-          case 11:
-            state = "Charging";
-            self.setCapabilityValue('measure_twc_power.vehicle', self.calculatePower(vit)).catch(e => self.log("Error setting measure_twc_power.vehicle"));
-            break;
-          case 9:
-            state = "Connected"; //Ready, Waiting for vehicle
-            self.setCapabilityValue('measure_twc_power.vehicle', 0).catch(e => self.log("Error setting measure_twc_power.vehicle"));
-            break;
-          case 4:
-            state = "Connected"; //Ready, Connected
-            self.setCapabilityValue('measure_twc_power.vehicle', 0).catch(e => self.log("Error setting measure_twc_power.vehicle"));
-            break;
-          case 1:
-            state = "Disconnected";
-            self.setCapabilityValue('measure_twc_power.vehicle', 0).catch(e => self.log("Error setting measure_twc_power.vehicle"));
-            break;
-          default:
-            state = "Unknown";
-            self.setCapabilityValue('measure_twc_power.vehicle', 0).catch(e => self.log("Error setting measure_twc_power.vehicle"));
+
+        let state = self.getEvseState(vit);
+        const currentState = self.getCapabilityValue('alarm_twc_state.evse');
+        if (currentState !== state) {
+          self.setCapabilityValue('alarm_twc_state.evse', state).then(t => {
+            const tokens = {
+              status: state
+            };
+            if (self._charging_status_changed != null) {
+              self._charging_status_changed.trigger(self, tokens, {}).catch(error => { self.error('Error triggering alarm_twc_state.evse') });
+            }
+          }).catch(e => self.log('Error setting alarm_twc_state.evse'));
+          self.setCapabilityValue('alarm_twc_state.contactor', vit.getContactorClosed() ? "Closed" : "Open").catch(e => self.log("Error setting alarm_twc_state.contactor"));
         }
-       
-        if( self.getCapabilityValue('alarm_twc_state.evse') !== state ){
-          const tokens = {
-            status: state
-          };
-          this.charging_status_changed.trigger(this, tokens );
-        }
-        self.setCapabilityValue('alarm_twc_state.evse', state).catch(e => self.log("Error setting alarm_twc_state.evse"));
-        self.setCapabilityValue('alarm_twc_state.contactor', vit.getContactorClosed() ? "Closed" : "Open").catch(e => self.log("Error setting alarm_twc_state.contactor"));
       } catch (e) {
         self.log("Error setting setCapabilityValue");
       }
@@ -219,8 +240,8 @@ export class TWCDevice extends Homey.Device {
         config_status: vit.getConfigStatus().toString(),
         current_alerts: self.toString(vit.getCurrentAlerts())
       }).catch(res => self.log("Error setting Vitals"));
-    }else{
-      self.setUnavailable('Could not connect to'+ self.getData().ip + ', check the device IP address' );
+    } else {
+      self.log('Could not connect to' + self.getData().ip + ', check the device IP address');
     }
   }
 }
