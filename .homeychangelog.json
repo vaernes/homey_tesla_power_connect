@@ -85,5 +85,8 @@
   },
   "1.6.0": {
     "en": "Added trigger and condition for charger state"
+  },
+  "1.7.0": {
+    "en": "Change power usage calculation."
   }
 }
