@@ -67,7 +67,7 @@ export class TWCDevice extends Homey.Device {
     }
   }
 
-  calculatePower(vit: vitals): number {
+  calculatePowerV1(vit: vitals): number {
 
     let a = Math.floor(vit.getVoltageA_v()) == 0 ? 0 : 1;
     let b = Math.floor(vit.getVoltageB_v()) == 0 ? 0 : 1;
@@ -78,6 +78,14 @@ export class TWCDevice extends Homey.Device {
       powerFactor = 1.732;
     }
     return vit.getVehicleCurrentA() * (vit.getGridV() + this.getVoltageAdjustment()) * powerFactor;
+  }
+
+  calculatePowerV2(vit: vitals): number {
+
+    let a = vit.getVoltageA_v() * vit.getCurrentA_a();
+    let b = vit.getVoltageB_v() * vit.getCurrentB_a();
+    let c = vit.getVoltageC_v() * vit.getCurrentC_a();
+    return a + b + c;
   }
 
   async isCharging(): Promise<boolean> {
@@ -118,7 +126,7 @@ export class TWCDevice extends Homey.Device {
     switch (vit.getEvseState()) {
       case 11:
         state = "Charging";
-        this.setCapabilityValue('measure_twc_power.vehicle', this.calculatePower(vit)).catch(e => this.log("Error setting measure_twc_power.vehicle"));
+        this.setCapabilityValue('measure_twc_power.vehicle', this.calculatePowerV2(vit)).catch(e => this.log("Error setting measure_twc_power.vehicle"));
         break;
       case 9:
         state = "Connected"; //Ready, Waiting for vehicle
