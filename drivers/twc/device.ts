@@ -25,6 +25,11 @@ export class TWCDevice extends Homey.Device {
     if (this.hasCapability('meter_power.total') === false) {
       await this.addCapability('meter_power.total');
     }
+    
+    if (this.hasCapability('measure_power') === false) {
+      await this.addCapability('measure_power');
+    }
+    
     const chargingCondition = this.homey.flow.getConditionCard('is_charging');
     chargingCondition.registerRunListener(async (args, state) => {
       const status = args.device.getCapabilityValue('alarm_twc_state.evse')
@@ -123,26 +128,27 @@ export class TWCDevice extends Homey.Device {
 
   getEvseState(vit: vitals) {
     let state = 'Unknown';
+    let power = 0;
     switch (vit.getEvseState()) {
       case 11:
         state = "Charging";
-        this.setCapabilityValue('measure_twc_power.vehicle', this.calculatePowerV2(vit)).catch(e => this.log("Error setting measure_twc_power.vehicle"));
+        power = this.calculatePowerV2(vit);
         break;
       case 9:
         state = "Connected"; //Ready, Waiting for vehicle
-        this.setCapabilityValue('measure_twc_power.vehicle', 0).catch(e => this.log("Error setting measure_twc_power.vehicle"));
         break;
       case 4:
         state = "Connected"; //Ready, Connected
-        this.setCapabilityValue('measure_twc_power.vehicle', 0).catch(e => this.log("Error setting measure_twc_power.vehicle"));
         break;
       case 1:
         state = "Disconnected";
-        this.setCapabilityValue('measure_twc_power.vehicle', 0).catch(e => this.log("Error setting measure_twc_power.vehicle"));
         break;
       default:
         state = "Unknown";
-        this.setCapabilityValue('measure_twc_power.vehicle', 0).catch(e => this.log("Error setting measure_twc_power.vehicle"));
+    }
+    this.setCapabilityValue('measure_twc_power.vehicle', power).catch(e => this.log("Error setting measure_twc_power.vehicle"));
+    if (this.hasCapability('measure_power')) {
+      this.setCapabilityValue('measure_power', power)
     }
     return state;
   }
