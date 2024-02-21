@@ -1,6 +1,6 @@
 {
   "id": "tesla.wall.connector",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [

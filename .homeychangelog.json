@@ -88,5 +88,8 @@
   },
   "1.7.0": {
     "en": "Change power usage calculation."
+  },
+  "1.8.0": {
+    "en": "Added support for energy"
   }
 }
