@@ -91,5 +91,8 @@
   },
   "1.8.0": {
     "en": "Added support for energy"
+  },
+  "1.9.0": {
+    "en": "Added isConnected and change driver class to EVCharger"
   }
 }
