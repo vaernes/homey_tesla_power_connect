@@ -125,20 +125,22 @@ export class TWCDevice extends Homey.Device {
     }
     return "";
   }
-
+  
   getEvseState(vit: vitals) {
     let state = 'Unknown';
     let power = 0;
     switch (vit.getEvseState()) {
       case 11:
+      case 10:
         state = "Charging";
         power = this.calculatePowerV2(vit);
         break;
-      case 9:
-        state = "Connected"; //Ready, Waiting for vehicle
-        break;
-      case 4:
-        state = "Connected"; //Ready, Connected
+      case 9: //Ready, Waiting for vehicle
+      case 4: //Ready, Connected
+      case 8:
+      case 6:
+      case 2:
+        state = "Connected"; 
         break;
       case 1:
         state = "Disconnected";
