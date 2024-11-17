@@ -2,7 +2,7 @@
   "name": {
     "en": "TWC Gen3"
   },
-  "class": "other",
+  "class": "evcharger",
   "platforms": [
     "local"
   ],
