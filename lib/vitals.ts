@@ -1,3 +1,5 @@
+
+import { EVSEState, getEVSEStateFromNumber } from './evsestate';
 export class vitals {
     contactor_closed!: boolean;
     vehicle_connected!: boolean;
@@ -227,6 +229,13 @@ export class vitals {
             return 0;
         }
         return this.evse_state;
+    }
+
+    public getEvseStateV2(): EVSEState | undefined {
+        if (this.evse_state == undefined) {
+            return 0;
+        }
+        return getEVSEStateFromNumber(this.evse_state);
     }
 
     public getCurrentAlerts(): string[] {
