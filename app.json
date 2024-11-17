@@ -87,6 +87,25 @@
             "filter": "driver_id=twc"
           }
         ]
+      },
+      {
+        "id": "is_connected",
+        "title": {
+          "en": "!{{Is|Isn't}} connected"
+        },
+        "titleFormatted": {
+          "en": "!{{Is|Isn't}} connected"
+        },
+        "hint": {
+          "en": "Checks if the charger is connected to the vehical"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=twc"
+          }
+        ]
       }
     ]
   },

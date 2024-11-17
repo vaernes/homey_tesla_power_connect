@@ -36,6 +36,12 @@ export class TWCDevice extends Homey.Device {
       return status === 'Charging';
     });
 
+    const connectedCondition = this.homey.flow.getConditionCard('is_connected');
+    connectedCondition.registerRunListener(async (args, state) => {
+      const status = args.device.getCapabilityValue('alarm_twc_state.evse')
+      return status === 'Connected';
+    });
+
     this._charging_status_changed = this.homey.flow.getDeviceTriggerCard('charger_status_changed');
   }
 
@@ -97,12 +103,22 @@ export class TWCDevice extends Homey.Device {
     if (this.api != null) {
       const vit = await this.api.getVitals();
       if (vit != null) {
-        return 11 == vit.getEvseState();
+        return "Charging" == this.getEvseState(vit);
       }
     }
     return false;
-
   }
+  
+  async isConnected(): Promise<boolean> {
+    if (this.api != null) {
+      const vit = await this.api.getVitals();
+      if (vit != null) {
+        return "Connected" == this.getEvseState(vit);
+      }
+    }
+    return false;
+  }
+
   toString(arr: string[]): string {
     try {
       if (arr != null && arr.length != 0) {
