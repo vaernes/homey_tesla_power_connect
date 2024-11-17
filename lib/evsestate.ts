@@ -1,3 +1,6 @@
+/*
+* Added thanks to Wallmonitor https://wallmonitor.app/
+*/
 export enum EVSEState {
     Starting = 0, // EVSE is initializing
     NoVehicleConnected = 1, // No vehicle is connected to the EVSE
