@@ -214,7 +214,7 @@
                 }
             },
             {
-                "id": "energy_wh",
+                "id": "enrgy_wh",
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {

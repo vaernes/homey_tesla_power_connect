@@ -203,7 +203,7 @@ export class TWCDevice extends Homey.Device {
         thermal_foldbacks: life.getThermalFoldbacks(),
         avg_startup_temp: life.getAvgStartupTemp(),
         charge_starts: life.getChargeStarts(),
-        energy_wh: total.toString() + "kWh",
+        enrgy_wh: total.toString() + "kWh",
         connector_cycles: life.getConnectorCycles(),
         uptime_s: self.toHoursAndMinutes(life.getUptimeS()),
         charging_time_s: self.toHoursAndMinutes(life.getChargingTimeS())
