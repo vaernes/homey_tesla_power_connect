@@ -94,5 +94,8 @@
   },
   "1.9.0": {
     "en": "Added isConnected and change driver class to EVCharger"
+  },
+  "1.10.0": {
+    "en": "Add 'measure_power' and 'meter_power' capabilities to TWC"
   }
 }
