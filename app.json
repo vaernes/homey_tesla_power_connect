@@ -149,7 +149,8 @@
         "measure_twc_voltage.prox_v",
         "measure_twc_voltage.pilot_high_v",
         "measure_twc_voltage.pilot_low_v",
-        "meter_power.total"
+        "meter_power.total",
+        "measure_power"
       ],
       "capabilitiesOptions": {
         "measure_twc_voltage.relay_coil_v": {

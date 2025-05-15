@@ -1,7 +1,6 @@
 import Homey from 'homey';
 import { TWC } from '../../lib/twc';
 import { vitals } from '../../lib/vitals';
-import { ArgumentAutocompleteResults } from 'homey/lib/FlowCard';
 
 export class TWCDevice extends Homey.Device {
 
@@ -25,11 +24,14 @@ export class TWCDevice extends Homey.Device {
     if (this.hasCapability('meter_power.total') === false) {
       await this.addCapability('meter_power.total');
     }
-    
+
+    if (this.hasCapability('meter_power') === false) {
+      await this.addCapability('meter_power');
+    }
     if (this.hasCapability('measure_power') === false) {
       await this.addCapability('measure_power');
     }
-    
+
     const chargingCondition = this.homey.flow.getConditionCard('is_charging');
     chargingCondition.registerRunListener(async (args, state) => {
       const status = args.device.getCapabilityValue('alarm_twc_state.evse')
@@ -108,7 +110,7 @@ export class TWCDevice extends Homey.Device {
     }
     return false;
   }
-  
+
   async isConnected(): Promise<boolean> {
     if (this.api != null) {
       const vit = await this.api.getVitals();
@@ -141,7 +143,7 @@ export class TWCDevice extends Homey.Device {
     }
     return "";
   }
-  
+
   getEvseState(vit: vitals) {
     let state = 'Unknown';
     let power = 0;
@@ -156,7 +158,7 @@ export class TWCDevice extends Homey.Device {
       case 8:
       case 6:
       case 2:
-        state = "Connected"; 
+        state = "Connected";
         break;
       case 1:
         state = "Disconnected";
@@ -210,7 +212,9 @@ export class TWCDevice extends Homey.Device {
 
       }).catch(res => self.log("Error setting Lifetime " + res));
       self.setCapabilityValue('meter_power.total', total).catch(e => self.log(e));
-
+      if (this.hasCapability('meter_power')) {
+        self.setCapabilityValue('meter_power', total).catch(e => self.log(e));
+      }
     } else {
       self.log('Could not connect to' + self.getData().ip + ', check the device IP address!');
     }
