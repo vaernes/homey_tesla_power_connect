@@ -1,8 +1,11 @@
-import fetch from 'node-fetch';
+// Remove: import fetch from 'node-fetch';
 import { version } from './version';
 import { lifetime } from './lifetime';
 import { vitals } from './vitals';
 import { wifi_status } from './wifi_status';
+
+// Helper function for dynamic import of node-fetch
+const fetch = (...args: Parameters<typeof import('node-fetch')['default']>) => import('node-fetch').then(mod => mod.default(...args));
 
 export class TWC {
 
