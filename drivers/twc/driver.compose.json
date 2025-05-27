@@ -161,6 +161,10 @@
       }
     }
   },
+  "energy": {
+    "evCharger": true,
+    "meterPowerImportedCapability": "meter_power"
+  },
   "pair": [
     {
       "id": "ip_view"
