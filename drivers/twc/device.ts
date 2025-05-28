@@ -162,13 +162,12 @@ export class TWCDevice extends Homey.Device {
       case EVSEState.Charging:
       case EVSEState.ChargePowerReduced:
         state = HomeyEVChargerChargingState.PluggedInCharging;
-        power = this.calculatePowerV2(vit);
         break;
       case EVSEState.ReadyToChargeWaitingOnVehicle: //Ready, Waiting for vehicle
       case EVSEState.ConnectedReady: //Ready, Connected
-      case EVSEState.ConnectedFullyCharged:
-        state = HomeyEVChargerChargingState.PluggedIn;
+        state = HomeyEVChargerChargingState.PluggedInPaused;
         break;
+      case EVSEState.ConnectedFullyCharged:
       case EVSEState.ConnectedNegotiating:
       case EVSEState.ConnectedNotReady:
         state = HomeyEVChargerChargingState.PluggedIn;
