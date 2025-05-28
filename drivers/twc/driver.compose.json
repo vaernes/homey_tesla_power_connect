@@ -39,7 +39,8 @@
     "measure_twc_voltage.pilot_low_v",
     "meter_power.total",
     "measure_power",
-    "meter_power"
+    "meter_power",
+    "evcharger_charging_state"
   ],
   "capabilitiesOptions": {
     "measure_twc_voltage.relay_coil_v": {

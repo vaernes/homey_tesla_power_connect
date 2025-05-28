@@ -1,6 +1,14 @@
 import Homey from 'homey';
 import { TWC } from '../../lib/twc';
 import { vitals } from '../../lib/vitals';
+import { EVSEState } from '../../lib/evsestate';
+export enum HomeyEVChargerChargingState {
+  PluggedInCharging = "plugged_in_charging",
+  PluggedInDischarging = "plugged_in_discharging",
+  PluggedInPaused = "plugged_in_paused",
+  PluggedIn = "plugged_in",
+  PluggedOut = "plugged_out"
+}
 
 export class TWCDevice extends Homey.Device {
 
@@ -30,6 +38,9 @@ export class TWCDevice extends Homey.Device {
     }
     if (this.hasCapability('measure_power') === false) {
       await this.addCapability('measure_power');
+    }
+    if (this.hasCapability('evcharger_charging_state') === false) {
+      await this.addCapability('evcharger_charging_state');
     }
 
     const chargingCondition = this.homey.flow.getConditionCard('is_charging');
@@ -144,8 +155,35 @@ export class TWCDevice extends Homey.Device {
     return "";
   }
 
-  getEvseState(vit: vitals) {
-    let state = 'Unknown';
+  getEvseStateV2(vit: vitals): HomeyEVChargerChargingState {
+    let state: HomeyEVChargerChargingState = HomeyEVChargerChargingState.PluggedOut;
+    let power = 0;
+    switch (vit.getEvseStateV2()) {
+      case EVSEState.Charging:
+      case EVSEState.ChargePowerReduced:
+        state = HomeyEVChargerChargingState.PluggedInCharging;
+        power = this.calculatePowerV2(vit);
+        break;
+      case EVSEState.ReadyToChargeWaitingOnVehicle: //Ready, Waiting for vehicle
+      case EVSEState.ConnectedReady: //Ready, Connected
+      case EVSEState.ConnectedFullyCharged:
+        state = HomeyEVChargerChargingState.PluggedIn;
+        break;
+      case EVSEState.ConnectedNegotiating:
+      case EVSEState.ConnectedNotReady:
+        state = HomeyEVChargerChargingState.PluggedIn;
+        break;
+      case EVSEState.NoVehicleConnected:
+        state = HomeyEVChargerChargingState.PluggedOut;
+        break;
+      default:
+        state = HomeyEVChargerChargingState.PluggedOut;
+    }
+    return state;
+  }
+
+  getEvseState(vit: vitals): string {
+    let state = 'Error';
     let power = 0;
     switch (vit.getEvseState()) {
       case 11:
@@ -156,6 +194,8 @@ export class TWCDevice extends Homey.Device {
       case 9: //Ready, Waiting for vehicle
       case 4: //Ready, Connected
       case 8:
+        state = "Finished";
+        break;
       case 6:
       case 2:
         state = "Connected";
@@ -164,7 +204,7 @@ export class TWCDevice extends Homey.Device {
         state = "Disconnected";
         break;
       default:
-        state = "Unknown";
+        state = "Error";
     }
     this.setCapabilityValue('measure_twc_power.vehicle', power).catch(e => this.log("Error setting measure_twc_power.vehicle"));
     if (this.hasCapability('measure_power')) {
@@ -265,6 +305,11 @@ export class TWCDevice extends Homey.Device {
             }
           }).catch(e => self.log('Error setting alarm_twc_state.evse'));
           self.setCapabilityValue('alarm_twc_state.contactor', vit.getContactorClosed() ? "Closed" : "Open").catch(e => self.log("Error setting alarm_twc_state.contactor"));
+        }
+        let stateV2 = self.getEvseStateV2(vit);
+        const currentStateV2 = self.getCapabilityValue('evcharger_charging_state');
+        if (currentStateV2 !== stateV2) {
+          self.setCapabilityValue('evcharger_charging_state', stateV2).catch(e => self.log("Error setting evcharger_charging_state"));
         }
       } catch (e) {
         self.log("Error setting setCapabilityValue");

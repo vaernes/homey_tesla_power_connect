@@ -1,21 +1,21 @@
 /*
-* Added thanks to Wallmonitor https://wallmonitor.app/
+* Added thanks to Wallmonitor https://wallmonitor.app/ and https://www.msxfaq.de/sonst/stromer/tesla_wallbox_gen_3.htm
 */
 export enum EVSEState {
-    Starting = 0, // EVSE is initializing
-    NoVehicleConnected = 1, // No vehicle is connected to the EVSE
-    ConnectedNotReady = 2, // Vehicle connected but not ready to charge
-    Unknown3 = 3, // Unknown state, further investigation needed
-    ConnectedReady = 4, // Vehicle connected and ready to charge
-    Unknown5 = 5, // Unknown state, further investigation needed
-    ConnectedNegotiating = 6, // Vehicle and EVSE are negotiating charging parameters
-    Unknown7 = 7, // Unknown state, further investigation needed
-    ConnectedFullyCharged = 8, // Vehicle connected and fully charged
-    ReadyToChargeWaitingOnVehicle = 9, // EVSE ready but waiting on vehicle to initiate
-    ChargePowerReduced = 10, // Charging with reduced power (potentially non-Tesla vehicle)
-    Charging = 11, // Vehicle is actively charging
-    Unknown12 = 12, // Unknown state, further investigation needed
-    Unknown13 = 13 // Unknown state, further investigation needed
+    Starting = 0,                       // Wallbox starts
+    NoVehicleConnected = 1,             // No vehicle connected
+    ConnectedNotReady = 2,              // Connected and not ready
+    Unknown3 = 3,                       // Still missing information here
+    ConnectedReady = 4,                 // Connected and ready
+    Unknown5 = 5,                       // Still missing information here
+    ConnectedNegotiating = 6,           // Vehicle connected, negotiation
+    Unknown7 = 7,                       // Still missing information here
+    ConnectedFullyCharged = 8,          // Vehicle connected and fully charged (locking does not matter)
+    ReadyToChargeWaitingOnVehicle = 9,  // Ready to load, waiting for vehicle
+    ChargePowerReduced = 10,            // Charging at reduced power (car not drawing full power, may be normal for some PHEVs)
+    Charging = 11,                      // Charging with 3 phases at 16A (e.g., 11kW)
+    Unknown12 = 12,                      // Sometimes seen between 2 and 8
+    Unknown13 = 13
 }
 
 /**
