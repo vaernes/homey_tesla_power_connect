@@ -100,5 +100,8 @@
   },
   "1.11.0": {
     "en": "Added EV charger state capabilities "
+  },
+  "1.11.1": {
+    "en": "Added support for charging paused"
   }
 }
