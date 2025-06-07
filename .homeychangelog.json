@@ -103,5 +103,8 @@
   },
   "1.11.1": {
     "en": "Added support for charging paused"
+  },
+  "1.12.0": {
+    "en": "Update isConnected method to return vehicle connection status directly"
   }
 }
