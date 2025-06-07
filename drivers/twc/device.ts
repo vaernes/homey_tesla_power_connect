@@ -126,7 +126,7 @@ export class TWCDevice extends Homey.Device {
     if (this.api != null) {
       const vit = await this.api.getVitals();
       if (vit != null) {
-        return "Connected" == this.getEvseState(vit);
+        return vit.vehicle_connected
       }
     }
     return false;
