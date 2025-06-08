@@ -106,5 +106,8 @@
   },
   "1.12.0": {
     "en": "Update isConnected method to return vehicle connection status directly"
+  },
+  "1.12.1": {
+    "en": "Enhance EV charger state handling"
   }
 }
