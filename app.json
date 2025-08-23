@@ -152,7 +152,9 @@
         "meter_power.total",
         "measure_power",
         "meter_power",
-        "evcharger_charging_state"
+        "evcharger_charging_state",
+        "evse_state",
+        "measure_evse_state"
       ],
       "capabilitiesOptions": {
         "measure_twc_voltage.relay_coil_v": {
@@ -271,6 +273,16 @@
         "meter_power.total": {
           "title": {
             "en": "Total Used Energy"
+          }
+        },
+        "evse_state": {
+          "title": {
+            "en": "EVSE State"
+          }
+        },
+        "measure_evse_state": {
+          "title": {
+            "en": "EVSE State (code)"
           }
         }
       },
@@ -589,6 +601,117 @@
       "setable": false,
       "uiComponent": "sensor",
       "icon": "/assets/charging.svg"
+    },
+    "evse_state": {
+      "title": {
+        "en": "EVSE State"
+      },
+      "type": "enum",
+      "values": [
+        {
+          "id": "starting",
+          "title": {
+            "en": "Starting"
+          }
+        },
+        {
+          "id": "no_vehicle",
+          "title": {
+            "en": "No vehicle connected"
+          }
+        },
+        {
+          "id": "connected_not_ready",
+          "title": {
+            "en": "Connected (not ready)"
+          }
+        },
+        {
+          "id": "unknown3",
+          "title": {
+            "en": "Unknown 3"
+          }
+        },
+        {
+          "id": "connected_ready",
+          "title": {
+            "en": "Connected (ready)"
+          }
+        },
+        {
+          "id": "unknown5",
+          "title": {
+            "en": "Unknown 5"
+          }
+        },
+        {
+          "id": "negotiating",
+          "title": {
+            "en": "Negotiating"
+          }
+        },
+        {
+          "id": "finished_charging",
+          "title": {
+            "en": "Finished charging"
+          }
+        },
+        {
+          "id": "fully_charged",
+          "title": {
+            "en": "Fully charged"
+          }
+        },
+        {
+          "id": "waiting_vehicle",
+          "title": {
+            "en": "Waiting for vehicle"
+          }
+        },
+        {
+          "id": "reduced_power",
+          "title": {
+            "en": "Reduced power"
+          }
+        },
+        {
+          "id": "charging",
+          "title": {
+            "en": "Charging"
+          }
+        },
+        {
+          "id": "unknown12",
+          "title": {
+            "en": "Unknown 12"
+          }
+        },
+        {
+          "id": "unknown13",
+          "title": {
+            "en": "Unknown 13"
+          }
+        }
+      ],
+      "insights": true,
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/evse_state.svg"
+    },
+    "measure_evse_state": {
+      "title": {
+        "en": "EVSE State (code)"
+      },
+      "type": "number",
+      "decimals": 0,
+      "min": 0,
+      "max": 13,
+      "insights": true,
+      "getable": true,
+      "setable": false,
+      "uiComponent": null,
+      "icon": "/assets/evse_state.svg"
     },
     "measure_frequency": {
       "type": "number",

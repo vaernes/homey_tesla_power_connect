@@ -1,7 +1,7 @@
 import Homey from 'homey';
 import { TWC } from '../../lib/twc';
 import { vitals } from '../../lib/vitals';
-import { EVSEState } from '../../lib/evsestate';
+import { EVSEState, getEVSEStateString } from '../../lib/evsestate';
 export enum HomeyEVChargerChargingState {
   PluggedInCharging = "plugged_in_charging",
   PluggedInDischarging = "plugged_in_discharging",
@@ -41,6 +41,14 @@ export class TWCDevice extends Homey.Device {
     }
     if (this.hasCapability('evcharger_charging_state') === false) {
       await this.addCapability('evcharger_charging_state');
+    }
+
+    if (this.hasCapability('evse_state') === false) {
+      await this.addCapability('evse_state');
+    }
+
+     if (this.hasCapability('measure_evse_state') === false) {
+      await this.addCapability('measure_evse_state');
     }
 
     const chargingCondition = this.homey.flow.getConditionCard('is_charging');
@@ -168,6 +176,7 @@ export class TWCDevice extends Homey.Device {
       case EVSEState.ConnectedReady: //Ready, Connected
         state = HomeyEVChargerChargingState.PluggedInPaused;
         break;
+      case EVSEState.ConnectedFinishedCharging:
       case EVSEState.ConnectedFullyCharged:
       case EVSEState.ConnectedNegotiating:
       case EVSEState.ConnectedNotReady:
@@ -296,7 +305,9 @@ export class TWCDevice extends Homey.Device {
         self.setCapabilityValue('measure_twc_voltage.prox_v', vit.getProxV()).catch(e => self.log("Error setting measure_twc_voltage.prox_v"));
         self.setCapabilityValue('measure_twc_voltage.pilot_high_v', vit.getPilotHighV()).catch(e => self.log("Error setting measure_twc_voltage.pilot_high_v"));
         self.setCapabilityValue('measure_twc_voltage.pilot_low_v', vit.getPilotLowV()).catch(e => self.log("Error setting measure_twc_voltage.pilot_low_v"));
-
+        self.setCapabilityValue('evse_state', getEVSEStateString(vit.getEvseState())).catch(e => self.log("Error setting evse_state"));
+        self.setCapabilityValue('measure_evse_state', vit.getEvseState()).catch(e => self.log("Error setting evse_state"));
+        
         let state = self.getEvseState(vit);
         const currentState = self.getCapabilityValue('alarm_twc_state.evse');
         if (currentState !== state) {

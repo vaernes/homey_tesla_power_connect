@@ -40,7 +40,9 @@
     "meter_power.total",
     "measure_power",
     "meter_power",
-    "evcharger_charging_state"
+    "evcharger_charging_state",
+    "evse_state",
+     "measure_evse_state"
   ],
   "capabilitiesOptions": {
     "measure_twc_voltage.relay_coil_v": {
@@ -160,6 +162,14 @@
       "title": {
         "en": "Total Used Energy"
       }
+    },
+    "evse_state": {
+      "title": {
+        "en": "EVSE State"
+      }
+    },
+    "measure_evse_state": {
+      "title": { "en": "EVSE State (code)" }
     }
   },
   "energy": {

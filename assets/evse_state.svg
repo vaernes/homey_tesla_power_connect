@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-labelledby="title">
+  <title>EVSE State</title>
+  <!-- EV plug (left) -->
+  <rect x="5.5" y="8" width="6" height="8" rx="1.6"/>
+  <line x1="4.2" y1="10.4" x2="5.5" y2="10.4"/>
+  <line x1="4.2" y1="13.6" x2="5.5" y2="13.6"/>
+  <!-- Cable -->
+  <path d="M8.5 16 C 10.6 17.5 12.2 17 13.6 15.8"/>
+  <!-- State dial (right) -->
+  <circle cx="16.8" cy="12" r="5"/>
+  <!-- Four subtle ticks to suggest enumerated states -->
+  <line x1="16.8" y1="6.7" x2="16.8" y2="7.8"/>
+  <line x1="16.8" y1="16.2" x2="16.8" y2="17.3"/>
+  <line x1="11.5" y1="12" x2="12.6" y2="12"/>
+  <line x1="21" y1="12" x2="22.1" y2="12"/>
+  <!-- Center dot -->
+  <circle cx="16.8" cy="12" r="0.6" fill="currentColor" stroke="none"/>
+</svg>

@@ -1,0 +1,14 @@
+{
+    "title": {
+        "en": "EVSE State (code)"
+    },
+    "type": "number",
+    "decimals": 0,
+    "min": 0,
+    "max": 13,
+    "insights": true,
+    "getable": true,
+    "setable": false,
+    "uiComponent": null,
+    "icon": "/assets/evse_state.svg"
+}
