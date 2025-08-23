@@ -109,5 +109,8 @@
   },
   "1.12.1": {
     "en": "Enhance EV charger state handling"
+  },
+  "1.12.2": {
+    "en": "Added Evse state to Insigth"
   }
 }
