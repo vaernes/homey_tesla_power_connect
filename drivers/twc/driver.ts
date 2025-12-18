@@ -8,7 +8,7 @@ export class TWCDriver extends Homey.Driver {
   async onInit() {
     this.log('Tesla Wall Connector driver has been initialized');
   }
-  
+
   async onPair(session: PairSession) {
 
     let address = '';
@@ -20,25 +20,25 @@ export class TWCDriver extends Homey.Driver {
       if (isIPV4Address(address)) {
         this.log(address);
         return true;
-      } else {
-        this.log('invalid ip provided');
-        return false;
       }
+      this.log('invalid ip provided');
+      return false;
+
     });
 
     session.setHandler('list_devices', async () => {
       this.log('pair: list_devices');
-      let api = new TWC(address);
+      const api = new TWC(address);
       const result = (await api.getVersion());
       const devices = [
         {
-          name: "TWC Gen3",
+          name: 'TWC Gen3',
           data: {
-            id: result == null ? "" : result.getSerialNumber(),
+            id: result == null ? '' : result.getSerialNumber(),
             ip: address,
           },
-          icon: 'icon.svg'
-        }
+          icon: 'icon.svg',
+        },
       ];
       this.log(devices);
       return devices;
