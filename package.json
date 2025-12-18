@@ -8,12 +8,12 @@
     "lint": "eslint --ext .js,.ts --ignore-path .gitignore ."
   },
   "devDependencies": {
-    "@tsconfig/node22": "^22.0.2",
+    "@tsconfig/node22": "^22.0.5",
     "@types/homey": "npm:homey-apps-sdk-v3-types@^0.3.12",
     "@types/node": "^22.15.23",
-    "eslint": "^7.32.0",
+    "eslint": "^8.57.0",
     "eslint-config-athom": "^3.1.5",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "ip-address-validator": "^1.0.10",
