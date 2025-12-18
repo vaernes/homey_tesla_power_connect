@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "license": "GPL-3.0-only",
   "main": "app.ts",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "build": "tsc",
     "lint": "eslint --ext .js,.ts --ignore-path .gitignore ."
@@ -16,8 +19,7 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "ip-address-validator": "^1.0.10",
-    "node-fetch": "^3.3.2"
+    "ip-address-validator": "^1.0.10"
   },
   "repository": {
     "type": "git",
