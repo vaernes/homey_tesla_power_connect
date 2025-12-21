@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "tesla.wall.connector",
-  "version": "1.12.2",
+  "version": "2.0.0",
   "compatibility": ">=12.4.5",
   "sdk": 3,
   "platforms": [
@@ -448,7 +448,7 @@
             "no": "Strøm A",
             "es": "Corriente A",
             "da": "Strøm A",
-            "ru": "Ток А",
+            "ru": "Ток A",
             "pl": "Prąd A"
           }
         },
@@ -463,7 +463,7 @@
             "no": "Strøm B",
             "es": "Corriente B",
             "da": "Strøm B",
-            "ru": "Ток Б",
+            "ru": "Ток B",
             "pl": "Prąd B"
           }
         },
@@ -478,7 +478,7 @@
             "no": "Strøm C",
             "es": "Corriente C",
             "da": "Strøm C",
-            "ru": "Ток В",
+            "ru": "Ток C",
             "pl": "Prąd C"
           }
         },
@@ -508,7 +508,7 @@
             "no": "Spenning A",
             "es": "Voltaje A",
             "da": "Spænding A",
-            "ru": "Напряжение А",
+            "ru": "Напряжение A",
             "pl": "Napięcie A"
           }
         },
@@ -523,7 +523,7 @@
             "no": "Spenning B",
             "es": "Voltaje B",
             "da": "Spænding B",
-            "ru": "Напряжение Б",
+            "ru": "Напряжение B",
             "pl": "Napięcie B"
           }
         },
@@ -538,7 +538,7 @@
             "no": "Spenning C",
             "es": "Voltaje C",
             "da": "Spænding C",
-            "ru": "Напряжение В",
+            "ru": "Напряжение C",
             "pl": "Napięcie C"
           }
         },

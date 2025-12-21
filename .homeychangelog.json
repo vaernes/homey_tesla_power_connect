@@ -112,5 +112,8 @@
   },
   "1.12.2": {
     "en": "Added Evse state to Insigth"
+  },
+  "2.0.0": {
+    "en": "Added translation with the help of Gemini 3"
   }
 }
