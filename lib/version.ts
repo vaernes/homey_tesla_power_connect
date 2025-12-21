@@ -5,6 +5,7 @@ export class version {
   ss!: string;
 
   public constructor(json: any) {
+    if (!json) return;
     this.firmware_version = json.firmware_version;
     this.part_number = json.part_number;
     this.serial_number = json.serial_number;

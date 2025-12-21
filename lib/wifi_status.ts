@@ -9,6 +9,7 @@ export class wifi_status {
   wifi_mac!: string;
 
   public constructor(json: any) {
+    if (!json) return;
     this.wifi_ssid = json.wifi_ssid;
     this.wifi_signal_strength = json.wifi_signal_strength;
     this.wifi_rssi = json.wifi_rssi;

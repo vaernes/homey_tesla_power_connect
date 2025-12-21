@@ -5,7 +5,8 @@
             "subtitle": "Recommended to 'MAC and IP Address Bind' the IP in your network router.",
             "label": "Tesla Wall Connector IP",
             "submit": "Submit",
-            "error": "Incorrect IP"
+            "error": "Incorrect IP",
+            "error_device_not_found": "Device not found or timed out"
         }
     }
 }

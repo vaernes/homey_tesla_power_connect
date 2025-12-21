@@ -5,7 +5,8 @@
             "subtitle": "Het wordt aanbevolen om het IP-adres te binden aan het MAC-adres in je router.",
             "label": "Tesla Wall Connector IP",
             "submit": "Verzenden",
-            "error": "Onjuist IP"
+            "error": "Onjuist IP",
+            "error_device_not_found": "Apparaat niet gevonden of time-out"
         }
     }
 }

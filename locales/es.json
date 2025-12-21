@@ -5,7 +5,8 @@
             "subtitle": "Se recomienda vincular la dirección MAC e IP en su router.",
             "label": "IP del Tesla Wall Connector",
             "submit": "Enviar",
-            "error": "IP incorrecta"
+            "error": "IP incorrecta",
+            "error_device_not_found": "Dispositivo no encontrado o tiempo de espera agotado"
         }
     }
 }

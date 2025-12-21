@@ -5,7 +5,8 @@
             "subtitle": "Anbefales å binde MAC- og IP-adressen i ruteren din.",
             "label": "Tesla Wall Connector IP",
             "submit": "Send",
-            "error": "Feil IP"
+            "error": "Feil IP",
+            "error_device_not_found": "Enheten ble ikke funnet eller tidsavbrudd"
         }
     }
 }

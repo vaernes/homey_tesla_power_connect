@@ -5,7 +5,8 @@
             "subtitle": "Рекомендуется привязать MAC- и IP-адрес в вашем роутере.",
             "label": "IP-адрес Tesla Wall Connector",
             "submit": "Отправить",
-            "error": "Неверный IP"
+            "error": "Неверный IP",
+            "error_device_not_found": "Устройство не найдено или истекло время ожидания"
         }
     }
 }

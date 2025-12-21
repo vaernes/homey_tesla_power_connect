@@ -29,6 +29,7 @@ export class vitals {
   current_alerts!: string[];
 
   public constructor(json: any) {
+    if (!json) return;
     this.contactor_closed = json.contactor_closed;
     this.vehicle_connected = json.vehicle_connected;
     this.session_s = json.session_s;
@@ -234,7 +235,7 @@ export class vitals {
 
   public getEvseStateV2(): EVSEState | undefined {
     if (this.evse_state === undefined) {
-      return 0;
+      return undefined;
     }
     return getEVSEStateFromNumber(this.evse_state);
   }

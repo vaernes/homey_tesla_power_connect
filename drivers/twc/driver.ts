@@ -29,12 +29,17 @@ export class TWCDriver extends Homey.Driver {
     session.setHandler('list_devices', async () => {
       this.log('pair: list_devices');
       const api = new TWC(address);
-      const result = (await api.getVersion());
+      const result = await api.getVersion();
+
+      if (result === null || !result.getSerialNumber()) {
+        throw new Error(this.homey.__('pair.twc.error_device_not_found'));
+      }
+
       const devices = [
         {
           name: 'TWC Gen3',
           data: {
-            id: result === null ? '' : result.getSerialNumber(),
+            id: result.getSerialNumber(),
             ip: address,
           },
           icon: 'icon.svg',

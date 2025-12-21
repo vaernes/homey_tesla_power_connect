@@ -16,15 +16,14 @@ export class TWC {
         if (res.ok) {
           return res.json();
         }
-        console.error(res.status, res.statusText);
         throw Error(`${res.status} - ${res.statusText}`);
-
       })
       .then((res) => {
         return new vitals(res);
       })
       .catch((e) => {
-        console.log(e); return null;
+        console.error(`TWC Error [getVitals]: ${e.message}`);
+        return null;
       });
   }
 
@@ -42,7 +41,8 @@ export class TWC {
         return new wifi_status(res);
       })
       .catch((e) => {
-        console.log(e); return null;
+        console.error(`TWC Error [getWifiStatus]: ${e.message}`);
+        return null;
       });
   }
 
@@ -52,16 +52,15 @@ export class TWC {
         if (res.ok) {
           return res.text();
         }
-        console.error(res.status, res.statusText);
         throw Error(`${res.status} - ${res.statusText}`);
-
       })
       .then((res) => {
         res = res.replace(':nan', ':0');
         return new lifetime(JSON.parse(res));
       })
       .catch((e) => {
-        console.log(e); return null;
+        console.error(`TWC Error [getLifetime]: ${e.message}`);
+        return null;
       });
   }
 
@@ -79,7 +78,8 @@ export class TWC {
         return new version(res);
       })
       .catch((e) => {
-        console.log(e); return null;
+        console.error(`TWC Error [getVersion]: ${e.message}`);
+        return null;
       });
   }
 }

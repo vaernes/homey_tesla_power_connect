@@ -38,7 +38,7 @@ export class TWCDevice extends Homey.Device {
 
   async onInit() {
     this.api = new TWC(this.getData().ip);
-    this.getChargerState();
+    this.getChargerState().catch(this.error);
     const settings = this.getSettings();
     this.cleanupPolling();
     this.pollIntervals.push(setInterval(() => {
@@ -143,7 +143,7 @@ export class TWCDevice extends Homey.Device {
 
   toString(arr: string[]): string {
     try {
-      if (arr !== null && arr.length !== 0) {
+      if (arr && arr.length !== 0) {
         return arr.join(', ');
       }
       return '';
@@ -155,7 +155,7 @@ export class TWCDevice extends Homey.Device {
 
   decodeSsid(encoded: string): string {
     try {
-      if (encoded !== null && encoded.length !== 0) {
+      if (encoded && encoded.length !== 0) {
         return Buffer.from(encoded, 'base64').toString('binary');
       }
     } catch (e) {

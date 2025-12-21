@@ -11,6 +11,7 @@ export class lifetime {
   charging_time_s!: number;
 
   public constructor(json: any) {
+    if (!json) return;
     this.contactor_cycles = json.contactor_cycles;
     this.contactor_cycles_loaded = json.contactor_cycles_loaded;
     this.alert_count = json.alert_count;
