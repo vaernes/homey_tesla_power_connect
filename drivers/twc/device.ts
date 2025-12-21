@@ -68,19 +68,19 @@ export class TWCDevice extends Homey.Device {
 
   private registerFlows() {
     const chargingCondition = this.homey.flow.getConditionCard('is_charging');
-    chargingCondition.registerRunListener(async (args, state) => {
+    chargingCondition.registerRunListener(async (args) => {
       const status = args.device.getCapabilityValue('alarm_twc_state.evse');
       return status === 'Charging';
     });
 
     const connectedCondition = this.homey.flow.getConditionCard('is_connected');
-    connectedCondition.registerRunListener(async (args, state) => {
+    connectedCondition.registerRunListener(async (args) => {
       const status = args.device.getCapabilityValue('alarm_twc_state.evse');
       return status === 'Connected';
     });
   }
 
-  async onSettings(event: { oldSettings: {}, newSettings: any, changedKeys: string[] }): Promise<string | void> {
+  async onSettings(event: { oldSettings: object, newSettings: any, changedKeys: string[] }): Promise<string | void> {
     this.log('Settings changed');
     if (event.changedKeys.indexOf('polling_interval') > -1) {
       this.cleanupPolling();
@@ -147,7 +147,7 @@ export class TWCDevice extends Homey.Device {
         return arr.join(', ');
       }
       return '';
-    } catch (e) {
+    } catch {
       this.error('');
       return '';
     }

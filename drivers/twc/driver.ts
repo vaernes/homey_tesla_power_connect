@@ -34,7 +34,7 @@ export class TWCDriver extends Homey.Driver {
         {
           name: 'TWC Gen3',
           data: {
-            id: result == null ? '' : result.getSerialNumber(),
+            id: result === null ? '' : result.getSerialNumber(),
             ip: address,
           },
           icon: 'icon.svg',
