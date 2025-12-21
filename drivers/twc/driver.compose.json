@@ -10,7 +10,8 @@
     "es": "TWC Gen3",
     "da": "TWC Gen3",
     "ru": "TWC Gen3",
-    "pl": "TWC Gen3"
+    "pl": "TWC Gen3",
+    "ko": "TWC Gen3"
   },
   "class": "evcharger",
   "platforms": [
@@ -67,7 +68,8 @@
         "es": "Voltaje de la bobina del relé",
         "da": "Relæspolespænding",
         "ru": "Напряжение катушки реле",
-        "pl": "Napięcie cewki przekaźnika"
+        "pl": "Napięcie cewki przekaźnika",
+        "ko": "릴레이 코일 전압"
       }
     },
     "measure_twc_voltage.prox_v": {
@@ -82,7 +84,8 @@
         "es": "Voltaje de proximidad",
         "da": "Prox-spænding",
         "ru": "Прокси-напряжение",
-        "pl": "Napięcie zbliżeniowe"
+        "pl": "Napięcie zbliżeniowe",
+        "ko": "근접 전압"
       }
     },
     "measure_twc_voltage.pilot_high_v": {
@@ -97,7 +100,8 @@
         "es": "Alta tensión piloto",
         "da": "Pilot-højspænding",
         "ru": "Высокое напряжение пилота",
-        "pl": "Wysokie napięcie sterujące"
+        "pl": "Wysokie napięcie sterujące",
+        "ko": "파일럿 고전압"
       }
     },
     "measure_twc_voltage.pilot_low_v": {
@@ -112,7 +116,8 @@
         "es": "Baja tensión piloto",
         "da": "Pilot-lavspænding",
         "ru": "Низкое напряжение пилота",
-        "pl": "Niskie napięcie sterujące"
+        "pl": "Niskie napięcie sterujące",
+        "ko": "파일럿 저전압"
       }
     },
     "alarm_twc_state.evse": {
@@ -127,7 +132,8 @@
         "es": "Estado de carga",
         "da": "Ladestatus",
         "ru": "Статус зарядки",
-        "pl": "Status ładowania"
+        "pl": "Status ładowania",
+        "ko": "충전 상태"
       }
     },
     "alarm_twc_state.contactor": {
@@ -142,7 +148,8 @@
         "es": "Contactor",
         "da": "Kontaktor",
         "ru": "Контактор",
-        "pl": "Stycznik"
+        "pl": "Stycznik",
+        "ko": "접촉기"
       }
     },
     "measure_temperature.handle": {
@@ -157,7 +164,8 @@
         "es": "Temperatura del mango",
         "da": "Temperatur håndtag",
         "ru": "Температура рукоятки",
-        "pl": "Temperatura uchwytu"
+        "pl": "Temperatura uchwytu",
+        "ko": "온도 핸들"
       }
     },
     "measure_temperature.charger": {
@@ -172,7 +180,8 @@
         "es": "Temperatura del cargador",
         "da": "Temperatur oplader",
         "ru": "Температура зарядного устройства",
-        "pl": "Temperatura ładowarki"
+        "pl": "Temperatura ładowarki",
+        "ko": "온도 충전기"
       }
     },
     "measure_temperature.pcba": {
@@ -187,7 +196,8 @@
         "es": "Temperatura PCBA",
         "da": "Temperatur PCBA",
         "ru": "Температура PCBA",
-        "pl": "Temperatura PCBA"
+        "pl": "Temperatura PCBA",
+        "ko": "온도 PCBA"
       }
     },
     "measure_temperature.mcu": {
@@ -202,7 +212,8 @@
         "es": "Temperatura MCU",
         "da": "Temperatur MCU",
         "ru": "Температура MCU",
-        "pl": "Temperatura MCU"
+        "pl": "Temperatura MCU",
+        "ko": "온도 MCU"
       }
     },
     "measure_current.a": {
@@ -217,7 +228,8 @@
         "es": "Corriente A",
         "da": "Strøm A",
         "ru": "Ток A",
-        "pl": "Prąd A"
+        "pl": "Prąd A",
+        "ko": "전류 A"
       }
     },
     "measure_current.b": {
@@ -232,7 +244,8 @@
         "es": "Corriente B",
         "da": "Strøm B",
         "ru": "Ток B",
-        "pl": "Prąd B"
+        "pl": "Prąd B",
+        "ko": "전류 B"
       }
     },
     "measure_current.c": {
@@ -247,7 +260,8 @@
         "es": "Corriente C",
         "da": "Strøm C",
         "ru": "Ток C",
-        "pl": "Prąd C"
+        "pl": "Prąd C",
+        "ko": "전류 C"
       }
     },
     "measure_current.n": {
@@ -262,7 +276,8 @@
         "es": "Corriente N",
         "da": "Strøm N",
         "ru": "Ток N",
-        "pl": "Prąd N"
+        "pl": "Prąd N",
+        "ko": "전류 N"
       }
     },
     "measure_twc_voltage.a": {
@@ -277,7 +292,8 @@
         "es": "Voltaje A",
         "da": "Spænding A",
         "ru": "Напряжение A",
-        "pl": "Napięcie A"
+        "pl": "Napięcie A",
+        "ko": "전압 A"
       }
     },
     "measure_twc_voltage.b": {
@@ -292,7 +308,8 @@
         "es": "Voltaje B",
         "da": "Spænding B",
         "ru": "Напряжение B",
-        "pl": "Napięcie B"
+        "pl": "Napięcie B",
+        "ko": "전압 B"
       }
     },
     "measure_twc_voltage.c": {
@@ -307,7 +324,8 @@
         "es": "Voltaje C",
         "da": "Spænding C",
         "ru": "Напряжение C",
-        "pl": "Napięcie C"
+        "pl": "Napięcie C",
+        "ko": "전압 C"
       }
     },
     "measure_twc_voltage.grid": {
@@ -322,7 +340,8 @@
         "es": "Voltaje de la red",
         "da": "Netspænding",
         "ru": "Напряжение сети",
-        "pl": "Napięcie sieci"
+        "pl": "Napięcie sieci",
+        "ko": "전압 그리드"
       }
     },
     "measure_frequency.grid": {
@@ -337,7 +356,8 @@
         "es": "Frecuencia de la red",
         "da": "Netfrekvens",
         "ru": "Частота сети",
-        "pl": "Częstotliwość sieci"
+        "pl": "Częstotliwość sieci",
+        "ko": "주파수 그리드"
       }
     },
     "measure_twc_power.vehicle": {
@@ -352,7 +372,8 @@
         "es": "Potencia de sesión del vehículo",
         "da": "Køretøjssessions-effekt",
         "ru": "Мощность сеанса автомобиля",
-        "pl": "Moc sesji pojazdu"
+        "pl": "Moc sesji pojazdu",
+        "ko": "차량 세션 전력"
       }
     },
     "meter_power.vehicle": {
@@ -382,7 +403,8 @@
         "es": "Corriente de sesión del vehículo",
         "da": "Køretøjssessions-strøm",
         "ru": "Ток сеанса автомобиля",
-        "pl": "Prąd sesji pojazdu"
+        "pl": "Prąd sesji pojazdu",
+        "ko": "차량 세션 전류"
       },
       "desc": {
         "en": "Current amp setting in the car.",
@@ -395,7 +417,8 @@
         "es": "Ajuste actual de amperios en el coche.",
         "da": "Nuværende ampère-indstilling i bilen.",
         "ru": "Текущая настройка силы тока в автомобиле.",
-        "pl": "Aktualne ustawienie natężenia w samochodzie."
+        "pl": "Aktualne ustawienie natężenia w samochodzie.",
+        "ko": "차량의 현재 암페어 설정입니다."
       }
     },
     "meter_power.total": {
@@ -410,7 +433,8 @@
         "es": "Energía total utilizada",
         "da": "Total brugt energi",
         "ru": "Всего использовано энергии",
-        "pl": "Całkowita zużyta energia"
+        "pl": "Całkowita zużyta energia",
+        "ko": "총 사용 에너지"
       }
     },
     "evse_state": {
@@ -425,7 +449,8 @@
         "es": "Estado del EVSE",
         "da": "EVSE-status",
         "ru": "Состояние EVSE",
-        "pl": "Stan EVSE"
+        "pl": "Stan EVSE",
+        "ko": "EVSE 상태"
       }
     },
     "measure_evse_state": {
@@ -440,7 +465,8 @@
         "es": "Estado del EVSE (código)",
         "da": "EVSE-status (kode)",
         "ru": "Состояние EVSE (код)",
-        "pl": "Stan EVSE (kod)"
+        "pl": "Stan EVSE (kod)",
+        "ko": "EVSE 상태 (코드)"
       }
     }
   },

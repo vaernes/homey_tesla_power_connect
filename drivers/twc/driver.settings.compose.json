@@ -12,7 +12,8 @@
             "es": "Ajustes",
             "da": "Indstillinger",
             "ru": "Настройки",
-            "pl": "Ustawienia"
+            "pl": "Ustawienia",
+            "ko": "설정"
         },
         "children": [
             {
@@ -29,7 +30,8 @@
                     "es": "Frecuencia de actualización",
                     "da": "Opdateringsfrekvens",
                     "ru": "Частота обновления",
-                    "pl": "Częstotliwość aktualizacji"
+                    "pl": "Częstotliwość aktualizacji",
+                    "ko": "업데이트 빈도"
                 },
                 "value": 60,
                 "min": 10,
@@ -45,7 +47,8 @@
                     "es": "segundos",
                     "da": "sekunder",
                     "ru": "секунд",
-                    "pl": "sekundy"
+                    "pl": "sekundy",
+                    "ko": "초"
                 },
                 "hint": {
                     "en": "60 is recommended.",
@@ -58,7 +61,8 @@
                     "es": "Se recomienda 60.",
                     "da": "60 anbefales.",
                     "ru": "рекомендуется 60.",
-                    "pl": "Zaleca się 60."
+                    "pl": "Zaleca się 60.",
+                    "ko": "60을 권장합니다."
                 }
             },
             {
@@ -91,7 +95,8 @@
                     "es": "voltaje",
                     "da": "spænding",
                     "ru": "напряжение",
-                    "pl": "napięcie"
+                    "pl": "napięcie",
+                    "ko": "전압"
                 },
                 "hint": {
                     "en": "Correct voltage readings with a fixed value adjustment, if the TWC reports are inaccurate.",
@@ -104,7 +109,8 @@
                     "es": "Corrija las lecturas de voltaje con un ajuste de valor fijo, si los informes de TWC son inexactos.",
                     "da": "Korriger spændingsaflæsninger med en fast værdi-justering, hvis TWC-rapporterne er unøjagtige.",
                     "ru": "Исправьте показания напряжения с помощью регулировки фиксированного значения, если отчеты TWC неточны.",
-                    "pl": "Skoryguj odczyty napięcia za pomocą regulacji stałej wartości, jeśli raporty TWC są niedokładne."
+                    "pl": "Skoryguj odczyty napięcia za pomocą regulacji stałej wartości, jeśli raporty TWC są niedokładne.",
+                    "ko": "TWC 보고가 부정확한 경우 고정 값 조정으로 전압 판독값을 수정합니다."
                 }
             }
         ]
@@ -122,7 +128,8 @@
             "es": "Estado de Wi-Fi",
             "da": "Wi-Fi-status",
             "ru": "Статус Wi-Fi",
-            "pl": "Status Wi-Fi"
+            "pl": "Status Wi-Fi",
+            "ko": "Wi-Fi 상태"
         },
         "children": [
             {
@@ -140,7 +147,8 @@
                     "es": "Conectado",
                     "da": "Tilsluttet",
                     "ru": "Подключено",
-                    "pl": "Połączony"
+                    "pl": "Połączony",
+                    "ko": "연결됨"
                 }
             },
             {
@@ -158,7 +166,8 @@
                     "es": "Conectado a Internet",
                     "da": "Tilsluttet internettet",
                     "ru": "Подключено к Интернету",
-                    "pl": "Połączony z Internetem"
+                    "pl": "Połączony z Internetem",
+                    "ko": "인터넷에 연결됨"
                 }
             },
             {
@@ -176,7 +185,8 @@
                     "es": "Dirección IP local",
                     "da": "Lokal IP-adresse",
                     "ru": "Локальный IP-адрес",
-                    "pl": "Lokalny adres IP"
+                    "pl": "Lokalny adres IP",
+                    "ko": "로컬 IP 주소"
                 }
             },
             {
@@ -194,7 +204,8 @@
                     "es": "Dirección MAC",
                     "da": "MAC-adresse",
                     "ru": "MAC-адрес",
-                    "pl": "Adres MAC"
+                    "pl": "Adres MAC",
+                    "ko": "MAC 주소"
                 }
             },
             {
@@ -212,7 +223,8 @@
                     "es": "SSID",
                     "da": "SSID",
                     "ru": "SSID",
-                    "pl": "SSID"
+                    "pl": "SSID",
+                    "ko": "SSID"
                 }
             },
             {
@@ -230,7 +242,8 @@
                     "es": "Fuerza de la señal",
                     "da": "Signalstyrke",
                     "ru": "Уровень сигнала",
-                    "pl": "Siła sygnału"
+                    "pl": "Siła sygnału",
+                    "ko": "신호 강도"
                 }
             },
             {
@@ -248,7 +261,8 @@
                     "es": "RSSI",
                     "da": "RSSI",
                     "ru": "RSSI",
-                    "pl": "RSSI"
+                    "pl": "RSSI",
+                    "ko": "RSSI"
                 }
             },
             {
@@ -266,7 +280,8 @@
                     "es": "SNR",
                     "da": "SNR",
                     "ru": "SNR",
-                    "pl": "SNR"
+                    "pl": "SNR",
+                    "ko": "SNR"
                 }
             }
         ]
@@ -284,7 +299,8 @@
             "es": "Signos vitales",
             "da": "Vitaltegn",
             "ru": "Жизненно важные показатели",
-            "pl": "Parametry życiowe"
+            "pl": "Parametry życiowe",
+            "ko": "필수 데이터"
         },
         "children": [
             {
@@ -302,7 +318,8 @@
                     "es": "Ciclos del contactor",
                     "da": "Kontaktorscyklusser",
                     "ru": "Циклы контактора",
-                    "pl": "Cykle stycznika"
+                    "pl": "Cykle stycznika",
+                    "ko": "접촉기 사이클"
                 }
             },
             {
@@ -320,7 +337,8 @@
                     "es": "Tiempo de actividad",
                     "da": "Driftstid",
                     "ru": "Время работы",
-                    "pl": "Czas pracy"
+                    "pl": "Czas pracy",
+                    "ko": "업타임"
                 }
             },
             {
@@ -338,7 +356,8 @@
                     "es": "Estado de la conexión",
                     "da": "Forbindelsesstatus",
                     "ru": "Состояние соединения",
-                    "pl": "Stan połączenia"
+                    "pl": "Stan połączenia",
+                    "ko": "연결 상태"
                 }
             },
             {
@@ -356,7 +375,8 @@
                     "es": "Estado de configuración",
                     "da": "Konfigurationsstatus",
                     "ru": "Статус конфигурации",
-                    "pl": "Status konfiguracji"
+                    "pl": "Status konfiguracji",
+                    "ko": "구성 상태"
                 }
             },
             {
@@ -374,7 +394,8 @@
                     "es": "Alertas actuales",
                     "da": "Aktuelle alarmer",
                     "ru": "Текущие оповещения",
-                    "pl": "Aktualne alerty"
+                    "pl": "Aktualne alerty",
+                    "ko": "현재 알림"
                 }
             }
         ]
@@ -392,7 +413,8 @@
             "es": "Vida útil",
             "da": "Levetid",
             "ru": "Срок службы",
-            "pl": "Żywotność"
+            "pl": "Żywotność",
+            "ko": "수명"
         },
         "children": [
             {
@@ -410,7 +432,8 @@
                     "es": "Ciclos del contactor",
                     "da": "Kontaktorscyklusser",
                     "ru": "Циклы контактора",
-                    "pl": "Cykle stycznika"
+                    "pl": "Cykle stycznika",
+                    "ko": "접촉기 사이클"
                 }
             },
             {
@@ -428,7 +451,8 @@
                     "es": "Ciclos del contactor cargados",
                     "da": "Kontaktorscyklusser belastet",
                     "ru": "Циклы контактора под нагрузкой",
-                    "pl": "Cykle stycznika pod obciążeniem"
+                    "pl": "Cykle stycznika pod obciążeniem",
+                    "ko": "부하된 접촉기 사이클"
                 }
             },
             {
@@ -446,7 +470,8 @@
                     "es": "Ciclos del conector",
                     "da": "Stikcyklusser",
                     "ru": "Циклы разъема",
-                    "pl": "Cykle złącza"
+                    "pl": "Cykle złącza",
+                    "ko": "커넥터 사이클"
                 }
             },
             {
@@ -464,7 +489,8 @@
                     "es": "Inicios de carga",
                     "da": "Ladestarter",
                     "ru": "Запуски зарядки",
-                    "pl": "Rozpoczęcia ładowania"
+                    "pl": "Rozpoczęcia ładowania",
+                    "ko": "충전 시작"
                 }
             },
             {
@@ -482,7 +508,8 @@
                     "es": "Limitaciones térmicas",
                     "da": "Termiske begrænsninger",
                     "ru": "Термические ограничения",
-                    "pl": "Ograniczenia termiczne"
+                    "pl": "Ograniczenia termiczne",
+                    "ko": "열 롤백"
                 }
             },
             {
@@ -500,7 +527,8 @@
                     "es": "Temperatura media de inicio",
                     "da": "Gennemsnitlig starttemperatur",
                     "ru": "Средняя температура пуска",
-                    "pl": "Średnia temperatura rozruchu"
+                    "pl": "Średnia temperatura rozruchu",
+                    "ko": "평균 시작 온도"
                 }
             },
             {
@@ -518,7 +546,8 @@
                     "es": "Energía total",
                     "da": "Total energi",
                     "ru": "Всего энергии",
-                    "pl": "Całkowita energia"
+                    "pl": "Całkowita energia",
+                    "ko": "총 에너지"
                 }
             },
             {
@@ -536,7 +565,8 @@
                     "es": "Tiempo de actividad total",
                     "da": "Total driftstid",
                     "ru": "Общее время работы",
-                    "pl": "Całkowity czas pracy"
+                    "pl": "Całkowity czas pracy",
+                    "ko": "총 업타임"
                 }
             },
             {
@@ -554,7 +584,8 @@
                     "es": "Tiempo total de carga",
                     "da": "Total ladetid",
                     "ru": "Общее время зарядки",
-                    "pl": "Całkowity czas ładowania"
+                    "pl": "Całkowity czas ładowania",
+                    "ko": "총 충전 시간"
                 }
             },
             {
@@ -572,7 +603,8 @@
                     "es": "Recuento de alertas",
                     "da": "Antal alarmer",
                     "ru": "Количество оповещений",
-                    "pl": "Liczba alertów"
+                    "pl": "Liczba alertów",
+                    "ko": "알림 횟수"
                 }
             }
         ]
@@ -590,7 +622,8 @@
             "es": "Versión",
             "da": "Version",
             "ru": "Версия",
-            "pl": "Wersja"
+            "pl": "Wersja",
+            "ko": "버전"
         },
         "children": [
             {
@@ -608,7 +641,8 @@
                     "es": "Versión del firmware",
                     "da": "Firmware-version",
                     "ru": "Версия прошивки",
-                    "pl": "Wersja oprogramowania układowego"
+                    "pl": "Wersja oprogramowania układowego",
+                    "ko": "펌웨어 버전"
                 }
             },
             {
@@ -626,7 +660,8 @@
                     "es": "Número de pieza",
                     "da": "Reservedelsnummer",
                     "ru": "Артикул",
-                    "pl": "Numer części"
+                    "pl": "Numer części",
+                    "ko": "부품 번호"
                 }
             },
             {
@@ -644,7 +679,8 @@
                     "es": "Número de serie",
                     "da": "Serienummer",
                     "ru": "Серийный номер",
-                    "pl": "Numer seryjny"
+                    "pl": "Numer seryjny",
+                    "ko": "일련 번호"
                 }
             }
         ]

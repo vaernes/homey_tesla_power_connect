@@ -11,7 +11,8 @@
     "es": "!{{Está|No está}} cargando",
     "da": "!{{Oplader|Oplader ikke}}",
     "ru": "!{{Заряжается|Не заряжается}}",
-    "pl": "!{{Ładuje|Nie ładuje}}"
+    "pl": "!{{Ładuje|Nie ładuje}}",
+    "ko": "!{{충전 중|충전 중이 아님}}"
   },
   "titleFormatted": {
     "en": "!{{Is|Isn't}} charging",
@@ -24,7 +25,8 @@
     "es": "!{{Está|No está}} cargando",
     "da": "!{{Oplader|Oplader ikke}}",
     "ru": "!{{Заряжается|Не заряжается}}",
-    "pl": "!{{Ładuje|Nie ładuje}}"
+    "pl": "!{{Ładuje|Nie ładuje}}",
+    "ko": "!{{충전 중|충전 중이 아님}}"
   },
   "hint": {
     "en": "Checks if the charger is charging",
@@ -37,7 +39,8 @@
     "es": "Comprueba si el cargador está cargando",
     "da": "Kontrollerer om opladeren oplader",
     "ru": "Проверяет, заряжается ли зарядное устройство",
-    "pl": "Sprawdza, czy ładowarka ładuje"
+    "pl": "Sprawdza, czy ładowarka ładuje",
+    "ko": "충전기가 충전 중인지 확인합니다"
   },
   "args": [
     {

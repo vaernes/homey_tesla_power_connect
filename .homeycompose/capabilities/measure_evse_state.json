@@ -10,7 +10,8 @@
         "es": "Estado del EVSE (código)",
         "da": "EVSE-status (kode)",
         "ru": "Состояние EVSE (код)",
-        "pl": "Stan EVSE (kod)"
+        "pl": "Stan EVSE (kod)",
+        "ko": "EVSE 상태 (코드)"
     },
     "type": "number",
     "decimals": 0,

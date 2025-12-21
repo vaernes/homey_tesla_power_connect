@@ -11,7 +11,8 @@
     "es": "!{{Está|No está}} conectado",
     "da": "!{{Er|Er ikke}} tilsluttet",
     "ru": "!{{Подключен|Не подключен}}",
-    "pl": "!{{Połączony|Niepołączony}}"
+    "pl": "!{{Połączony|Niepołączony}}",
+    "ko": "!{{연결됨|연결되지 않음}}"
   },
   "titleFormatted": {
     "en": "!{{Is|Isn't}} connected",
@@ -24,7 +25,8 @@
     "es": "!{{Está|No está}} conectado",
     "da": "!{{Er|Er ikke}} tilsluttet",
     "ru": "!{{Подключен|Не подключен}}",
-    "pl": "!{{Połączony|Niepołączony}}"
+    "pl": "!{{Połączony|Niepołączony}}",
+    "ko": "!{{연결됨|연결되지 않음}}"
   },
   "hint": {
     "en": "Checks if the charger is connected to the vehical",
@@ -37,7 +39,8 @@
     "es": "Comprueba si el cargador está conectado al vehículo",
     "da": "Kontrollerer, om opladeren er tilsluttet køretøjet",
     "ru": "Проверяет, подключено ли зарядное устройство к автомобилю",
-    "pl": "Sprawdza, czy ładowarka jest podłączona do pojazdu"
+    "pl": "Sprawdza, czy ładowarka jest podłączona do pojazdu",
+    "ko": "충전기가 차량에 연결되어 있는지 확인합니다"
   },
   "args": [
     {

@@ -10,7 +10,8 @@
         "es": "Estado del EVSE",
         "da": "EVSE-status",
         "ru": "Состояние EVSE",
-        "pl": "Stan EVSE"
+        "pl": "Stan EVSE",
+        "ko": "EVSE 상태"
     },
     "type": "enum",
     "values": [
@@ -27,7 +28,8 @@
                 "es": "Iniciando",
                 "da": "Starter",
                 "ru": "Запуск",
-                "pl": "Uruchamianie"
+                "pl": "Uruchamianie",
+                "ko": "시작 중"
             }
         },
         {
@@ -43,7 +45,8 @@
                 "es": "Ningún vehículo conectado",
                 "da": "Intet køretøj tilsluttet",
                 "ru": "Автомобиль не подключен",
-                "pl": "Brak podłączonego pojazdu"
+                "pl": "Brak podłączonego pojazdu",
+                "ko": "차량이 연결되지 않음"
             }
         },
         {
@@ -59,7 +62,8 @@
                 "es": "Conectado (no listo)",
                 "da": "Tilsluttet (ikke klar)",
                 "ru": "Подключен (не готов)",
-                "pl": "Połączony (niegotowy)"
+                "pl": "Połączony (niegotowy)",
+                "ko": "연결됨 (준비되지 않음)"
             }
         },
         {
@@ -91,7 +95,8 @@
                 "es": "Conectado (listo)",
                 "da": "Tilsluttet (klar)",
                 "ru": "Подключен (готово)",
-                "pl": "Połączony (gotowy)"
+                "pl": "Połączony (gotowy)",
+                "ko": "연결됨 (준비됨)"
             }
         },
         {
@@ -123,7 +128,8 @@
                 "es": "Negociando",
                 "da": "Forhandler",
                 "ru": "Переговоры",
-                "pl": "Negocjacje"
+                "pl": "Negocjacje",
+                "ko": "협상 중"
             }
         },
         {
@@ -139,7 +145,8 @@
                 "es": "Carga finalizada",
                 "da": "Opladning færdig",
                 "ru": "Зарядка завершена",
-                "pl": "Ładowanie zakończone"
+                "pl": "Ładowanie zakończone",
+                "ko": "충전 완료"
             }
         },
         {
@@ -155,7 +162,8 @@
                 "es": "Totalmente cargado",
                 "da": "Fuldt opladet",
                 "ru": "Полностью заряжен",
-                "pl": "W pełni naładowany"
+                "pl": "W pełni naładowany",
+                "ko": "완전 충전됨"
             }
         },
         {
@@ -171,7 +179,8 @@
                 "es": "Esperando al vehículo",
                 "da": "Venter på køretøj",
                 "ru": "Ожидание автомобиля",
-                "pl": "Oczekiwanie na pojazd"
+                "pl": "Oczekiwanie na pojazd",
+                "ko": "차량 대기 중"
             }
         },
         {
@@ -187,7 +196,8 @@
                 "es": "Potencia reducida",
                 "da": "Reduceret effekt",
                 "ru": "Пониженная мощность",
-                "pl": "Zredukowana moc"
+                "pl": "Zredukowana moc",
+                "ko": "감소된 전력"
             }
         },
         {
@@ -203,7 +213,8 @@
                 "es": "Cargando",
                 "da": "Oplader",
                 "ru": "Зарядка",
-                "pl": "Ładowanie"
+                "pl": "Ładowanie",
+                "ko": "충전 중"
             }
         },
         {

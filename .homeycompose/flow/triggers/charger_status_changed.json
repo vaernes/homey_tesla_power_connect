@@ -11,7 +11,8 @@
         "es": "Estado del cargador modificado",
         "da": "Ladestatus ændret",
         "ru": "Статус зарядного устройства изменен",
-        "pl": "Status ładowarki uległ zmianie"
+        "pl": "Status ładowarki uległ zmianie",
+        "ko": "충전기 상태가 변경됨"
     },
     "titleFormatted": {
         "en": "Charger status changed",
@@ -24,7 +25,8 @@
         "es": "Estado del cargador modificado",
         "da": "Ladestatus ændret",
         "ru": "Статус зарядного устройства изменен",
-        "pl": "Status ładowarki uległ zmianie"
+        "pl": "Status ładowarki uległ zmianie",
+        "ko": "충전기 상태가 변경됨"
     },
     "tokens": [
         {
@@ -41,7 +43,8 @@
                 "es": "Estado",
                 "da": "Status",
                 "ru": "Статус",
-                "pl": "Status"
+                "pl": "Status",
+                "ko": "상태"
             },
             "example": {
                 "en": "Charging,Connected,Disconnected",
@@ -54,7 +57,8 @@
                 "es": "Cargando,Conectado,Desconectado",
                 "da": "Oplader,Tilsluttet,Afbrudt",
                 "ru": "Зарядка,Подключен,Отключен",
-                "pl": "Ładowanie,Połączony,Odłączony"
+                "pl": "Ładowanie,Połączony,Odłączony",
+                "ko": "충전 중, 연결됨, 연결 끊김"
             }
         }
     ],

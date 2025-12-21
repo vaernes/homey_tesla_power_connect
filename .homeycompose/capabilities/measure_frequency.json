@@ -12,7 +12,8 @@
     "es": "Frecuencia",
     "da": "Frekvens",
     "ru": "Частота",
-    "pl": "Częstotliwość"
+    "pl": "Częstotliwość",
+    "ko": "주파수"
   },
   "units": {
     "en": "Hz"

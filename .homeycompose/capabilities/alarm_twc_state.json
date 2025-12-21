@@ -11,7 +11,8 @@
     "es": "Estado",
     "da": "Status",
     "ru": "Статус",
-    "pl": "Status"
+    "pl": "Status",
+    "ko": "상태"
   },
   "getable": true,
   "setable": false,

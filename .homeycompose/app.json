@@ -17,7 +17,8 @@
     "es": "Tesla Power Connect",
     "da": "Tesla Power Connect",
     "ru": "Tesla Power Connect",
-    "pl": "Tesla Power Connect"
+    "pl": "Tesla Power Connect",
+    "ko": "Tesla Power Connect"
   },
   "description": {
     "en": "Stay charged, always connected.",
@@ -30,7 +31,8 @@
     "es": "Mantente cargado, siempre conectado.",
     "da": "Hold dig opladet, altid forbundet.",
     "ru": "Будьте заряжены, всегда на связи.",
-    "pl": "Bądź naładowany, zawsze połączony."
+    "pl": "Bądź naładowany, zawsze połączony.",
+    "ko": "충전 상태를 유지하고 항상 연결하십시오."
   },
   "category": [
     "energy"
