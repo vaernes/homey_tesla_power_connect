@@ -1,6 +1,16 @@
 {
   "name": {
-    "en": "TWC Gen3"
+    "en": "TWC Gen3",
+    "nl": "TWC Gen3",
+    "de": "TWC Gen3",
+    "fr": "TWC Gen3",
+    "it": "TWC Gen3",
+    "sv": "TWC Gen3",
+    "no": "TWC Gen3",
+    "es": "TWC Gen3",
+    "da": "TWC Gen3",
+    "ru": "TWC Gen3",
+    "pl": "TWC Gen3"
   },
   "class": "evcharger",
   "platforms": [
@@ -42,134 +52,396 @@
     "meter_power",
     "evcharger_charging_state",
     "evse_state",
-     "measure_evse_state"
+    "measure_evse_state"
   ],
   "capabilitiesOptions": {
     "measure_twc_voltage.relay_coil_v": {
       "title": {
-        "en": "Relay Coil Voltage"
+        "en": "Relay Coil Voltage",
+        "nl": "Relaisspoelspanning",
+        "de": "Relaisspulenspannung",
+        "fr": "Tension de la bobine du relais",
+        "it": "Tensione bobina relè",
+        "sv": "Reläspolspänning",
+        "no": "Reléspolespenning",
+        "es": "Voltaje de la bobina del relé",
+        "da": "Relæspolespænding",
+        "ru": "Напряжение катушки реле",
+        "pl": "Napięcie cewki przekaźnika"
       }
     },
     "measure_twc_voltage.prox_v": {
       "title": {
-        "en": "Prox Voltage"
+        "en": "Prox Voltage",
+        "nl": "Prox-spanning",
+        "de": "Prox-Spannung",
+        "fr": "Tension de proximité",
+        "it": "Tensione di prossimità",
+        "sv": "Prox-spänning",
+        "no": "Prox-spenning",
+        "es": "Voltaje de proximidad",
+        "da": "Prox-spænding",
+        "ru": "Прокси-напряжение",
+        "pl": "Napięcie zbliżeniowe"
       }
     },
     "measure_twc_voltage.pilot_high_v": {
       "title": {
-        "en": "Pilot High Voltage"
+        "en": "Pilot High Voltage",
+        "nl": "Pilot hoogspanning",
+        "de": "Pilot-Hochspannung",
+        "fr": "Haute tension pilote",
+        "it": "Alta tensione pilota",
+        "sv": "Pilot-högspänning",
+        "no": "Pilot-høyspenning",
+        "es": "Alta tensión piloto",
+        "da": "Pilot-højspænding",
+        "ru": "Высокое напряжение пилота",
+        "pl": "Wysokie napięcie sterujące"
       }
     },
     "measure_twc_voltage.pilot_low_v": {
       "title": {
-        "en": "Pilot Low Voltage"
+        "en": "Pilot Low Voltage",
+        "nl": "Pilot laagspanning",
+        "de": "Pilot-Niederspannung",
+        "fr": "Basse tension pilote",
+        "it": "Bassa tensione pilota",
+        "sv": "Pilot-lågspänning",
+        "no": "Pilot-lavspenning",
+        "es": "Baja tensión piloto",
+        "da": "Pilot-lavspænding",
+        "ru": "Низкое напряжение пилота",
+        "pl": "Niskie napięcie sterujące"
       }
     },
     "alarm_twc_state.evse": {
       "title": {
-        "en": "Charging Status"
+        "en": "Charging Status",
+        "nl": "Laadstatus",
+        "de": "Ladestatus",
+        "fr": "État de la charge",
+        "it": "Stato di carica",
+        "sv": "Laddningsstatus",
+        "no": "Ladestatus",
+        "es": "Estado de carga",
+        "da": "Ladestatus",
+        "ru": "Статус зарядки",
+        "pl": "Status ładowania"
       }
     },
     "alarm_twc_state.contactor": {
       "title": {
-        "en": "Contactor"
+        "en": "Contactor",
+        "nl": "Contactor",
+        "de": "Schütz",
+        "fr": "Contacteur",
+        "it": "Contattore",
+        "sv": "Kontaktor",
+        "no": "Kontaktor",
+        "es": "Contactor",
+        "da": "Kontaktor",
+        "ru": "Контактор",
+        "pl": "Stycznik"
       }
     },
     "measure_temperature.handle": {
       "title": {
-        "en": "Temperature Handle"
+        "en": "Temperature Handle",
+        "nl": "Temperatuur handgreep",
+        "de": "Temperatur Handgriff",
+        "fr": "Température de la poignée",
+        "it": "Temperatura impugnatura",
+        "sv": "Temperatur handtag",
+        "no": "Temperatur håndtak",
+        "es": "Temperatura del mango",
+        "da": "Temperatur håndtag",
+        "ru": "Температура рукоятки",
+        "pl": "Temperatura uchwytu"
       }
     },
     "measure_temperature.charger": {
       "title": {
-        "en": "Temperature Charger"
+        "en": "Temperature Charger",
+        "nl": "Temperatuur lader",
+        "de": "Temperatur Ladegerät",
+        "fr": "Température du chargeur",
+        "it": "Temperatura caricatore",
+        "sv": "Temperatur laddare",
+        "no": "Temperatur lader",
+        "es": "Temperatura del cargador",
+        "da": "Temperatur oplader",
+        "ru": "Температура зарядного устройства",
+        "pl": "Temperatura ładowarki"
       }
     },
     "measure_temperature.pcba": {
       "title": {
-        "en": "Temperature PCBA"
+        "en": "Temperature PCBA",
+        "nl": "Temperatuur PCBA",
+        "de": "Temperatur PCBA",
+        "fr": "Température PCBA",
+        "it": "Temperatura PCBA",
+        "sv": "Temperatur PCBA",
+        "no": "Temperatur PCBA",
+        "es": "Temperatura PCBA",
+        "da": "Temperatur PCBA",
+        "ru": "Температура PCBA",
+        "pl": "Temperatura PCBA"
       }
     },
     "measure_temperature.mcu": {
       "title": {
-        "en": "Temperature MCU"
+        "en": "Temperature MCU",
+        "nl": "Temperatuur MCU",
+        "de": "Temperatur MCU",
+        "fr": "Température MCU",
+        "it": "Temperatura MCU",
+        "sv": "Temperatur MCU",
+        "no": "Temperatur MCU",
+        "es": "Temperatura MCU",
+        "da": "Temperatur MCU",
+        "ru": "Температура MCU",
+        "pl": "Temperatura MCU"
       }
     },
     "measure_current.a": {
       "title": {
-        "en": "Current A"
+        "en": "Current A",
+        "nl": "Stroom A",
+        "de": "Strom A",
+        "fr": "Courant A",
+        "it": "Corrente A",
+        "sv": "Ström A",
+        "no": "Strøm A",
+        "es": "Corriente A",
+        "da": "Strøm A",
+        "ru": "Ток А",
+        "pl": "Prąd A"
       }
     },
     "measure_current.b": {
       "title": {
-        "en": "Current B"
+        "en": "Current B",
+        "nl": "Stroom B",
+        "de": "Strom B",
+        "fr": "Courant B",
+        "it": "Corrente B",
+        "sv": "Ström B",
+        "no": "Strøm B",
+        "es": "Corriente B",
+        "da": "Strøm B",
+        "ru": "Ток Б",
+        "pl": "Prąd B"
       }
     },
     "measure_current.c": {
       "title": {
-        "en": "Current C"
+        "en": "Current C",
+        "nl": "Stroom C",
+        "de": "Strom C",
+        "fr": "Courant C",
+        "it": "Corrente C",
+        "sv": "Ström C",
+        "no": "Strøm C",
+        "es": "Corriente C",
+        "da": "Strøm C",
+        "ru": "Ток В",
+        "pl": "Prąd C"
       }
     },
     "measure_current.n": {
       "title": {
-        "en": "Current N"
+        "en": "Current N",
+        "nl": "Stroom N",
+        "de": "Strom N",
+        "fr": "Courant N",
+        "it": "Corrente N",
+        "sv": "Ström N",
+        "no": "Strøm N",
+        "es": "Corriente N",
+        "da": "Strøm N",
+        "ru": "Ток N",
+        "pl": "Prąd N"
       }
     },
     "measure_twc_voltage.a": {
       "title": {
-        "en": "Voltage A"
+        "en": "Voltage A",
+        "nl": "Voltage A",
+        "de": "Spannung A",
+        "fr": "Tension A",
+        "it": "Tensione A",
+        "sv": "Spänning A",
+        "no": "Spenning A",
+        "es": "Voltaje A",
+        "da": "Spænding A",
+        "ru": "Напряжение А",
+        "pl": "Napięcie A"
       }
     },
     "measure_twc_voltage.b": {
       "title": {
-        "en": "Voltage B"
+        "en": "Voltage B",
+        "nl": "Voltage B",
+        "de": "Spannung B",
+        "fr": "Tension B",
+        "it": "Tensione B",
+        "sv": "Spänning B",
+        "no": "Spenning B",
+        "es": "Voltaje B",
+        "da": "Spænding B",
+        "ru": "Напряжение Б",
+        "pl": "Napięcie B"
       }
     },
     "measure_twc_voltage.c": {
       "title": {
-        "en": "Voltage C"
+        "en": "Voltage C",
+        "nl": "Voltage C",
+        "de": "Spannung C",
+        "fr": "Tension C",
+        "it": "Tensione C",
+        "sv": "Spänning C",
+        "no": "Spenning C",
+        "es": "Voltaje C",
+        "da": "Spænding C",
+        "ru": "Напряжение В",
+        "pl": "Napięcie C"
       }
     },
     "measure_twc_voltage.grid": {
       "title": {
-        "en": "Voltage Grid"
+        "en": "Voltage Grid",
+        "nl": "Voltage netwerk",
+        "de": "Netzspannung",
+        "fr": "Tension du réseau",
+        "it": "Tensione di rete",
+        "sv": "Nätspänning",
+        "no": "Nettspenning",
+        "es": "Voltaje de la red",
+        "da": "Netspænding",
+        "ru": "Напряжение сети",
+        "pl": "Napięcie sieci"
       }
     },
     "measure_frequency.grid": {
       "title": {
-        "en": "Frequency Grid"
+        "en": "Frequency Grid",
+        "nl": "Netwerkfrequentie",
+        "de": "Netzfrequenz",
+        "fr": "Fréquence du réseau",
+        "it": "Frequenza di rete",
+        "sv": "Nätfrekvens",
+        "no": "Nettfrekvens",
+        "es": "Frecuencia de la red",
+        "da": "Netfrekvens",
+        "ru": "Частота сети",
+        "pl": "Częstotliwość sieci"
       }
     },
     "measure_twc_power.vehicle": {
       "title": {
-        "en": "Vehicle Session Power"
+        "en": "Vehicle Session Power",
+        "nl": "Vermogen voertuigsessie",
+        "de": "Fahrzeug-Sitzungsleistung",
+        "fr": "Puissance de session du véhicule",
+        "it": "Potenza sessione veicolo",
+        "sv": "Fordonssessions-effekt",
+        "no": "Kjøretøysessjons-effekt",
+        "es": "Potencia de sesión del vehículo",
+        "da": "Køretøjssessions-effekt",
+        "ru": "Мощность сеанса автомобиля",
+        "pl": "Moc sesji pojazdu"
       }
     },
     "meter_power.vehicle": {
       "title": {
-        "en": "Vehicle Session Energy"
+        "en": "Vehicle Session Energy",
+        "nl": "Energie voertuigsessie",
+        "de": "Fahrzeug-Sitzungsenergie",
+        "fr": "Énergie de session du véhicule",
+        "it": "Energia sessione veicolo",
+        "sv": "Fordonssessions-energi",
+        "no": "Kjøretøysessjons-energi",
+        "es": "Energía de sesión del vehículo",
+        "da": "Køretøjssessions-energi",
+        "ru": "Энергия сеанса автомобиля",
+        "pl": "Energia sesji pojazdu"
       }
     },
     "measure_current.vehicle": {
       "title": {
-        "en": "Vehicle Session Current"
+        "en": "Vehicle Session Current",
+        "nl": "Stroom voertuigsessie",
+        "de": "Fahrzeug-Sitzungsstrom",
+        "fr": "Courant de session du véhicule",
+        "it": "Corrente sessione veicolo",
+        "sv": "Fordonssessions-ström",
+        "no": "Kjøretøysessjons-strøm",
+        "es": "Corriente de sesión del vehículo",
+        "da": "Køretøjssessions-strøm",
+        "ru": "Ток сеанса автомобиля",
+        "pl": "Prąd sesji pojazdu"
       },
       "desc": {
-        "en": "Current amp setting in the car."
+        "en": "Current amp setting in the car.",
+        "nl": "Huidige ampère-instelling in de auto.",
+        "de": "Aktuelle Amperestufe im Auto.",
+        "fr": "Réglage actuel de l'intensité dans la voiture.",
+        "it": "Impostazione attuale degli ampere nell'auto.",
+        "sv": "Aktuell ampereinställning i bilen.",
+        "no": "Gjeldende ampereinnstilling i bilen.",
+        "es": "Ajuste actual de amperios en el coche.",
+        "da": "Nuværende ampère-indstilling i bilen.",
+        "ru": "Текущая настройка силы тока в автомобиле.",
+        "pl": "Aktualne ustawienie natężenia w samochodzie."
       }
     },
     "meter_power.total": {
       "title": {
-        "en": "Total Used Energy"
+        "en": "Total Used Energy",
+        "nl": "Totaal verbruikte energie",
+        "de": "Gesamtverbrauch Energie",
+        "fr": "Énergie totale utilisée",
+        "it": "Energia totale utilizzata",
+        "sv": "Total använd energi",
+        "no": "Total brukt energi",
+        "es": "Energía total utilizada",
+        "da": "Total brugt energi",
+        "ru": "Всего использовано энергии",
+        "pl": "Całkowita zużyta energia"
       }
     },
     "evse_state": {
       "title": {
-        "en": "EVSE State"
+        "en": "EVSE State",
+        "nl": "EVSE-status",
+        "de": "EVSE-Status",
+        "fr": "État de l'EVSE",
+        "it": "Stato EVSE",
+        "sv": "EVSE-status",
+        "no": "EVSE-status",
+        "es": "Estado del EVSE",
+        "da": "EVSE-status",
+        "ru": "Состояние EVSE",
+        "pl": "Stan EVSE"
       }
     },
     "measure_evse_state": {
-      "title": { "en": "EVSE State (code)" }
+      "title": {
+        "en": "EVSE State (code)",
+        "nl": "EVSE-status (code)",
+        "de": "EVSE-Status (Code)",
+        "fr": "État de l'EVSE (code)",
+        "it": "Stato EVSE (codice)",
+        "sv": "EVSE-status (kod)",
+        "no": "EVSE-status (kode)",
+        "es": "Estado del EVSE (código)",
+        "da": "EVSE-status (kode)",
+        "ru": "Состояние EVSE (код)",
+        "pl": "Stan EVSE (kod)"
+      }
     }
   },
   "energy": {

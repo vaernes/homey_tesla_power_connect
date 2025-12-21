@@ -1,0 +1,11 @@
+{
+    "pair": {
+        "twc": {
+            "title": "Indstil venligst IP-adressen på din Tesla Wall Connector Gen 3",
+            "subtitle": "Det anbefales at binde MAC- og IP-adressen i din router.",
+            "label": "Tesla Wall Connector IP",
+            "submit": "Indsend",
+            "error": "Forkert IP"
+        }
+    }
+}

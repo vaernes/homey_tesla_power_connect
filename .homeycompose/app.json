@@ -7,10 +7,30 @@
     "local"
   ],
   "name": {
-    "en": "Tesla Power Connect"
+    "en": "Tesla Power Connect",
+    "nl": "Tesla Power Connect",
+    "de": "Tesla Power Connect",
+    "fr": "Tesla Power Connect",
+    "it": "Tesla Power Connect",
+    "sv": "Tesla Power Connect",
+    "no": "Tesla Power Connect",
+    "es": "Tesla Power Connect",
+    "da": "Tesla Power Connect",
+    "ru": "Tesla Power Connect",
+    "pl": "Tesla Power Connect"
   },
   "description": {
-    "en": "Stay charged, always connected."
+    "en": "Stay charged, always connected.",
+    "nl": "Blijf opgeladen, altijd verbonden.",
+    "de": "Immer geladen, immer verbunden.",
+    "fr": "Restez chargé, toujours connecté.",
+    "it": "Sempre carico, sempre connesso.",
+    "sv": "Håll dig laddad, alltid ansluten.",
+    "no": "Hold deg ladet, alltid tilkoblet.",
+    "es": "Mantente cargado, siempre conectado.",
+    "da": "Hold dig opladet, altid forbundet.",
+    "ru": "Будьте заряжены, всегда на связи.",
+    "pl": "Bądź naładowany, zawsze połączony."
   },
   "category": [
     "energy"

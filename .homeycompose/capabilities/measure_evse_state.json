@@ -1,6 +1,16 @@
 {
     "title": {
-        "en": "EVSE State (code)"
+        "en": "EVSE State (code)",
+        "nl": "EVSE-status (code)",
+        "de": "EVSE-Status (Code)",
+        "fr": "État de l'EVSE (code)",
+        "it": "Stato EVSE (codice)",
+        "sv": "EVSE-status (kod)",
+        "no": "EVSE-status (kode)",
+        "es": "Estado del EVSE (código)",
+        "da": "EVSE-status (kode)",
+        "ru": "Состояние EVSE (код)",
+        "pl": "Stan EVSE (kod)"
     },
     "type": "number",
     "decimals": 0,

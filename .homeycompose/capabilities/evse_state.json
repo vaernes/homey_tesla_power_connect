@@ -1,91 +1,241 @@
 {
     "title": {
-        "en": "EVSE State"
+        "en": "EVSE State",
+        "nl": "EVSE-status",
+        "de": "EVSE-Status",
+        "fr": "État de l'EVSE",
+        "it": "Stato EVSE",
+        "sv": "EVSE-status",
+        "no": "EVSE-status",
+        "es": "Estado del EVSE",
+        "da": "EVSE-status",
+        "ru": "Состояние EVSE",
+        "pl": "Stan EVSE"
     },
     "type": "enum",
     "values": [
         {
             "id": "starting",
             "title": {
-                "en": "Starting"
+                "en": "Starting",
+                "nl": "Opstarten",
+                "de": "Starten",
+                "fr": "Démarrage",
+                "it": "Avvio",
+                "sv": "Startar",
+                "no": "Starter",
+                "es": "Iniciando",
+                "da": "Starter",
+                "ru": "Запуск",
+                "pl": "Uruchamianie"
             }
         },
         {
             "id": "no_vehicle",
             "title": {
-                "en": "No vehicle connected"
+                "en": "No vehicle connected",
+                "nl": "Geen voertuig aangesloten",
+                "de": "Kein Fahrzeug angeschlossen",
+                "fr": "Aucun véhicule connecté",
+                "it": "Nessun veicolo collegato",
+                "sv": "Inget fordon anslutet",
+                "no": "Intet kjøretøy tilkoblet",
+                "es": "Ningún vehículo conectado",
+                "da": "Intet køretøj tilsluttet",
+                "ru": "Автомобиль не подключен",
+                "pl": "Brak podłączonego pojazdu"
             }
         },
         {
             "id": "connected_not_ready",
             "title": {
-                "en": "Connected (not ready)"
+                "en": "Connected (not ready)",
+                "nl": "Verbonden (niet gereed)",
+                "de": "Verbunden (nicht bereit)",
+                "fr": "Connecté (pas prêt)",
+                "it": "Collegato (non pronto)",
+                "sv": "Ansluten (inte klar)",
+                "no": "Tilkoblet (ikke klar)",
+                "es": "Conectado (no listo)",
+                "da": "Tilsluttet (ikke klar)",
+                "ru": "Подключен (не готов)",
+                "pl": "Połączony (niegotowy)"
             }
         },
         {
             "id": "unknown3",
             "title": {
-                "en": "Unknown 3"
+                "en": "Unknown 3",
+                "nl": "Onbekend 3",
+                "de": "Unbekannt 3",
+                "fr": "Inconnu 3",
+                "it": "Sconosciuto 3",
+                "sv": "Okänd 3",
+                "no": "Ukjent 3",
+                "es": "Desconocido 3",
+                "da": "Ukendt 3",
+                "ru": "Неизвестно 3",
+                "pl": "Nieznany 3"
             }
         },
         {
             "id": "connected_ready",
             "title": {
-                "en": "Connected (ready)"
+                "en": "Connected (ready)",
+                "nl": "Verbonden (gereed)",
+                "de": "Verbunden (bereit)",
+                "fr": "Connecté (prêt)",
+                "it": "Collegato (pronto)",
+                "sv": "Ansluten (klar)",
+                "no": "Tilkoblet (klar)",
+                "es": "Conectado (listo)",
+                "da": "Tilsluttet (klar)",
+                "ru": "Подключен (готово)",
+                "pl": "Połączony (gotowy)"
             }
         },
         {
             "id": "unknown5",
             "title": {
-                "en": "Unknown 5"
+                "en": "Unknown 5",
+                "nl": "Onbekend 5",
+                "de": "Unbekannt 5",
+                "fr": "Inconnu 5",
+                "it": "Sconosciuto 5",
+                "sv": "Okänd 5",
+                "no": "Ukjent 5",
+                "es": "Desconocido 5",
+                "da": "Ukendt 5",
+                "ru": "Неизвестно 5",
+                "pl": "Nieznany 5"
             }
         },
         {
             "id": "negotiating",
             "title": {
-                "en": "Negotiating"
+                "en": "Negotiating",
+                "nl": "Onderhandelen",
+                "de": "Aushandeln",
+                "fr": "Négociation",
+                "it": "Negoziazione",
+                "sv": "Förhandlar",
+                "no": "Forhandler",
+                "es": "Negociando",
+                "da": "Forhandler",
+                "ru": "Переговоры",
+                "pl": "Negocjacje"
             }
         },
         {
             "id": "finished_charging",
             "title": {
-                "en": "Finished charging"
+                "en": "Finished charging",
+                "nl": "Klaar met laden",
+                "de": "Ladevorgang abgeschlossen",
+                "fr": "Charge terminée",
+                "it": "Carica terminata",
+                "sv": "Laddning klar",
+                "no": "Lading fullført",
+                "es": "Carga finalizada",
+                "da": "Opladning færdig",
+                "ru": "Зарядка завершена",
+                "pl": "Ładowanie zakończone"
             }
         },
         {
             "id": "fully_charged",
             "title": {
-                "en": "Fully charged"
+                "en": "Fully charged",
+                "nl": "Volledig opgeladen",
+                "de": "Vollständig aufgeladen",
+                "fr": "Complètement chargé",
+                "it": "Completamente carico",
+                "sv": "Fulladdat",
+                "no": "Fulladet",
+                "es": "Totalmente cargado",
+                "da": "Fuldt opladet",
+                "ru": "Полностью заряжен",
+                "pl": "W pełni naładowany"
             }
         },
         {
             "id": "waiting_vehicle",
             "title": {
-                "en": "Waiting for vehicle"
+                "en": "Waiting for vehicle",
+                "nl": "Wachten op voertuig",
+                "de": "Warten auf Fahrzeug",
+                "fr": "En attente du véhicule",
+                "it": "In attente del veicolo",
+                "sv": "Väntar på fordon",
+                "no": "Venter på kjøretøy",
+                "es": "Esperando al vehículo",
+                "da": "Venter på køretøj",
+                "ru": "Ожидание автомобиля",
+                "pl": "Oczekiwanie na pojazd"
             }
         },
         {
             "id": "reduced_power",
             "title": {
-                "en": "Reduced power"
+                "en": "Reduced power",
+                "nl": "Gereduceerd vermogen",
+                "de": "Reduzierte Leistung",
+                "fr": "Puissance réduite",
+                "it": "Potenza ridotta",
+                "sv": "Reducerad effekt",
+                "no": "Redusert effekt",
+                "es": "Potencia reducida",
+                "da": "Reduceret effekt",
+                "ru": "Пониженная мощность",
+                "pl": "Zredukowana moc"
             }
         },
         {
             "id": "charging",
             "title": {
-                "en": "Charging"
+                "en": "Charging",
+                "nl": "Laden",
+                "de": "Laden",
+                "fr": "Charge en cours",
+                "it": "In carica",
+                "sv": "Laddar",
+                "no": "Lader",
+                "es": "Cargando",
+                "da": "Oplader",
+                "ru": "Зарядка",
+                "pl": "Ładowanie"
             }
         },
         {
             "id": "unknown12",
             "title": {
-                "en": "Unknown 12"
+                "en": "Unknown 12",
+                "nl": "Onbekend 12",
+                "de": "Unbekannt 12",
+                "fr": "Inconnu 12",
+                "it": "Sconosciuto 12",
+                "sv": "Okänd 12",
+                "no": "Ukjent 12",
+                "es": "Desconocido 12",
+                "da": "Ukendt 12",
+                "ru": "Неизвестно 12",
+                "pl": "Nieznany 12"
             }
         },
         {
             "id": "unknown13",
             "title": {
-                "en": "Unknown 13"
+                "en": "Unknown 13",
+                "nl": "Onbekend 13",
+                "de": "Unbekannt 13",
+                "fr": "Inconnu 13",
+                "it": "Sconosciuto 13",
+                "sv": "Okänd 13",
+                "no": "Ukjent 13",
+                "es": "Desconocido 13",
+                "da": "Ukendt 13",
+                "ru": "Неизвестно 13",
+                "pl": "Nieznany 13"
             }
         }
     ],

@@ -1,1 +1,11 @@
-{}
+{
+    "pair": {
+        "twc": {
+            "title": "Please set the IP address of your Tesla Wall Connector Gen 3",
+            "subtitle": "Recommended to 'MAC and IP Address Bind' the IP in your network router.",
+            "label": "Tesla Wall Connector IP",
+            "submit": "Submit",
+            "error": "Incorrect IP"
+        }
+    }
+}

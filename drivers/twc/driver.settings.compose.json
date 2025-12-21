@@ -2,39 +2,109 @@
     {
         "type": "group",
         "label": {
-            "en": "Settings"
+            "en": "Settings",
+            "nl": "Instellingen",
+            "de": "Einstellungen",
+            "fr": "Paramètres",
+            "it": "Impostazioni",
+            "sv": "Inställningar",
+            "no": "Innstillinger",
+            "es": "Ajustes",
+            "da": "Indstillinger",
+            "ru": "Настройки",
+            "pl": "Ustawienia"
         },
         "children": [
             {
                 "id": "polling_interval",
                 "type": "number",
                 "label": {
-                    "en": "Update Frequency"
+                    "en": "Update Frequency",
+                    "nl": "Updatefrequentie",
+                    "de": "Aktualisierungsintervall",
+                    "fr": "Fréquence de mise à jour",
+                    "it": "Frequenza di aggiornamento",
+                    "sv": "Uppdateringsfrekvens",
+                    "no": "Oppdateringsfrekvens",
+                    "es": "Frecuencia de actualización",
+                    "da": "Opdateringsfrekvens",
+                    "ru": "Частота обновления",
+                    "pl": "Częstotliwość aktualizacji"
                 },
                 "value": 60,
                 "min": 10,
                 "max": 120,
                 "units": {
-                    "en": "seconds"
+                    "en": "seconds",
+                    "nl": "seconden",
+                    "de": "Sekunden",
+                    "fr": "secondes",
+                    "it": "secondi",
+                    "sv": "sekunder",
+                    "no": "sekunder",
+                    "es": "segundos",
+                    "da": "sekunder",
+                    "ru": "секунд",
+                    "pl": "sekundy"
                 },
                 "hint": {
-                    "en": "60 is recommended."
+                    "en": "60 is recommended.",
+                    "nl": "60 wordt aanbevolen.",
+                    "de": "60 wird empfohlen.",
+                    "fr": "60 est recommandé.",
+                    "it": "60 è consigliato.",
+                    "sv": "60 rekommenderas.",
+                    "no": "60 anbefales.",
+                    "es": "Se recomienda 60.",
+                    "da": "60 anbefales.",
+                    "ru": "рекомендуется 60.",
+                    "pl": "Zaleca się 60."
                 }
             },
             {
                 "id": "voltage_adjustment",
                 "type": "number",
                 "label": {
-                    "en": "Fixed voltage adjustment"
+                    "en": "Fixed voltage adjustment",
+                    "nl": "Vaste spanningsaanpassing",
+                    "de": "Feste Spannungsanpassung",
+                    "fr": "Ajustement de tension fixe",
+                    "it": "Regolazione fissa della tensione",
+                    "sv": "Fast spänningsjustering",
+                    "no": "Fast spenningsjustering",
+                    "es": "Ajuste de voltaje fijo",
+                    "da": "Fast spændingsjustering",
+                    "ru": "Фиксированная регулировка напряжения",
+                    "pl": "Stała regulacja napięcia"
                 },
                 "value": 0,
                 "min": 0,
                 "max": 200,
                 "units": {
-                    "en": "voltage"
+                    "en": "voltage",
+                    "nl": "voltage",
+                    "de": "Spannung",
+                    "fr": "tension",
+                    "it": "tensione",
+                    "sv": "spänning",
+                    "no": "spenning",
+                    "es": "voltaje",
+                    "da": "spænding",
+                    "ru": "напряжение",
+                    "pl": "napięcie"
                 },
                 "hint": {
-                    "en": "Correct voltage readings with a fixed value adjustment, if the TWC reports are inaccurate."
+                    "en": "Correct voltage readings with a fixed value adjustment, if the TWC reports are inaccurate.",
+                    "nl": "Corrigeer spanningsmetingen met een aanpassing van een vaste waarde, als de TWC-rapporten onnauwkeurig zijn.",
+                    "de": "Korrigieren Sie Spannungsmesswerte mit einer Festwertanpassung, wenn die TWC-Berichte ungenau sind.",
+                    "fr": "Corrigez les lectures de tension avec un ajustement de valeur fixe, si les rapports TWC sont inexacts.",
+                    "it": "Correggi le letture di tensione con una regolazione del valore fisso, se i rapporti TWC sono imprecisi.",
+                    "sv": "Korrigera spänningsavläsningar med en justering av ett fast värde, om TWC-rapporterna är felaktiga.",
+                    "no": "Korriger spenningsavlesninger med en justering av en fast verdi, hvis TWC-rapportene er unøyaktige.",
+                    "es": "Corrija las lecturas de voltaje con un ajuste de valor fijo, si los informes de TWC son inexactos.",
+                    "da": "Korriger spændingsaflæsninger med en fast værdi-justering, hvis TWC-rapporterne er unøjagtige.",
+                    "ru": "Исправьте показания напряжения с помощью регулировки фиксированного значения, если отчеты TWC неточны.",
+                    "pl": "Skoryguj odczyty napięcia za pomocą regulacji stałej wartości, jeśli raporty TWC są niedokładne."
                 }
             }
         ]
@@ -42,7 +112,17 @@
     {
         "type": "group",
         "label": {
-            "en": "Wi-Fi Status"
+            "en": "Wi-Fi Status",
+            "nl": "Wi-Fi-status",
+            "de": "WLAN-Status",
+            "fr": "État du Wi-Fi",
+            "it": "Stato Wi-Fi",
+            "sv": "Wi-Fi-status",
+            "no": "Wi-Fi-status",
+            "es": "Estado de Wi-Fi",
+            "da": "Wi-Fi-status",
+            "ru": "Статус Wi-Fi",
+            "pl": "Status Wi-Fi"
         },
         "children": [
             {
@@ -50,7 +130,17 @@
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
-                    "en": "Connected"
+                    "en": "Connected",
+                    "nl": "Verbonden",
+                    "de": "Verbunden",
+                    "fr": "Connecté",
+                    "it": "Collegato",
+                    "sv": "Ansluten",
+                    "no": "Tilkoblet",
+                    "es": "Conectado",
+                    "da": "Tilsluttet",
+                    "ru": "Подключено",
+                    "pl": "Połączony"
                 }
             },
             {
@@ -58,7 +148,17 @@
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
-                    "en": "Connected to Internet"
+                    "en": "Connected to Internet",
+                    "nl": "Verbonden met internet",
+                    "de": "Mit dem Internet verbunden",
+                    "fr": "Connecté à Internet",
+                    "it": "Collegato a Internet",
+                    "sv": "Ansluten till internet",
+                    "no": "Tilkoblet Internett",
+                    "es": "Conectado a Internet",
+                    "da": "Tilsluttet internettet",
+                    "ru": "Подключено к Интернету",
+                    "pl": "Połączony z Internetem"
                 }
             },
             {
@@ -66,7 +166,17 @@
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
-                    "en": "Local IP Address"
+                    "en": "Local IP Address",
+                    "nl": "Lokaal IP-adres",
+                    "de": "Lokale IP-Adresse",
+                    "fr": "Adresse IP locale",
+                    "it": "Indirizzo IP locale",
+                    "sv": "Lokal IP-adress",
+                    "no": "Lokal IP-adresse",
+                    "es": "Dirección IP local",
+                    "da": "Lokal IP-adresse",
+                    "ru": "Локальный IP-адрес",
+                    "pl": "Lokalny adres IP"
                 }
             },
             {
@@ -74,7 +184,17 @@
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
-                    "en": "MAC Address"
+                    "en": "MAC Address",
+                    "nl": "MAC-adres",
+                    "de": "MAC-Adresse",
+                    "fr": "Adresse MAC",
+                    "it": "Indirizzo MAC",
+                    "sv": "MAC-adress",
+                    "no": "MAC-adresse",
+                    "es": "Dirección MAC",
+                    "da": "MAC-adresse",
+                    "ru": "MAC-адрес",
+                    "pl": "Adres MAC"
                 }
             },
             {
@@ -82,7 +202,17 @@
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
-                    "en": "SSID"
+                    "en": "SSID",
+                    "nl": "SSID",
+                    "de": "SSID",
+                    "fr": "SSID",
+                    "it": "SSID",
+                    "sv": "SSID",
+                    "no": "SSID",
+                    "es": "SSID",
+                    "da": "SSID",
+                    "ru": "SSID",
+                    "pl": "SSID"
                 }
             },
             {
@@ -90,7 +220,17 @@
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
-                    "en": "Signal Strength"
+                    "en": "Signal Strength",
+                    "nl": "Signaalsterkte",
+                    "de": "Signalstärke",
+                    "fr": "Force du signal",
+                    "it": "Potenza del segnale",
+                    "sv": "Signalstyrka",
+                    "no": "Signalstyrke",
+                    "es": "Fuerza de la señal",
+                    "da": "Signalstyrke",
+                    "ru": "Уровень сигнала",
+                    "pl": "Siła sygnału"
                 }
             },
             {
@@ -98,7 +238,17 @@
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
-                    "en": "RSSI"
+                    "en": "RSSI",
+                    "nl": "RSSI",
+                    "de": "RSSI",
+                    "fr": "RSSI",
+                    "it": "RSSI",
+                    "sv": "RSSI",
+                    "no": "RSSI",
+                    "es": "RSSI",
+                    "da": "RSSI",
+                    "ru": "RSSI",
+                    "pl": "RSSI"
                 }
             },
             {
@@ -106,7 +256,17 @@
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
-                    "en": "SNR"
+                    "en": "SNR",
+                    "nl": "SNR",
+                    "de": "SNR",
+                    "fr": "SNR",
+                    "it": "SNR",
+                    "sv": "SNR",
+                    "no": "SNR",
+                    "es": "SNR",
+                    "da": "SNR",
+                    "ru": "SNR",
+                    "pl": "SNR"
                 }
             }
         ]
@@ -114,7 +274,17 @@
     {
         "type": "group",
         "label": {
-            "en": "Vitals"
+            "en": "Vitals",
+            "nl": "Vitale gegevens",
+            "de": "Vitalwerte",
+            "fr": "Vitals",
+            "it": "Parametri vitali",
+            "sv": "Vitalparametrar",
+            "no": "Vitalparametre",
+            "es": "Signos vitales",
+            "da": "Vitaltegn",
+            "ru": "Жизненно важные показатели",
+            "pl": "Parametry życiowe"
         },
         "children": [
             {
@@ -122,7 +292,17 @@
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
-                    "en": "Contactor Cycles"
+                    "en": "Contactor Cycles",
+                    "nl": "Contactcycli",
+                    "de": "Schützzyklen",
+                    "fr": "Cycles de contacteur",
+                    "it": "Cicli del contattore",
+                    "sv": "Kontaktorscykler",
+                    "no": "Kontaktorsykluser",
+                    "es": "Ciclos del contactor",
+                    "da": "Kontaktorscyklusser",
+                    "ru": "Циклы контактора",
+                    "pl": "Cykle stycznika"
                 }
             },
             {
@@ -130,7 +310,17 @@
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
-                    "en": "Uptime"
+                    "en": "Uptime",
+                    "nl": "Uptime",
+                    "de": "Betriebszeit",
+                    "fr": "Temps de fonctionnement",
+                    "it": "Tempo di attività",
+                    "sv": "Drifttid",
+                    "no": "Driftstid",
+                    "es": "Tiempo de actividad",
+                    "da": "Driftstid",
+                    "ru": "Время работы",
+                    "pl": "Czas pracy"
                 }
             },
             {
@@ -138,7 +328,17 @@
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
-                    "en": "Connection State"
+                    "en": "Connection State",
+                    "nl": "Verbindingsstatus",
+                    "de": "Verbindungsstatus",
+                    "fr": "État de la connexion",
+                    "it": "Stato della connessione",
+                    "sv": "Anslutningsstatus",
+                    "no": "Tilkoblingsstatus",
+                    "es": "Estado de la conexión",
+                    "da": "Forbindelsesstatus",
+                    "ru": "Состояние соединения",
+                    "pl": "Stan połączenia"
                 }
             },
             {
@@ -146,7 +346,17 @@
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
-                    "en": "Config Status"
+                    "en": "Config Status",
+                    "nl": "Configuratiestatus",
+                    "de": "Konfigurationsstatus",
+                    "fr": "État de la configuration",
+                    "it": "Stato configurazione",
+                    "sv": "Konfigurationsstatus",
+                    "no": "Konfigurasjonsstatus",
+                    "es": "Estado de configuración",
+                    "da": "Konfigurationsstatus",
+                    "ru": "Статус конфигурации",
+                    "pl": "Status konfiguracji"
                 }
             },
             {
@@ -154,7 +364,17 @@
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
-                    "en": "Current Alerts"
+                    "en": "Current Alerts",
+                    "nl": "Huidige waarschuwingen",
+                    "de": "Aktuelle Warnungen",
+                    "fr": "Alertes actuelles",
+                    "it": "Avvisi attuali",
+                    "sv": "Aktuella larm",
+                    "no": "Gjeldende varsler",
+                    "es": "Alertas actuales",
+                    "da": "Aktuelle alarmer",
+                    "ru": "Текущие оповещения",
+                    "pl": "Aktualne alerty"
                 }
             }
         ]
@@ -162,7 +382,17 @@
     {
         "type": "group",
         "label": {
-            "en": "Lifetime"
+            "en": "Lifetime",
+            "nl": "Levensduur",
+            "de": "Lebensdauer",
+            "fr": "Durée de vie",
+            "it": "Durata",
+            "sv": "Livstid",
+            "no": "Levetid",
+            "es": "Vida útil",
+            "da": "Levetid",
+            "ru": "Срок службы",
+            "pl": "Żywotność"
         },
         "children": [
             {
@@ -170,7 +400,17 @@
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
-                    "en": "Contactor Cycles"
+                    "en": "Contactor Cycles",
+                    "nl": "Contactcycli",
+                    "de": "Schützzyklen",
+                    "fr": "Cycles de contacteur",
+                    "it": "Cicli del contattore",
+                    "sv": "Kontaktorscykler",
+                    "no": "Kontaktorsykluser",
+                    "es": "Ciclos del contactor",
+                    "da": "Kontaktorscyklusser",
+                    "ru": "Циклы контактора",
+                    "pl": "Cykle stycznika"
                 }
             },
             {
@@ -178,7 +418,17 @@
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
-                    "en": "Contactor Cycles Loaded"
+                    "en": "Contactor Cycles Loaded",
+                    "nl": "Contactcycli geladen",
+                    "de": "Schützzyklen geladen",
+                    "fr": "Cycles de contacteur chargés",
+                    "it": "Cicli del contattore caricati",
+                    "sv": "Kontaktorscykler belastade",
+                    "no": "Kontaktorsykluser belastet",
+                    "es": "Ciclos del contactor cargados",
+                    "da": "Kontaktorscyklusser belastet",
+                    "ru": "Циклы контактора под нагрузкой",
+                    "pl": "Cykle stycznika pod obciążeniem"
                 }
             },
             {
@@ -186,7 +436,17 @@
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
-                    "en": "Connector Cycles"
+                    "en": "Connector Cycles",
+                    "nl": "Connectorcycli",
+                    "de": "Steckzyklen",
+                    "fr": "Cycles de connecteur",
+                    "it": "Cicli del connettore",
+                    "sv": "Anslutningscykler",
+                    "no": "Tilkoblingssykluser",
+                    "es": "Ciclos del conector",
+                    "da": "Stikcyklusser",
+                    "ru": "Циклы разъема",
+                    "pl": "Cykle złącza"
                 }
             },
             {
@@ -194,7 +454,17 @@
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
-                    "en": "Charge Starts"
+                    "en": "Charge Starts",
+                    "nl": "Laadstarts",
+                    "de": "Ladestarts",
+                    "fr": "Démarrages de charge",
+                    "it": "Inizi di carica",
+                    "sv": "Laddningsstarter",
+                    "no": "Ladestarter",
+                    "es": "Inicios de carga",
+                    "da": "Ladestarter",
+                    "ru": "Запуски зарядки",
+                    "pl": "Rozpoczęcia ładowania"
                 }
             },
             {
@@ -202,7 +472,17 @@
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
-                    "en": "Thermal Foldbacks"
+                    "en": "Thermal Foldbacks",
+                    "nl": "Thermische inperkingen",
+                    "de": "Thermische Rückregelung",
+                    "fr": "Limites thermiques",
+                    "it": "Limitazioni termiche",
+                    "sv": "Termiska begränsningar",
+                    "no": "Termiske begrensninger",
+                    "es": "Limitaciones térmicas",
+                    "da": "Termiske begrænsninger",
+                    "ru": "Термические ограничения",
+                    "pl": "Ograniczenia termiczne"
                 }
             },
             {
@@ -210,7 +490,17 @@
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
-                    "en": "Average Startup Temperature"
+                    "en": "Average Startup Temperature",
+                    "nl": "Gemiddelde opstarttemperatuur",
+                    "de": "Durchschnittliche Starttemperatur",
+                    "fr": "Température moyenne au démarrage",
+                    "it": "Temperatura media di avvio",
+                    "sv": "Genomsnittlig starttemperatur",
+                    "no": "Gjennomsnittlig starttemperatur",
+                    "es": "Temperatura media de inicio",
+                    "da": "Gennemsnitlig starttemperatur",
+                    "ru": "Средняя температура пуска",
+                    "pl": "Średnia temperatura rozruchu"
                 }
             },
             {
@@ -218,7 +508,17 @@
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
-                    "en": "Total Energy"
+                    "en": "Total Energy",
+                    "nl": "Totale energie",
+                    "de": "Gesamtenergie",
+                    "fr": "Énergie totale",
+                    "it": "Energia totale",
+                    "sv": "Total energi",
+                    "no": "Total energi",
+                    "es": "Energía total",
+                    "da": "Total energi",
+                    "ru": "Всего энергии",
+                    "pl": "Całkowita energia"
                 }
             },
             {
@@ -226,7 +526,17 @@
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
-                    "en": "Total Uptime"
+                    "en": "Total Uptime",
+                    "nl": "Totale uptime",
+                    "de": "Gesamtbetriebszeit",
+                    "fr": "Temps de fonctionnement total",
+                    "it": "Tempo di attività totale",
+                    "sv": "Total drifttid",
+                    "no": "Total driftstid",
+                    "es": "Tiempo de actividad total",
+                    "da": "Total driftstid",
+                    "ru": "Общее время работы",
+                    "pl": "Całkowity czas pracy"
                 }
             },
             {
@@ -234,7 +544,17 @@
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
-                    "en": "Total Charging Time"
+                    "en": "Total Charging Time",
+                    "nl": "Totale laadtijd",
+                    "de": "Gesamtladedauer",
+                    "fr": "Temps de charge total",
+                    "it": "Tempo di ricarica totale",
+                    "sv": "Total laddningstid",
+                    "no": "Total ladetid",
+                    "es": "Tiempo total de carga",
+                    "da": "Total ladetid",
+                    "ru": "Общее время зарядки",
+                    "pl": "Całkowity czas ładowania"
                 }
             },
             {
@@ -242,7 +562,17 @@
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
-                    "en": "Alert Count"
+                    "en": "Alert Count",
+                    "nl": "Aantal waarschuwingen",
+                    "de": "Alarmanzahl",
+                    "fr": "Nombre d'alertes",
+                    "it": "Numero di avvisi",
+                    "sv": "Antal larm",
+                    "no": "Antall varsler",
+                    "es": "Recuento de alertas",
+                    "da": "Antal alarmer",
+                    "ru": "Количество оповещений",
+                    "pl": "Liczba alertów"
                 }
             }
         ]
@@ -250,7 +580,17 @@
     {
         "type": "group",
         "label": {
-            "en": "Version"
+            "en": "Version",
+            "nl": "Versie",
+            "de": "Version",
+            "fr": "Version",
+            "it": "Versione",
+            "sv": "Version",
+            "no": "Versjon",
+            "es": "Versión",
+            "da": "Version",
+            "ru": "Версия",
+            "pl": "Wersja"
         },
         "children": [
             {
@@ -258,7 +598,17 @@
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
-                    "en": "Firmware Version"
+                    "en": "Firmware Version",
+                    "nl": "Firmware-versie",
+                    "de": "Firmware-Version",
+                    "fr": "Version du firmware",
+                    "it": "Versione del firmware",
+                    "sv": "Firmware-version",
+                    "no": "Firmware-versjon",
+                    "es": "Versión del firmware",
+                    "da": "Firmware-version",
+                    "ru": "Версия прошивки",
+                    "pl": "Wersja oprogramowania układowego"
                 }
             },
             {
@@ -266,7 +616,17 @@
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
-                    "en": "Part Number"
+                    "en": "Part Number",
+                    "nl": "Onderdeelnummer",
+                    "de": "Teilenummer",
+                    "fr": "Numéro de pièce",
+                    "it": "Codice prodotto",
+                    "sv": "Artikelnummer",
+                    "no": "Delenummer",
+                    "es": "Número de pieza",
+                    "da": "Reservedelsnummer",
+                    "ru": "Артикул",
+                    "pl": "Numer części"
                 }
             },
             {
@@ -274,7 +634,17 @@
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
-                    "en": "Serial Number"
+                    "en": "Serial Number",
+                    "nl": "Serienummer",
+                    "de": "Seriennummer",
+                    "fr": "Numéro de série",
+                    "it": "Numero di serie",
+                    "sv": "Serienummer",
+                    "no": "Serienummer",
+                    "es": "Número de serie",
+                    "da": "Serienummer",
+                    "ru": "Серийный номер",
+                    "pl": "Numer seryjny"
                 }
             }
         ]

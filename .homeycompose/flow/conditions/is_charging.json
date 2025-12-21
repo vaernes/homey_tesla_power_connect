@@ -1,19 +1,49 @@
 {
-    "id":"is_charging",
-    "title": {
-      "en": "!{{Is|Isn't}} charging"
-    },
-    "titleFormatted": {
-      "en": "!{{Is|Isn't}} charging"
-    },
-    "hint": {
-      "en": "Checks if the charger is charging"
-    },
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=twc"
-        }
-    ]
-  }
+  "id": "is_charging",
+  "title": {
+    "en": "!{{Is|Isn't}} charging",
+    "nl": "!{{Is|Is niet}} aan het laden",
+    "de": "!{{Lädt|Lädt nicht}}",
+    "fr": "!{{Est|N'est pas}} en train de charger",
+    "it": "!{{In|Non è in}} carica",
+    "sv": "!{{Laddar|Laddar inte}}",
+    "no": "!{{Lader|Lader ikke}}",
+    "es": "!{{Está|No está}} cargando",
+    "da": "!{{Oplader|Oplader ikke}}",
+    "ru": "!{{Заряжается|Не заряжается}}",
+    "pl": "!{{Ładuje|Nie ładuje}}"
+  },
+  "titleFormatted": {
+    "en": "!{{Is|Isn't}} charging",
+    "nl": "!{{Is|Is niet}} aan het laden",
+    "de": "!{{Lädt|Lädt nicht}}",
+    "fr": "!{{Est|N'est pas}} en train de charger",
+    "it": "!{{In|Non è in}} carica",
+    "sv": "!{{Laddar|Laddar inte}}",
+    "no": "!{{Lader|Lader ikke}}",
+    "es": "!{{Está|No está}} cargando",
+    "da": "!{{Oplader|Oplader ikke}}",
+    "ru": "!{{Заряжается|Не заряжается}}",
+    "pl": "!{{Ładuje|Nie ładuje}}"
+  },
+  "hint": {
+    "en": "Checks if the charger is charging",
+    "nl": "Controleert of de lader aan het laden is",
+    "de": "Prüft, ob das Ladegerät lädt",
+    "fr": "Vérifie si le chargeur est en train de charger",
+    "it": "Controlla se il caricabatterie è in carica",
+    "sv": "Kontrollerar om laddaren laddar",
+    "no": "Sjekker om laderen lader",
+    "es": "Comprueba si el cargador está cargando",
+    "da": "Kontrollerer om opladeren oplader",
+    "ru": "Проверяет, заряжается ли зарядное устройство",
+    "pl": "Sprawdza, czy ładowarka ładuje"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=twc"
+    }
+  ]
+}

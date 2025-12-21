@@ -1,7 +1,17 @@
 {
   "type": "string",
   "title": {
-    "en": "Status"
+    "en": "Status",
+    "nl": "Status",
+    "de": "Status",
+    "fr": "État",
+    "it": "Stato",
+    "sv": "Status",
+    "no": "Status",
+    "es": "Estado",
+    "da": "Status",
+    "ru": "Статус",
+    "pl": "Status"
   },
   "getable": true,
   "setable": false,

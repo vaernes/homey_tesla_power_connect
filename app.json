@@ -8,10 +8,30 @@
     "local"
   ],
   "name": {
-    "en": "Tesla Power Connect"
+    "en": "Tesla Power Connect",
+    "nl": "Tesla Power Connect",
+    "de": "Tesla Power Connect",
+    "fr": "Tesla Power Connect",
+    "it": "Tesla Power Connect",
+    "sv": "Tesla Power Connect",
+    "no": "Tesla Power Connect",
+    "es": "Tesla Power Connect",
+    "da": "Tesla Power Connect",
+    "ru": "Tesla Power Connect",
+    "pl": "Tesla Power Connect"
   },
   "description": {
-    "en": "Stay charged, always connected."
+    "en": "Stay charged, always connected.",
+    "nl": "Blijf opgeladen, altijd verbonden.",
+    "de": "Immer geladen, immer verbunden.",
+    "fr": "Restez chargé, toujours connecté.",
+    "it": "Sempre carico, sempre connesso.",
+    "sv": "Håll dig laddad, alltid ansluten.",
+    "no": "Hold deg ladet, alltid tilkoblet.",
+    "es": "Mantente cargado, siempre conectado.",
+    "da": "Hold dig opladet, altid forbundet.",
+    "ru": "Будьте заряжены, всегда на связи.",
+    "pl": "Bądź naładowany, zawsze połączony."
   },
   "category": [
     "energy"
@@ -42,20 +62,60 @@
       {
         "id": "charger_status_changed",
         "title": {
-          "en": "Charger status changed"
+          "en": "Charger status changed",
+          "nl": "Laderstatus gewijzigd",
+          "de": "Ladestatus geändert",
+          "fr": "Statut du chargeur modifié",
+          "it": "Stato caricabatterie cambiato",
+          "sv": "Laddarstatus ändrad",
+          "no": "Laderstatus endret",
+          "es": "Estado del cargador modificado",
+          "da": "Ladestatus ændret",
+          "ru": "Статус зарядного устройства изменен",
+          "pl": "Status ładowarki uległ zmianie"
         },
         "titleFormatted": {
-          "en": "Charger status changed"
+          "en": "Charger status changed",
+          "nl": "Laderstatus gewijzigd",
+          "de": "Ladestatus geändert",
+          "fr": "Statut du chargeur modifié",
+          "it": "Stato caricabatterie cambiato",
+          "sv": "Laddarstatus ändrad",
+          "no": "Laderstatus endret",
+          "es": "Estado del cargador modificado",
+          "da": "Ladestatus ændret",
+          "ru": "Статус зарядного устройства изменен",
+          "pl": "Status ładowarki uległ zmianie"
         },
         "tokens": [
           {
             "name": "status",
             "type": "string",
             "title": {
-              "en": "Status"
+              "en": "Status",
+              "nl": "Status",
+              "de": "Status",
+              "fr": "État",
+              "it": "Stato",
+              "sv": "Status",
+              "no": "Status",
+              "es": "Estado",
+              "da": "Status",
+              "ru": "Статус",
+              "pl": "Status"
             },
             "example": {
-              "en": "Charging,Connected,Disconnected"
+              "en": "Charging,Connected,Disconnected",
+              "nl": "Laden,Verbonden,Verbinding verbroken",
+              "de": "Laden,Verbunden,Getrennt",
+              "fr": "En charge,Connecté,Déconnecté",
+              "it": "In carica,Collegato,Disconnesso",
+              "sv": "Laddar,Ansluten,Frånkopplad",
+              "no": "Lader,Tilkoblet,Frakoblet",
+              "es": "Cargando,Conectado,Desconectado",
+              "da": "Oplader,Tilsluttet,Afbrudt",
+              "ru": "Зарядка,Подключен,Отключен",
+              "pl": "Ładowanie,Połączony,Odłączony"
             }
           }
         ],
@@ -72,13 +132,43 @@
       {
         "id": "is_charging",
         "title": {
-          "en": "!{{Is|Isn't}} charging"
+          "en": "!{{Is|Isn't}} charging",
+          "nl": "!{{Is|Is niet}} aan het laden",
+          "de": "!{{Lädt|Lädt nicht}}",
+          "fr": "!{{Est|N'est pas}} en train de charger",
+          "it": "!{{In|Non è in}} carica",
+          "sv": "!{{Laddar|Laddar inte}}",
+          "no": "!{{Lader|Lader ikke}}",
+          "es": "!{{Está|No está}} cargando",
+          "da": "!{{Oplader|Oplader ikke}}",
+          "ru": "!{{Заряжается|Не заряжается}}",
+          "pl": "!{{Ładuje|Nie ładuje}}"
         },
         "titleFormatted": {
-          "en": "!{{Is|Isn't}} charging"
+          "en": "!{{Is|Isn't}} charging",
+          "nl": "!{{Is|Is niet}} aan het laden",
+          "de": "!{{Lädt|Lädt nicht}}",
+          "fr": "!{{Est|N'est pas}} en train de charger",
+          "it": "!{{In|Non è in}} carica",
+          "sv": "!{{Laddar|Laddar inte}}",
+          "no": "!{{Lader|Lader ikke}}",
+          "es": "!{{Está|No está}} cargando",
+          "da": "!{{Oplader|Oplader ikke}}",
+          "ru": "!{{Заряжается|Не заряжается}}",
+          "pl": "!{{Ładuje|Nie ładuje}}"
         },
         "hint": {
-          "en": "Checks if the charger is charging"
+          "en": "Checks if the charger is charging",
+          "nl": "Controleert of de lader aan het laden is",
+          "de": "Prüft, ob das Ladegerät lädt",
+          "fr": "Vérifie si le chargeur est en train de charger",
+          "it": "Controlla se il caricabatterie è in carica",
+          "sv": "Kontrollerar om laddaren laddar",
+          "no": "Sjekker om laderen lader",
+          "es": "Comprueba si el cargador está cargando",
+          "da": "Kontrollerer om opladeren oplader",
+          "ru": "Проверяет, заряжается ли зарядное устройство",
+          "pl": "Sprawdza, czy ładowarka ładuje"
         },
         "args": [
           {
@@ -91,13 +181,43 @@
       {
         "id": "is_connected",
         "title": {
-          "en": "!{{Is|Isn't}} connected"
+          "en": "!{{Is|Isn't}} connected",
+          "nl": "!{{Is|Is niet}} verbonden",
+          "de": "!{{Ist|Ist nicht}} verbunden",
+          "fr": "!{{Est|N'est pas}} connecté",
+          "it": "!{{Collegato|Non è collegato}}",
+          "sv": "!{{Är|Är inte}} ansluten",
+          "no": "!{{Er|Er ikke}} tilkoblet",
+          "es": "!{{Está|No está}} conectado",
+          "da": "!{{Er|Er ikke}} tilsluttet",
+          "ru": "!{{Подключен|Не подключен}}",
+          "pl": "!{{Połączony|Niepołączony}}"
         },
         "titleFormatted": {
-          "en": "!{{Is|Isn't}} connected"
+          "en": "!{{Is|Isn't}} connected",
+          "nl": "!{{Is|Is niet}} verbonden",
+          "de": "!{{Ist|Ist nicht}} verbunden",
+          "fr": "!{{Est|N'est pas}} connecté",
+          "it": "!{{Collegato|Non è collegato}}",
+          "sv": "!{{Är|Är inte}} ansluten",
+          "no": "!{{Er|Er ikke}} tilkoblet",
+          "es": "!{{Está|No está}} conectado",
+          "da": "!{{Er|Er ikke}} tilsluttet",
+          "ru": "!{{Подключен|Не подключен}}",
+          "pl": "!{{Połączony|Niepołączony}}"
         },
         "hint": {
-          "en": "Checks if the charger is connected to the vehical"
+          "en": "Checks if the charger is connected to the vehical",
+          "nl": "Controleert of de lader is verbonden met het voertuig",
+          "de": "Prüft, ob das Ladegerät mit dem Fahrzeug verbunden ist",
+          "fr": "Vérifie si le chargeur est connecté au véhicule",
+          "it": "Controlla se il caricabatterie è collegato al veicolo",
+          "sv": "Kontrollerar om laddaren är ansluten till fordonet",
+          "no": "Sjekker om laderen er tilkoblet kjøretøyet",
+          "es": "Comprueba si el cargador está conectado al vehículo",
+          "da": "Kontrollerer, om opladeren er tilsluttet køretøjet",
+          "ru": "Проверяет, подключено ли зарядное устройство к автомобилю",
+          "pl": "Sprawdza, czy ładowarka jest podłączona do pojazdu"
         },
         "args": [
           {
@@ -112,7 +232,17 @@
   "drivers": [
     {
       "name": {
-        "en": "TWC Gen3"
+        "en": "TWC Gen3",
+        "nl": "TWC Gen3",
+        "de": "TWC Gen3",
+        "fr": "TWC Gen3",
+        "it": "TWC Gen3",
+        "sv": "TWC Gen3",
+        "no": "TWC Gen3",
+        "es": "TWC Gen3",
+        "da": "TWC Gen3",
+        "ru": "TWC Gen3",
+        "pl": "TWC Gen3"
       },
       "class": "evcharger",
       "platforms": [
@@ -159,130 +289,390 @@
       "capabilitiesOptions": {
         "measure_twc_voltage.relay_coil_v": {
           "title": {
-            "en": "Relay Coil Voltage"
+            "en": "Relay Coil Voltage",
+            "nl": "Relaisspoelspanning",
+            "de": "Relaisspulenspannung",
+            "fr": "Tension de la bobine du relais",
+            "it": "Tensione bobina relè",
+            "sv": "Reläspolspänning",
+            "no": "Reléspolespenning",
+            "es": "Voltaje de la bobina del relé",
+            "da": "Relæspolespænding",
+            "ru": "Напряжение катушки реле",
+            "pl": "Napięcie cewki przekaźnika"
           }
         },
         "measure_twc_voltage.prox_v": {
           "title": {
-            "en": "Prox Voltage"
+            "en": "Prox Voltage",
+            "nl": "Prox-spanning",
+            "de": "Prox-Spannung",
+            "fr": "Tension de proximité",
+            "it": "Tensione di prossimità",
+            "sv": "Prox-spänning",
+            "no": "Prox-spenning",
+            "es": "Voltaje de proximidad",
+            "da": "Prox-spænding",
+            "ru": "Прокси-напряжение",
+            "pl": "Napięcie zbliżeniowe"
           }
         },
         "measure_twc_voltage.pilot_high_v": {
           "title": {
-            "en": "Pilot High Voltage"
+            "en": "Pilot High Voltage",
+            "nl": "Pilot hoogspanning",
+            "de": "Pilot-Hochspannung",
+            "fr": "Haute tension pilote",
+            "it": "Alta tensione pilota",
+            "sv": "Pilot-högspänning",
+            "no": "Pilot-høyspenning",
+            "es": "Alta tensión piloto",
+            "da": "Pilot-højspænding",
+            "ru": "Высокое напряжение пилота",
+            "pl": "Wysokie napięcie sterujące"
           }
         },
         "measure_twc_voltage.pilot_low_v": {
           "title": {
-            "en": "Pilot Low Voltage"
+            "en": "Pilot Low Voltage",
+            "nl": "Pilot laagspanning",
+            "de": "Pilot-Niederspannung",
+            "fr": "Basse tension pilote",
+            "it": "Bassa tensione pilota",
+            "sv": "Pilot-lågspänning",
+            "no": "Pilot-lavspenning",
+            "es": "Baja tensión piloto",
+            "da": "Pilot-lavspænding",
+            "ru": "Низкое напряжение пилота",
+            "pl": "Niskie napięcie sterujące"
           }
         },
         "alarm_twc_state.evse": {
           "title": {
-            "en": "Charging Status"
+            "en": "Charging Status",
+            "nl": "Laadstatus",
+            "de": "Ladestatus",
+            "fr": "État de la charge",
+            "it": "Stato di carica",
+            "sv": "Laddningsstatus",
+            "no": "Ladestatus",
+            "es": "Estado de carga",
+            "da": "Ladestatus",
+            "ru": "Статус зарядки",
+            "pl": "Status ładowania"
           }
         },
         "alarm_twc_state.contactor": {
           "title": {
-            "en": "Contactor"
+            "en": "Contactor",
+            "nl": "Contactor",
+            "de": "Schütz",
+            "fr": "Contacteur",
+            "it": "Contattore",
+            "sv": "Kontaktor",
+            "no": "Kontaktor",
+            "es": "Contactor",
+            "da": "Kontaktor",
+            "ru": "Контактор",
+            "pl": "Stycznik"
           }
         },
         "measure_temperature.handle": {
           "title": {
-            "en": "Temperature Handle"
+            "en": "Temperature Handle",
+            "nl": "Temperatuur handgreep",
+            "de": "Temperatur Handgriff",
+            "fr": "Température de la poignée",
+            "it": "Temperatura impugnatura",
+            "sv": "Temperatur handtag",
+            "no": "Temperatur håndtak",
+            "es": "Temperatura del mango",
+            "da": "Temperatur håndtag",
+            "ru": "Температура рукоятки",
+            "pl": "Temperatura uchwytu"
           }
         },
         "measure_temperature.charger": {
           "title": {
-            "en": "Temperature Charger"
+            "en": "Temperature Charger",
+            "nl": "Temperatuur lader",
+            "de": "Temperatur Ladegerät",
+            "fr": "Température du chargeur",
+            "it": "Temperatura caricatore",
+            "sv": "Temperatur laddare",
+            "no": "Temperatur lader",
+            "es": "Temperatura del cargador",
+            "da": "Temperatur oplader",
+            "ru": "Температура зарядного устройства",
+            "pl": "Temperatura ładowarki"
           }
         },
         "measure_temperature.pcba": {
           "title": {
-            "en": "Temperature PCBA"
+            "en": "Temperature PCBA",
+            "nl": "Temperatuur PCBA",
+            "de": "Temperatur PCBA",
+            "fr": "Température PCBA",
+            "it": "Temperatura PCBA",
+            "sv": "Temperatur PCBA",
+            "no": "Temperatur PCBA",
+            "es": "Temperatura PCBA",
+            "da": "Temperatur PCBA",
+            "ru": "Температура PCBA",
+            "pl": "Temperatura PCBA"
           }
         },
         "measure_temperature.mcu": {
           "title": {
-            "en": "Temperature MCU"
+            "en": "Temperature MCU",
+            "nl": "Temperatuur MCU",
+            "de": "Temperatur MCU",
+            "fr": "Température MCU",
+            "it": "Temperatura MCU",
+            "sv": "Temperatur MCU",
+            "no": "Temperatur MCU",
+            "es": "Temperatura MCU",
+            "da": "Temperatur MCU",
+            "ru": "Температура MCU",
+            "pl": "Temperatura MCU"
           }
         },
         "measure_current.a": {
           "title": {
-            "en": "Current A"
+            "en": "Current A",
+            "nl": "Stroom A",
+            "de": "Strom A",
+            "fr": "Courant A",
+            "it": "Corrente A",
+            "sv": "Ström A",
+            "no": "Strøm A",
+            "es": "Corriente A",
+            "da": "Strøm A",
+            "ru": "Ток А",
+            "pl": "Prąd A"
           }
         },
         "measure_current.b": {
           "title": {
-            "en": "Current B"
+            "en": "Current B",
+            "nl": "Stroom B",
+            "de": "Strom B",
+            "fr": "Courant B",
+            "it": "Corrente B",
+            "sv": "Ström B",
+            "no": "Strøm B",
+            "es": "Corriente B",
+            "da": "Strøm B",
+            "ru": "Ток Б",
+            "pl": "Prąd B"
           }
         },
         "measure_current.c": {
           "title": {
-            "en": "Current C"
+            "en": "Current C",
+            "nl": "Stroom C",
+            "de": "Strom C",
+            "fr": "Courant C",
+            "it": "Corrente C",
+            "sv": "Ström C",
+            "no": "Strøm C",
+            "es": "Corriente C",
+            "da": "Strøm C",
+            "ru": "Ток В",
+            "pl": "Prąd C"
           }
         },
         "measure_current.n": {
           "title": {
-            "en": "Current N"
+            "en": "Current N",
+            "nl": "Stroom N",
+            "de": "Strom N",
+            "fr": "Courant N",
+            "it": "Corrente N",
+            "sv": "Ström N",
+            "no": "Strøm N",
+            "es": "Corriente N",
+            "da": "Strøm N",
+            "ru": "Ток N",
+            "pl": "Prąd N"
           }
         },
         "measure_twc_voltage.a": {
           "title": {
-            "en": "Voltage A"
+            "en": "Voltage A",
+            "nl": "Voltage A",
+            "de": "Spannung A",
+            "fr": "Tension A",
+            "it": "Tensione A",
+            "sv": "Spänning A",
+            "no": "Spenning A",
+            "es": "Voltaje A",
+            "da": "Spænding A",
+            "ru": "Напряжение А",
+            "pl": "Napięcie A"
           }
         },
         "measure_twc_voltage.b": {
           "title": {
-            "en": "Voltage B"
+            "en": "Voltage B",
+            "nl": "Voltage B",
+            "de": "Spannung B",
+            "fr": "Tension B",
+            "it": "Tensione B",
+            "sv": "Spänning B",
+            "no": "Spenning B",
+            "es": "Voltaje B",
+            "da": "Spænding B",
+            "ru": "Напряжение Б",
+            "pl": "Napięcie B"
           }
         },
         "measure_twc_voltage.c": {
           "title": {
-            "en": "Voltage C"
+            "en": "Voltage C",
+            "nl": "Voltage C",
+            "de": "Spannung C",
+            "fr": "Tension C",
+            "it": "Tensione C",
+            "sv": "Spänning C",
+            "no": "Spenning C",
+            "es": "Voltaje C",
+            "da": "Spænding C",
+            "ru": "Напряжение В",
+            "pl": "Napięcie C"
           }
         },
         "measure_twc_voltage.grid": {
           "title": {
-            "en": "Voltage Grid"
+            "en": "Voltage Grid",
+            "nl": "Voltage netwerk",
+            "de": "Netzspannung",
+            "fr": "Tension du réseau",
+            "it": "Tensione di rete",
+            "sv": "Nätspänning",
+            "no": "Nettspenning",
+            "es": "Voltaje de la red",
+            "da": "Netspænding",
+            "ru": "Напряжение сети",
+            "pl": "Napięcie sieci"
           }
         },
         "measure_frequency.grid": {
           "title": {
-            "en": "Frequency Grid"
+            "en": "Frequency Grid",
+            "nl": "Netwerkfrequentie",
+            "de": "Netzfrequenz",
+            "fr": "Fréquence du réseau",
+            "it": "Frequenza di rete",
+            "sv": "Nätfrekvens",
+            "no": "Nettfrekvens",
+            "es": "Frecuencia de la red",
+            "da": "Netfrekvens",
+            "ru": "Частота сети",
+            "pl": "Częstotliwość sieci"
           }
         },
         "measure_twc_power.vehicle": {
           "title": {
-            "en": "Vehicle Session Power"
+            "en": "Vehicle Session Power",
+            "nl": "Vermogen voertuigsessie",
+            "de": "Fahrzeug-Sitzungsleistung",
+            "fr": "Puissance de session du véhicule",
+            "it": "Potenza sessione veicolo",
+            "sv": "Fordonssessions-effekt",
+            "no": "Kjøretøysessjons-effekt",
+            "es": "Potencia de sesión del vehículo",
+            "da": "Køretøjssessions-effekt",
+            "ru": "Мощность сеанса автомобиля",
+            "pl": "Moc sesji pojazdu"
           }
         },
         "meter_power.vehicle": {
           "title": {
-            "en": "Vehicle Session Energy"
+            "en": "Vehicle Session Energy",
+            "nl": "Energie voertuigsessie",
+            "de": "Fahrzeug-Sitzungsenergie",
+            "fr": "Énergie de session du véhicule",
+            "it": "Energia sessione veicolo",
+            "sv": "Fordonssessions-energi",
+            "no": "Kjøretøysessjons-energi",
+            "es": "Energía de sesión del vehículo",
+            "da": "Køretøjssessions-energi",
+            "ru": "Энергия сеанса автомобиля",
+            "pl": "Energia sesji pojazdu"
           }
         },
         "measure_current.vehicle": {
           "title": {
-            "en": "Vehicle Session Current"
+            "en": "Vehicle Session Current",
+            "nl": "Stroom voertuigsessie",
+            "de": "Fahrzeug-Sitzungsstrom",
+            "fr": "Courant de session du véhicule",
+            "it": "Corrente sessione veicolo",
+            "sv": "Fordonssessions-ström",
+            "no": "Kjøretøysessjons-strøm",
+            "es": "Corriente de sesión del vehículo",
+            "da": "Køretøjssessions-strøm",
+            "ru": "Ток сеанса автомобиля",
+            "pl": "Prąd sesji pojazdu"
           },
           "desc": {
-            "en": "Current amp setting in the car."
+            "en": "Current amp setting in the car.",
+            "nl": "Huidige ampère-instelling in de auto.",
+            "de": "Aktuelle Amperestufe im Auto.",
+            "fr": "Réglage actuel de l'intensité dans la voiture.",
+            "it": "Impostazione attuale degli ampere nell'auto.",
+            "sv": "Aktuell ampereinställning i bilen.",
+            "no": "Gjeldende ampereinnstilling i bilen.",
+            "es": "Ajuste actual de amperios en el coche.",
+            "da": "Nuværende ampère-indstilling i bilen.",
+            "ru": "Текущая настройка силы тока в автомобиле.",
+            "pl": "Aktualne ustawienie natężenia w samochodzie."
           }
         },
         "meter_power.total": {
           "title": {
-            "en": "Total Used Energy"
+            "en": "Total Used Energy",
+            "nl": "Totaal verbruikte energie",
+            "de": "Gesamtverbrauch Energie",
+            "fr": "Énergie totale utilisée",
+            "it": "Energia totale utilizzata",
+            "sv": "Total använd energi",
+            "no": "Total brukt energi",
+            "es": "Energía total utilizada",
+            "da": "Total brugt energi",
+            "ru": "Всего использовано энергии",
+            "pl": "Całkowita zużyta energia"
           }
         },
         "evse_state": {
           "title": {
-            "en": "EVSE State"
+            "en": "EVSE State",
+            "nl": "EVSE-status",
+            "de": "EVSE-Status",
+            "fr": "État de l'EVSE",
+            "it": "Stato EVSE",
+            "sv": "EVSE-status",
+            "no": "EVSE-status",
+            "es": "Estado del EVSE",
+            "da": "EVSE-status",
+            "ru": "Состояние EVSE",
+            "pl": "Stan EVSE"
           }
         },
         "measure_evse_state": {
           "title": {
-            "en": "EVSE State (code)"
+            "en": "EVSE State (code)",
+            "nl": "EVSE-status (code)",
+            "de": "EVSE-Status (Code)",
+            "fr": "État de l'EVSE (code)",
+            "it": "Stato EVSE (codice)",
+            "sv": "EVSE-status (kod)",
+            "no": "EVSE-status (kode)",
+            "es": "Estado del EVSE (código)",
+            "da": "EVSE-status (kode)",
+            "ru": "Состояние EVSE (код)",
+            "pl": "Stan EVSE (kod)"
           }
         }
       },
@@ -311,39 +701,109 @@
         {
           "type": "group",
           "label": {
-            "en": "Settings"
+            "en": "Settings",
+            "nl": "Instellingen",
+            "de": "Einstellungen",
+            "fr": "Paramètres",
+            "it": "Impostazioni",
+            "sv": "Inställningar",
+            "no": "Innstillinger",
+            "es": "Ajustes",
+            "da": "Indstillinger",
+            "ru": "Настройки",
+            "pl": "Ustawienia"
           },
           "children": [
             {
               "id": "polling_interval",
               "type": "number",
               "label": {
-                "en": "Update Frequency"
+                "en": "Update Frequency",
+                "nl": "Updatefrequentie",
+                "de": "Aktualisierungsintervall",
+                "fr": "Fréquence de mise à jour",
+                "it": "Frequenza di aggiornamento",
+                "sv": "Uppdateringsfrekvens",
+                "no": "Oppdateringsfrekvens",
+                "es": "Frecuencia de actualización",
+                "da": "Opdateringsfrekvens",
+                "ru": "Частота обновления",
+                "pl": "Częstotliwość aktualizacji"
               },
               "value": 60,
               "min": 10,
               "max": 120,
               "units": {
-                "en": "seconds"
+                "en": "seconds",
+                "nl": "seconden",
+                "de": "Sekunden",
+                "fr": "secondes",
+                "it": "secondi",
+                "sv": "sekunder",
+                "no": "sekunder",
+                "es": "segundos",
+                "da": "sekunder",
+                "ru": "секунд",
+                "pl": "sekundy"
               },
               "hint": {
-                "en": "60 is recommended."
+                "en": "60 is recommended.",
+                "nl": "60 wordt aanbevolen.",
+                "de": "60 wird empfohlen.",
+                "fr": "60 est recommandé.",
+                "it": "60 è consigliato.",
+                "sv": "60 rekommenderas.",
+                "no": "60 anbefales.",
+                "es": "Se recomienda 60.",
+                "da": "60 anbefales.",
+                "ru": "рекомендуется 60.",
+                "pl": "Zaleca się 60."
               }
             },
             {
               "id": "voltage_adjustment",
               "type": "number",
               "label": {
-                "en": "Fixed voltage adjustment"
+                "en": "Fixed voltage adjustment",
+                "nl": "Vaste spanningsaanpassing",
+                "de": "Feste Spannungsanpassung",
+                "fr": "Ajustement de tension fixe",
+                "it": "Regolazione fissa della tensione",
+                "sv": "Fast spänningsjustering",
+                "no": "Fast spenningsjustering",
+                "es": "Ajuste de voltaje fijo",
+                "da": "Fast spændingsjustering",
+                "ru": "Фиксированная регулировка напряжения",
+                "pl": "Stała regulacja napięcia"
               },
               "value": 0,
               "min": 0,
               "max": 200,
               "units": {
-                "en": "voltage"
+                "en": "voltage",
+                "nl": "voltage",
+                "de": "Spannung",
+                "fr": "tension",
+                "it": "tensione",
+                "sv": "spänning",
+                "no": "spenning",
+                "es": "voltaje",
+                "da": "spænding",
+                "ru": "напряжение",
+                "pl": "napięcie"
               },
               "hint": {
-                "en": "Correct voltage readings with a fixed value adjustment, if the TWC reports are inaccurate."
+                "en": "Correct voltage readings with a fixed value adjustment, if the TWC reports are inaccurate.",
+                "nl": "Corrigeer spanningsmetingen met een aanpassing van een vaste waarde, als de TWC-rapporten onnauwkeurig zijn.",
+                "de": "Korrigieren Sie Spannungsmesswerte mit einer Festwertanpassung, wenn die TWC-Berichte ungenau sind.",
+                "fr": "Corrigez les lectures de tension avec un ajustement de valeur fixe, si les rapports TWC sont inexacts.",
+                "it": "Correggi le letture di tensione con una regolazione del valore fisso, se i rapporti TWC sono imprecisi.",
+                "sv": "Korrigera spänningsavläsningar med en justering av ett fast värde, om TWC-rapporterna är felaktiga.",
+                "no": "Korriger spenningsavlesninger med en justering av en fast verdi, hvis TWC-rapportene er unøyaktige.",
+                "es": "Corrija las lecturas de voltaje con un ajuste de valor fijo, si los informes de TWC son inexactos.",
+                "da": "Korriger spændingsaflæsninger med en fast værdi-justering, hvis TWC-rapporterne er unøjagtige.",
+                "ru": "Исправьте показания напряжения с помощью регулировки фиксированного значения, если отчеты TWC неточны.",
+                "pl": "Skoryguj odczyty napięcia za pomocą regulacji stałej wartości, jeśli raporty TWC są niedokładne."
               }
             }
           ]
@@ -351,7 +811,17 @@
         {
           "type": "group",
           "label": {
-            "en": "Wi-Fi Status"
+            "en": "Wi-Fi Status",
+            "nl": "Wi-Fi-status",
+            "de": "WLAN-Status",
+            "fr": "État du Wi-Fi",
+            "it": "Stato Wi-Fi",
+            "sv": "Wi-Fi-status",
+            "no": "Wi-Fi-status",
+            "es": "Estado de Wi-Fi",
+            "da": "Wi-Fi-status",
+            "ru": "Статус Wi-Fi",
+            "pl": "Status Wi-Fi"
           },
           "children": [
             {
@@ -359,7 +829,17 @@
               "type": "label",
               "value": "Waiting for data",
               "label": {
-                "en": "Connected"
+                "en": "Connected",
+                "nl": "Verbonden",
+                "de": "Verbunden",
+                "fr": "Connecté",
+                "it": "Collegato",
+                "sv": "Ansluten",
+                "no": "Tilkoblet",
+                "es": "Conectado",
+                "da": "Tilsluttet",
+                "ru": "Подключено",
+                "pl": "Połączony"
               }
             },
             {
@@ -367,7 +847,17 @@
               "type": "label",
               "value": "Waiting for data",
               "label": {
-                "en": "Connected to Internet"
+                "en": "Connected to Internet",
+                "nl": "Verbonden met internet",
+                "de": "Mit dem Internet verbunden",
+                "fr": "Connecté à Internet",
+                "it": "Collegato a Internet",
+                "sv": "Ansluten till internet",
+                "no": "Tilkoblet Internett",
+                "es": "Conectado a Internet",
+                "da": "Tilsluttet internettet",
+                "ru": "Подключено к Интернету",
+                "pl": "Połączony z Internetem"
               }
             },
             {
@@ -375,7 +865,17 @@
               "type": "label",
               "value": "Waiting for data",
               "label": {
-                "en": "Local IP Address"
+                "en": "Local IP Address",
+                "nl": "Lokaal IP-adres",
+                "de": "Lokale IP-Adresse",
+                "fr": "Adresse IP locale",
+                "it": "Indirizzo IP locale",
+                "sv": "Lokal IP-adress",
+                "no": "Lokal IP-adresse",
+                "es": "Dirección IP local",
+                "da": "Lokal IP-adresse",
+                "ru": "Локальный IP-адрес",
+                "pl": "Lokalny adres IP"
               }
             },
             {
@@ -383,7 +883,17 @@
               "type": "label",
               "value": "Waiting for data",
               "label": {
-                "en": "MAC Address"
+                "en": "MAC Address",
+                "nl": "MAC-adres",
+                "de": "MAC-Adresse",
+                "fr": "Adresse MAC",
+                "it": "Indirizzo MAC",
+                "sv": "MAC-adress",
+                "no": "MAC-adresse",
+                "es": "Dirección MAC",
+                "da": "MAC-adresse",
+                "ru": "MAC-адрес",
+                "pl": "Adres MAC"
               }
             },
             {
@@ -391,7 +901,17 @@
               "type": "label",
               "value": "Waiting for data",
               "label": {
-                "en": "SSID"
+                "en": "SSID",
+                "nl": "SSID",
+                "de": "SSID",
+                "fr": "SSID",
+                "it": "SSID",
+                "sv": "SSID",
+                "no": "SSID",
+                "es": "SSID",
+                "da": "SSID",
+                "ru": "SSID",
+                "pl": "SSID"
               }
             },
             {
@@ -399,7 +919,17 @@
               "type": "label",
               "value": "Waiting for data",
               "label": {
-                "en": "Signal Strength"
+                "en": "Signal Strength",
+                "nl": "Signaalsterkte",
+                "de": "Signalstärke",
+                "fr": "Force du signal",
+                "it": "Potenza del segnale",
+                "sv": "Signalstyrka",
+                "no": "Signalstyrke",
+                "es": "Fuerza de la señal",
+                "da": "Signalstyrke",
+                "ru": "Уровень сигнала",
+                "pl": "Siła sygnału"
               }
             },
             {
@@ -407,7 +937,17 @@
               "type": "label",
               "value": "Waiting for data",
               "label": {
-                "en": "RSSI"
+                "en": "RSSI",
+                "nl": "RSSI",
+                "de": "RSSI",
+                "fr": "RSSI",
+                "it": "RSSI",
+                "sv": "RSSI",
+                "no": "RSSI",
+                "es": "RSSI",
+                "da": "RSSI",
+                "ru": "RSSI",
+                "pl": "RSSI"
               }
             },
             {
@@ -415,7 +955,17 @@
               "type": "label",
               "value": "Waiting for data",
               "label": {
-                "en": "SNR"
+                "en": "SNR",
+                "nl": "SNR",
+                "de": "SNR",
+                "fr": "SNR",
+                "it": "SNR",
+                "sv": "SNR",
+                "no": "SNR",
+                "es": "SNR",
+                "da": "SNR",
+                "ru": "SNR",
+                "pl": "SNR"
               }
             }
           ]
@@ -423,7 +973,17 @@
         {
           "type": "group",
           "label": {
-            "en": "Vitals"
+            "en": "Vitals",
+            "nl": "Vitale gegevens",
+            "de": "Vitalwerte",
+            "fr": "Vitals",
+            "it": "Parametri vitali",
+            "sv": "Vitalparametrar",
+            "no": "Vitalparametre",
+            "es": "Signos vitales",
+            "da": "Vitaltegn",
+            "ru": "Жизненно важные показатели",
+            "pl": "Parametry życiowe"
           },
           "children": [
             {
@@ -431,7 +991,17 @@
               "type": "label",
               "value": "Waiting for data",
               "label": {
-                "en": "Contactor Cycles"
+                "en": "Contactor Cycles",
+                "nl": "Contactcycli",
+                "de": "Schützzyklen",
+                "fr": "Cycles de contacteur",
+                "it": "Cicli del contattore",
+                "sv": "Kontaktorscykler",
+                "no": "Kontaktorsykluser",
+                "es": "Ciclos del contactor",
+                "da": "Kontaktorscyklusser",
+                "ru": "Циклы контактора",
+                "pl": "Cykle stycznika"
               }
             },
             {
@@ -439,7 +1009,17 @@
               "type": "label",
               "value": "Waiting for data",
               "label": {
-                "en": "Uptime"
+                "en": "Uptime",
+                "nl": "Uptime",
+                "de": "Betriebszeit",
+                "fr": "Temps de fonctionnement",
+                "it": "Tempo di attività",
+                "sv": "Drifttid",
+                "no": "Driftstid",
+                "es": "Tiempo de actividad",
+                "da": "Driftstid",
+                "ru": "Время работы",
+                "pl": "Czas pracy"
               }
             },
             {
@@ -447,7 +1027,17 @@
               "type": "label",
               "value": "Waiting for data",
               "label": {
-                "en": "Connection State"
+                "en": "Connection State",
+                "nl": "Verbindingsstatus",
+                "de": "Verbindungsstatus",
+                "fr": "État de la connexion",
+                "it": "Stato della connessione",
+                "sv": "Anslutningsstatus",
+                "no": "Tilkoblingsstatus",
+                "es": "Estado de la conexión",
+                "da": "Forbindelsesstatus",
+                "ru": "Состояние соединения",
+                "pl": "Stan połączenia"
               }
             },
             {
@@ -455,7 +1045,17 @@
               "type": "label",
               "value": "Waiting for data",
               "label": {
-                "en": "Config Status"
+                "en": "Config Status",
+                "nl": "Configuratiestatus",
+                "de": "Konfigurationsstatus",
+                "fr": "État de la configuration",
+                "it": "Stato configurazione",
+                "sv": "Konfigurationsstatus",
+                "no": "Konfigurasjonsstatus",
+                "es": "Estado de configuración",
+                "da": "Konfigurationsstatus",
+                "ru": "Статус конфигурации",
+                "pl": "Status konfiguracji"
               }
             },
             {
@@ -463,7 +1063,17 @@
               "type": "label",
               "value": "Waiting for data",
               "label": {
-                "en": "Current Alerts"
+                "en": "Current Alerts",
+                "nl": "Huidige waarschuwingen",
+                "de": "Aktuelle Warnungen",
+                "fr": "Alertes actuelles",
+                "it": "Avvisi attuali",
+                "sv": "Aktuella larm",
+                "no": "Gjeldende varsler",
+                "es": "Alertas actuales",
+                "da": "Aktuelle alarmer",
+                "ru": "Текущие оповещения",
+                "pl": "Aktualne alerty"
               }
             }
           ]
@@ -471,7 +1081,17 @@
         {
           "type": "group",
           "label": {
-            "en": "Lifetime"
+            "en": "Lifetime",
+            "nl": "Levensduur",
+            "de": "Lebensdauer",
+            "fr": "Durée de vie",
+            "it": "Durata",
+            "sv": "Livstid",
+            "no": "Levetid",
+            "es": "Vida útil",
+            "da": "Levetid",
+            "ru": "Срок службы",
+            "pl": "Żywotność"
           },
           "children": [
             {
@@ -479,7 +1099,17 @@
               "type": "label",
               "value": "Waiting for data",
               "label": {
-                "en": "Contactor Cycles"
+                "en": "Contactor Cycles",
+                "nl": "Contactcycli",
+                "de": "Schützzyklen",
+                "fr": "Cycles de contacteur",
+                "it": "Cicli del contattore",
+                "sv": "Kontaktorscykler",
+                "no": "Kontaktorsykluser",
+                "es": "Ciclos del contactor",
+                "da": "Kontaktorscyklusser",
+                "ru": "Циклы контактора",
+                "pl": "Cykle stycznika"
               }
             },
             {
@@ -487,7 +1117,17 @@
               "type": "label",
               "value": "Waiting for data",
               "label": {
-                "en": "Contactor Cycles Loaded"
+                "en": "Contactor Cycles Loaded",
+                "nl": "Contactcycli geladen",
+                "de": "Schützzyklen geladen",
+                "fr": "Cycles de contacteur chargés",
+                "it": "Cicli del contattore caricati",
+                "sv": "Kontaktorscykler belastade",
+                "no": "Kontaktorsykluser belastet",
+                "es": "Ciclos del contactor cargados",
+                "da": "Kontaktorscyklusser belastet",
+                "ru": "Циклы контактора под нагрузкой",
+                "pl": "Cykle stycznika pod obciążeniem"
               }
             },
             {
@@ -495,7 +1135,17 @@
               "type": "label",
               "value": "Waiting for data",
               "label": {
-                "en": "Connector Cycles"
+                "en": "Connector Cycles",
+                "nl": "Connectorcycli",
+                "de": "Steckzyklen",
+                "fr": "Cycles de connecteur",
+                "it": "Cicli del connettore",
+                "sv": "Anslutningscykler",
+                "no": "Tilkoblingssykluser",
+                "es": "Ciclos del conector",
+                "da": "Stikcyklusser",
+                "ru": "Циклы разъема",
+                "pl": "Cykle złącza"
               }
             },
             {
@@ -503,7 +1153,17 @@
               "type": "label",
               "value": "Waiting for data",
               "label": {
-                "en": "Charge Starts"
+                "en": "Charge Starts",
+                "nl": "Laadstarts",
+                "de": "Ladestarts",
+                "fr": "Démarrages de charge",
+                "it": "Inizi di carica",
+                "sv": "Laddningsstarter",
+                "no": "Ladestarter",
+                "es": "Inicios de carga",
+                "da": "Ladestarter",
+                "ru": "Запуски зарядки",
+                "pl": "Rozpoczęcia ładowania"
               }
             },
             {
@@ -511,7 +1171,17 @@
               "type": "label",
               "value": "Waiting for data",
               "label": {
-                "en": "Thermal Foldbacks"
+                "en": "Thermal Foldbacks",
+                "nl": "Thermische inperkingen",
+                "de": "Thermische Rückregelung",
+                "fr": "Limites thermiques",
+                "it": "Limitazioni termiche",
+                "sv": "Termiska begränsningar",
+                "no": "Termiske begrensninger",
+                "es": "Limitaciones térmicas",
+                "da": "Termiske begrænsninger",
+                "ru": "Термические ограничения",
+                "pl": "Ograniczenia termiczne"
               }
             },
             {
@@ -519,7 +1189,17 @@
               "type": "label",
               "value": "Waiting for data",
               "label": {
-                "en": "Average Startup Temperature"
+                "en": "Average Startup Temperature",
+                "nl": "Gemiddelde opstarttemperatuur",
+                "de": "Durchschnittliche Starttemperatur",
+                "fr": "Température moyenne au démarrage",
+                "it": "Temperatura media di avvio",
+                "sv": "Genomsnittlig starttemperatur",
+                "no": "Gjennomsnittlig starttemperatur",
+                "es": "Temperatura media de inicio",
+                "da": "Gennemsnitlig starttemperatur",
+                "ru": "Средняя температура пуска",
+                "pl": "Średnia temperatura rozruchu"
               }
             },
             {
@@ -527,7 +1207,17 @@
               "type": "label",
               "value": "Waiting for data",
               "label": {
-                "en": "Total Energy"
+                "en": "Total Energy",
+                "nl": "Totale energie",
+                "de": "Gesamtenergie",
+                "fr": "Énergie totale",
+                "it": "Energia totale",
+                "sv": "Total energi",
+                "no": "Total energi",
+                "es": "Energía total",
+                "da": "Total energi",
+                "ru": "Всего энергии",
+                "pl": "Całkowita energia"
               }
             },
             {
@@ -535,7 +1225,17 @@
               "type": "label",
               "value": "Waiting for data",
               "label": {
-                "en": "Total Uptime"
+                "en": "Total Uptime",
+                "nl": "Totale uptime",
+                "de": "Gesamtbetriebszeit",
+                "fr": "Temps de fonctionnement total",
+                "it": "Tempo di attività totale",
+                "sv": "Total drifttid",
+                "no": "Total driftstid",
+                "es": "Tiempo de actividad total",
+                "da": "Total driftstid",
+                "ru": "Общее время работы",
+                "pl": "Całkowity czas pracy"
               }
             },
             {
@@ -543,7 +1243,17 @@
               "type": "label",
               "value": "Waiting for data",
               "label": {
-                "en": "Total Charging Time"
+                "en": "Total Charging Time",
+                "nl": "Totale laadtijd",
+                "de": "Gesamtladedauer",
+                "fr": "Temps de charge total",
+                "it": "Tempo di ricarica totale",
+                "sv": "Total laddningstid",
+                "no": "Total ladetid",
+                "es": "Tiempo total de carga",
+                "da": "Total ladetid",
+                "ru": "Общее время зарядки",
+                "pl": "Całkowity czas ładowania"
               }
             },
             {
@@ -551,7 +1261,17 @@
               "type": "label",
               "value": "Waiting for data",
               "label": {
-                "en": "Alert Count"
+                "en": "Alert Count",
+                "nl": "Aantal waarschuwingen",
+                "de": "Alarmanzahl",
+                "fr": "Nombre d'alertes",
+                "it": "Numero di avvisi",
+                "sv": "Antal larm",
+                "no": "Antall varsler",
+                "es": "Recuento de alertas",
+                "da": "Antal alarmer",
+                "ru": "Количество оповещений",
+                "pl": "Liczba alertów"
               }
             }
           ]
@@ -559,7 +1279,17 @@
         {
           "type": "group",
           "label": {
-            "en": "Version"
+            "en": "Version",
+            "nl": "Versie",
+            "de": "Version",
+            "fr": "Version",
+            "it": "Versione",
+            "sv": "Version",
+            "no": "Versjon",
+            "es": "Versión",
+            "da": "Version",
+            "ru": "Версия",
+            "pl": "Wersja"
           },
           "children": [
             {
@@ -567,7 +1297,17 @@
               "type": "label",
               "value": "Waiting for data",
               "label": {
-                "en": "Firmware Version"
+                "en": "Firmware Version",
+                "nl": "Firmware-versie",
+                "de": "Firmware-Version",
+                "fr": "Version du firmware",
+                "it": "Versione del firmware",
+                "sv": "Firmware-version",
+                "no": "Firmware-versjon",
+                "es": "Versión del firmware",
+                "da": "Firmware-version",
+                "ru": "Версия прошивки",
+                "pl": "Wersja oprogramowania układowego"
               }
             },
             {
@@ -575,7 +1315,17 @@
               "type": "label",
               "value": "Waiting for data",
               "label": {
-                "en": "Part Number"
+                "en": "Part Number",
+                "nl": "Onderdeelnummer",
+                "de": "Teilenummer",
+                "fr": "Numéro de pièce",
+                "it": "Codice prodotto",
+                "sv": "Artikelnummer",
+                "no": "Delenummer",
+                "es": "Número de pieza",
+                "da": "Reservedelsnummer",
+                "ru": "Артикул",
+                "pl": "Numer części"
               }
             },
             {
@@ -583,7 +1333,17 @@
               "type": "label",
               "value": "Waiting for data",
               "label": {
-                "en": "Serial Number"
+                "en": "Serial Number",
+                "nl": "Serienummer",
+                "de": "Seriennummer",
+                "fr": "Numéro de série",
+                "it": "Numero di serie",
+                "sv": "Serienummer",
+                "no": "Serienummer",
+                "es": "Número de serie",
+                "da": "Serienummer",
+                "ru": "Серийный номер",
+                "pl": "Numer seryjny"
               }
             }
           ]
@@ -595,7 +1355,17 @@
     "alarm_twc_state": {
       "type": "string",
       "title": {
-        "en": "Status"
+        "en": "Status",
+        "nl": "Status",
+        "de": "Status",
+        "fr": "État",
+        "it": "Stato",
+        "sv": "Status",
+        "no": "Status",
+        "es": "Estado",
+        "da": "Status",
+        "ru": "Статус",
+        "pl": "Status"
       },
       "getable": true,
       "setable": false,
@@ -604,92 +1374,242 @@
     },
     "evse_state": {
       "title": {
-        "en": "EVSE State"
+        "en": "EVSE State",
+        "nl": "EVSE-status",
+        "de": "EVSE-Status",
+        "fr": "État de l'EVSE",
+        "it": "Stato EVSE",
+        "sv": "EVSE-status",
+        "no": "EVSE-status",
+        "es": "Estado del EVSE",
+        "da": "EVSE-status",
+        "ru": "Состояние EVSE",
+        "pl": "Stan EVSE"
       },
       "type": "enum",
       "values": [
         {
           "id": "starting",
           "title": {
-            "en": "Starting"
+            "en": "Starting",
+            "nl": "Opstarten",
+            "de": "Starten",
+            "fr": "Démarrage",
+            "it": "Avvio",
+            "sv": "Startar",
+            "no": "Starter",
+            "es": "Iniciando",
+            "da": "Starter",
+            "ru": "Запуск",
+            "pl": "Uruchamianie"
           }
         },
         {
           "id": "no_vehicle",
           "title": {
-            "en": "No vehicle connected"
+            "en": "No vehicle connected",
+            "nl": "Geen voertuig aangesloten",
+            "de": "Kein Fahrzeug angeschlossen",
+            "fr": "Aucun véhicule connecté",
+            "it": "Nessun veicolo collegato",
+            "sv": "Inget fordon anslutet",
+            "no": "Intet kjøretøy tilkoblet",
+            "es": "Ningún vehículo conectado",
+            "da": "Intet køretøj tilsluttet",
+            "ru": "Автомобиль не подключен",
+            "pl": "Brak podłączonego pojazdu"
           }
         },
         {
           "id": "connected_not_ready",
           "title": {
-            "en": "Connected (not ready)"
+            "en": "Connected (not ready)",
+            "nl": "Verbonden (niet gereed)",
+            "de": "Verbunden (nicht bereit)",
+            "fr": "Connecté (pas prêt)",
+            "it": "Collegato (non pronto)",
+            "sv": "Ansluten (inte klar)",
+            "no": "Tilkoblet (ikke klar)",
+            "es": "Conectado (no listo)",
+            "da": "Tilsluttet (ikke klar)",
+            "ru": "Подключен (не готов)",
+            "pl": "Połączony (niegotowy)"
           }
         },
         {
           "id": "unknown3",
           "title": {
-            "en": "Unknown 3"
+            "en": "Unknown 3",
+            "nl": "Onbekend 3",
+            "de": "Unbekannt 3",
+            "fr": "Inconnu 3",
+            "it": "Sconosciuto 3",
+            "sv": "Okänd 3",
+            "no": "Ukjent 3",
+            "es": "Desconocido 3",
+            "da": "Ukendt 3",
+            "ru": "Неизвестно 3",
+            "pl": "Nieznany 3"
           }
         },
         {
           "id": "connected_ready",
           "title": {
-            "en": "Connected (ready)"
+            "en": "Connected (ready)",
+            "nl": "Verbonden (gereed)",
+            "de": "Verbunden (bereit)",
+            "fr": "Connecté (prêt)",
+            "it": "Collegato (pronto)",
+            "sv": "Ansluten (klar)",
+            "no": "Tilkoblet (klar)",
+            "es": "Conectado (listo)",
+            "da": "Tilsluttet (klar)",
+            "ru": "Подключен (готово)",
+            "pl": "Połączony (gotowy)"
           }
         },
         {
           "id": "unknown5",
           "title": {
-            "en": "Unknown 5"
+            "en": "Unknown 5",
+            "nl": "Onbekend 5",
+            "de": "Unbekannt 5",
+            "fr": "Inconnu 5",
+            "it": "Sconosciuto 5",
+            "sv": "Okänd 5",
+            "no": "Ukjent 5",
+            "es": "Desconocido 5",
+            "da": "Ukendt 5",
+            "ru": "Неизвестно 5",
+            "pl": "Nieznany 5"
           }
         },
         {
           "id": "negotiating",
           "title": {
-            "en": "Negotiating"
+            "en": "Negotiating",
+            "nl": "Onderhandelen",
+            "de": "Aushandeln",
+            "fr": "Négociation",
+            "it": "Negoziazione",
+            "sv": "Förhandlar",
+            "no": "Forhandler",
+            "es": "Negociando",
+            "da": "Forhandler",
+            "ru": "Переговоры",
+            "pl": "Negocjacje"
           }
         },
         {
           "id": "finished_charging",
           "title": {
-            "en": "Finished charging"
+            "en": "Finished charging",
+            "nl": "Klaar met laden",
+            "de": "Ladevorgang abgeschlossen",
+            "fr": "Charge terminée",
+            "it": "Carica terminata",
+            "sv": "Laddning klar",
+            "no": "Lading fullført",
+            "es": "Carga finalizada",
+            "da": "Opladning færdig",
+            "ru": "Зарядка завершена",
+            "pl": "Ładowanie zakończone"
           }
         },
         {
           "id": "fully_charged",
           "title": {
-            "en": "Fully charged"
+            "en": "Fully charged",
+            "nl": "Volledig opgeladen",
+            "de": "Vollständig aufgeladen",
+            "fr": "Complètement chargé",
+            "it": "Completamente carico",
+            "sv": "Fulladdat",
+            "no": "Fulladet",
+            "es": "Totalmente cargado",
+            "da": "Fuldt opladet",
+            "ru": "Полностью заряжен",
+            "pl": "W pełni naładowany"
           }
         },
         {
           "id": "waiting_vehicle",
           "title": {
-            "en": "Waiting for vehicle"
+            "en": "Waiting for vehicle",
+            "nl": "Wachten op voertuig",
+            "de": "Warten auf Fahrzeug",
+            "fr": "En attente du véhicule",
+            "it": "In attente del veicolo",
+            "sv": "Väntar på fordon",
+            "no": "Venter på kjøretøy",
+            "es": "Esperando al vehículo",
+            "da": "Venter på køretøj",
+            "ru": "Ожидание автомобиля",
+            "pl": "Oczekiwanie na pojazd"
           }
         },
         {
           "id": "reduced_power",
           "title": {
-            "en": "Reduced power"
+            "en": "Reduced power",
+            "nl": "Gereduceerd vermogen",
+            "de": "Reduzierte Leistung",
+            "fr": "Puissance réduite",
+            "it": "Potenza ridotta",
+            "sv": "Reducerad effekt",
+            "no": "Redusert effekt",
+            "es": "Potencia reducida",
+            "da": "Reduceret effekt",
+            "ru": "Пониженная мощность",
+            "pl": "Zredukowana moc"
           }
         },
         {
           "id": "charging",
           "title": {
-            "en": "Charging"
+            "en": "Charging",
+            "nl": "Laden",
+            "de": "Laden",
+            "fr": "Charge en cours",
+            "it": "In carica",
+            "sv": "Laddar",
+            "no": "Lader",
+            "es": "Cargando",
+            "da": "Oplader",
+            "ru": "Зарядка",
+            "pl": "Ładowanie"
           }
         },
         {
           "id": "unknown12",
           "title": {
-            "en": "Unknown 12"
+            "en": "Unknown 12",
+            "nl": "Onbekend 12",
+            "de": "Unbekannt 12",
+            "fr": "Inconnu 12",
+            "it": "Sconosciuto 12",
+            "sv": "Okänd 12",
+            "no": "Ukjent 12",
+            "es": "Desconocido 12",
+            "da": "Ukendt 12",
+            "ru": "Неизвестно 12",
+            "pl": "Nieznany 12"
           }
         },
         {
           "id": "unknown13",
           "title": {
-            "en": "Unknown 13"
+            "en": "Unknown 13",
+            "nl": "Onbekend 13",
+            "de": "Unbekannt 13",
+            "fr": "Inconnu 13",
+            "it": "Sconosciuto 13",
+            "sv": "Okänd 13",
+            "no": "Ukjent 13",
+            "es": "Desconocido 13",
+            "da": "Ukendt 13",
+            "ru": "Неизвестно 13",
+            "pl": "Nieznany 13"
           }
         }
       ],
@@ -701,7 +1621,17 @@
     },
     "measure_evse_state": {
       "title": {
-        "en": "EVSE State (code)"
+        "en": "EVSE State (code)",
+        "nl": "EVSE-status (code)",
+        "de": "EVSE-Status (Code)",
+        "fr": "État de l'EVSE (code)",
+        "it": "Stato EVSE (codice)",
+        "sv": "EVSE-status (kod)",
+        "no": "EVSE-status (kode)",
+        "es": "Estado del EVSE (código)",
+        "da": "EVSE-status (kode)",
+        "ru": "Состояние EVSE (код)",
+        "pl": "Stan EVSE (kod)"
       },
       "type": "number",
       "decimals": 0,
@@ -718,7 +1648,16 @@
       "decimals": 2,
       "title": {
         "en": "Frequency",
-        "no": "Frekvens"
+        "nl": "Frequentie",
+        "de": "Frequenz",
+        "fr": "Fréquence",
+        "it": "Frequenza",
+        "sv": "Frekvens",
+        "no": "Frekvens",
+        "es": "Frecuencia",
+        "da": "Frekvens",
+        "ru": "Частота",
+        "pl": "Częstotliwość"
       },
       "units": {
         "en": "Hz"

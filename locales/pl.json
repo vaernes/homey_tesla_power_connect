@@ -1,0 +1,11 @@
+{
+    "pair": {
+        "twc": {
+            "title": "Ustaw adres IP swojego Tesla Wall Connector Gen 3",
+            "subtitle": "Zaleca się przypisanie adresu MAC do adresu IP w routerze.",
+            "label": "Adres IP Tesla Wall Connector",
+            "submit": "Wyślij",
+            "error": "Nieprawidłowy adres IP"
+        }
+    }
+}

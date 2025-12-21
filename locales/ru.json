@@ -1,0 +1,11 @@
+{
+    "pair": {
+        "twc": {
+            "title": "Установите IP-адрес вашего Tesla Wall Connector Gen 3",
+            "subtitle": "Рекомендуется привязать MAC- и IP-адрес в вашем роутере.",
+            "label": "IP-адрес Tesla Wall Connector",
+            "submit": "Отправить",
+            "error": "Неверный IP"
+        }
+    }
+}

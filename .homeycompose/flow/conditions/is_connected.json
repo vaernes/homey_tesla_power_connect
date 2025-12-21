@@ -1,19 +1,49 @@
 {
-    "id":"is_connected",
-    "title": {
-      "en": "!{{Is|Isn't}} connected"
-    },
-    "titleFormatted": {
-      "en": "!{{Is|Isn't}} connected"
-    },
-    "hint": {
-      "en": "Checks if the charger is connected to the vehical"
-    },
-    "args": [
-        {
-            "type": "device",
-            "name": "device",
-            "filter": "driver_id=twc"
-        }
-    ]
-  }
+  "id": "is_connected",
+  "title": {
+    "en": "!{{Is|Isn't}} connected",
+    "nl": "!{{Is|Is niet}} verbonden",
+    "de": "!{{Ist|Ist nicht}} verbunden",
+    "fr": "!{{Est|N'est pas}} connecté",
+    "it": "!{{Collegato|Non è collegato}}",
+    "sv": "!{{Är|Är inte}} ansluten",
+    "no": "!{{Er|Er ikke}} tilkoblet",
+    "es": "!{{Está|No está}} conectado",
+    "da": "!{{Er|Er ikke}} tilsluttet",
+    "ru": "!{{Подключен|Не подключен}}",
+    "pl": "!{{Połączony|Niepołączony}}"
+  },
+  "titleFormatted": {
+    "en": "!{{Is|Isn't}} connected",
+    "nl": "!{{Is|Is niet}} verbonden",
+    "de": "!{{Ist|Ist nicht}} verbunden",
+    "fr": "!{{Est|N'est pas}} connecté",
+    "it": "!{{Collegato|Non è collegato}}",
+    "sv": "!{{Är|Är inte}} ansluten",
+    "no": "!{{Er|Er ikke}} tilkoblet",
+    "es": "!{{Está|No está}} conectado",
+    "da": "!{{Er|Er ikke}} tilsluttet",
+    "ru": "!{{Подключен|Не подключен}}",
+    "pl": "!{{Połączony|Niepołączony}}"
+  },
+  "hint": {
+    "en": "Checks if the charger is connected to the vehical",
+    "nl": "Controleert of de lader is verbonden met het voertuig",
+    "de": "Prüft, ob das Ladegerät mit dem Fahrzeug verbunden ist",
+    "fr": "Vérifie si le chargeur est connecté au véhicule",
+    "it": "Controlla se il caricabatterie è collegato al veicolo",
+    "sv": "Kontrollerar om laddaren är ansluten till fordonet",
+    "no": "Sjekker om laderen er tilkoblet kjøretøyet",
+    "es": "Comprueba si el cargador está conectado al vehículo",
+    "da": "Kontrollerer, om opladeren er tilsluttet køretøjet",
+    "ru": "Проверяет, подключено ли зарядное устройство к автомобилю",
+    "pl": "Sprawdza, czy ładowarka jest podłączona do pojazdu"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=twc"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+    "pair": {
+        "twc": {
+            "title": "Vennligst oppgi IP-adressen til din Tesla Wall Connector Gen 3",
+            "subtitle": "Anbefales å binde MAC- og IP-adressen i ruteren din.",
+            "label": "Tesla Wall Connector IP",
+            "submit": "Send",
+            "error": "Feil IP"
+        }
+    }
+}

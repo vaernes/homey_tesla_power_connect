@@ -1,0 +1,11 @@
+{
+    "pair": {
+        "twc": {
+            "title": "Stel het IP-adres van je Tesla Wall Connector Gen 3 in",
+            "subtitle": "Het wordt aanbevolen om het IP-adres te binden aan het MAC-adres in je router.",
+            "label": "Tesla Wall Connector IP",
+            "submit": "Verzenden",
+            "error": "Onjuist IP"
+        }
+    }
+}

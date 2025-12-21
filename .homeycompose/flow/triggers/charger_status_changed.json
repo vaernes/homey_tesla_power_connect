@@ -1,20 +1,63 @@
 {
     "id": "charger_status_changed",
     "title": {
-        "en": "Charger status changed"
+        "en": "Charger status changed",
+        "nl": "Laderstatus gewijzigd",
+        "de": "Ladestatus geändert",
+        "fr": "Statut du chargeur modifié",
+        "it": "Stato caricabatterie cambiato",
+        "sv": "Laddarstatus ändrad",
+        "no": "Laderstatus endret",
+        "es": "Estado del cargador modificado",
+        "da": "Ladestatus ændret",
+        "ru": "Статус зарядного устройства изменен",
+        "pl": "Status ładowarki uległ zmianie"
     },
     "titleFormatted": {
-        "en": "Charger status changed"
+        "en": "Charger status changed",
+        "nl": "Laderstatus gewijzigd",
+        "de": "Ladestatus geändert",
+        "fr": "Statut du chargeur modifié",
+        "it": "Stato caricabatterie cambiato",
+        "sv": "Laddarstatus ändrad",
+        "no": "Laderstatus endret",
+        "es": "Estado del cargador modificado",
+        "da": "Ladestatus ændret",
+        "ru": "Статус зарядного устройства изменен",
+        "pl": "Status ładowarki uległ zmianie"
     },
     "tokens": [
         {
             "name": "status",
             "type": "string",
             "title": {
-                "en": "Status"
+                "en": "Status",
+                "nl": "Status",
+                "de": "Status",
+                "fr": "État",
+                "it": "Stato",
+                "sv": "Status",
+                "no": "Status",
+                "es": "Estado",
+                "da": "Status",
+                "ru": "Статус",
+                "pl": "Status"
             },
-            "example": { "en": "Charging,Connected,Disconnected" }
-        }],
+            "example": {
+                "en": "Charging,Connected,Disconnected",
+                "nl": "Laden,Verbonden,Verbinding verbroken",
+                "de": "Laden,Verbunden,Getrennt",
+                "fr": "En charge,Connecté,Déconnecté",
+                "it": "In carica,Collegato,Disconnesso",
+                "sv": "Laddar,Ansluten,Frånkopplad",
+                "no": "Lader,Tilkoblet,Frakoblet",
+                "es": "Cargando,Conectado,Desconectado",
+                "da": "Oplader,Tilsluttet,Afbrudt",
+                "ru": "Зарядка,Подключен,Отключен",
+                "pl": "Ładowanie,Połączony,Odłączony"
+            }
+        }
+    ],
     "args": [
         {
             "type": "device",
