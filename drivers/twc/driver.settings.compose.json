@@ -323,7 +323,7 @@
                 }
             },
             {
-                "id": "uptime_s",
+                "id": "vitals_uptime_s",
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
@@ -570,7 +570,7 @@
                 }
             },
             {
-                "id": "uptime_s",
+                "id": "lifetime_uptime_s",
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {

@@ -337,7 +337,7 @@ export class TWCDevice extends Homey.Device {
           charge_starts: life.getChargeStarts(),
           enrgy_wh: this.humanizeEnergy(energyWh),
           connector_cycles: life.getConnectorCycles(),
-          uptime_s: this.humanizeDuration(life.getUptimeS()),
+          lifetime_uptime_s: this.humanizeDuration(life.getUptimeS()),
           charging_time_s: this.humanizeDuration(life.getChargingTimeS()),
         });
         await this.setCapabilityValue('meter_power.total', totalKwh).catch(this.error);
@@ -431,7 +431,7 @@ export class TWCDevice extends Homey.Device {
         // 3. Update Vitals Settings
         await this.setSettings({
           session_s: this.humanizeDuration(vit.getSessionS()),
-          uptime_s: this.humanizeDuration(vit.getUptimeS()),
+          vitals_uptime_s: this.humanizeDuration(vit.getUptimeS()),
           evse_state: vit.getEvseState().toString(),
           config_status: vit.getConfigStatus().toString(),
           current_alerts: this.arrayToString(vit.getCurrentAlerts()),
