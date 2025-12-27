@@ -7,30 +7,46 @@ export class TWCDriver extends Homey.Driver {
 
   async onInit() {
     this.log('Tesla Wall Connector driver has been initialized');
+
+    // Check for already discovered devices immediately on startup
+    const strategy = this.getDiscoveryStrategy();
+    const results = strategy.getDiscoveryResults();
+    this.log('onInit: Current Discovery Results:', JSON.stringify(results, null, 2));
+  }
+
+  async onDiscovery(discoveryResult: any) {
+    this.log('onDiscovery called', JSON.stringify(discoveryResult, null, 2));
+    return discoveryResult;
   }
 
   async onPair(session: PairSession) {
+    this.log('onPair called');
 
+    this.log('Registering list_devices handler...');
     session.setHandler('list_devices', async () => {
-      this.log('pair: list_devices');
+      this.log('pair: list_devices handler triggered');
 
       const devices = [];
       const seenIds = new Set();
 
       // 1. Handle discovery results
       const discoveryStrategy = this.getDiscoveryStrategy();
-      let discoveryResults = discoveryStrategy.getDiscoveryResults();
+      this.log('discoveryStrategy initialized');
+
       let attempts = 0;
+      let discoveryResults = discoveryStrategy.getDiscoveryResults();
+
+      this.log('Initial discoveryResults type:', typeof discoveryResults);
+      this.log('Initial discoveryResults:', JSON.stringify(discoveryResults, null, 2));
 
       // Wait if no results found
-      while (Object.keys(discoveryResults).length === 0 && attempts < 10) {
-        this.log(`No devices found yet, waiting... (Attempt ${attempts + 1}/10)`);
-        await new Promise(resolve => setTimeout(resolve, 3000));
+      while (Object.keys(discoveryResults).length === 0 && attempts < 15) {
+        this.log(`No devices found yet, waiting... (Attempt ${attempts + 1}/15)`);
+        await new Promise(resolve => setTimeout(resolve, 2000));
         discoveryResults = discoveryStrategy.getDiscoveryResults();
+        this.log(`Attempt ${attempts + 1} discoveryResults:`, JSON.stringify(discoveryResults, null, 2));
         attempts++;
       }
-
-      this.log('discoveryResults', JSON.stringify(discoveryResults, null, 2));
 
       const resultsList = Array.isArray(discoveryResults) ? discoveryResults : Object.values(discoveryResults);
 

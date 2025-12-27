@@ -192,6 +192,7 @@ export class TWCDevice extends Homey.Device {
   }
 
   onDiscoveryResult(discoveryResult: Homey.DiscoveryResult): boolean {
+    this.log('onDiscoveryResult', discoveryResult);
     const result = discoveryResult as any;
     const discoveredIp = result.address;
     const currentIp = this.api?.address;
