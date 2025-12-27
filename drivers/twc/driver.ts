@@ -42,6 +42,16 @@ export class TWCDriver extends Homey.Driver {
             continue;
           }
 
+          // Filter by model if available (exclude Powerwalls etc.)
+          if (discoveryResult.txt && discoveryResult.txt.model) {
+            const model = discoveryResult.txt.model.toLowerCase();
+            // Simple check: 'wc' is present in both 'wc3' (Gen 3) and 'uwc' (Universal)
+            if (!model.includes('wc')) {
+              this.log(`Skipping non-Wall Connector device (model: ${model}) at ${discoveryResult.address}`);
+              continue;
+            }
+          }
+
           this.log(`Probing discovered device at ${discoveryResult.address}...`);
           const api = new TWC(discoveryResult.address);
           const result = await api.getVersion();
