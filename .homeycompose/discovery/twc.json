@@ -4,5 +4,5 @@
         "name": "tedapi",
         "protocol": "tcp"
     },
-    "id": "{{name}}"
+    "id": "{{address}}"
 }

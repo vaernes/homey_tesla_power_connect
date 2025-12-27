@@ -728,9 +728,6 @@
           }
         },
         {
-          "id": "ip_view"
-        },
-        {
           "id": "add_devices",
           "template": "add_devices"
         }
@@ -1859,7 +1856,7 @@
         "name": "tedapi",
         "protocol": "tcp"
       },
-      "id": "{{name}}"
+      "id": "{{address}}"
     }
   }
 }

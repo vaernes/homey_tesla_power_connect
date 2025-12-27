@@ -174,15 +174,43 @@ export class TWCDevice extends Homey.Device {
 
   onDiscoveryResult(discoveryResult: Homey.DiscoveryResult): boolean {
     const result = discoveryResult as any;
-    const newIp = result.address;
+    const discoveredIp = result.address;
     const currentIp = this.api?.address;
 
-    if (newIp && newIp !== currentIp) {
-      this.log(`Device IP changed from ${currentIp} to ${newIp}. Updating...`);
-      this.api = new TWC(newIp);
-      this.setStoreValue('ip', newIp).catch(this.error);
+    if (discoveredIp && discoveredIp !== currentIp) {
+      this.log(`Potential IP change detected from ${currentIp} to ${discoveredIp}. Verifying device identity...`);
+      this.verifyAndUpdateIp(discoveredIp).catch(err => this.error(`Failed to verify IP update: ${err.message}`));
     }
     return true;
+  }
+
+  private async verifyAndUpdateIp(newIp: string) {
+    try {
+      const tempApi = new TWC(newIp);
+      const version = await tempApi.getVersion();
+
+      if (!version) {
+        throw new Error('Could not fetch version from discovered device.');
+      }
+
+      const discoveredSerial = version.getSerialNumber();
+      const storedSerial = this.getSetting('serial_number'); // Retrieve stored serial
+
+      if (discoveredSerial && storedSerial && discoveredSerial === storedSerial) {
+        this.log(`Device identity verified (Serial: ${discoveredSerial}). Updating IP to ${newIp}.`);
+
+        // Update API and Store
+        this.api = new TWC(newIp);
+        await this.setStoreValue('ip', newIp);
+
+        // Optionally update settings to reflect new network state immediately
+        this.getChargerState().catch(this.error);
+      } else {
+        this.log(`IP Verification Failed: Serial Number Mismatch. Discovered: ${discoveredSerial}, Expected: ${storedSerial}. Ignoring update.`);
+      }
+    } catch (err: any) {
+      this.error(`Error during IP verification for ${newIp}`, err);
+    }
   }
 
   arrayToString(arr: string[]): string {

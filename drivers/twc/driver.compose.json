@@ -484,9 +484,6 @@
       }
     },
     {
-      "id": "ip_view"
-    },
-    {
       "id": "add_devices",
       "template": "add_devices"
     }
