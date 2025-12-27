@@ -121,5 +121,8 @@
   },
   "3.0.0": {
     "en": "added experimental support for mdns"
+  },
+  "3.0.1": {
+    "en": "Added better handling for already added devices."
   }
 }
