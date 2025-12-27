@@ -118,5 +118,8 @@
   },
   "2.0.1": {
     "en": "Added translation with the help of Gemini 3"
+  },
+  "3.0.0": {
+    "en": "added experimental support for mdns"
   }
 }
