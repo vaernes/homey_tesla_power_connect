@@ -130,5 +130,8 @@
   },
   "3.0.3": {
     "en": "Added mDns support"
+  },
+  "3.1.0": {
+    "en": "Added missing settings from the TWC"
   }
 }
