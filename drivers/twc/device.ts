@@ -194,7 +194,8 @@ export class TWCDevice extends Homey.Device {
       }
 
       const discoveredSerial = version.getSerialNumber();
-      const storedSerial = this.getSetting('serial_number'); // Retrieve stored serial
+      // Use data.id (immutable from pairing) as primary source, fallback to settings
+      const storedSerial = this.getData().id || this.getSetting('serial_number');
 
       if (discoveredSerial && storedSerial && discoveredSerial === storedSerial) {
         this.log(`Device identity verified (Serial: ${discoveredSerial}). Updating IP to ${newIp}.`);
