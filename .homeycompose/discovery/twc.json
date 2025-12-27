@@ -1,0 +1,8 @@
+{
+    "type": "mdns-sd",
+    "mdns-sd": {
+        "name": "tedapi",
+        "protocol": "tcp"
+    },
+    "id": "{{name}}"
+}

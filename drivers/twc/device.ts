@@ -37,7 +37,16 @@ export class TWCDevice extends Homey.Device {
   }
 
   async onInit() {
-    this.api = new TWC(this.getData().ip);
+    let address = this.getData().ip;
+    const storedAddress = this.getStoreValue('ip');
+    if (storedAddress) {
+      address = storedAddress;
+    } else {
+      // Initialize store with data ip if missing
+      await this.setStoreValue('ip', address).catch(this.error);
+    }
+
+    this.api = new TWC(address);
     this.getChargerState().catch(this.error);
     const settings = this.getSettings();
     this.cleanupPolling();
@@ -52,11 +61,33 @@ export class TWCDevice extends Homey.Device {
       'evcharger_charging_state',
       'evse_state',
       'measure_evse_state',
+      'measure_twc_power.vehicle',
+      'measure_current.vehicle',
+      'measure_current.a',
+      'measure_current.b',
+      'measure_current.c',
+      'measure_current.n',
+      'measure_twc_voltage.a',
+      'measure_twc_voltage.b',
+      'measure_twc_voltage.c',
+      'measure_temperature.handle',
+      'measure_temperature.mcu',
+      'measure_temperature.pcba',
+      'measure_temperature.charger',
+      'measure_twc_voltage.grid',
+      'measure_frequency.grid',
+      'measure_twc_voltage.relay_coil_v',
+      'measure_twc_voltage.prox_v',
+      'measure_twc_voltage.pilot_high_v',
+      'measure_twc_voltage.pilot_low_v',
+      'alarm_twc_state.contactor'
     ]);
 
     this.registerFlows();
     this._charging_status_changed = this.homey.flow.getDeviceTriggerCard('charger_status_changed');
   }
+
+
 
   private async ensureCapabilities(capabilities: string[]) {
     for (const cap of capabilities) {
@@ -141,7 +172,20 @@ export class TWCDevice extends Homey.Device {
     return false;
   }
 
-  toString(arr: string[]): string {
+  onDiscoveryResult(discoveryResult: Homey.DiscoveryResult): boolean {
+    const result = discoveryResult as any;
+    const newIp = result.address;
+    const currentIp = this.api?.address;
+
+    if (newIp && newIp !== currentIp) {
+      this.log(`Device IP changed from ${currentIp} to ${newIp}. Updating...`);
+      this.api = new TWC(newIp);
+      this.setStoreValue('ip', newIp).catch(this.error);
+    }
+    return true;
+  }
+
+  arrayToString(arr: string[]): string {
     try {
       if (arr && arr.length !== 0) {
         return arr.join(', ');
@@ -339,7 +383,7 @@ export class TWCDevice extends Homey.Device {
           uptime_s: this.toHoursAndMinutes(vit.getUptimeS()),
           evse_state: vit.getEvseState().toString(),
           config_status: vit.getConfigStatus().toString(),
-          current_alerts: this.toString(vit.getCurrentAlerts()),
+          current_alerts: this.arrayToString(vit.getCurrentAlerts()),
         }).catch((e) => this.error('Error setting Vitals settings', e));
 
       }

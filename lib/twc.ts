@@ -70,7 +70,6 @@ export class TWC {
         if (res.ok) {
           return res.json();
         }
-        console.error(res.status, res.statusText);
         throw Error(`${res.status} - ${res.statusText}`);
 
       })
