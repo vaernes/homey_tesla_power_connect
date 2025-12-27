@@ -1,12 +1,1 @@
-{
-    "pair": {
-        "twc": {
-            "title": "Imposta l'indirizzo IP del tuo Tesla Wall Connector Gen 3",
-            "subtitle": "Si consiglia di associare l'indirizzo MAC e IP nel router di rete.",
-            "label": "IP del Tesla Wall Connector",
-            "submit": "Invia",
-            "error": "IP errato",
-            "error_device_not_found": "Dispositivo non trovato o timeout"
-        }
-    }
-}
+{}

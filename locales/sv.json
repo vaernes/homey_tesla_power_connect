@@ -1,12 +1,1 @@
-{
-    "pair": {
-        "twc": {
-            "title": "Ange IP-adressen för din Tesla Wall Connector Gen 3",
-            "subtitle": "Rekommenderas att binda MAC- och IP-adressen i din router.",
-            "label": "Tesla Wall Connector IP",
-            "submit": "Skicka",
-            "error": "Felaktig IP",
-            "error_device_not_found": "Enheten hittades inte eller tidsgränsen överskreds"
-        }
-    }
-}
+{}
