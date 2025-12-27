@@ -1132,6 +1132,25 @@
                 "pl": "Aktualne alerty",
                 "ko": "현재 알림"
               }
+            },
+            {
+              "id": "evse_not_ready_reasons",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "Not Ready Reasons (codes)",
+                "nl": "Niet gereed redenen (codes)",
+                "de": "Nicht bereit Gründe (Codes)",
+                "fr": "Raisons de non-disponibilité (codes)",
+                "it": "Motivi di non disponibilità (codici)",
+                "sv": "Orsaker till ej redo (koder)",
+                "no": "Årsaker til ikke klar (koder)",
+                "es": "Razones de no disponibilidad (códigos)",
+                "da": "Årsager til ikke klar (koder)",
+                "ru": "Причины неготовности (коды)",
+                "pl": "Powody braku gotowości (kody)",
+                "ko": "준비되지 않은 이유 (코드)"
+              }
             }
           ]
         },
@@ -1378,6 +1397,44 @@
                 "ru": "Версия прошивки",
                 "pl": "Wersja oprogramowania układowego",
                 "ko": "펌웨어 버전"
+              }
+            },
+            {
+              "id": "git_branch",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "Git Branch",
+                "nl": "Git branch",
+                "de": "Git-Zweig",
+                "fr": "Branche Git",
+                "it": "Ramo Git",
+                "sv": "Git-branch",
+                "no": "Git-gren",
+                "es": "Rama Git",
+                "da": "Git-gren",
+                "ru": "Ветка Git",
+                "pl": "Gałąź Git",
+                "ko": "Git 브랜치"
+              }
+            },
+            {
+              "id": "web_service",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "Web Service",
+                "nl": "Webservice",
+                "de": "Webservice",
+                "fr": "Service Web",
+                "it": "Servizio Web",
+                "sv": "Webbtjänst",
+                "no": "Webtjeneste",
+                "es": "Servicio Web",
+                "da": "Webtjeneste",
+                "ru": "Веб-сервис",
+                "pl": "Usługa internetowa",
+                "ko": "웹 서비스"
               }
             },
             {

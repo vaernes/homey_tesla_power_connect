@@ -25,72 +25,42 @@ export class lifetime {
   }
 
   public getContactorCycles(): string {
-    if (this.connector_cycles === undefined) {
-      return '';
-    }
-    return this.connector_cycles.toString();
+    return (this.contactor_cycles || 0).toString();
   }
 
   public getContactorCyclesLoaded(): string {
-    if (this.contactor_cycles_loaded === undefined) {
-      return '';
-    }
-    return this.contactor_cycles_loaded.toString();
+    return (this.contactor_cycles_loaded || 0).toString();
   }
 
   public getAlertCount(): string {
-    if (this.alert_count === undefined) {
-      return '';
-    }
-    return this.alert_count.toString();
+    return (this.alert_count || 0).toString();
   }
 
   public getThermalFoldbacks(): string {
-    if (this.thermal_foldbacks === undefined) {
-      return '';
-    }
-    return this.thermal_foldbacks.toString();
+    return (this.thermal_foldbacks || 0).toString();
   }
 
   public getAvgStartupTemp(): string {
-    if (this.avg_startup_temp === undefined) {
-      return '';
-    }
-    return this.avg_startup_temp.toString();
+    return (this.avg_startup_temp || 0).toString();
   }
 
   public getChargeStarts(): string {
-    if (this.charge_starts === undefined) {
-      return '';
-    }
-    return this.charge_starts.toString();
+    return (this.charge_starts || 0).toString();
   }
 
   public getEnergyWh(): number {
-    if (this.energy_wh === undefined) {
-      return 0;
-    }
-    return this.energy_wh;
+    return this.energy_wh || 0;
   }
 
   public getConnectorCycles(): string {
-    if (this.connector_cycles === undefined) {
-      return '';
-    }
-    return this.connector_cycles.toString();
+    return (this.connector_cycles || 0).toString();
   }
 
   public getUptimeS(): number {
-    if (this.uptime_s === undefined) {
-      return 0;
-    }
-    return this.uptime_s;
+    return this.uptime_s || 0;
   }
 
   public getChargingTimeS(): number {
-    if (this.charging_time_s === undefined) {
-      return 0;
-    }
-    return this.charging_time_s;
+    return this.charging_time_s || 0;
   }
 }

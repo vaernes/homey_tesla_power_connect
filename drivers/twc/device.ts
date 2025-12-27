@@ -125,12 +125,31 @@ export class TWCDevice extends Homey.Device {
     }
   }
 
-  toHoursAndMinutes(totalSeconds: number): string {
-    const totalMinutes = Math.floor(totalSeconds / 60);
+  humanizeDuration(totalSeconds: number): string {
+    const months = Math.floor(totalSeconds / 2592000); // 30 days
+    const weeks = Math.floor((totalSeconds % 2592000) / 604800);
+    const days = Math.floor((totalSeconds % 604800) / 86400);
+    const hours = Math.floor((totalSeconds % 86400) / 3600);
+    const minutes = Math.floor((totalSeconds % 3600) / 60);
     const seconds = totalSeconds % 60;
-    const hours = Math.floor(totalMinutes / 60);
-    const minutes = totalMinutes % 60;
-    return `${hours}h ${minutes}m ${seconds}s`;
+
+    const parts = [];
+    if (months > 0) parts.push(`${months}mo`);
+    if (weeks > 0) parts.push(`${weeks}w`);
+    if (days > 0) parts.push(`${days}d`);
+    if (hours > 0) parts.push(`${hours}h`);
+    if (parts.length < 3 && minutes > 0) parts.push(`${minutes}m`);
+    if (parts.length === 0) parts.push(`${seconds}s`);
+
+    return parts.join(' ') || '0s';
+  }
+
+  humanizeEnergy(wh: number): string {
+    if (wh < 1000) return `${wh} Wh`;
+    const kwh = wh / 1000;
+    if (kwh < 1000) return `${kwh.toFixed(1)} kWh`;
+    const mwh = kwh / 1000;
+    return `${mwh.toFixed(2)} MWh`;
   }
 
   getVoltageAdjustment(): number {
@@ -307,7 +326,8 @@ export class TWCDevice extends Homey.Device {
     try {
       const life = await this.api.getLifetime();
       if (life) {
-        const total = life.getEnergyWh() / 1000;
+        const energyWh = life.getEnergyWh();
+        const totalKwh = energyWh / 1000;
         await this.setSettings({
           contactor_cycles: life.getContactorCycles(),
           contactor_cycles_loaded: life.getContactorCyclesLoaded(),
@@ -315,14 +335,14 @@ export class TWCDevice extends Homey.Device {
           thermal_foldbacks: life.getThermalFoldbacks(),
           avg_startup_temp: life.getAvgStartupTemp(),
           charge_starts: life.getChargeStarts(),
-          enrgy_wh: `${total.toString()}kWh`,
+          enrgy_wh: this.humanizeEnergy(energyWh),
           connector_cycles: life.getConnectorCycles(),
-          uptime_s: this.toHoursAndMinutes(life.getUptimeS()),
-          charging_time_s: this.toHoursAndMinutes(life.getChargingTimeS()),
+          uptime_s: this.humanizeDuration(life.getUptimeS()),
+          charging_time_s: this.humanizeDuration(life.getChargingTimeS()),
         });
-        await this.setCapabilityValue('meter_power.total', total).catch(this.error);
+        await this.setCapabilityValue('meter_power.total', totalKwh).catch(this.error);
         if (this.hasCapability('meter_power')) {
-          await this.setCapabilityValue('meter_power', total).catch(this.error);
+          await this.setCapabilityValue('meter_power', totalKwh).catch(this.error);
         }
       }
     } catch (e) {
@@ -335,8 +355,10 @@ export class TWCDevice extends Homey.Device {
       if (ver) {
         await this.setSettings({
           firmware_version: ver.getFirmwareVersion(),
+          git_branch: ver.getGitBranch(),
           part_number: ver.getPartNumber(),
           serial_number: ver.getSerialNumber(),
+          web_service: ver.getWebService(),
         });
       }
     } catch (e) {
@@ -408,11 +430,12 @@ export class TWCDevice extends Homey.Device {
 
         // 3. Update Vitals Settings
         await this.setSettings({
-          session_s: this.toHoursAndMinutes(vit.getSessionS()),
-          uptime_s: this.toHoursAndMinutes(vit.getUptimeS()),
+          session_s: this.humanizeDuration(vit.getSessionS()),
+          uptime_s: this.humanizeDuration(vit.getUptimeS()),
           evse_state: vit.getEvseState().toString(),
           config_status: vit.getConfigStatus().toString(),
           current_alerts: this.arrayToString(vit.getCurrentAlerts()),
+          evse_not_ready_reasons: this.arrayToString(vit.getEvseNotReadyReasons() as any),
         }).catch((e) => this.error('Error setting Vitals settings', e));
 
       }

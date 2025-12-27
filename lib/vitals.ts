@@ -27,6 +27,7 @@ export class vitals {
   config_status!: number;
   evse_state!: number;
   current_alerts!: string[];
+  evse_not_ready_reasons!: number[];
 
   public constructor(json: any) {
     if (!json) return;
@@ -56,181 +57,111 @@ export class vitals {
     this.config_status = json.config_status;
     this.evse_state = json.evse_state;
     this.current_alerts = json.current_alerts;
+    this.evse_not_ready_reasons = json.evse_not_ready_reasons;
+  }
+
+  public getEvseNotReadyReasons(): number[] {
+    return this.evse_not_ready_reasons || [];
   }
 
   public getContactorClosed(): boolean {
-    if (this.contactor_closed === undefined) {
-      return false;
-    }
-    return this.contactor_closed;
+    return !!this.contactor_closed;
   }
 
   public getVehicleConnected(): boolean {
-    if (this.vehicle_connected === undefined) {
-      return false;
-    }
-    return this.vehicle_connected;
+    return !!this.vehicle_connected;
   }
 
   public getSessionS(): number {
-    if (this.session_s === undefined) {
-      return 0;
-    }
-    return this.session_s;
+    return this.session_s || 0;
   }
 
   public getGridV(): number {
-    if (this.grid_v === undefined) {
-      return 0;
-    }
-    return this.grid_v;
+    return this.grid_v || 0;
   }
 
   public getGridHz(): number {
-    if (this.grid_hz === undefined) {
-      return 0;
-    }
-    return this.grid_hz;
+    return this.grid_hz || 0;
   }
 
   public getVehicleCurrentA(): number {
-    if (this.vehicle_current_a === undefined) {
-      return 0;
-    }
-    return this.vehicle_current_a;
+    return this.vehicle_current_a || 0;
   }
 
   public getCurrentA_a(): number {
-    if (this.currentA_a === undefined) {
-      return 0;
-    }
-    return this.currentA_a;
+    return this.currentA_a || 0;
   }
 
   public getCurrentB_a(): number {
-    if (this.currentB_a === undefined) {
-      return 0;
-    }
-    return this.currentB_a;
+    return this.currentB_a || 0;
   }
 
   public getCurrentC_a(): number {
-    if (this.currentC_a === undefined) {
-      return 0;
-    }
-    return this.currentC_a;
+    return this.currentC_a || 0;
   }
 
   public getCurrentN_a(): number {
-    if (this.currentN_a === undefined) {
-      return 0;
-    }
-    return this.currentN_a;
+    return this.currentN_a || 0;
   }
 
   public getVoltageA_v(): number {
-    if (this.voltageA_v === undefined) {
-      return 0;
-    }
-    return this.voltageA_v;
+    return this.voltageA_v || 0;
   }
 
   public getVoltageB_v(): number {
-    if (this.voltageB_v === undefined) {
-      return 0;
-    }
-    return this.voltageB_v;
+    return this.voltageB_v || 0;
   }
 
   public getVoltageC_v(): number {
-    if (this.voltageC_v === undefined) {
-      return 0;
-    }
-    return this.voltageC_v;
+    return this.voltageC_v || 0;
   }
 
   public getRelayCoilV(): number {
-    if (this.relay_coil_v === undefined) {
-      return 0;
-    }
-    return this.relay_coil_v;
+    return this.relay_coil_v || 0;
   }
 
   public getPcbaTempC(): number {
-    if (this.pcba_temp_c === undefined) {
-      return 0;
-    }
-    return this.pcba_temp_c;
+    return this.pcba_temp_c || 0;
   }
 
   public getHandleTempC(): number {
-    if (this.handle_temp_c === undefined) {
-      return 0;
-    }
-    return this.handle_temp_c;
+    return this.handle_temp_c || 0;
   }
 
   public getMcuTempC(): number {
-    if (this.mcu_temp_c === undefined) {
-      return 0;
-    }
-    return this.mcu_temp_c;
+    return this.mcu_temp_c || 0;
   }
 
   public getUptimeS(): number {
-    if (this.uptime_s === undefined) {
-      return 0;
-    }
-    return this.uptime_s;
+    return this.uptime_s || 0;
   }
 
   public getInputThermopileUV(): number {
-    if (this.input_thermopile_uv === undefined) {
-      return 0;
-    }
-    return this.input_thermopile_uv;
+    return this.input_thermopile_uv || 0;
   }
 
   public getProxV(): number {
-    if (this.prox_v === undefined) {
-      return 0;
-    }
-    return this.prox_v;
+    return this.prox_v || 0;
   }
 
   public getPilotHighV(): number {
-    if (this.pilot_high_v === undefined) {
-      return 0;
-    }
-    return this.pilot_high_v;
+    return this.pilot_high_v || 0;
   }
 
   public getPilotLowV(): number {
-    if (this.pilot_low_v === undefined) {
-      return 0;
-    }
-    return this.pilot_low_v;
+    return this.pilot_low_v || 0;
   }
 
   public getSessionEnergyWh(): number {
-    if (this.session_energy_wh === undefined) {
-      return 0;
-    }
-    return this.session_energy_wh;
+    return this.session_energy_wh || 0;
   }
 
   public getConfigStatus(): number {
-    if (this.config_status === undefined) {
-      return 0;
-    }
-    return this.config_status;
+    return this.config_status || 0;
   }
 
   public getEvseState(): number {
-    if (this.evse_state === undefined) {
-      return 0;
-    }
-    return this.evse_state;
+    return this.evse_state || 0;
   }
 
   public getEvseStateV2(): EVSEState | undefined {
@@ -241,9 +172,6 @@ export class vitals {
   }
 
   public getCurrentAlerts(): string[] {
-    if (this.current_alerts === undefined) {
-      return [];
-    }
-    return this.current_alerts;
+    return this.current_alerts || [];
   }
 }

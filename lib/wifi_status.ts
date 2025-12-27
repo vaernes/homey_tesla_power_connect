@@ -21,58 +21,34 @@ export class wifi_status {
   }
 
   public getWifiSsid(): string {
-    if (this.wifi_ssid === undefined) {
-      return '';
-    }
-    return this.wifi_ssid.toString();
+    return (this.wifi_ssid || '').toString();
   }
 
   public getWifiSignalStrength(): string {
-    if (this.wifi_signal_strength === undefined) {
-      return '';
-    }
-    return this.wifi_signal_strength.toString();
+    return (this.wifi_signal_strength || 0).toString();
   }
 
   public getWifiRssi(): string {
-    if (this.wifi_rssi === undefined) {
-      return '';
-    }
-    return this.wifi_rssi.toString();
+    return (this.wifi_rssi || 0).toString();
   }
 
   public getWifiSnr(): string {
-    if (this.wifi_snr === undefined) {
-      return '';
-    }
-    return this.wifi_snr.toString();
+    return (this.wifi_snr || 0).toString();
   }
 
   public getWifiConnected(): boolean {
-    if (this.wifi_connected === undefined) {
-      return false;
-    }
-    return this.wifi_connected;
+    return !!this.wifi_connected;
   }
 
   public getWifiInfraIp(): string {
-    if (this.wifi_infra_ip === undefined) {
-      return '';
-    }
-    return this.wifi_infra_ip.toString();
+    return (this.wifi_infra_ip || '').toString();
   }
 
   public getInternet(): boolean {
-    if (this.internet === undefined) {
-      return false;
-    }
-    return this.internet;
+    return !!this.internet;
   }
 
   public getWifiMac(): string {
-    if (this.wifi_mac === undefined) {
-      return '';
-    }
-    return this.wifi_mac.toString();
+    return (this.wifi_mac || '').toString();
   }
 }

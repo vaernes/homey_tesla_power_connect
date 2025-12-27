@@ -308,18 +308,18 @@
                 "type": "label",
                 "value": "Waiting for data",
                 "label": {
-                    "en": "Contactor Cycles",
-                    "nl": "Contactcycli",
-                    "de": "Schützzyklen",
-                    "fr": "Cycles de contacteur",
-                    "it": "Cicli del contattore",
-                    "sv": "Kontaktorscykler",
-                    "no": "Kontaktorsykluser",
-                    "es": "Ciclos del contactor",
-                    "da": "Kontaktorscyklusser",
-                    "ru": "Циклы контактора",
-                    "pl": "Cykle stycznika",
-                    "ko": "접촉기 사이클"
+                    "en": "Session Duration",
+                    "nl": "Sessieduur",
+                    "de": "Sitzungsdauer",
+                    "fr": "Durée de la session",
+                    "it": "Durata della sessione",
+                    "sv": "Sessionslängd",
+                    "no": "Sessjonsvarighet",
+                    "es": "Duración de la sesión",
+                    "da": "Sessionsvarighed",
+                    "ru": "Продолжительность сеанса",
+                    "pl": "Czas trwania sesji",
+                    "ko": "세션 기간"
                 }
             },
             {
@@ -396,6 +396,25 @@
                     "ru": "Текущие оповещения",
                     "pl": "Aktualne alerty",
                     "ko": "현재 알림"
+                }
+            },
+            {
+                "id": "evse_not_ready_reasons",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "EVSE not ready reasons",
+                    "nl": "EVSE niet gereed redenen",
+                    "de": "EVSE nicht bereit Gründe",
+                    "fr": "Raisons de non-disponibilité EVSE",
+                    "it": "Motivi di non disponibilità EVSE",
+                    "sv": "EVSE-orsaker till ej redo",
+                    "no": "EVSE-årsaker til ikke klar",
+                    "es": "Razones de no disponibilidad del EVSE",
+                    "da": "EVSE-årsager til ikke klar",
+                    "ru": "Причины неготовности EVSE",
+                    "pl": "Powody braku gotowości EVSE",
+                    "ko": "EVSE 준비되지 않은 이유"
                 }
             }
         ]
@@ -643,6 +662,44 @@
                     "ru": "Версия прошивки",
                     "pl": "Wersja oprogramowania układowego",
                     "ko": "펌웨어 버전"
+                }
+            },
+            {
+                "id": "git_branch",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "Git Branch",
+                    "nl": "Git branch",
+                    "de": "Git-Zweig",
+                    "fr": "Branche Git",
+                    "it": "Ramo Git",
+                    "sv": "Git-branch",
+                    "no": "Git-gren",
+                    "es": "Rama Git",
+                    "da": "Git-gren",
+                    "ru": "Ветка Git",
+                    "pl": "Gałąź Git",
+                    "ko": "Git 브랜치"
+                }
+            },
+            {
+                "id": "web_service",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "Web Service",
+                    "nl": "Webservice",
+                    "de": "Webservice",
+                    "fr": "Service Web",
+                    "it": "Servizio Web",
+                    "sv": "Webbtjänst",
+                    "no": "Webtjeneste",
+                    "es": "Servicio Web",
+                    "da": "Webtjeneste",
+                    "ru": "Веб-сервис",
+                    "pl": "Usługa internetowa",
+                    "ko": "웹 서비스"
                 }
             },
             {
