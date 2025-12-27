@@ -139,5 +139,8 @@
   },
   "3.1.2": {
     "en": "Added mDns support for easier connection to the device, cleaned up the code and fixed minor bugs, thanks to Gemini 3"
+  },
+  "3.2.0": {
+    "en": "Added mDns support with bug fixes"
   }
 }
