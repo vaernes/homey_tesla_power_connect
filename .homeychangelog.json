@@ -142,5 +142,8 @@
   },
   "3.2.0": {
     "en": "Added mDns support with bug fixes"
+  },
+  "3.2.1": {
+    "en": "Added mDNS support and with a fallback to manual IP if it fails."
   }
 }
