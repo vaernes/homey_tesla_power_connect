@@ -1,19 +1,19 @@
 {
     "pair": {
         "start": {
-            "title": "Connect Wall Connector",
-            "title_short": "Connect",
-            "subtitle": "Choose how you want to connect your device.",
-            "search": "Search for Devices",
-            "manual": "Enter IP Address Manually"
+            "title": "Подключить Wall Connector",
+            "title_short": "Подключить",
+            "subtitle": "Выберите способ подключения устройства.",
+            "search": "Поиск устройств",
+            "manual": "Ввести IP-адрес вручную"
         },
         "twc": {
-            "title": "Please set the IP address of your Tesla Wall Connector Gen 3",
-            "subtitle": "Recommended to 'MAC and IP Address Bind' the IP in your network router.",
-            "label": "Tesla Wall Connector IP",
-            "submit": "Submit",
-            "error": "Incorrect IP",
-            "error_device_not_found": "Device not found or timed out"
+            "title": "Укажите IP-адрес вашего Tesla Wall Connector Gen 3",
+            "subtitle": "Рекомендуется привязать IP-адрес к MAC-адресу в роутере.",
+            "label": "IP Tesla Wall Connector",
+            "submit": "Отправить",
+            "error": "Неверный IP",
+            "error_device_not_found": "Устройство не найдено или истекло время ожидания"
         }
     }
 }

@@ -1,11 +1,11 @@
 {
     "pair": {
         "start": {
-            "title": "Connect Wall Connector",
-            "title_short": "Connect",
-            "subtitle": "Choose how you want to connect your device.",
-            "search": "Search for Devices",
-            "manual": "Enter IP Address Manually"
+            "title": "Wall Connector Verbinden",
+            "title_short": "Verbinden",
+            "subtitle": "Kies hoe je je apparaat wilt verbinden.",
+            "search": "Zoeken naar apparaten",
+            "manual": "IP-adres handmatig invoeren"
         },
         "twc": {
             "title": "Stel het IP-adres van je Tesla Wall Connector Gen 3 in",
