@@ -1,1 +1,19 @@
-{}
+{
+    "pair": {
+        "start": {
+            "title": "Connect Wall Connector",
+            "title_short": "Connect",
+            "subtitle": "Choose how you want to connect your device.",
+            "search": "Search for Devices",
+            "manual": "Enter IP Address Manually"
+        },
+        "twc": {
+            "title": "Indstil venligst IP-adressen på din Tesla Wall Connector Gen 3",
+            "subtitle": "Det anbefales at 'MAC og IP-adresse binde' Tesla Wall Connector's IP i din netværksrouter.",
+            "label": "Tesla Wall Connector IP",
+            "submit": "Indsend",
+            "error": "Forkert IP",
+            "error_device_not_found": "Enhed ikke fundet eller tidsafbrydelse"
+        }
+    }
+}

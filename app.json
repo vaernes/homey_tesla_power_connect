@@ -721,8 +721,17 @@
       },
       "pair": [
         {
+          "id": "start"
+        },
+        {
           "id": "list_devices",
           "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "ip_view",
           "navigation": {
             "next": "add_devices"
           }

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .hy-tmpl-login_credentials-logo {
+            background-image: url("/drivers/twc/assets/images/small.png");
+            width: 100px;
+            height: 100px;
+            background-size: cover;
+            margin: 0 auto 20px auto;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="homey-header">
+        <h1 class="homey-title" data-i18n="pair.twc.title">Enter IP Address</h1>
+        <p class="homey-subtitle" data-i18n="pair.twc.subtitle">Please enter the IP address of your Tesla Wall
+            Connector.</p>
+    </header>
+
+    <div class="hy-tmpl-login_credentials-logo"></div>
+
+    <div class="homey-form-group">
+        <label class="homey-form-label" for="chargerIP" data-i18n="pair.twc.label">Tesla Wall Connector IP</label>
+        <input class="homey-form-input" id="chargerIP" type="text" value="" placeholder="192.168.1.15" />
+    </div>
+
+    <div class="homey-form-group-button">
+        <button id="submit" class="homey-button-primary-full" data-i18n="pair.twc.submit">Submit</button>
+    </div>
+
+    <p id="error" class="homey-form-error" style="display: none; color: red; margin-top: 10px;"></p>
+
+    <script type="text/javascript">
+        Homey.setTitle(Homey.__('pair.twc.title'));
+        // Homey.setSubtitle(Homey.__('pair.twc.subtitle')); // Header handles this now
+
+        const $error = document.getElementById('error');
+        const $submit = document.getElementById('submit');
+        const $input = document.getElementById('chargerIP');
+
+        $submit.addEventListener('click', function () {
+            const address = $input.value;
+            $error.style.display = 'none';
+            $submit.disabled = true;
+
+            // Simple validation
+            if (!address || address.length < 7) {
+                $error.innerHTML = Homey.__('pair.twc.error');
+                $error.style.display = 'block';
+                $submit.disabled = false;
+                return;
+            }
+
+            // Emit to driver (driver.ts implementation)
+            Homey.emit('manual_add', { address }, function (err, device) {
+                if (err) {
+                    $error.innerHTML = err.message || Homey.__('pair.twc.error_device_not_found');
+                    $error.style.display = 'block';
+                    $submit.disabled = false;
+                    return;
+                }
+
+                // Device found! Add it.
+                Homey.addDevice({
+                    name: device.name,
+                    data: device.data,
+                    settings: device.settings
+                }, function (err) {
+                    if (err) {
+                        $error.innerHTML = err.message;
+                        $error.style.display = 'block';
+                        $submit.disabled = false;
+                        return;
+                    }
+                    // Success
+                    Homey.done();
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

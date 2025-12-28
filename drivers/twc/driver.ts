@@ -7,17 +7,9 @@ export class TWCDriver extends Homey.Driver {
 
   async onInit() {
     this.log('Tesla Wall Connector driver has been initialized');
-
-    // Check for already discovered devices immediately on startup
-    const strategy = this.getDiscoveryStrategy();
-    const results = strategy.getDiscoveryResults();
-    this.log('onInit: Current Discovery Results:', JSON.stringify(results, null, 2));
   }
 
-  async onDiscovery(discoveryResult: any) {
-    this.log('onDiscovery called', JSON.stringify(discoveryResult, null, 2));
-    return discoveryResult;
-  }
+
 
   async onPair(session: PairSession) {
     this.log('onPair called');
@@ -31,20 +23,13 @@ export class TWCDriver extends Homey.Driver {
 
       // 1. Handle discovery results
       const discoveryStrategy = this.getDiscoveryStrategy();
-      this.log('discoveryStrategy initialized');
-
-      let attempts = 0;
       let discoveryResults = discoveryStrategy.getDiscoveryResults();
 
-      this.log('Initial discoveryResults type:', typeof discoveryResults);
-      this.log('Initial discoveryResults:', JSON.stringify(discoveryResults, null, 2));
-
       // Wait if no results found
-      while (Object.keys(discoveryResults).length === 0 && attempts < 15) {
-        this.log(`No devices found yet, waiting... (Attempt ${attempts + 1}/15)`);
-        await new Promise(resolve => setTimeout(resolve, 2000));
+      let attempts = 0;
+      while (Object.keys(discoveryResults).length === 0 && attempts < 10) {
+        await new Promise(resolve => setTimeout(resolve, 1000));
         discoveryResults = discoveryStrategy.getDiscoveryResults();
-        this.log(`Attempt ${attempts + 1} discoveryResults:`, JSON.stringify(discoveryResults, null, 2));
         attempts++;
       }
 
@@ -99,6 +84,30 @@ export class TWCDriver extends Homey.Driver {
 
       this.log('Returning devices:', devices);
       return devices;
+    });
+
+    session.setHandler('manual_add', async (data) => {
+      this.log('pair: manual_add', data);
+      const { address } = data;
+      const api = new TWC(address);
+      try {
+        const result = await api.getVersion();
+        if (result && result.getSerialNumber()) {
+          const id = result.getSerialNumber();
+          return {
+            name: `TWC Gen3 (${address})`,
+            data: {
+              id,
+              ip: address,
+            },
+          };
+        } else {
+          throw new Error('Device found but did not return a valid serial number.');
+        }
+      } catch (err: any) {
+        this.error(`Failed to manually add device at ${address}`, err);
+        throw new Error(`Could not connect to device at ${address}: ${err.message}`);
+      }
     });
   }
 }

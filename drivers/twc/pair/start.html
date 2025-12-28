@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .homey-header {
+            margin-bottom: 20px;
+        }
+
+        .option-button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .option-button:hover {
+            background-color: #eee;
+        }
+
+        .option-button.primary {
+            background-color: #00A4E4;
+            /* Homey Primary Blue */
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="homey-header">
+        <h1 class="homey-title" data-i18n="pair.start.title">Connect Wall Connector</h1>
+        <p class="homey-subtitle" data-i18n="pair.start.subtitle">Choose how you want to connect your device.</p>
+    </header>
+
+    <div class="homey-form-group-button">
+        <button id="search" class="homey-button-primary-full option-button primary" data-i18n="pair.start.search">Search
+            for Devices</button>
+        <button id="manual" class="homey-button-secondary-full option-button" data-i18n="pair.start.manual">Enter IP
+            Address Manually</button>
+    </div>
+
+    <script type="text/javascript">
+        Homey.setTitle(Homey.__('pair.start.title_short'));
+
+        document.getElementById('search').addEventListener('click', function () {
+            Homey.showView('list_devices');
+        });
+
+        document.getElementById('manual').addEventListener('click', function () {
+            Homey.showView('ip_view');
+        });
+    </script>
+</body>
+
+</html>

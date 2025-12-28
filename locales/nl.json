@@ -1,1 +1,19 @@
-{}
+{
+    "pair": {
+        "start": {
+            "title": "Connect Wall Connector",
+            "title_short": "Connect",
+            "subtitle": "Choose how you want to connect your device.",
+            "search": "Search for Devices",
+            "manual": "Enter IP Address Manually"
+        },
+        "twc": {
+            "title": "Stel het IP-adres van je Tesla Wall Connector Gen 3 in",
+            "subtitle": "Het wordt aanbevolen om het IP-adres te binden aan het MAC-adres in je router.",
+            "label": "Tesla Wall Connector IP",
+            "submit": "Verzenden",
+            "error": "Onjuist IP",
+            "error_device_not_found": "Apparaat niet gevonden of time-out"
+        }
+    }
+}
