@@ -31,12 +31,13 @@ export class TWCDevice extends Homey.Device {
 
   private cleanupPolling() {
     if (this.pollIntervals) {
-      this.pollIntervals.forEach((interval) => clearInterval(interval));
+      this.pollIntervals.forEach((interval) => clearTimeout(interval));
       this.pollIntervals = [];
     }
   }
 
   async onInit() {
+    this.log(`Initializing TWC device: ${this.getName()}...`);
     let address = this.getData().ip;
     const storedAddress = this.getStoreValue('ip');
     if (storedAddress) {
@@ -47,12 +48,13 @@ export class TWCDevice extends Homey.Device {
     }
 
     this.api = new TWC(address);
-    this.getChargerState().catch(this.error);
+
     const settings = this.getSettings();
+    const interval = settings.polling_interval || 60;
     this.cleanupPolling();
-    this.pollIntervals.push(setInterval(() => {
+    this.pollIntervals.push(setTimeout(() => {
       this.getChargerState();
-    }, settings.polling_interval * 1000));
+    }, 1000));
 
     await this.ensureCapabilities([
       'meter_power.total',
@@ -62,6 +64,8 @@ export class TWCDevice extends Homey.Device {
       'evse_state',
       'measure_evse_state',
       'measure_twc_power.vehicle',
+      'meter_power.vehicle',
+      'alarm_twc_state.evse',
       'measure_current.vehicle',
       'measure_current.a',
       'measure_current.b',
@@ -85,6 +89,7 @@ export class TWCDevice extends Homey.Device {
 
     this.registerFlows();
     this._charging_status_changed = this.homey.flow.getDeviceTriggerCard('charger_status_changed');
+    this.log(`TWC device initialized successfully. Firmware: ${settings.firmware_version || 'unknown'}`);
   }
 
 
@@ -116,7 +121,7 @@ export class TWCDevice extends Homey.Device {
     if (event.changedKeys.indexOf('polling_interval') > -1) {
       this.cleanupPolling();
       this.log(`Change poll interval ${event.newSettings.polling_interval}`);
-      this.pollIntervals.push(setInterval(() => {
+      this.pollIntervals.push(setTimeout(() => {
         this.getChargerState();
       }, event.newSettings.polling_interval * 1000));
     }
@@ -304,10 +309,14 @@ export class TWCDevice extends Homey.Device {
   async getChargerState() {
     if (this.api === null) return;
 
+    let success = false;
+    let errorMsg = 'Unknown error';
+
     // --- Wifi Status ---
     try {
       const wifi = await this.api.getWifiStatus();
       if (wifi) {
+        success = true;
         await this.setSettings({
           wifi_ssid: this.decodeSsid(wifi.getWifiSsid()),
           wifi_signal_strength: `${wifi.getWifiSignalStrength()}%`,
@@ -319,7 +328,8 @@ export class TWCDevice extends Homey.Device {
           wifi_mac: wifi.getWifiMac(),
         });
       }
-    } catch (e) {
+    } catch (e: any) {
+      errorMsg = e.message || 'Error fetching Wifi status';
       this.error('Error fetching/setting Wifi status', e);
     }
 
@@ -327,6 +337,7 @@ export class TWCDevice extends Homey.Device {
     try {
       const life = await this.api.getLifetime();
       if (life) {
+        success = true;
         const energyWh = life.getEnergyWh();
         const totalKwh = energyWh / 1000;
         await this.setSettings({
@@ -346,7 +357,8 @@ export class TWCDevice extends Homey.Device {
           await this.setCapabilityValue('meter_power', totalKwh).catch(this.error);
         }
       }
-    } catch (e) {
+    } catch (e: any) {
+      errorMsg = e.message || 'Error fetching Lifetime stats';
       this.error('Error fetching/setting Lifetime', e);
     }
 
@@ -354,6 +366,7 @@ export class TWCDevice extends Homey.Device {
     try {
       const ver = await this.api.getVersion();
       if (ver) {
+        success = true;
         await this.setSettings({
           firmware_version: ver.getFirmwareVersion(),
           git_branch: ver.getGitBranch(),
@@ -362,7 +375,8 @@ export class TWCDevice extends Homey.Device {
           web_service: ver.getWebService(),
         });
       }
-    } catch (e) {
+    } catch (e: any) {
+      errorMsg = e.message || 'Error fetching Version info';
       this.error('Error fetching/setting Version', e);
     }
 
@@ -370,6 +384,7 @@ export class TWCDevice extends Homey.Device {
     try {
       const vit = await this.api.getVitals();
       if (vit) {
+        success = true;
         // 1. Update Standard Capabilities via Mapping
         const mappings: CapabilityMapping[] = [
           { capability: 'meter_power.vehicle', valueGetter: (v) => v.getSessionEnergyWh() / 1000 },
@@ -417,6 +432,7 @@ export class TWCDevice extends Homey.Device {
 
         const currentStatus = this.getCapabilityValue('alarm_twc_state.evse');
         if (currentStatus !== status) {
+          this.log(`Status changed: ${currentStatus} -> ${status}`);
           await this.setCapabilityValue('alarm_twc_state.evse', status).catch(this.error);
           // Trigger flow
           if (this._charging_status_changed) {
@@ -426,6 +442,7 @@ export class TWCDevice extends Homey.Device {
 
         const currentStateV2 = this.getCapabilityValue('evcharger_charging_state');
         if (currentStateV2 !== state) {
+          this.log(`Charging state changed: ${currentStateV2} -> ${state}`);
           await this.setCapabilityValue('evcharger_charging_state', state).catch(this.error);
         }
 
@@ -440,9 +457,26 @@ export class TWCDevice extends Homey.Device {
         }).catch((e) => this.error('Error setting Vitals settings', e));
 
       }
-    } catch (e) {
+    } catch (e: any) {
+      errorMsg = e.message || 'Error fetching Vitals';
       this.error('Error fetching Vitals', e);
     }
+
+    // --- Availability handling ---
+    if (success) {
+      await this.setAvailable().catch(this.error);
+    } else {
+      this.error(`Poll cycle failed: ${errorMsg}. Marking device unavailable.`);
+      await this.setUnavailable(errorMsg).catch(this.error);
+    }
+
+    // --- Schedule next poll ---
+    const settings = this.getSettings();
+    const interval = settings.polling_interval || 60;
+    this.cleanupPolling();
+    this.pollIntervals.push(setTimeout(() => {
+      this.getChargerState();
+    }, interval * 1000));
   }
 }
 module.exports = TWCDevice;
