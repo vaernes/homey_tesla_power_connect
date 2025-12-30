@@ -89,7 +89,12 @@ export class TWCDevice extends Homey.Device {
 
     this.registerFlows();
     this._charging_status_changed = this.homey.flow.getDeviceTriggerCard('charger_status_changed');
-    this.log(`TWC device initialized successfully. Firmware: ${settings.firmware_version || 'unknown'}`);
+    const verified = await this.verifyDeviceIdentity();
+    if (verified) {
+      this.log(`TWC device initialized successfully. Firmware: ${settings.firmware_version || 'unknown'}`);
+    } else {
+      this.error('TWC device initialization failed: Serial Number Mismatch or device unreachable.');
+    }
   }
 
 
@@ -99,6 +104,29 @@ export class TWCDevice extends Homey.Device {
       if (!this.hasCapability(cap)) {
         await this.addCapability(cap);
       }
+    }
+  }
+
+  private async verifyDeviceIdentity(): Promise<boolean> {
+    if (!this.api) return false;
+    try {
+      const version = await this.api.getVersion();
+      if (!version) return false;
+
+      const discoveredSerial = version.getSerialNumber();
+      const storedSerial = this.getData().id; // The ID is the serial number from pairing
+
+      if (discoveredSerial && storedSerial && discoveredSerial === storedSerial) {
+        return true;
+      }
+
+      this.error(`Serial Mismatch! Expected: ${storedSerial}, Found: ${discoveredSerial} at ${this.api.address}`);
+      await this.setUnavailable(`Serial Mismatch. Expected: ${storedSerial}, Found: ${discoveredSerial}`).catch(this.error);
+      return false;
+
+    } catch (e) {
+      this.error('Error verifying device identity:', e);
+      return false;
     }
   }
 
@@ -308,6 +336,11 @@ export class TWCDevice extends Homey.Device {
 
   async getChargerState() {
     if (this.api === null) return;
+
+    // Verify identity before fetching sensitive data
+    if (!(await this.verifyDeviceIdentity())) {
+      return;
+    }
 
     let success = false;
     let errorMsg = 'Unknown error';
