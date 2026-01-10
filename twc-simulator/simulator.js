@@ -3,10 +3,10 @@ const os = require('os');
 const { Bonjour } = require('bonjour-service');
 
 const PORT = 80;
-const SERIAL = 'SIMULATOR';
+const SERIAL = 'PGT11111111111';
 const MODEL = 'wc3';
 const FIRMWARE = '25.10.0';
-const PART_NUMBER = 'WallConnector';
+const PART_NUMBER = '1111111-01-A';
 const NAME = `${PART_NUMBER}--${SERIAL}`;
 
 // IP detection helper
@@ -38,6 +38,8 @@ const publishMdns = (ip) => {
         protocol: 'tcp',
         port: 4743,
         host: `${NAME}.local`,
+        id: NAME,
+        address: ip,
         txt: {
             model: MODEL,
             fwver: FIRMWARE,
