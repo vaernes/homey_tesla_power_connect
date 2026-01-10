@@ -151,5 +151,8 @@
   },
   "3.2.3": {
     "en": "Added more logging in the app to easier find issues."
+  },
+  "3.2.4": {
+    "en": "More robust discovery"
   }
 }
