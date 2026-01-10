@@ -57,5 +57,12 @@
   "contributors": {
     "developers": []
   },
-  "homeyCommunityTopicId": 75554
+  "homeyCommunityTopicId": 75554,
+  "contributing": {
+    "donate": {
+      "githubSponsors": {
+        "username": "vaernes"
+      }
+    }
+  }
 }

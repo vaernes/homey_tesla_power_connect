@@ -16,6 +16,10 @@ Stay charged, always connected. ⚡
 - Tesla Wall Connector Generation 3
 - Tesla Universal Wall Connector
 
+## Limitations
+- The TWC can’t be controlled.
+- Power Sharing only provide access to the main TWC; data from the slaves are not accessible.
+
 ## Setup & Pairing
 The app uses **Automatic mDNS Discovery**. When adding a new device, Homey will automatically scan your network for compatible Wall Connectors. 
 
