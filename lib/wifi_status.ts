@@ -1,4 +1,4 @@
-export class wifi_status {
+export class TWCWifiStatus {
   wifi_ssid!: string;
   wifi_signal_strength!: number;
   wifi_rssi!: number;

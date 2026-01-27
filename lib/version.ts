@@ -1,4 +1,4 @@
-export class version {
+export class TWCVersion {
   firmware_version!: string;
   git_branch!: string;
   part_number!: string;

@@ -1,6 +1,6 @@
 import { EVSEState, getEVSEStateFromNumber } from './evsestate';
 
-export class vitals {
+export class TWCVitals {
   contactor_closed!: boolean;
   vehicle_connected!: boolean;
   session_s!: number;

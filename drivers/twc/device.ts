@@ -1,6 +1,7 @@
 import Homey from 'homey';
 import { TWC } from '../../lib/twc';
-import { vitals } from '../../lib/vitals';
+import { TWCVitals } from '../../lib/vitals';
+import { TWCVersion } from '../../lib/version';
 import { EVSEState, getEVSEStateString } from '../../lib/evsestate';
 
 export enum HomeyEVChargerChargingState {
@@ -13,9 +14,9 @@ export enum HomeyEVChargerChargingState {
 
 interface CapabilityMapping {
   capability: string;
-  valueGetter: (vit: vitals) => any;
+  valueGetter: (vit: TWCVitals) => any;
   transform?: (val: any) => any;
-  condition?: (vit: vitals) => boolean;
+  condition?: (vit: TWCVitals) => boolean;
 }
 
 export class TWCDevice extends Homey.Device {
@@ -107,10 +108,10 @@ export class TWCDevice extends Homey.Device {
     }
   }
 
-  private async verifyDeviceIdentity(): Promise<boolean> {
+  private async verifyDeviceIdentity(ver?: TWCVersion | null): Promise<boolean> {
     if (!this.api) return false;
     try {
-      const version = await this.api.getVersion();
+      const version = ver || await this.api.getVersion();
       if (!version) return false;
 
       const discoveredSerial = version.getSerialNumber();
@@ -194,7 +195,7 @@ export class TWCDevice extends Homey.Device {
     }
   }
 
-  private calculatePower(vit: vitals): number {
+  private calculatePower(vit: TWCVitals): number {
     // V2 calculation logic preferred as per review findings
     const a = vit.getVoltageA_v() * vit.getCurrentA_a();
     const b = vit.getVoltageB_v() * vit.getCurrentB_a();
@@ -291,7 +292,7 @@ export class TWCDevice extends Homey.Device {
   }
 
   // Unified State Logic
-  private determineEvseState(vit: vitals): { state: HomeyEVChargerChargingState, status: string, power: number } {
+  private determineEvseState(vit: TWCVitals): { state: HomeyEVChargerChargingState, status: string, power: number } {
     let state: HomeyEVChargerChargingState = HomeyEVChargerChargingState.PluggedOut;
     let status = 'Error';
     let power = 0;
@@ -337,13 +338,33 @@ export class TWCDevice extends Homey.Device {
   async getChargerState() {
     if (this.api === null) return;
 
-    // Verify identity before fetching sensitive data
-    if (!(await this.verifyDeviceIdentity())) {
-      return;
-    }
+
+
 
     let success = false;
     let errorMsg = 'Unknown error';
+
+    // --- Version Info ---
+    try {
+      const ver = await this.api.getVersion();
+      // Verify identity before fetching sensitive data
+      if (!(await this.verifyDeviceIdentity(ver))) {
+        return;
+      }
+      if (ver) {
+        success = true;
+        await this.setSettings({
+          firmware_version: ver.getFirmwareVersion(),
+          git_branch: ver.getGitBranch(),
+          part_number: ver.getPartNumber(),
+          serial_number: ver.getSerialNumber(),
+          web_service: ver.getWebService(),
+        });
+      }
+    } catch (e: any) {
+      errorMsg = e.message || 'Error fetching Version info';
+      this.error('Error fetching/setting Version', e);
+    }
 
     // --- Wifi Status ---
     try {
@@ -395,23 +416,7 @@ export class TWCDevice extends Homey.Device {
       this.error('Error fetching/setting Lifetime', e);
     }
 
-    // --- Version Info ---
-    try {
-      const ver = await this.api.getVersion();
-      if (ver) {
-        success = true;
-        await this.setSettings({
-          firmware_version: ver.getFirmwareVersion(),
-          git_branch: ver.getGitBranch(),
-          part_number: ver.getPartNumber(),
-          serial_number: ver.getSerialNumber(),
-          web_service: ver.getWebService(),
-        });
-      }
-    } catch (e: any) {
-      errorMsg = e.message || 'Error fetching Version info';
-      this.error('Error fetching/setting Version', e);
-    }
+
 
     // --- Vitals (Capabilities) ---
     try {

@@ -1,7 +1,7 @@
-import { version } from './version';
-import { lifetime } from './lifetime';
-import { vitals } from './vitals';
-import { wifi_status } from './wifi_status';
+import { TWCVersion } from './version';
+import { TWCLifetime } from './lifetime';
+import { TWCVitals } from './vitals';
+import { TWCWifiStatus } from './wifi_status';
 
 export class TWC {
 
@@ -23,7 +23,7 @@ export class TWC {
     }
   }
 
-  async getVitals(): Promise<vitals | null> {
+  async getVitals(): Promise<TWCVitals | null> {
     return this.fetchWithTimeout(`http://${this.address}/api/1/vitals`)
       .then((res) => {
         if (res.ok) {
@@ -32,7 +32,7 @@ export class TWC {
         throw Error(`${res.status} - ${res.statusText}`);
       })
       .then((res) => {
-        return new vitals(res);
+        return new TWCVitals(res);
       })
       .catch((e) => {
         console.error(`TWC Error [getVitals]: ${e.message}`);
@@ -40,7 +40,7 @@ export class TWC {
       });
   }
 
-  async getWifiStatus(): Promise<wifi_status | null> {
+  async getWifiStatus(): Promise<TWCWifiStatus | null> {
     return this.fetchWithTimeout(`http://${this.address}/api/1/wifi_status`)
       .then((res) => {
         if (res.ok) {
@@ -51,7 +51,7 @@ export class TWC {
 
       })
       .then((res) => {
-        return new wifi_status(res);
+        return new TWCWifiStatus(res);
       })
       .catch((e) => {
         console.error(`TWC Error [getWifiStatus]: ${e.message}`);
@@ -59,7 +59,7 @@ export class TWC {
       });
   }
 
-  async getLifetime(): Promise<lifetime | null> {
+  async getLifetime(): Promise<TWCLifetime | null> {
     return this.fetchWithTimeout(`http://${this.address}/api/1/lifetime`)
       .then((res) => {
         if (res.ok) {
@@ -69,7 +69,7 @@ export class TWC {
       })
       .then((res) => {
         res = res.replace(':nan', ':0');
-        return new lifetime(JSON.parse(res));
+        return new TWCLifetime(JSON.parse(res));
       })
       .catch((e) => {
         console.error(`TWC Error [getLifetime]: ${e.message}`);
@@ -77,7 +77,7 @@ export class TWC {
       });
   }
 
-  async getVersion(): Promise<version | null> {
+  async getVersion(): Promise<TWCVersion | null> {
     return this.fetchWithTimeout(`http://${this.address}/api/1/version`)
       .then((res) => {
         if (res.ok) {
@@ -87,7 +87,7 @@ export class TWC {
 
       })
       .then((res) => {
-        return new version(res);
+        return new TWCVersion(res);
       })
       .catch((e) => {
         console.error(`TWC Error [getVersion]: ${e.message}`);

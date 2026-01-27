@@ -1,4 +1,4 @@
-export class lifetime {
+export class TWCLifetime {
   contactor_cycles!: number;
   contactor_cycles_loaded!: number;
   alert_count!: number;
