@@ -157,5 +157,8 @@
   },
   "3.3.0": {
     "en": "More robust discovery"
+  },
+  "3.3.1": {
+    "en": "Fixed double call to getVersion."
   }
 }
