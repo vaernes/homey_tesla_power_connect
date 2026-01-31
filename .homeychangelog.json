@@ -160,5 +160,8 @@
   },
   "3.3.1": {
     "en": "Fixed double call to getVersion."
+  },
+  "3.3.2": {
+    "en": "Fix for timeout"
   }
 }
