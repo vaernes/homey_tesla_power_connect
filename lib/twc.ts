@@ -10,21 +10,9 @@ export class TWC {
     this.address = address;
   }
 
-  private async fetchWithTimeout(url: string, timeout = 10000): Promise<Response> {
-    const controller = new AbortController();
-    const id = setTimeout(() => controller.abort(), timeout);
-    try {
-      const response = await fetch(url, { signal: controller.signal });
-      clearTimeout(id);
-      return response;
-    } catch (e) {
-      clearTimeout(id);
-      throw e;
-    }
-  }
 
   async getVitals(): Promise<TWCVitals | null> {
-    return this.fetchWithTimeout(`http://${this.address}/api/1/vitals`)
+    return fetch(`http://${this.address}/api/1/vitals`)
       .then((res) => {
         if (res.ok) {
           return res.json();
@@ -41,7 +29,7 @@ export class TWC {
   }
 
   async getWifiStatus(): Promise<TWCWifiStatus | null> {
-    return this.fetchWithTimeout(`http://${this.address}/api/1/wifi_status`)
+    return fetch(`http://${this.address}/api/1/wifi_status`)
       .then((res) => {
         if (res.ok) {
           return res.json();
@@ -60,7 +48,7 @@ export class TWC {
   }
 
   async getLifetime(): Promise<TWCLifetime | null> {
-    return this.fetchWithTimeout(`http://${this.address}/api/1/lifetime`)
+    return fetch(`http://${this.address}/api/1/lifetime`)
       .then((res) => {
         if (res.ok) {
           return res.text();
@@ -78,7 +66,7 @@ export class TWC {
   }
 
   async getVersion(): Promise<TWCVersion | null> {
-    return this.fetchWithTimeout(`http://${this.address}/api/1/version`)
+    return fetch(`http://${this.address}/api/1/version`)
       .then((res) => {
         if (res.ok) {
           return res.json();
