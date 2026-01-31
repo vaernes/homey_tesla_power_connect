@@ -14,10 +14,35 @@ export enum HomeyEVChargerChargingState {
 
 interface CapabilityMapping {
   capability: string;
-  valueGetter: (vit: TWCVitals) => any;
+  valueGetter: (vit: TWCVitals, device: TWCDevice) => any;
   transform?: (val: any) => any;
   condition?: (vit: TWCVitals) => boolean;
 }
+
+const MAPPINGS: CapabilityMapping[] = [
+  { capability: 'meter_power.vehicle', valueGetter: (v) => v.getSessionEnergyWh() / 1000 },
+  { capability: 'measure_current.vehicle', valueGetter: (v) => v.getVehicleCurrentA() },
+  { capability: 'measure_current.a', valueGetter: (v) => v.getCurrentA_a() },
+  { capability: 'measure_current.b', valueGetter: (v) => v.getCurrentB_a() },
+  { capability: 'measure_current.c', valueGetter: (v) => v.getCurrentC_a() },
+  { capability: 'measure_current.n', valueGetter: (v) => v.getCurrentN_a() },
+  { capability: 'measure_twc_voltage.a', valueGetter: (v, d) => v.getVoltageA_v() + d.getVoltageAdjustment() },
+  { capability: 'measure_twc_voltage.b', valueGetter: (v, d) => v.getVoltageB_v() + d.getVoltageAdjustment() },
+  { capability: 'measure_twc_voltage.c', valueGetter: (v, d) => v.getVoltageC_v() + d.getVoltageAdjustment() },
+  { capability: 'measure_temperature.handle', valueGetter: (v) => v.getHandleTempC() },
+  { capability: 'measure_temperature.mcu', valueGetter: (v) => v.getMcuTempC() },
+  { capability: 'measure_temperature.pcba', valueGetter: (v) => v.getPcbaTempC() },
+  { capability: 'measure_temperature.charger', valueGetter: (v) => (v.getMcuTempC() + v.getPcbaTempC()) / 2 },
+  { capability: 'measure_twc_voltage.grid', valueGetter: (v, d) => v.getGridV() + d.getVoltageAdjustment() },
+  { capability: 'measure_frequency.grid', valueGetter: (v) => v.getGridHz() },
+  { capability: 'measure_twc_voltage.relay_coil_v', valueGetter: (v) => v.getRelayCoilV() },
+  { capability: 'measure_twc_voltage.prox_v', valueGetter: (v) => v.getProxV() },
+  { capability: 'measure_twc_voltage.pilot_high_v', valueGetter: (v) => v.getPilotHighV() },
+  { capability: 'measure_twc_voltage.pilot_low_v', valueGetter: (v) => v.getPilotLowV() },
+  { capability: 'evse_state', valueGetter: (v) => getEVSEStateString(v.getEvseState()) },
+  { capability: 'measure_evse_state', valueGetter: (v) => v.getEvseState() },
+  { capability: 'alarm_twc_state.contactor', valueGetter: (v) => (v.getContactorClosed() ? 'Closed' : 'Open') },
+];
 
 export class TWCDevice extends Homey.Device {
 
@@ -338,11 +363,9 @@ export class TWCDevice extends Homey.Device {
   async getChargerState() {
     if (this.api === null) return;
 
-
-
-
     let success = false;
     let errorMsg = 'Unknown error';
+    const settingsUpdates: Record<string, any> = {};
 
     // --- Version Info ---
     try {
@@ -353,7 +376,7 @@ export class TWCDevice extends Homey.Device {
       }
       if (ver) {
         success = true;
-        await this.setSettings({
+        Object.assign(settingsUpdates, {
           firmware_version: ver.getFirmwareVersion(),
           git_branch: ver.getGitBranch(),
           part_number: ver.getPartNumber(),
@@ -371,7 +394,7 @@ export class TWCDevice extends Homey.Device {
       const wifi = await this.api.getWifiStatus();
       if (wifi) {
         success = true;
-        await this.setSettings({
+        Object.assign(settingsUpdates, {
           wifi_ssid: this.decodeSsid(wifi.getWifiSsid()),
           wifi_signal_strength: `${wifi.getWifiSignalStrength()}%`,
           wifi_rssi: `${wifi.getWifiRssi()}dB`,
@@ -394,7 +417,7 @@ export class TWCDevice extends Homey.Device {
         success = true;
         const energyWh = life.getEnergyWh();
         const totalKwh = energyWh / 1000;
-        await this.setSettings({
+        Object.assign(settingsUpdates, {
           contactor_cycles: life.getContactorCycles(),
           contactor_cycles_loaded: life.getContactorCyclesLoaded(),
           alert_count: life.getAlertCount(),
@@ -416,43 +439,16 @@ export class TWCDevice extends Homey.Device {
       this.error('Error fetching/setting Lifetime', e);
     }
 
-
-
     // --- Vitals (Capabilities) ---
     try {
       const vit = await this.api.getVitals();
       if (vit) {
         success = true;
         // 1. Update Standard Capabilities via Mapping
-        const mappings: CapabilityMapping[] = [
-          { capability: 'meter_power.vehicle', valueGetter: (v) => v.getSessionEnergyWh() / 1000 },
-          { capability: 'measure_current.vehicle', valueGetter: (v) => v.getVehicleCurrentA() },
-          { capability: 'measure_current.a', valueGetter: (v) => v.getCurrentA_a() },
-          { capability: 'measure_current.b', valueGetter: (v) => v.getCurrentB_a() },
-          { capability: 'measure_current.c', valueGetter: (v) => v.getCurrentC_a() },
-          { capability: 'measure_current.n', valueGetter: (v) => v.getCurrentN_a() },
-          { capability: 'measure_twc_voltage.a', valueGetter: (v) => v.getVoltageA_v() + this.getVoltageAdjustment() },
-          { capability: 'measure_twc_voltage.b', valueGetter: (v) => v.getVoltageB_v() + this.getVoltageAdjustment() },
-          { capability: 'measure_twc_voltage.c', valueGetter: (v) => v.getVoltageC_v() + this.getVoltageAdjustment() },
-          { capability: 'measure_temperature.handle', valueGetter: (v) => v.getHandleTempC() },
-          { capability: 'measure_temperature.mcu', valueGetter: (v) => v.getMcuTempC() },
-          { capability: 'measure_temperature.pcba', valueGetter: (v) => v.getPcbaTempC() },
-          { capability: 'measure_temperature.charger', valueGetter: (v) => (v.getMcuTempC() + v.getPcbaTempC()) / 2 },
-          { capability: 'measure_twc_voltage.grid', valueGetter: (v) => v.getGridV() + this.getVoltageAdjustment() },
-          { capability: 'measure_frequency.grid', valueGetter: (v) => v.getGridHz() },
-          { capability: 'measure_twc_voltage.relay_coil_v', valueGetter: (v) => v.getRelayCoilV() },
-          { capability: 'measure_twc_voltage.prox_v', valueGetter: (v) => v.getProxV() },
-          { capability: 'measure_twc_voltage.pilot_high_v', valueGetter: (v) => v.getPilotHighV() },
-          { capability: 'measure_twc_voltage.pilot_low_v', valueGetter: (v) => v.getPilotLowV() },
-          { capability: 'evse_state', valueGetter: (v) => getEVSEStateString(v.getEvseState()) },
-          { capability: 'measure_evse_state', valueGetter: (v) => v.getEvseState() },
-          { capability: 'alarm_twc_state.contactor', valueGetter: (v) => (v.getContactorClosed() ? 'Closed' : 'Open') },
-        ];
-
-        for (const m of mappings) {
+        for (const m of MAPPINGS) {
           try {
             if (m.condition && !m.condition(vit)) continue;
-            const val = m.valueGetter(vit);
+            const val = m.valueGetter(vit, this);
             await this.setCapabilityValue(m.capability, m.transform ? m.transform(val) : val);
           } catch (err: any) {
             // Silent fail for individual capability updates is acceptable, but logging is good
@@ -485,19 +481,28 @@ export class TWCDevice extends Homey.Device {
         }
 
         // 3. Update Vitals Settings
-        await this.setSettings({
+        Object.assign(settingsUpdates, {
           session_s: this.humanizeDuration(vit.getSessionS()),
           vitals_uptime_s: this.humanizeDuration(vit.getUptimeS()),
           evse_state: vit.getEvseState().toString(),
           config_status: vit.getConfigStatus().toString(),
           current_alerts: this.arrayToString(vit.getCurrentAlerts()),
           evse_not_ready_reasons: this.arrayToString(vit.getEvseNotReadyReasons() as any),
-        }).catch((e) => this.error('Error setting Vitals settings', e));
+        });
 
       }
     } catch (e: any) {
       errorMsg = e.message || 'Error fetching Vitals';
       this.error('Error fetching Vitals', e);
+    }
+
+    // --- Apply Batched Settings ---
+    if (Object.keys(settingsUpdates).length > 0) {
+      try {
+        await this.setSettings(settingsUpdates);
+      } catch (e: any) {
+        this.error('Error applying batched settings', e);
+      }
     }
 
     // --- Availability handling ---

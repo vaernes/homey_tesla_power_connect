@@ -10,76 +10,63 @@ export class TWC {
     this.address = address;
   }
 
+  private async fetch(endpoint: string): Promise<Response> {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000);
+    try {
+      return await fetch(`http://${this.address}/api/1/${endpoint}`, { signal: controller.signal });
+    } finally {
+      clearTimeout(timeout);
+    }
+  }
+
 
   async getVitals(): Promise<TWCVitals | null> {
-    return fetch(`http://${this.address}/api/1/vitals`)
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        throw Error(`${res.status} - ${res.statusText}`);
-      })
-      .then((res) => {
-        return new TWCVitals(res);
-      })
-      .catch((e) => {
-        console.error(`TWC Error [getVitals]: ${e.message}`);
-        return null;
-      });
+    try {
+      const res = await this.fetch('vitals');
+      if (!res.ok) throw Error(`${res.status} - ${res.statusText}`);
+      return new TWCVitals(await res.json());
+    } catch (e: any) {
+      console.error(`TWC Error [getVitals]: ${e.message}`);
+      return null;
+    }
   }
 
   async getWifiStatus(): Promise<TWCWifiStatus | null> {
-    return fetch(`http://${this.address}/api/1/wifi_status`)
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
+    try {
+      const res = await this.fetch('wifi_status');
+      if (!res.ok) {
         console.error(res.status, res.statusText);
         throw Error(`${res.status} - ${res.statusText}`);
-
-      })
-      .then((res) => {
-        return new TWCWifiStatus(res);
-      })
-      .catch((e) => {
-        console.error(`TWC Error [getWifiStatus]: ${e.message}`);
-        return null;
-      });
+      }
+      return new TWCWifiStatus(await res.json());
+    } catch (e: any) {
+      console.error(`TWC Error [getWifiStatus]: ${e.message}`);
+      return null;
+    }
   }
 
   async getLifetime(): Promise<TWCLifetime | null> {
-    return fetch(`http://${this.address}/api/1/lifetime`)
-      .then((res) => {
-        if (res.ok) {
-          return res.text();
-        }
-        throw Error(`${res.status} - ${res.statusText}`);
-      })
-      .then((res) => {
-        res = res.replace(':nan', ':0');
-        return new TWCLifetime(JSON.parse(res));
-      })
-      .catch((e) => {
-        console.error(`TWC Error [getLifetime]: ${e.message}`);
-        return null;
-      });
+    try {
+      const res = await this.fetch('lifetime');
+      if (!res.ok) throw Error(`${res.status} - ${res.statusText}`);
+      let text = await res.text();
+      text = text.replace(':nan', ':0');
+      return new TWCLifetime(JSON.parse(text));
+    } catch (e: any) {
+      console.error(`TWC Error [getLifetime]: ${e.message}`);
+      return null;
+    }
   }
 
   async getVersion(): Promise<TWCVersion | null> {
-    return fetch(`http://${this.address}/api/1/version`)
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        throw Error(`${res.status} - ${res.statusText}`);
-
-      })
-      .then((res) => {
-        return new TWCVersion(res);
-      })
-      .catch((e) => {
-        console.error(`TWC Error [getVersion]: ${e.message}`);
-        return null;
-      });
+    try {
+      const res = await this.fetch('version');
+      if (!res.ok) throw Error(`${res.status} - ${res.statusText}`);
+      return new TWCVersion(await res.json());
+    } catch (e: any) {
+      console.error(`TWC Error [getVersion]: ${e.message}`);
+      return null;
+    }
   }
 }
