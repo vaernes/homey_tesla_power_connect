@@ -50,6 +50,14 @@ export class TWCDevice extends Homey.Device {
   private pollIntervals: NodeJS.Timeout[] = [];
   private _charging_status_changed!: Homey.FlowCardTriggerDevice | null;
 
+  // Debug state tracking
+  private lastSuccessfulPoll: string = 'Never';
+  private lastFailedPoll: string = 'Never';
+  private lastError: string = 'None';
+  private consecutiveFailures: number = 0;
+  private totalPollCount: number = 0;
+  private totalFailureCount: number = 0;
+
   async onDeleted() {
     this.cleanupPolling();
     this.api = null;
@@ -113,7 +121,6 @@ export class TWCDevice extends Homey.Device {
       'alarm_twc_state.contactor'
     ]);
 
-    this.registerFlows();
     this._charging_status_changed = this.homey.flow.getDeviceTriggerCard('charger_status_changed');
     const verified = await this.verifyDeviceIdentity();
     if (verified) {
@@ -122,8 +129,6 @@ export class TWCDevice extends Homey.Device {
       this.error('TWC device initialization failed: Serial Number Mismatch or device unreachable.');
     }
   }
-
-
 
   private async ensureCapabilities(capabilities: string[]) {
     for (const cap of capabilities) {
@@ -154,20 +159,6 @@ export class TWCDevice extends Homey.Device {
       this.error('Error verifying device identity:', e);
       return false;
     }
-  }
-
-  private registerFlows() {
-    const chargingCondition = this.homey.flow.getConditionCard('is_charging');
-    chargingCondition.registerRunListener(async (args) => {
-      const status = args.device.getCapabilityValue('alarm_twc_state.evse');
-      return status === 'Charging';
-    });
-
-    const connectedCondition = this.homey.flow.getConditionCard('is_connected');
-    connectedCondition.registerRunListener(async (args) => {
-      const status = args.device.getCapabilityValue('alarm_twc_state.evse');
-      return status === 'Connected';
-    });
   }
 
   async onSettings(event: { oldSettings: object, newSettings: any, changedKeys: string[] }): Promise<string | void> {
@@ -250,20 +241,40 @@ export class TWCDevice extends Homey.Device {
     return false;
   }
 
+  private discoveryCache: Map<string, number> = new Map();
+
   onDiscoveryResult(discoveryResult: Homey.DiscoveryResult): boolean {
     this.log('onDiscoveryResult', discoveryResult);
     const result = discoveryResult as any;
     const discoveredIp = result.address;
     const currentIp = this.api?.address;
 
-    if (discoveredIp && discoveredIp !== currentIp) {
-      this.log(`Potential IP change detected from ${currentIp} to ${discoveredIp}. Verifying device identity...`);
-      this.verifyAndUpdateIp(discoveredIp).catch(err => this.error(`Failed to verify IP update: ${err.message}`));
+    // Filter out if no address
+    if (!discoveredIp) return true;
+
+    // Check if we are seeing the same IP (expected normal behavior, just return)
+    if (discoveredIp === currentIp) return true;
+
+    // Check cache to prevent spamming verification
+    const lastCheck = this.discoveryCache.get(discoveredIp);
+    const now = Date.now();
+    const COOLDOWN = 300000; // 5 minutes
+
+    if (lastCheck && (now - lastCheck) < COOLDOWN) {
+      this.log(`Skipping discovery verification for ${discoveredIp} (cached recently).`);
+      return true;
     }
+
+    this.log(`Potential IP change detected from ${currentIp} to ${discoveredIp}. Verifying device identity...`);
+    this.verifyAndUpdateIp(discoveredIp).catch(err => this.error(`Failed to verify IP update: ${err.message}`));
+
     return true;
   }
 
   private async verifyAndUpdateIp(newIp: string) {
+    // Mark this IP as checked now
+    this.discoveryCache.set(newIp, Date.now());
+
     try {
       const tempApi = new TWC(newIp);
       const version = await tempApi.getVersion();
@@ -282,6 +293,11 @@ export class TWCDevice extends Homey.Device {
         // Update API and Store
         this.api = new TWC(newIp);
         await this.setStoreValue('ip', newIp);
+
+        // Verification successful, so we are now using this IP. 
+        // We can technically clear it from cache or keep it. 
+        // If we clear it, repeated discovery of this SAME IP will hit "if (discoveredIp === currentIp)" check above, so it's fine.
+        // But if it fails, the cache prevents retries.
 
         // Optionally update settings to reflect new network state immediately
         this.getChargerState().catch(this.error);
@@ -363,163 +379,196 @@ export class TWCDevice extends Homey.Device {
   async getChargerState() {
     if (this.api === null) return;
 
+    this.totalPollCount++;
     let success = false;
     let errorMsg = 'Unknown error';
     const settingsUpdates: Record<string, any> = {};
 
-    // --- Version Info ---
     try {
-      const ver = await this.api.getVersion();
-      // Verify identity before fetching sensitive data
-      if (!(await this.verifyDeviceIdentity(ver))) {
-        return;
-      }
-      if (ver) {
-        success = true;
-        Object.assign(settingsUpdates, {
-          firmware_version: ver.getFirmwareVersion(),
-          git_branch: ver.getGitBranch(),
-          part_number: ver.getPartNumber(),
-          serial_number: ver.getSerialNumber(),
-          web_service: ver.getWebService(),
-        });
-      }
-    } catch (e: any) {
-      errorMsg = e.message || 'Error fetching Version info';
-      this.error('Error fetching/setting Version', e);
-    }
-
-    // --- Wifi Status ---
-    try {
-      const wifi = await this.api.getWifiStatus();
-      if (wifi) {
-        success = true;
-        Object.assign(settingsUpdates, {
-          wifi_ssid: this.decodeSsid(wifi.getWifiSsid()),
-          wifi_signal_strength: `${wifi.getWifiSignalStrength()}%`,
-          wifi_rssi: `${wifi.getWifiRssi()}dB`,
-          wifi_snr: `${wifi.getWifiSnr()}dB`,
-          wifi_connected: wifi.getWifiConnected() ? 'Yes' : 'No',
-          wifi_infra_ip: wifi.getWifiInfraIp(),
-          internet: wifi.getInternet() ? 'Yes' : 'No',
-          wifi_mac: wifi.getWifiMac(),
-        });
-      }
-    } catch (e: any) {
-      errorMsg = e.message || 'Error fetching Wifi status';
-      this.error('Error fetching/setting Wifi status', e);
-    }
-
-    // --- Lifetime Stats ---
-    try {
-      const life = await this.api.getLifetime();
-      if (life) {
-        success = true;
-        const energyWh = life.getEnergyWh();
-        const totalKwh = energyWh / 1000;
-        Object.assign(settingsUpdates, {
-          contactor_cycles: life.getContactorCycles(),
-          contactor_cycles_loaded: life.getContactorCyclesLoaded(),
-          alert_count: life.getAlertCount(),
-          thermal_foldbacks: life.getThermalFoldbacks(),
-          avg_startup_temp: life.getAvgStartupTemp(),
-          charge_starts: life.getChargeStarts(),
-          enrgy_wh: this.humanizeEnergy(energyWh),
-          connector_cycles: life.getConnectorCycles(),
-          lifetime_uptime_s: this.humanizeDuration(life.getUptimeS()),
-          charging_time_s: this.humanizeDuration(life.getChargingTimeS()),
-        });
-        await this.setCapabilityValue('meter_power.total', totalKwh).catch(this.error);
-        if (this.hasCapability('meter_power')) {
-          await this.setCapabilityValue('meter_power', totalKwh).catch(this.error);
-        }
-      }
-    } catch (e: any) {
-      errorMsg = e.message || 'Error fetching Lifetime stats';
-      this.error('Error fetching/setting Lifetime', e);
-    }
-
-    // --- Vitals (Capabilities) ---
-    try {
-      const vit = await this.api.getVitals();
-      if (vit) {
-        success = true;
-        // 1. Update Standard Capabilities via Mapping
-        for (const m of MAPPINGS) {
-          try {
-            if (m.condition && !m.condition(vit)) continue;
-            const val = m.valueGetter(vit, this);
-            await this.setCapabilityValue(m.capability, m.transform ? m.transform(val) : val);
-          } catch (err: any) {
-            // Silent fail for individual capability updates is acceptable, but logging is good
-            this.log(`Failed to set ${m.capability}:`, err.message || err);
-          }
-        }
-
-        // 2. Handle Complex State Logic (Status & Charging State)
-        const { state, status, power } = this.determineEvseState(vit);
-
-        await this.setCapabilityValue('measure_twc_power.vehicle', power).catch(this.error);
-        if (this.hasCapability('measure_power')) {
-          await this.setCapabilityValue('measure_power', power).catch(this.error);
-        }
-
-        const currentStatus = this.getCapabilityValue('alarm_twc_state.evse');
-        if (currentStatus !== status) {
-          this.log(`Status changed: ${currentStatus} -> ${status}`);
-          await this.setCapabilityValue('alarm_twc_state.evse', status).catch(this.error);
-          // Trigger flow
-          if (this._charging_status_changed) {
-            this._charging_status_changed.trigger(this, { status }, {}).catch(this.error);
-          }
-        }
-
-        const currentStateV2 = this.getCapabilityValue('evcharger_charging_state');
-        if (currentStateV2 !== state) {
-          this.log(`Charging state changed: ${currentStateV2} -> ${state}`);
-          await this.setCapabilityValue('evcharger_charging_state', state).catch(this.error);
-        }
-
-        // 3. Update Vitals Settings
-        Object.assign(settingsUpdates, {
-          session_s: this.humanizeDuration(vit.getSessionS()),
-          vitals_uptime_s: this.humanizeDuration(vit.getUptimeS()),
-          evse_state: vit.getEvseState().toString(),
-          config_status: vit.getConfigStatus().toString(),
-          current_alerts: this.arrayToString(vit.getCurrentAlerts()),
-          evse_not_ready_reasons: this.arrayToString(vit.getEvseNotReadyReasons() as any),
-        });
-
-      }
-    } catch (e: any) {
-      errorMsg = e.message || 'Error fetching Vitals';
-      this.error('Error fetching Vitals', e);
-    }
-
-    // --- Apply Batched Settings ---
-    if (Object.keys(settingsUpdates).length > 0) {
+      // --- Version Info ---
       try {
-        await this.setSettings(settingsUpdates);
+        const ver = await this.api.getVersion();
+        // Verify identity before fetching sensitive data
+        if (!(await this.verifyDeviceIdentity(ver))) {
+          errorMsg = 'Identity verification failed (will retry next cycle)';
+          this.error(errorMsg);
+          // Don't return — let the poll cycle finish so next poll is always scheduled
+        } else if (ver) {
+          success = true;
+          Object.assign(settingsUpdates, {
+            firmware_version: ver.getFirmwareVersion(),
+            git_branch: ver.getGitBranch(),
+            part_number: ver.getPartNumber(),
+            serial_number: ver.getSerialNumber(),
+            web_service: ver.getWebService(),
+          });
+        }
       } catch (e: any) {
-        this.error('Error applying batched settings', e);
+        errorMsg = e.message || 'Error fetching Version info';
+        this.error('Error fetching/setting Version', e);
       }
-    }
 
-    // --- Availability handling ---
-    if (success) {
-      await this.setAvailable().catch(this.error);
-    } else {
-      this.error(`Poll cycle failed: ${errorMsg}. Marking device unavailable.`);
-      await this.setUnavailable(errorMsg).catch(this.error);
-    }
+      // --- Wifi Status ---
+      try {
+        const wifi = await this.api.getWifiStatus();
+        if (wifi) {
+          success = true;
+          Object.assign(settingsUpdates, {
+            wifi_ssid: this.decodeSsid(wifi.getWifiSsid()),
+            wifi_signal_strength: `${wifi.getWifiSignalStrength()}%`,
+            wifi_rssi: `${wifi.getWifiRssi()}dB`,
+            wifi_snr: `${wifi.getWifiSnr()}dB`,
+            wifi_connected: wifi.getWifiConnected() ? 'Yes' : 'No',
+            wifi_infra_ip: wifi.getWifiInfraIp(),
+            internet: wifi.getInternet() ? 'Yes' : 'No',
+            wifi_mac: wifi.getWifiMac(),
+          });
+        }
+      } catch (e: any) {
+        errorMsg = e.message || 'Error fetching Wifi status';
+        this.error('Error fetching/setting Wifi status', e);
+      }
 
-    // --- Schedule next poll ---
-    const settings = this.getSettings();
-    const interval = settings.polling_interval || 60;
-    this.cleanupPolling();
-    this.pollIntervals.push(setTimeout(() => {
-      this.getChargerState();
-    }, interval * 1000));
+      // --- Lifetime Stats ---
+      try {
+        const life = await this.api.getLifetime();
+        if (life) {
+          success = true;
+          const energyWh = life.getEnergyWh();
+          const totalKwh = energyWh / 1000;
+          Object.assign(settingsUpdates, {
+            contactor_cycles: life.getContactorCycles(),
+            contactor_cycles_loaded: life.getContactorCyclesLoaded(),
+            alert_count: life.getAlertCount(),
+            thermal_foldbacks: life.getThermalFoldbacks(),
+            avg_startup_temp: life.getAvgStartupTemp(),
+            charge_starts: life.getChargeStarts(),
+            enrgy_wh: this.humanizeEnergy(energyWh),
+            connector_cycles: life.getConnectorCycles(),
+            lifetime_uptime_s: this.humanizeDuration(life.getUptimeS()),
+            charging_time_s: this.humanizeDuration(life.getChargingTimeS()),
+          });
+          await this.setCapabilityValue('meter_power.total', totalKwh).catch(this.error);
+          if (this.hasCapability('meter_power')) {
+            await this.setCapabilityValue('meter_power', totalKwh).catch(this.error);
+          }
+        }
+      } catch (e: any) {
+        errorMsg = e.message || 'Error fetching Lifetime stats';
+        this.error('Error fetching/setting Lifetime', e);
+      }
+
+      // --- Vitals (Capabilities) ---
+      try {
+        const vit = await this.api.getVitals();
+        if (vit) {
+          success = true;
+          // 1. Update Standard Capabilities via Mapping
+          for (const m of MAPPINGS) {
+            try {
+              if (m.condition && !m.condition(vit)) continue;
+              const val = m.valueGetter(vit, this);
+              await this.setCapabilityValue(m.capability, m.transform ? m.transform(val) : val);
+            } catch (err: any) {
+              // Silent fail for individual capability updates is acceptable, but logging is good
+              this.log(`Failed to set ${m.capability}:`, err.message || err);
+            }
+          }
+
+          // 2. Handle Complex State Logic (Status & Charging State)
+          const { state, status, power } = this.determineEvseState(vit);
+
+          await this.setCapabilityValue('measure_twc_power.vehicle', power).catch(this.error);
+          if (this.hasCapability('measure_power')) {
+            await this.setCapabilityValue('measure_power', power).catch(this.error);
+          }
+
+          const currentStatus = this.getCapabilityValue('alarm_twc_state.evse');
+          if (currentStatus !== status) {
+            this.log(`Status changed: ${currentStatus} -> ${status}`);
+            await this.setCapabilityValue('alarm_twc_state.evse', status).catch(this.error);
+            // Trigger flow
+            if (this._charging_status_changed) {
+              this._charging_status_changed.trigger(this, { status }, {}).catch(this.error);
+            }
+          }
+
+          const currentStateV2 = this.getCapabilityValue('evcharger_charging_state');
+          if (currentStateV2 !== state) {
+            this.log(`Charging state changed: ${currentStateV2} -> ${state}`);
+            await this.setCapabilityValue('evcharger_charging_state', state).catch(this.error);
+          }
+
+          // 3. Update Vitals Settings
+          Object.assign(settingsUpdates, {
+            session_s: this.humanizeDuration(vit.getSessionS()),
+            vitals_uptime_s: this.humanizeDuration(vit.getUptimeS()),
+            evse_state: vit.getEvseState().toString(),
+            config_status: vit.getConfigStatus().toString(),
+            current_alerts: this.arrayToString(vit.getCurrentAlerts()),
+            evse_not_ready_reasons: this.arrayToString(vit.getEvseNotReadyReasons() as any),
+          });
+
+        }
+      } catch (e: any) {
+        errorMsg = e.message || 'Error fetching Vitals';
+        this.error('Error fetching Vitals', e);
+      }
+
+      // --- Update debug tracking ---
+      const now = new Date().toISOString();
+      if (success) {
+        this.lastSuccessfulPoll = now;
+        this.consecutiveFailures = 0;
+      } else {
+        this.lastFailedPoll = now;
+        this.lastError = errorMsg;
+        this.consecutiveFailures++;
+        this.totalFailureCount++;
+      }
+
+      // --- Add debug info to settings ---
+      Object.assign(settingsUpdates, {
+        debug_poll_status: success
+          ? 'OK'
+          : `FAILING (${this.consecutiveFailures} consecutive)`,
+        debug_last_success: this.lastSuccessfulPoll,
+        debug_last_failure: this.lastFailedPoll,
+        debug_last_error: this.lastError,
+        debug_poll_count: this.totalPollCount.toString(),
+        debug_failure_count: this.totalFailureCount.toString(),
+        debug_ip_address: this.api?.address || 'Unknown',
+      });
+
+      // --- Apply Batched Settings ---
+      if (Object.keys(settingsUpdates).length > 0) {
+        try {
+          await this.setSettings(settingsUpdates);
+        } catch (e: any) {
+          this.error('Error applying batched settings', e);
+        }
+      }
+
+      // --- Availability handling ---
+      if (success) {
+        await this.setAvailable().catch(this.error);
+      } else {
+        this.error(`Poll cycle failed: ${errorMsg}. Marking device unavailable.`);
+        await this.setUnavailable(errorMsg).catch(this.error);
+      }
+
+    } catch (e: any) {
+      // Catch-all for any unexpected errors — ensures polling never dies
+      this.error('Unexpected error in poll cycle:', e);
+    } finally {
+      // --- Schedule next poll (ALWAYS runs, even after errors) ---
+      const settings = this.getSettings();
+      const interval = settings.polling_interval || 60;
+      this.cleanupPolling();
+      this.pollIntervals.push(setTimeout(() => {
+        this.getChargerState();
+      }, interval * 1000));
+    }
   }
 }
 module.exports = TWCDevice;

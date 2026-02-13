@@ -12,6 +12,24 @@ export class TWCDriver extends Homey.Driver {
     const strategy = this.getDiscoveryStrategy();
     const results = strategy.getDiscoveryResults();
     this.log('onInit: Current Discovery Results:', JSON.stringify(results, null, 2));
+
+    this.registerFlows();
+  }
+
+  private registerFlows() {
+    this.log('Registering flow card listeners...');
+
+    const chargingCondition = this.homey.flow.getConditionCard('is_charging');
+    chargingCondition.registerRunListener(async (args) => {
+      const status = args.device.getCapabilityValue('alarm_twc_state.evse');
+      return status === 'Charging';
+    });
+
+    const connectedCondition = this.homey.flow.getConditionCard('is_connected');
+    connectedCondition.registerRunListener(async (args) => {
+      const status = args.device.getCapabilityValue('alarm_twc_state.evse');
+      return status === 'Connected';
+    });
   }
 
 

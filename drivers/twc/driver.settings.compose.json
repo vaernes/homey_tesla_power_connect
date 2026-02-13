@@ -741,5 +741,157 @@
                 }
             }
         ]
+    },
+    {
+        "type": "group",
+        "label": {
+            "en": "App Debug",
+            "nl": "App Debug",
+            "de": "App Debug",
+            "fr": "Débogage App",
+            "it": "Debug App",
+            "sv": "App Debug",
+            "no": "App Debug",
+            "es": "Depuración App",
+            "da": "App Debug",
+            "ru": "Отладка приложения",
+            "pl": "Debugowanie aplikacji",
+            "ko": "앱 디버그"
+        },
+        "children": [
+            {
+                "id": "debug_poll_status",
+                "type": "label",
+                "value": "Waiting for data",
+                "label": {
+                    "en": "Poll Status",
+                    "nl": "Poll Status",
+                    "de": "Abfragestatus",
+                    "fr": "État du sondage",
+                    "it": "Stato del sondaggio",
+                    "sv": "Pollstatus",
+                    "no": "Pollstatus",
+                    "es": "Estado de sondeo",
+                    "da": "Pollstatus",
+                    "ru": "Статус опроса",
+                    "pl": "Status odpytywania",
+                    "ko": "폴링 상태"
+                }
+            },
+            {
+                "id": "debug_last_success",
+                "type": "label",
+                "value": "Never",
+                "label": {
+                    "en": "Last Successful Poll",
+                    "nl": "Laatste succesvolle poll",
+                    "de": "Letzte erfolgreiche Abfrage",
+                    "fr": "Dernier sondage réussi",
+                    "it": "Ultimo sondaggio riuscito",
+                    "sv": "Senaste lyckade poll",
+                    "no": "Siste vellykkede poll",
+                    "es": "Último sondeo exitoso",
+                    "da": "Seneste vellykkede poll",
+                    "ru": "Последний успешный опрос",
+                    "pl": "Ostatnie udane odpytywanie",
+                    "ko": "마지막 성공적인 폴링"
+                }
+            },
+            {
+                "id": "debug_last_failure",
+                "type": "label",
+                "value": "Never",
+                "label": {
+                    "en": "Last Failed Poll",
+                    "nl": "Laatste mislukte poll",
+                    "de": "Letzte fehlgeschlagene Abfrage",
+                    "fr": "Dernier sondage échoué",
+                    "it": "Ultimo sondaggio fallito",
+                    "sv": "Senaste misslyckade poll",
+                    "no": "Siste mislykkede poll",
+                    "es": "Último sondeo fallido",
+                    "da": "Seneste mislykkede poll",
+                    "ru": "Последний неудачный опрос",
+                    "pl": "Ostatnie nieudane odpytywanie",
+                    "ko": "마지막 실패한 폴링"
+                }
+            },
+            {
+                "id": "debug_last_error",
+                "type": "label",
+                "value": "None",
+                "label": {
+                    "en": "Last Error",
+                    "nl": "Laatste fout",
+                    "de": "Letzter Fehler",
+                    "fr": "Dernière erreur",
+                    "it": "Ultimo errore",
+                    "sv": "Senaste fel",
+                    "no": "Siste feil",
+                    "es": "Último error",
+                    "da": "Seneste fejl",
+                    "ru": "Последняя ошибка",
+                    "pl": "Ostatni błąd",
+                    "ko": "마지막 오류"
+                }
+            },
+            {
+                "id": "debug_poll_count",
+                "type": "label",
+                "value": "0",
+                "label": {
+                    "en": "Total Polls",
+                    "nl": "Totaal polls",
+                    "de": "Gesamtabfragen",
+                    "fr": "Total des sondages",
+                    "it": "Totale sondaggi",
+                    "sv": "Totalt antal polls",
+                    "no": "Totalt antall polls",
+                    "es": "Total de sondeos",
+                    "da": "Samlet antal polls",
+                    "ru": "Всего опросов",
+                    "pl": "Łączna liczba odpytywań",
+                    "ko": "총 폴링 수"
+                }
+            },
+            {
+                "id": "debug_failure_count",
+                "type": "label",
+                "value": "0",
+                "label": {
+                    "en": "Total Failures",
+                    "nl": "Totaal fouten",
+                    "de": "Gesamtfehler",
+                    "fr": "Total des échecs",
+                    "it": "Totale errori",
+                    "sv": "Totalt antal fel",
+                    "no": "Totalt antall feil",
+                    "es": "Total de fallos",
+                    "da": "Samlet antal fejl",
+                    "ru": "Всего ошибок",
+                    "pl": "Łączna liczba błędów",
+                    "ko": "총 실패 수"
+                }
+            },
+            {
+                "id": "debug_ip_address",
+                "type": "label",
+                "value": "Unknown",
+                "label": {
+                    "en": "Current IP Address",
+                    "nl": "Huidig IP-adres",
+                    "de": "Aktuelle IP-Adresse",
+                    "fr": "Adresse IP actuelle",
+                    "it": "Indirizzo IP attuale",
+                    "sv": "Nuvarande IP-adress",
+                    "no": "Gjeldende IP-adresse",
+                    "es": "Dirección IP actual",
+                    "da": "Aktuel IP-adresse",
+                    "ru": "Текущий IP-адрес",
+                    "pl": "Aktualny adres IP",
+                    "ko": "현재 IP 주소"
+                }
+            }
+        ]
     }
 ]
