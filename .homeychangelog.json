@@ -166,5 +166,8 @@
   },
   "3.3.3": {
     "en": "Optimized memory usage"
+  },
+  "3.4.0": {
+    "en": "Added a debug section under advanced settings"
   }
 }
