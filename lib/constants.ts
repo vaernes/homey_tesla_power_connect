@@ -27,6 +27,7 @@ export enum Capability {
     MEASURE_TWC_VOLTAGE_PILOT_HIGH_V = 'measure_twc_voltage.pilot_high_v',
     MEASURE_TWC_VOLTAGE_PILOT_LOW_V = 'measure_twc_voltage.pilot_low_v',
     ALARM_TWC_STATE_CONTACTOR = 'alarm_twc_state.contactor',
+    MEASURE_SIGNAL_STRENGTH = 'measure_signal_strength',
 }
 
 export enum Settings {
