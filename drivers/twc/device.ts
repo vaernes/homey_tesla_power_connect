@@ -50,6 +50,7 @@ export class TWCDevice extends Homey.Device {
   private api!: TWC | null;
   private pollIntervals: NodeJS.Timeout[] = [];
   private _charging_status_changed!: Homey.FlowCardTriggerDevice | null;
+  private settingsCache: Record<string, any> = {};
 
   // Debug state tracking
   private lastSuccessfulPoll: string = 'Never';
@@ -85,6 +86,7 @@ export class TWCDevice extends Homey.Device {
     this.api = new TWC(address);
 
     const settings = this.getSettings();
+    this.settingsCache = settings;
 
     this.cleanupPolling();
     this.pollIntervals.push(setTimeout(() => {
@@ -164,6 +166,7 @@ export class TWCDevice extends Homey.Device {
 
   async onSettings(event: { oldSettings: object, newSettings: any, changedKeys: string[] }): Promise<string | void> {
     this.log('Settings changed');
+    this.settingsCache = event.newSettings;
     if (event.changedKeys.indexOf('polling_interval') > -1) {
       this.cleanupPolling();
       this.log(`Change poll interval ${event.newSettings.polling_interval}`);
@@ -245,7 +248,6 @@ export class TWCDevice extends Homey.Device {
   private discoveryCache: Map<string, number> = new Map();
 
   onDiscoveryResult(discoveryResult: Homey.DiscoveryResult): boolean {
-    this.log('onDiscoveryResult', discoveryResult);
     const result = discoveryResult as any;
     const discoveredIp = result.address;
     const currentIp = this.api?.address;
@@ -255,6 +257,8 @@ export class TWCDevice extends Homey.Device {
 
     // Check if we are seeing the same IP (expected normal behavior, just return)
     if (discoveredIp === currentIp) return true;
+
+    this.log('onDiscoveryResult', discoveryResult);
 
     // Check cache to prevent spamming verification
     const lastCheck = this.discoveryCache.get(discoveredIp);
@@ -541,10 +545,21 @@ export class TWCDevice extends Homey.Device {
         debug_ip_address: this.api?.address || 'Unknown',
       });
 
-      // --- Apply Batched Settings ---
+      // --- Apply Batched Settings (Only if changed) ---
       if (Object.keys(settingsUpdates).length > 0) {
         try {
-          await this.setSettings(settingsUpdates);
+          const changedSettings: Record<string, any> = {};
+
+          for (const [key, value] of Object.entries(settingsUpdates)) {
+            if (this.settingsCache[key] !== value) {
+              changedSettings[key] = value;
+            }
+          }
+
+          if (Object.keys(changedSettings).length > 0) {
+            await this.setSettings(changedSettings);
+            Object.assign(this.settingsCache, changedSettings);
+          }
         } catch (e: any) {
           this.error('Error applying batched settings', e);
         }
