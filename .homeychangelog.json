@@ -169,5 +169,8 @@
   },
   "3.4.0": {
     "en": "Added a debug section under advanced settings"
+  },
+  "3.5.0": {
+    "en": "Clean up the code."
   }
 }
