@@ -172,5 +172,8 @@
   },
   "3.5.0": {
     "en": "Clean up the code."
+  },
+  "3.6.0": {
+    "en": "Optimized memory usage by reducing discovery logging churn and implementing differential settings updates."
   }
 }
