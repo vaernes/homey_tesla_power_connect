@@ -175,5 +175,8 @@
   },
   "3.6.0": {
     "en": "Optimized memory usage by reducing discovery logging churn and implementing differential settings updates."
+  },
+  "3.6.1": {
+    "en": "Optimized resource usage by minimizing redundant settings updates and logging churn"
   }
 }
