@@ -25,13 +25,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/vaernes/homey_tesla_power_connect.git"
-  },
-  "overrides": {
-    "eslint-config-airbnb-base": {
-      "eslint": "$eslint"
-    },
-    "eslint-plugin-homey-app": {
-      "eslint": "$eslint"
-    }
   }
 }

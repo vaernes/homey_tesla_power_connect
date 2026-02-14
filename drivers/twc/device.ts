@@ -14,6 +14,7 @@ export enum HomeyEVChargerChargingState {
 
 interface CapabilityMapping {
   capability: string;
+  // eslint-disable-next-line no-use-before-define
   valueGetter: (vit: TWCVitals, device: TWCDevice) => any;
   transform?: (val: any) => any;
   condition?: (vit: TWCVitals) => boolean;
@@ -84,7 +85,7 @@ export class TWCDevice extends Homey.Device {
     this.api = new TWC(address);
 
     const settings = this.getSettings();
-    const interval = settings.polling_interval || 60;
+
     this.cleanupPolling();
     this.pollIntervals.push(setTimeout(() => {
       this.getChargerState();
@@ -118,7 +119,7 @@ export class TWCDevice extends Homey.Device {
       'measure_twc_voltage.prox_v',
       'measure_twc_voltage.pilot_high_v',
       'measure_twc_voltage.pilot_low_v',
-      'alarm_twc_state.contactor'
+      'alarm_twc_state.contactor',
     ]);
 
     this._charging_status_changed = this.homey.flow.getDeviceTriggerCard('charger_status_changed');
@@ -266,7 +267,7 @@ export class TWCDevice extends Homey.Device {
     }
 
     this.log(`Potential IP change detected from ${currentIp} to ${discoveredIp}. Verifying device identity...`);
-    this.verifyAndUpdateIp(discoveredIp).catch(err => this.error(`Failed to verify IP update: ${err.message}`));
+    this.verifyAndUpdateIp(discoveredIp).catch((err) => this.error(`Failed to verify IP update: ${err.message}`));
 
     return true;
   }
@@ -294,8 +295,8 @@ export class TWCDevice extends Homey.Device {
         this.api = new TWC(newIp);
         await this.setStoreValue('ip', newIp);
 
-        // Verification successful, so we are now using this IP. 
-        // We can technically clear it from cache or keep it. 
+        // Verification successful, so we are now using this IP.
+        // We can technically clear it from cache or keep it.
         // If we clear it, repeated discovery of this SAME IP will hit "if (discoveredIp === currentIp)" check above, so it's fine.
         // But if it fails, the cache prevents retries.
 

@@ -20,7 +20,6 @@ export class TWC {
     }
   }
 
-
   async getVitals(): Promise<TWCVitals | null> {
     try {
       const res = await this.fetch('vitals');

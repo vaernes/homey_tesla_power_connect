@@ -32,8 +32,6 @@ export class TWCDriver extends Homey.Driver {
     });
   }
 
-
-
   async onPair(session: PairSession) {
     this.log('onPair called');
 
@@ -53,7 +51,7 @@ export class TWCDriver extends Homey.Driver {
       let attempts = 0;
       while (Object.keys(discoveryResults).length === 0 && attempts < 10) {
         this.log(`No discovery results yet, attempt ${attempts + 1}/10...`);
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        await new Promise((resolve) => setTimeout(resolve, 1000));
         discoveryResults = discoveryStrategy.getDiscoveryResults();
         attempts++;
       }
@@ -131,10 +129,10 @@ export class TWCDriver extends Homey.Driver {
               ip: address,
             },
           };
-        } else {
-          this.error(`Manual probe failed: Device at ${address} did not return a valid serial number.`);
-          throw new Error('Device found but did not return a valid serial number.');
         }
+        this.error(`Manual probe failed: Device at ${address} did not return a valid serial number.`);
+        throw new Error('Device found but did not return a valid serial number.');
+
       } catch (err: any) {
         this.error(`Failed to manually add device at ${address}. Error: ${err.message}`, err);
         throw new Error(`Could not connect to device at ${address}: ${err.message}`);
