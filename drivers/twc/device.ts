@@ -50,7 +50,6 @@ export class TWCDevice extends Homey.Device {
   private api!: TWC | null;
   private pollIntervals: NodeJS.Timeout[] = [];
   private _charging_status_changed!: Homey.FlowCardTriggerDevice | null;
-  private settingsCache: Record<string, any> = {};
 
   // Debug state tracking
   private lastSuccessfulPoll: string = 'Never';
@@ -86,8 +85,8 @@ export class TWCDevice extends Homey.Device {
     this.api = new TWC(address);
 
     const settings = this.getSettings();
-    this.settingsCache = settings;
 
+    // Clean up any existing polling intervals
     this.cleanupPolling();
     this.pollIntervals.push(setTimeout(() => {
       this.getChargerState();
@@ -166,7 +165,6 @@ export class TWCDevice extends Homey.Device {
 
   async onSettings(event: { oldSettings: object, newSettings: any, changedKeys: string[] }): Promise<string | void> {
     this.log('Settings changed');
-    this.settingsCache = event.newSettings;
     if (event.changedKeys.indexOf('polling_interval') > -1) {
       this.cleanupPolling();
       this.log(`Change poll interval ${event.newSettings.polling_interval}`);
@@ -548,17 +546,17 @@ export class TWCDevice extends Homey.Device {
       // --- Apply Batched Settings (Only if changed) ---
       if (Object.keys(settingsUpdates).length > 0) {
         try {
+          const currentSettings = this.getSettings();
           const changedSettings: Record<string, any> = {};
 
           for (const [key, value] of Object.entries(settingsUpdates)) {
-            if (this.settingsCache[key] !== value) {
+            if (currentSettings[key] !== value) {
               changedSettings[key] = value;
             }
           }
 
           if (Object.keys(changedSettings).length > 0) {
             await this.setSettings(changedSettings);
-            Object.assign(this.settingsCache, changedSettings);
           }
         } catch (e: any) {
           this.error('Error applying batched settings', e);
