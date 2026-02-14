@@ -1,6 +1,7 @@
 {
   "extends": [
     "athom",
+    "athom/homey-app",
     "plugin:@typescript-eslint/recommended"
   ],
   "parser": "@typescript-eslint/parser",
