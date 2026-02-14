@@ -178,5 +178,19 @@
   },
   "3.6.1": {
     "en": "Optimized resource usage by minimizing redundant settings updates and logging churn"
+  },
+  "4.0.0": {
+    "en": "Added Thermopile Voltage and Signal-to-Noise Ratio capabilities and optimizations",
+    "nl": "Thermopile-spanning en signaal-ruisverhouding toegevoegd en optimalisaties",
+    "de": "Thermopile-Spannung und Signal-Rausch-Verhältnis hinzugefügt und Optimierungen",
+    "fr": "Ajout de la tension thermopile et du rapport signal sur bruit et optimisations",
+    "it": "Aggiunte tensione termopila e rapporto segnale/rumore e ottimizzazioni",
+    "sv": "Lade till termopilspänning och signal-brusförhållande och optimeringar",
+    "no": "Lagt til termopilespenning og signal-støy-forhold og optimaliseringer",
+    "es": "Añadido voltaje de termopila y relación señal/ruido y optimizaciones",
+    "da": "Tilføjet termopilespænding og signal-støj-forhold og optimeringer",
+    "ru": "Добавлено напряжение термопары и отношение сигнал/шум и оптимизации",
+    "pl": "Dodano napięcie termostosu i stosunek sygnału do szumu oraz optymalizacje",
+    "ko": "서모파일 전압 및 신호 대 잡음비 기능 추가 및 최적화"
   }
 }
