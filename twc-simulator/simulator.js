@@ -84,6 +84,7 @@ const handlers = {
       mcu_temp_c: 25.4,
       pcba_temp_c: 26.1,
       handle_temp_c: 22.3,
+      input_thermopile_uv: 1234,
       current_alerts: [],
     }));
   },

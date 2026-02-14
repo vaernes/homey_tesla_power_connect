@@ -55,7 +55,9 @@
     "evcharger_charging_state",
     "evse_state",
     "measure_evse_state",
-    "measure_signal_strength"
+    "measure_signal_strength",
+    "measure_voltage.thermopile",
+    "measure_snr"
   ],
   "capabilitiesOptions": {
     "measure_twc_voltage.relay_coil_v": {
@@ -469,6 +471,41 @@
         "ru": "Состояние EVSE (код)",
         "pl": "Stan EVSE (kod)",
         "ko": "EVSE 상태 (코드)"
+      }
+    },
+    "measure_voltage.thermopile": {
+      "title": {
+        "en": "Thermopile Voltage",
+        "nl": "Thermopile Voltage",
+        "de": "Thermopile-Spannung",
+        "fr": "Tension Thermopile",
+        "it": "Tensione Termopila",
+        "sv": "Termopilspänning",
+        "no": "Termopilespenning",
+        "es": "Voltaje Termopila",
+        "da": "Termopilespænding",
+        "ru": "Напряжение термопары",
+        "pl": "Napięcie termostosu",
+        "ko": "서모파일 전압"
+      }
+    },
+    "measure_snr": {
+      "title": {
+        "en": "Signal-to-Noise Ratio",
+        "nl": "Signaal-ruisverhouding",
+        "de": "Signal-Rausch-Verhältnis",
+        "fr": "Rapport signal sur bruit",
+        "it": "Rapporto segnale/rumore",
+        "sv": "Signal-brusförhållande",
+        "no": "Signal-støy-forhold",
+        "es": "Relación señal/ruido",
+        "da": "Signal-støj-forhold",
+        "ru": "Отношение сигнал/шум",
+        "pl": "Stosunek sygnału do szumu",
+        "ko": "신호 대 잡음비"
+      },
+      "units": {
+        "en": "dB"
       }
     }
   },

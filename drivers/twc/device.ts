@@ -51,6 +51,7 @@ const MAPPINGS: CapabilityMapping[] = [
   // Signal strength is from wifi status, not vitals directly, handled separately or we need to pass wifi object
   // Since MAPPINGS is strictly for Vitals currently, we'll handle signal strength in getChargerState directly
   // or extend the mapping system. For simplicity, let's handle it in the WiFi section of getChargerState.
+  { capability: Capability.MEASURE_VOLTAGE_THERMOPILE, valueGetter: (v) => v.getInputThermopileUV() / 1000000 },
 ];
 
 export class TWCDevice extends Homey.Device {
@@ -131,6 +132,8 @@ export class TWCDevice extends Homey.Device {
 
       Capability.ALARM_TWC_STATE_CONTACTOR,
       Capability.MEASURE_SIGNAL_STRENGTH,
+      Capability.MEASURE_VOLTAGE_THERMOPILE,
+      Capability.MEASURE_SNR,
     ]);
 
     this._charging_status_changed = this.homey.flow.getDeviceTriggerCard(Flow.CHARGER_STATUS_CHANGED);
@@ -438,6 +441,7 @@ export class TWCDevice extends Homey.Device {
           });
 
           await this.setCapabilityValue(Capability.MEASURE_SIGNAL_STRENGTH, parseInt(wifi.getWifiRssi(), 10) || -100).catch(this.error);
+          await this.setCapabilityValue(Capability.MEASURE_SNR, parseInt(wifi.getWifiSnr(), 10) || 0).catch(this.error);
         }
       } catch (e: any) {
         errorMsg = e.message || Log.ERR_WIFI;

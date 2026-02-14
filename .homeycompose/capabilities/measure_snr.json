@@ -1,0 +1,30 @@
+{
+    "type": "number",
+    "title": {
+        "en": "Signal-to-Noise Ratio",
+        "nl": "Signaal-ruisverhouding",
+        "de": "Signal-Rausch-Verhältnis",
+        "fr": "Rapport signal sur bruit",
+        "it": "Rapporto segnale/rumore",
+        "sv": "Signal-brusförhållande",
+        "no": "Signal-støy-forhold",
+        "es": "Relación señal/ruido",
+        "da": "Signal-støj-forhold",
+        "ru": "Отношение сигнал/шум",
+        "pl": "Stosunek sygnału do szumu",
+        "ko": "신호 대 잡음비"
+    },
+    "units": {
+        "en": "dB"
+    },
+    "desc": {
+        "en": "Signal-to-Noise Ratio (dB)"
+    },
+    "icon": "/assets/snr.svg",
+    "chartType": "stepLine",
+    "decimals": 0,
+    "getable": true,
+    "setable": false,
+    "uiComponent": "sensor",
+    "insights": true
+}
