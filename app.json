@@ -725,6 +725,24 @@
           }
         },
         "measure_voltage.thermopile": {
+          "min": -5000,
+          "units": {
+            "en": "µV"
+          },
+          "desc": {
+            "en": "Raw thermopile sensor voltage used to detect input terminal temperature.",
+            "nl": "Ruwe thermopile-sensorspanning voor detectie van ingangsklemtemperatuur.",
+            "de": "Rohe Thermopile-Sensorspannung zur Erkennung der Eingangsanschlusstemperatur.",
+            "fr": "Tension brute du capteur thermopile pour détecter la température des bornes d'entrée.",
+            "it": "Tensione grezza del sensore termopila per rilevare la temperatura dei terminali di ingresso.",
+            "sv": "Rå termopilsensorspänning för att detektera ingångsterminaltemperatur.",
+            "no": "Rå termopilesensorspenning for å oppdage inngangsterminaltemperatur.",
+            "es": "Voltaje bruto del sensor termopila para detectar la temperatura del terminal de entrada.",
+            "da": "Rå termopile-sensorspænding til registrering af indgangsterminaltemperatur.",
+            "ru": "Необработанное напряжение термопары для определения температуры входных клемм.",
+            "pl": "Surowe napięcie czujnika termostosu do wykrywania temperatury zacisków wejściowych.",
+            "ko": "입력 단자 온도를 감지하기 위한 서모파일 센서 원시 전압."
+          },
           "title": {
             "en": "Thermopile Voltage",
             "nl": "Thermopile Voltage",

@@ -51,7 +51,7 @@ const MAPPINGS: CapabilityMapping[] = [
   // Signal strength is from wifi status, not vitals directly, handled separately or we need to pass wifi object
   // Since MAPPINGS is strictly for Vitals currently, we'll handle signal strength in getChargerState directly
   // or extend the mapping system. For simplicity, let's handle it in the WiFi section of getChargerState.
-  { capability: Capability.MEASURE_VOLTAGE_THERMOPILE, valueGetter: (v) => v.getInputThermopileUV() / 1000000 },
+  { capability: Capability.MEASURE_VOLTAGE_THERMOPILE, valueGetter: (v) => v.getInputThermopileUV() },
 ];
 
 export class TWCDevice extends Homey.Device {
