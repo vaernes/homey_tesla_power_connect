@@ -192,5 +192,8 @@
     "ru": "Добавлено напряжение термопары и отношение сигнал/шум и оптимизации",
     "pl": "Dodano napięcie termostosu i stosunek sygnału do szumu oraz optymalizacje",
     "ko": "서모파일 전압 및 신호 대 잡음비 기능 추가 및 최적화"
+  },
+  "4.0.1": {
+    "en": "Fixed Thermopile Voltage to display raw sensor value in µV and allow negative readings"
   }
 }
