@@ -195,5 +195,8 @@
   },
   "4.0.1": {
     "en": "Fixed Thermopile Voltage to display raw sensor value in µV and allow negative readings"
+  },
+  "4.1.0": {
+    "en": "Added descriptions to all capabilities and renamed Proximity Pilot and Control Pilot signals for clarity"
   }
 }

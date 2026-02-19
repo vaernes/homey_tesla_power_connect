@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "tesla.wall.connector",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "compatibility": ">=12.4.5",
   "sdk": 3,
   "platforms": [
@@ -445,6 +445,20 @@
             "ru": "Статус зарядки",
             "pl": "Status ładowania",
             "ko": "충전 상태"
+          },
+          "desc": {
+            "en": "Human-readable EVSE charging state.",
+            "nl": "Leesbare EVSE-laadstatus.",
+            "de": "Lesbarer EVSE-Ladestatus.",
+            "fr": "État de charge EVSE lisible.",
+            "it": "Stato di carica EVSE leggibile.",
+            "sv": "Läsbar EVSE-laddningsstatus.",
+            "no": "Lesbar EVSE-ladestatus.",
+            "es": "Estado de carga EVSE legible.",
+            "da": "Læsbar EVSE-ladestatus.",
+            "ru": "Читаемый статус зарядки EVSE.",
+            "pl": "Czytelny stan ładowania EVSE.",
+            "ko": "사람이 읽을 수 있는 EVSE 충전 상태."
           }
         },
         "alarm_twc_state.contactor": {
