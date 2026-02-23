@@ -13,7 +13,8 @@
             "da": "Indstillinger",
             "ru": "Настройки",
             "pl": "Ustawienia",
-            "ko": "설정"
+            "ko": "설정",
+            "ar": "الإعدادات"
         },
         "children": [
             {
@@ -31,7 +32,8 @@
                     "da": "Opdateringsfrekvens",
                     "ru": "Частота обновления",
                     "pl": "Częstotliwość aktualizacji",
-                    "ko": "업데이트 빈도"
+                    "ko": "업데이트 빈도",
+                    "ar": "تكرار التحديث"
                 },
                 "value": 60,
                 "min": 10,
@@ -48,7 +50,8 @@
                     "da": "sekunder",
                     "ru": "секунд",
                     "pl": "sekundy",
-                    "ko": "초"
+                    "ko": "초",
+                    "ar": "ثوانٍ"
                 },
                 "hint": {
                     "en": "60 is recommended.",
@@ -62,7 +65,8 @@
                     "da": "60 anbefales.",
                     "ru": "рекомендуется 60.",
                     "pl": "Zaleca się 60.",
-                    "ko": "60을 권장합니다."
+                    "ko": "60을 권장합니다.",
+                    "ar": "يُنصح بـ 60."
                 }
             },
             {
@@ -79,7 +83,8 @@
                     "es": "Ajuste de voltaje fijo",
                     "da": "Fast spændingsjustering",
                     "ru": "Фиксированная регулировка напряжения",
-                    "pl": "Stała regulacja napięcia"
+                    "pl": "Stała regulacja napięcia",
+                    "ar": "تعديل الجهد الثابت"
                 },
                 "value": 0,
                 "min": 0,
@@ -96,7 +101,8 @@
                     "da": "spænding",
                     "ru": "напряжение",
                     "pl": "napięcie",
-                    "ko": "전압"
+                    "ko": "전압",
+                    "ar": "جهد كهربائي"
                 },
                 "hint": {
                     "en": "Correct voltage readings with a fixed value adjustment, if the TWC reports are inaccurate.",
@@ -110,7 +116,8 @@
                     "da": "Korriger spændingsaflæsninger med en fast værdi-justering, hvis TWC-rapporterne er unøjagtige.",
                     "ru": "Исправьте показания напряжения с помощью регулировки фиксированного значения, если отчеты TWC неточны.",
                     "pl": "Skoryguj odczyty napięcia za pomocą regulacji stałej wartości, jeśli raporty TWC są niedokładne.",
-                    "ko": "TWC 보고가 부정확한 경우 고정 값 조정으로 전압 판독값을 수정합니다."
+                    "ko": "TWC 보고가 부정확한 경우 고정 값 조정으로 전압 판독값을 수정합니다.",
+                    "ar": "صحّح قراءات الجهد بتعديل قيمة ثابتة، إذا كانت تقارير TWC غير دقيقة."
                 }
             }
         ]
@@ -129,7 +136,8 @@
             "da": "Wi-Fi-status",
             "ru": "Статус Wi-Fi",
             "pl": "Status Wi-Fi",
-            "ko": "Wi-Fi 상태"
+            "ko": "Wi-Fi 상태",
+            "ar": "حالة Wi-Fi"
         },
         "children": [
             {
@@ -148,7 +156,8 @@
                     "da": "Tilsluttet",
                     "ru": "Подключено",
                     "pl": "Połączony",
-                    "ko": "연결됨"
+                    "ko": "연결됨",
+                    "ar": "متصل"
                 }
             },
             {
@@ -167,7 +176,8 @@
                     "da": "Tilsluttet internettet",
                     "ru": "Подключено к Интернету",
                     "pl": "Połączony z Internetem",
-                    "ko": "인터넷에 연결됨"
+                    "ko": "인터넷에 연결됨",
+                    "ar": "متصل بالإنترنت"
                 }
             },
             {
@@ -186,7 +196,8 @@
                     "da": "Lokal IP-adresse",
                     "ru": "Локальный IP-адрес",
                     "pl": "Lokalny adres IP",
-                    "ko": "로컬 IP 주소"
+                    "ko": "로컬 IP 주소",
+                    "ar": "عنوان IP المحلي"
                 }
             },
             {
@@ -205,7 +216,8 @@
                     "da": "MAC-adresse",
                     "ru": "MAC-адрес",
                     "pl": "Adres MAC",
-                    "ko": "MAC 주소"
+                    "ko": "MAC 주소",
+                    "ar": "عنوان MAC"
                 }
             },
             {
@@ -224,7 +236,8 @@
                     "da": "SSID",
                     "ru": "SSID",
                     "pl": "SSID",
-                    "ko": "SSID"
+                    "ko": "SSID",
+                    "ar": "SSID"
                 }
             },
             {
@@ -243,7 +256,8 @@
                     "da": "Signalstyrke",
                     "ru": "Уровень сигнала",
                     "pl": "Siła sygnału",
-                    "ko": "신호 강도"
+                    "ko": "신호 강도",
+                    "ar": "قوة الإشارة"
                 }
             },
             {
@@ -262,7 +276,8 @@
                     "da": "RSSI",
                     "ru": "RSSI",
                     "pl": "RSSI",
-                    "ko": "RSSI"
+                    "ko": "RSSI",
+                    "ar": "RSSI"
                 }
             },
             {
@@ -281,7 +296,8 @@
                     "da": "SNR",
                     "ru": "SNR",
                     "pl": "SNR",
-                    "ko": "SNR"
+                    "ko": "SNR",
+                    "ar": "SNR"
                 }
             }
         ]
@@ -300,7 +316,8 @@
             "da": "Vitaltegn",
             "ru": "Жизненно важные показатели",
             "pl": "Parametry życiowe",
-            "ko": "필수 데이터"
+            "ko": "필수 데이터",
+            "ar": "المؤشرات الحيوية"
         },
         "children": [
             {
@@ -319,7 +336,8 @@
                     "da": "Sessionsvarighed",
                     "ru": "Продолжительность сеанса",
                     "pl": "Czas trwania sesji",
-                    "ko": "세션 기간"
+                    "ko": "세션 기간",
+                    "ar": "مدة الجلسة"
                 }
             },
             {
@@ -338,7 +356,8 @@
                     "da": "Driftstid",
                     "ru": "Время работы",
                     "pl": "Czas pracy",
-                    "ko": "업타임"
+                    "ko": "업타임",
+                    "ar": "وقت التشغيل"
                 }
             },
             {
@@ -357,7 +376,8 @@
                     "da": "Forbindelsesstatus",
                     "ru": "Состояние соединения",
                     "pl": "Stan połączenia",
-                    "ko": "연결 상태"
+                    "ko": "연결 상태",
+                    "ar": "حالة الاتصال"
                 }
             },
             {
@@ -376,7 +396,8 @@
                     "da": "Konfigurationsstatus",
                     "ru": "Статус конфигурации",
                     "pl": "Status konfiguracji",
-                    "ko": "구성 상태"
+                    "ko": "구성 상태",
+                    "ar": "حالة التكوين"
                 }
             },
             {
@@ -395,7 +416,8 @@
                     "da": "Aktuelle alarmer",
                     "ru": "Текущие оповещения",
                     "pl": "Aktualne alerty",
-                    "ko": "현재 알림"
+                    "ko": "현재 알림",
+                    "ar": "التنبيهات الحالية"
                 }
             },
             {
@@ -414,7 +436,8 @@
                     "da": "EVSE-årsager til ikke klar",
                     "ru": "Причины неготовности EVSE",
                     "pl": "Powody braku gotowości EVSE",
-                    "ko": "EVSE 준비되지 않은 이유"
+                    "ko": "EVSE 준비되지 않은 이유",
+                    "ar": "أسباب عدم جاهزية EVSE"
                 }
             }
         ]
@@ -433,7 +456,8 @@
             "da": "Levetid",
             "ru": "Срок службы",
             "pl": "Żywotność",
-            "ko": "수명"
+            "ko": "수명",
+            "ar": "العمر الافتراضي"
         },
         "children": [
             {
@@ -452,7 +476,8 @@
                     "da": "Kontaktorscyklusser",
                     "ru": "Циклы контактора",
                     "pl": "Cykle stycznika",
-                    "ko": "접촉기 사이클"
+                    "ko": "접촉기 사이클",
+                    "ar": "دورات المُلامِس"
                 }
             },
             {
@@ -471,7 +496,8 @@
                     "da": "Kontaktorscyklusser belastet",
                     "ru": "Циклы контактора под нагрузкой",
                     "pl": "Cykle stycznika pod obciążeniem",
-                    "ko": "부하된 접촉기 사이클"
+                    "ko": "부하된 접촉기 사이클",
+                    "ar": "دورات المُلامِس تحت الحمل"
                 }
             },
             {
@@ -490,7 +516,8 @@
                     "da": "Stikcyklusser",
                     "ru": "Циклы разъема",
                     "pl": "Cykle złącza",
-                    "ko": "커넥터 사이클"
+                    "ko": "커넥터 사이클",
+                    "ar": "دورات الموصل"
                 }
             },
             {
@@ -509,7 +536,8 @@
                     "da": "Ladestarter",
                     "ru": "Запуски зарядки",
                     "pl": "Rozpoczęcia ładowania",
-                    "ko": "충전 시작"
+                    "ko": "충전 시작",
+                    "ar": "بدايات الشحن"
                 }
             },
             {
@@ -528,7 +556,8 @@
                     "da": "Termiske begrænsninger",
                     "ru": "Термические ограничения",
                     "pl": "Ograniczenia termiczne",
-                    "ko": "열 롤백"
+                    "ko": "열 롤백",
+                    "ar": "تراجعات حرارية"
                 }
             },
             {
@@ -547,7 +576,8 @@
                     "da": "Gennemsnitlig starttemperatur",
                     "ru": "Средняя температура пуска",
                     "pl": "Średnia temperatura rozruchu",
-                    "ko": "평균 시작 온도"
+                    "ko": "평균 시작 온도",
+                    "ar": "متوسط درجة حرارة التشغيل"
                 }
             },
             {
@@ -566,7 +596,8 @@
                     "da": "Total energi",
                     "ru": "Всего энергии",
                     "pl": "Całkowita energia",
-                    "ko": "총 에너지"
+                    "ko": "총 에너지",
+                    "ar": "الطاقة الإجمالية"
                 }
             },
             {
@@ -585,7 +616,8 @@
                     "da": "Total driftstid",
                     "ru": "Общее время работы",
                     "pl": "Całkowity czas pracy",
-                    "ko": "총 업타임"
+                    "ko": "총 업타임",
+                    "ar": "إجمالي وقت التشغيل"
                 }
             },
             {
@@ -604,7 +636,8 @@
                     "da": "Total ladetid",
                     "ru": "Общее время зарядки",
                     "pl": "Całkowity czas ładowania",
-                    "ko": "총 충전 시간"
+                    "ko": "총 충전 시간",
+                    "ar": "إجمالي وقت الشحن"
                 }
             },
             {
@@ -623,7 +656,8 @@
                     "da": "Antal alarmer",
                     "ru": "Количество оповещений",
                     "pl": "Liczba alertów",
-                    "ko": "알림 횟수"
+                    "ko": "알림 횟수",
+                    "ar": "عدد التنبيهات"
                 }
             }
         ]
@@ -642,7 +676,8 @@
             "da": "Version",
             "ru": "Версия",
             "pl": "Wersja",
-            "ko": "버전"
+            "ko": "버전",
+            "ar": "الإصدار"
         },
         "children": [
             {
@@ -661,7 +696,8 @@
                     "da": "Firmware-version",
                     "ru": "Версия прошивки",
                     "pl": "Wersja oprogramowania układowego",
-                    "ko": "펌웨어 버전"
+                    "ko": "펌웨어 버전",
+                    "ar": "إصدار البرنامج الثابت"
                 }
             },
             {
@@ -680,7 +716,8 @@
                     "da": "Git-gren",
                     "ru": "Ветка Git",
                     "pl": "Gałąź Git",
-                    "ko": "Git 브랜치"
+                    "ko": "Git 브랜치",
+                    "ar": "فرع Git"
                 }
             },
             {
@@ -699,7 +736,8 @@
                     "da": "Webtjeneste",
                     "ru": "Веб-сервис",
                     "pl": "Usługa internetowa",
-                    "ko": "웹 서비스"
+                    "ko": "웹 서비스",
+                    "ar": "خدمة الويب"
                 }
             },
             {
@@ -718,7 +756,8 @@
                     "da": "Reservedelsnummer",
                     "ru": "Артикул",
                     "pl": "Numer części",
-                    "ko": "부품 번호"
+                    "ko": "부품 번호",
+                    "ar": "رقم القطعة"
                 }
             },
             {
@@ -737,7 +776,8 @@
                     "da": "Serienummer",
                     "ru": "Серийный номер",
                     "pl": "Numer seryjny",
-                    "ko": "일련 번호"
+                    "ko": "일련 번호",
+                    "ar": "الرقم التسلسلي"
                 }
             }
         ]
@@ -756,7 +796,8 @@
             "da": "App Debug",
             "ru": "Отладка приложения",
             "pl": "Debugowanie aplikacji",
-            "ko": "앱 디버그"
+            "ko": "앱 디버그",
+            "ar": "تصحيح التطبيق"
         },
         "children": [
             {
@@ -775,7 +816,8 @@
                     "da": "Pollstatus",
                     "ru": "Статус опроса",
                     "pl": "Status odpytywania",
-                    "ko": "폴링 상태"
+                    "ko": "폴링 상태",
+                    "ar": "حالة الاستطلاع"
                 }
             },
             {
@@ -794,7 +836,8 @@
                     "da": "Seneste vellykkede poll",
                     "ru": "Последний успешный опрос",
                     "pl": "Ostatnie udane odpytywanie",
-                    "ko": "마지막 성공적인 폴링"
+                    "ko": "마지막 성공적인 폴링",
+                    "ar": "آخر استطلاع ناجح"
                 }
             },
             {
@@ -813,7 +856,8 @@
                     "da": "Seneste mislykkede poll",
                     "ru": "Последний неудачный опрос",
                     "pl": "Ostatnie nieudane odpytywanie",
-                    "ko": "마지막 실패한 폴링"
+                    "ko": "마지막 실패한 폴링",
+                    "ar": "آخر استطلاع فاشل"
                 }
             },
             {
@@ -832,7 +876,8 @@
                     "da": "Seneste fejl",
                     "ru": "Последняя ошибка",
                     "pl": "Ostatni błąd",
-                    "ko": "마지막 오류"
+                    "ko": "마지막 오류",
+                    "ar": "آخر خطأ"
                 }
             },
             {
@@ -851,7 +896,8 @@
                     "da": "Samlet antal polls",
                     "ru": "Всего опросов",
                     "pl": "Łączna liczba odpytywań",
-                    "ko": "총 폴링 수"
+                    "ko": "총 폴링 수",
+                    "ar": "إجمالي الاستطلاعات"
                 }
             },
             {
@@ -870,7 +916,8 @@
                     "da": "Samlet antal fejl",
                     "ru": "Всего ошибок",
                     "pl": "Łączna liczba błędów",
-                    "ko": "총 실패 수"
+                    "ko": "총 실패 수",
+                    "ar": "Total Failures"
                 }
             },
             {
@@ -889,7 +936,8 @@
                     "da": "Aktuel IP-adresse",
                     "ru": "Текущий IP-адрес",
                     "pl": "Aktualny adres IP",
-                    "ko": "현재 IP 주소"
+                    "ko": "현재 IP 주소",
+                    "ar": "Current IP Address"
                 }
             }
         ]

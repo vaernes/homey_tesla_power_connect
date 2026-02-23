@@ -11,7 +11,8 @@
         "da": "EVSE-status",
         "ru": "Состояние EVSE",
         "pl": "Stan EVSE",
-        "ko": "EVSE 상태"
+        "ko": "EVSE 상태",
+        "ar": "حالة EVSE"
     },
     "type": "enum",
     "values": [
@@ -29,7 +30,8 @@
                 "da": "Starter",
                 "ru": "Запуск",
                 "pl": "Uruchamianie",
-                "ko": "시작 중"
+                "ko": "시작 중",
+                "ar": "بدء التشغيل"
             }
         },
         {
@@ -46,7 +48,8 @@
                 "da": "Intet køretøj tilsluttet",
                 "ru": "Автомобиль не подключен",
                 "pl": "Brak podłączonego pojazdu",
-                "ko": "차량이 연결되지 않음"
+                "ko": "차량이 연결되지 않음",
+                "ar": "لا يوجد مركبة متصلة"
             }
         },
         {
@@ -63,7 +66,8 @@
                 "da": "Tilsluttet (ikke klar)",
                 "ru": "Подключен (не готов)",
                 "pl": "Połączony (niegotowy)",
-                "ko": "연결됨 (준비되지 않음)"
+                "ko": "연결됨 (준비되지 않음)",
+                "ar": "متصل (غير جاهز)"
             }
         },
         {
@@ -79,7 +83,8 @@
                 "es": "Desconocido 3",
                 "da": "Ukendt 3",
                 "ru": "Неизвестно 3",
-                "pl": "Nieznany 3"
+                "pl": "Nieznany 3",
+                "ar": "غير معروف 3"
             }
         },
         {
@@ -96,7 +101,8 @@
                 "da": "Tilsluttet (klar)",
                 "ru": "Подключен (готово)",
                 "pl": "Połączony (gotowy)",
-                "ko": "연결됨 (준비됨)"
+                "ko": "연결됨 (준비됨)",
+                "ar": "متصل (جاهز)"
             }
         },
         {
@@ -112,7 +118,8 @@
                 "es": "Desconocido 5",
                 "da": "Ukendt 5",
                 "ru": "Неизвестно 5",
-                "pl": "Nieznany 5"
+                "pl": "Nieznany 5",
+                "ar": "غير معروف 5"
             }
         },
         {
@@ -129,7 +136,8 @@
                 "da": "Forhandler",
                 "ru": "Переговоры",
                 "pl": "Negocjacje",
-                "ko": "협상 중"
+                "ko": "협상 중",
+                "ar": "جارٍ التفاوض"
             }
         },
         {
@@ -146,7 +154,8 @@
                 "da": "Opladning færdig",
                 "ru": "Зарядка завершена",
                 "pl": "Ładowanie zakończone",
-                "ko": "충전 완료"
+                "ko": "충전 완료",
+                "ar": "اكتمل الشحن"
             }
         },
         {
@@ -163,7 +172,8 @@
                 "da": "Fuldt opladet",
                 "ru": "Полностью заряжен",
                 "pl": "W pełni naładowany",
-                "ko": "완전 충전됨"
+                "ko": "완전 충전됨",
+                "ar": "مشحون بالكامل"
             }
         },
         {
@@ -180,7 +190,8 @@
                 "da": "Venter på køretøj",
                 "ru": "Ожидание автомобиля",
                 "pl": "Oczekiwanie na pojazd",
-                "ko": "차량 대기 중"
+                "ko": "차량 대기 중",
+                "ar": "في انتظار المركبة"
             }
         },
         {
@@ -197,7 +208,8 @@
                 "da": "Reduceret effekt",
                 "ru": "Пониженная мощность",
                 "pl": "Zredukowana moc",
-                "ko": "감소된 전력"
+                "ko": "감소된 전력",
+                "ar": "طاقة مخفضة"
             }
         },
         {
@@ -214,7 +226,8 @@
                 "da": "Oplader",
                 "ru": "Зарядка",
                 "pl": "Ładowanie",
-                "ko": "충전 중"
+                "ko": "충전 중",
+                "ar": "جارٍ الشحن"
             }
         },
         {
@@ -230,7 +243,8 @@
                 "es": "Desconocido 12",
                 "da": "Ukendt 12",
                 "ru": "Неизвестно 12",
-                "pl": "Nieznany 12"
+                "pl": "Nieznany 12",
+                "ar": "غير معروف 12"
             }
         },
         {
@@ -246,7 +260,8 @@
                 "es": "Desconocido 13",
                 "da": "Ukendt 13",
                 "ru": "Неизвестно 13",
-                "pl": "Nieznany 13"
+                "pl": "Nieznany 13",
+                "ar": "غير معروف 13"
             }
         }
     ],

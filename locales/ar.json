@@ -1,0 +1,19 @@
+{
+    "pair": {
+        "start": {
+            "title": "توصيل Wall Connector",
+            "title_short": "توصيل",
+            "subtitle": "اختر كيفية توصيل جهازك.",
+            "search": "البحث عن الأجهزة",
+            "manual": "إدخال عنوان IP يدوياً"
+        },
+        "twc": {
+            "title": "يرجى تعيين عنوان IP الخاص بـ Tesla Wall Connector Gen 3",
+            "subtitle": "يُنصح بربط عنوان MAC و IP في جهاز التوجيه الخاص بك.",
+            "label": "عنوان IP لـ Tesla Wall Connector",
+            "submit": "إرسال",
+            "error": "عنوان IP غير صحيح",
+            "error_device_not_found": "لم يتم العثور على الجهاز أو انتهت المهلة"
+        }
+    }
+}

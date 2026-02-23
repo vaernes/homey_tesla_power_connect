@@ -13,7 +13,8 @@
     "da": "Frekvens",
     "ru": "Частота",
     "pl": "Częstotliwość",
-    "ko": "주파수"
+    "ko": "주파수",
+    "ar": "التردد"
   },
   "units": {
     "en": "Hz"

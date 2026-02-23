@@ -12,7 +12,8 @@
     "da": "Status",
     "ru": "Статус",
     "pl": "Status",
-    "ko": "상태"
+    "ko": "상태",
+    "ar": "الحالة"
   },
   "getable": true,
   "setable": false,

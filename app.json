@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "tesla.wall.connector",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "compatibility": ">=12.4.5",
   "sdk": 3,
   "platforms": [
@@ -19,7 +19,8 @@
     "da": "Tesla Power Connect",
     "ru": "Tesla Power Connect",
     "pl": "Tesla Power Connect",
-    "ko": "Tesla Power Connect"
+    "ko": "Tesla Power Connect",
+    "ar": "Tesla Power Connect"
   },
   "description": {
     "en": "Stay charged, always connected.",
@@ -33,7 +34,8 @@
     "da": "Hold dig opladet, altid forbundet.",
     "ru": "Будьте заряжены, всегда на связи.",
     "pl": "Bądź naładowany, zawsze połączony.",
-    "ko": "충전 상태를 유지하고 항상 연결하십시오."
+    "ko": "충전 상태를 유지하고 항상 연결하십시오.",
+    "ar": "ابقَ مشحونًا، متصلًا دائمًا."
   },
   "category": [
     "energy"
@@ -82,7 +84,8 @@
           "da": "Ladestatus ændret",
           "ru": "Статус зарядного устройства изменен",
           "pl": "Status ładowarki uległ zmianie",
-          "ko": "충전기 상태가 변경됨"
+          "ko": "충전기 상태가 변경됨",
+          "ar": "تغيرت حالة الشاحن"
         },
         "titleFormatted": {
           "en": "Charger status changed",
@@ -96,7 +99,8 @@
           "da": "Ladestatus ændret",
           "ru": "Статус зарядного устройства изменен",
           "pl": "Status ładowarki uległ zmianie",
-          "ko": "충전기 상태가 변경됨"
+          "ko": "충전기 상태가 변경됨",
+          "ar": "تغيرت حالة الشاحن"
         },
         "tokens": [
           {
@@ -114,7 +118,8 @@
               "da": "Status",
               "ru": "Статус",
               "pl": "Status",
-              "ko": "상태"
+              "ko": "상태",
+              "ar": "الحالة"
             },
             "example": {
               "en": "Charging,Connected,Disconnected",
@@ -128,7 +133,8 @@
               "da": "Oplader,Tilsluttet,Afbrudt",
               "ru": "Зарядка,Подключен,Отключен",
               "pl": "Ładowanie,Połączony,Odłączony",
-              "ko": "충전 중, 연결됨, 연결 끊김"
+              "ko": "충전 중, 연결됨, 연결 끊김",
+              "ar": "يشحن، متصل، غير متصل"
             }
           }
         ],
@@ -156,7 +162,8 @@
           "da": "!{{Oplader|Oplader ikke}}",
           "ru": "!{{Заряжается|Не заряжается}}",
           "pl": "!{{Ładuje|Nie ładuje}}",
-          "ko": "!{{충전 중|충전 중이 아님}}"
+          "ko": "!{{충전 중|충전 중이 아님}}",
+          "ar": "!{{يشحن|لا يشحن}}"
         },
         "titleFormatted": {
           "en": "!{{Is|Isn't}} charging",
@@ -170,7 +177,8 @@
           "da": "!{{Oplader|Oplader ikke}}",
           "ru": "!{{Заряжается|Не заряжается}}",
           "pl": "!{{Ładuje|Nie ładuje}}",
-          "ko": "!{{충전 중|충전 중이 아님}}"
+          "ko": "!{{충전 중|충전 중이 아님}}",
+          "ar": "!{{يشحن|لا يشحن}}"
         },
         "hint": {
           "en": "Checks if the charger is charging",
@@ -184,7 +192,8 @@
           "da": "Kontrollerer om opladeren oplader",
           "ru": "Проверяет, заряжается ли зарядное устройство",
           "pl": "Sprawdza, czy ładowarka ładuje",
-          "ko": "충전기가 충전 중인지 확인합니다"
+          "ko": "충전기가 충전 중인지 확인합니다",
+          "ar": "يتحقق مما إذا كان الشاحن يشحن"
         },
         "args": [
           {
@@ -208,7 +217,8 @@
           "da": "!{{Er|Er ikke}} tilsluttet",
           "ru": "!{{Подключен|Не подключен}}",
           "pl": "!{{Połączony|Niepołączony}}",
-          "ko": "!{{연결됨|연결되지 않음}}"
+          "ko": "!{{연결됨|연결되지 않음}}",
+          "ar": "!{{متصل|غير متصل}}"
         },
         "titleFormatted": {
           "en": "!{{Is|Isn't}} connected",
@@ -222,10 +232,11 @@
           "da": "!{{Er|Er ikke}} tilsluttet",
           "ru": "!{{Подключен|Не подключен}}",
           "pl": "!{{Połączony|Niepołączony}}",
-          "ko": "!{{연결됨|연결되지 않음}}"
+          "ko": "!{{연결됨|연결되지 않음}}",
+          "ar": "!{{متصل|غير متصل}}"
         },
         "hint": {
-          "en": "Checks if the charger is connected to the vehical",
+          "en": "Checks if the charger is connected to the vehicle",
           "nl": "Controleert of de lader is verbonden met het voertuig",
           "de": "Prüft, ob das Ladegerät mit dem Fahrzeug verbunden ist",
           "fr": "Vérifie si le chargeur est connecté au véhicule",
@@ -236,7 +247,8 @@
           "da": "Kontrollerer, om opladeren er tilsluttet køretøjet",
           "ru": "Проверяет, подключено ли зарядное устройство к автомобилю",
           "pl": "Sprawdza, czy ładowarka jest podłączona do pojazdu",
-          "ko": "충전기가 차량에 연결되어 있는지 확인합니다"
+          "ko": "충전기가 차량에 연결되어 있는지 확인합니다",
+          "ar": "يتحقق مما إذا كان الشاحن متصلاً بالمركبة"
         },
         "args": [
           {
@@ -262,7 +274,8 @@
         "da": "TWC Gen3",
         "ru": "TWC Gen3",
         "pl": "TWC Gen3",
-        "ko": "TWC Gen3"
+        "ko": "TWC Gen3",
+        "ar": "TWC Gen3"
       },
       "class": "evcharger",
       "discovery": "twc",
@@ -324,7 +337,8 @@
             "da": "Relæspolespænding",
             "ru": "Напряжение катушки реле",
             "pl": "Napięcie cewki przekaźnika",
-            "ko": "릴레이 코일 전압"
+            "ko": "릴레이 코일 전압",
+            "ar": "جهد ملف المرحّل"
           },
           "desc": {
             "en": "Voltage across the relay coil. Indicates if the contactor relay is energized.",
@@ -338,7 +352,8 @@
             "da": "Spænding over relæspolen. Angiver om kontaktoren er aktiveret.",
             "ru": "Напряжение на катушке реле. Указывает, возбуждён ли контактор.",
             "pl": "Napięcie na cewce przekaźnika. Wskazuje, czy stycznik jest zasilony.",
-            "ko": "릴레이 코일의 전압. 접촉기 릴레이가 통전되었는지 나타냅니다."
+            "ko": "릴레이 코일의 전압. 접촉기 릴레이가 통전되었는지 나타냅니다.",
+            "ar": "الجهد عبر ملف المرحّل. يُشير إلى ما إذا كان مرحّل المُلامِس مُمَدًّا بالطاقة."
           }
         },
         "measure_twc_voltage.prox_v": {
@@ -354,7 +369,8 @@
             "da": "Nærhedspilot",
             "ru": "Пилот приближения",
             "pl": "Pilot zbliżeniowy",
-            "ko": "근접 파일럿"
+            "ko": "근접 파일럿",
+            "ar": "مُوجّه القرب"
           },
           "desc": {
             "en": "Signals plug presence to the vehicle to prevent movement while connected.",
@@ -368,7 +384,8 @@
             "da": "Signalerer stiktilstedeværelse til køretøjet for at forhindre bevægelse.",
             "ru": "Сигнализирует о наличии вилки транспортному средству для предотвращения движения.",
             "pl": "Sygnalizuje obecność wtyczki pojazdu, aby zapobiec ruchowi.",
-            "ko": "플러그 연결 상태를 차량에 알려 이동을 방지합니다."
+            "ko": "플러그 연결 상태를 차량에 알려 이동을 방지합니다.",
+            "ar": "يُرسل إشارة بوجود القابس للمركبة لمنع الحركة أثناء الاتصال."
           }
         },
         "measure_twc_voltage.pilot_high_v": {
@@ -384,7 +401,8 @@
             "da": "Styrepilot høj",
             "ru": "Управляющий пилот высокий",
             "pl": "Pilot sterujący wysoki",
-            "ko": "제어 파일럿 하이"
+            "ko": "제어 파일럿 하이",
+            "ar": "إشارة التحكم العليا"
           },
           "desc": {
             "en": "Control Pilot high signal for negotiating charging level between vehicle and Wall Connector.",
@@ -398,7 +416,8 @@
             "da": "Styrepilot højsignal til forhandling af ladeniveau.",
             "ru": "Высокий сигнал управляющего пилота для согласования уровня зарядки.",
             "pl": "Wysoki sygnał pilota sterującego do negocjacji poziomu ładowania.",
-            "ko": "충전 수준 협상을 위한 제어 파일럿 하이 신호."
+            "ko": "충전 수준 협상을 위한 제어 파일럿 하이 신호.",
+            "ar": "إشارة التحكم العليا للتفاوض على مستوى الشحن بين المركبة وشاحن الحائط."
           }
         },
         "measure_twc_voltage.pilot_low_v": {
@@ -414,7 +433,8 @@
             "da": "Styrepilot lav",
             "ru": "Управляющий пилот низкий",
             "pl": "Pilot sterujący niski",
-            "ko": "제어 파일럿 로우"
+            "ko": "제어 파일럿 로우",
+            "ar": "إشارة التحكم الدنيا"
           },
           "desc": {
             "en": "Control Pilot low signal for negotiating charging level between vehicle and Wall Connector.",
@@ -428,7 +448,8 @@
             "da": "Styrepilot lavsignal til forhandling af ladeniveau.",
             "ru": "Низкий сигнал управляющего пилота для согласования уровня зарядки.",
             "pl": "Niski sygnał pilota sterującego do negocjacji poziomu ładowania.",
-            "ko": "충전 수준 협상을 위한 제어 파일럿 로우 신호."
+            "ko": "충전 수준 협상을 위한 제어 파일럿 로우 신호.",
+            "ar": "إشارة التحكم الدنيا للتفاوض على مستوى الشحن بين المركبة وشاحن الحائط."
           }
         },
         "alarm_twc_state.evse": {
@@ -444,7 +465,8 @@
             "da": "Ladestatus",
             "ru": "Статус зарядки",
             "pl": "Status ładowania",
-            "ko": "충전 상태"
+            "ko": "충전 상태",
+            "ar": "حالة الشحن"
           },
           "desc": {
             "en": "Human-readable EVSE charging state.",
@@ -458,7 +480,8 @@
             "da": "Læsbar EVSE-ladestatus.",
             "ru": "Читаемый статус зарядки EVSE.",
             "pl": "Czytelny stan ładowania EVSE.",
-            "ko": "사람이 읽을 수 있는 EVSE 충전 상태."
+            "ko": "사람이 읽을 수 있는 EVSE 충전 상태.",
+            "ar": "Human-readable EVSE charging state."
           }
         },
         "alarm_twc_state.contactor": {
@@ -474,7 +497,8 @@
             "da": "Kontaktor",
             "ru": "Контактор",
             "pl": "Stycznik",
-            "ko": "접촉기"
+            "ko": "접촉기",
+            "ar": "المُلامِس"
           },
           "desc": {
             "en": "Indicates if the load relay is closed. Closed = power on and available for the vehicle.",
@@ -488,7 +512,8 @@
             "da": "Angiver om lastrelæet er lukket. Lukket = strøm tændt og tilgængelig for køretøjet.",
             "ru": "Указывает, замкнуто ли реле нагрузки. Замкнуто = питание включено и доступно для транспортного средства.",
             "pl": "Wskazuje, czy przekaźnik obciążenia jest zamknięty. Zamknięty = zasilanie włączone i dostępne dla pojazdu.",
-            "ko": "부하 릴레이가 닫혀 있는지 나타냅니다. 닫힘 = 전원이 켜져 차량에 공급 가능."
+            "ko": "부하 릴레이가 닫혀 있는지 나타냅니다. 닫힘 = 전원이 켜져 차량에 공급 가능.",
+            "ar": "يُشير إلى ما إذا كان مرحّل الحمل مُغلقًا. مُغلق = الطاقة مُشغّلة ومتاحة للمركبة."
           }
         },
         "measure_temperature.handle": {
@@ -504,7 +529,8 @@
             "da": "Temperatur håndtag",
             "ru": "Температура рукоятки",
             "pl": "Temperatura uchwytu",
-            "ko": "온도 핸들"
+            "ko": "온도 핸들",
+            "ar": "Temperature Handle"
           },
           "desc": {
             "en": "Temperature of the charging handle. Monitors for overheating during charging.",
@@ -518,7 +544,8 @@
             "da": "Temperatur på ladehåndtaget. Overvåger overophedning under opladning.",
             "ru": "Температура зарядной рукоятки. Контролирует перегрев при зарядке.",
             "pl": "Temperatura uchwytu ładowania. Monitoruje przegrzanie podczas ładowania.",
-            "ko": "충전 핸들 온도. 충전 중 과열을 모니터링합니다."
+            "ko": "충전 핸들 온도. 충전 중 과열을 모니터링합니다.",
+            "ar": "درجة حرارة مقبض الشحن. يُراقب الحرارة الزائدة أثناء الشحن."
           }
         },
         "measure_temperature.charger": {
@@ -534,7 +561,8 @@
             "da": "Temperatur oplader",
             "ru": "Температура зарядного устройства",
             "pl": "Temperatura ładowarki",
-            "ko": "온도 충전기"
+            "ko": "온도 충전기",
+            "ar": "Temperature Charger"
           },
           "desc": {
             "en": "Average of MCU and PCBA temperatures.",
@@ -548,7 +576,8 @@
             "da": "Gennemsnit af MCU- og PCBA-temperaturer.",
             "ru": "Среднее значение температур MCU и PCBA.",
             "pl": "Średnia temperatur MCU i PCBA.",
-            "ko": "MCU와 PCBA 온도의 평균."
+            "ko": "MCU와 PCBA 온도의 평균.",
+            "ar": "Average of MCU and PCBA temperatures."
           }
         },
         "measure_temperature.pcba": {
@@ -564,7 +593,8 @@
             "da": "Temperatur PCBA",
             "ru": "Температура PCBA",
             "pl": "Temperatura PCBA",
-            "ko": "온도 PCBA"
+            "ko": "온도 PCBA",
+            "ar": "Temperature PCBA"
           },
           "desc": {
             "en": "Ambient temperature of the internal circuit board. Also used to calibrate the thermopile sensor.",
@@ -578,7 +608,8 @@
             "da": "Omgivelsestemperatur på det interne kredsløbskort. Bruges også til at kalibrere termopile-sensoren.",
             "ru": "Температура окружающей среды внутренней платы. Также используется для калибровки термопары.",
             "pl": "Temperatura otoczenia wewnętrznej płytki drukowanej. Używana również do kalibracji czujnika termostosu.",
-            "ko": "내부 회로 기판의 주변 온도. 서모파일 센서 교정에도 사용됩니다."
+            "ko": "내부 회로 기판의 주변 온도. 서모파일 센서 교정에도 사용됩니다.",
+            "ar": "درجة الحرارة المحيطة للوحة الدوائر الداخلية. تُستخدم أيضًا لمعايرة مستشعر المزدوج الحراري."
           }
         },
         "measure_temperature.mcu": {
@@ -594,7 +625,8 @@
             "da": "Temperatur MCU",
             "ru": "Температура MCU",
             "pl": "Temperatura MCU",
-            "ko": "온도 MCU"
+            "ko": "온도 MCU",
+            "ar": "Temperature MCU"
           },
           "desc": {
             "en": "Temperature of the microcontroller unit.",
@@ -608,7 +640,8 @@
             "da": "Temperatur på mikrokontrolleren.",
             "ru": "Температура микроконтроллера.",
             "pl": "Temperatura jednostki mikrokontrolera.",
-            "ko": "마이크로컨트롤러 유닛의 온도."
+            "ko": "마이크로컨트롤러 유닛의 온도.",
+            "ar": "درجة حرارة وحدة المتحكم الدقيق."
           }
         },
         "measure_current.a": {
@@ -624,7 +657,8 @@
             "da": "Strøm A",
             "ru": "Ток A",
             "pl": "Prąd A",
-            "ko": "전류 A"
+            "ko": "전류 A",
+            "ar": "Current A"
           },
           "desc": {
             "en": "Current drawn on input A. Active phases depend on single/three phase configuration.",
@@ -638,7 +672,8 @@
             "da": "Strøm på indgang A. Aktive faser afhænger af en-/trefasekonfigurationen.",
             "ru": "Ток на входе A. Активные фазы зависят от однофазной/трёхфазной конфигурации.",
             "pl": "Prąd na wejściu A. Aktywne fazy zależą od konfiguracji jedno-/trójfazowej.",
-            "ko": "입력 A의 전류. 활성 위상은 단상/삼상 구성에 따라 다릅니다."
+            "ko": "입력 A의 전류. 활성 위상은 단상/삼상 구성에 따라 다릅니다.",
+            "ar": "التيار المسحوب على الإدخال A. تعتمد المراحل النشطة على تكوين الطور الأحادي/الثلاثي."
           }
         },
         "measure_current.b": {
@@ -654,7 +689,8 @@
             "da": "Strøm B",
             "ru": "Ток B",
             "pl": "Prąd B",
-            "ko": "전류 B"
+            "ko": "전류 B",
+            "ar": "Current B"
           },
           "desc": {
             "en": "Current drawn on input B. Active phases depend on single/three phase configuration.",
@@ -668,7 +704,8 @@
             "da": "Strøm på indgang B. Aktive faser afhænger af en-/trefasekonfigurationen.",
             "ru": "Ток на входе B. Активные фазы зависят от однофазной/трёхфазной конфигурации.",
             "pl": "Prąd na wejściu B. Aktywne fazy zależą od konfiguracji jedno-/trójfazowej.",
-            "ko": "입력 B의 전류. 활성 위상은 단상/삼상 구성에 따라 다릅니다."
+            "ko": "입력 B의 전류. 활성 위상은 단상/삼상 구성에 따라 다릅니다.",
+            "ar": "التيار المسحوب على الإدخال B. تعتمد المراحل النشطة على تكوين الطور الأحادي/الثلاثي."
           }
         },
         "measure_current.c": {
@@ -684,7 +721,8 @@
             "da": "Strøm C",
             "ru": "Ток C",
             "pl": "Prąd C",
-            "ko": "전류 C"
+            "ko": "전류 C",
+            "ar": "Current C"
           },
           "desc": {
             "en": "Current drawn on input C. Active phases depend on single/three phase configuration.",
@@ -698,7 +736,8 @@
             "da": "Strøm på indgang C. Aktive faser afhænger af en-/trefasekonfigurationen.",
             "ru": "Ток на входе C. Активные фазы зависят от однофазной/трёхфазной конфигурации.",
             "pl": "Prąd na wejściu C. Aktywne fazy zależą od konfiguracji jedno-/trójfazowej.",
-            "ko": "입력 C의 전류. 활성 위상은 단상/삼상 구성에 따라 다릅니다."
+            "ko": "입력 C의 전류. 활성 위상은 단상/삼상 구성에 따라 다릅니다.",
+            "ar": "التيار المسحوب على الإدخال C. تعتمد المراحل النشطة على تكوين الطور الأحادي/الثلاثي."
           }
         },
         "measure_current.n": {
@@ -714,7 +753,8 @@
             "da": "Strøm N",
             "ru": "Ток N",
             "pl": "Prąd N",
-            "ko": "전류 N"
+            "ko": "전류 N",
+            "ar": "Current N"
           },
           "desc": {
             "en": "Current on the neutral conductor.",
@@ -728,7 +768,8 @@
             "da": "Strøm på nullederen.",
             "ru": "Ток на нулевом проводнике.",
             "pl": "Prąd na przewodzie neutralnym.",
-            "ko": "중성선의 전류."
+            "ko": "중성선의 전류.",
+            "ar": "Current on the neutral conductor."
           }
         },
         "measure_twc_voltage.a": {
@@ -744,7 +785,8 @@
             "da": "Spænding A",
             "ru": "Напряжение A",
             "pl": "Napięcie A",
-            "ko": "전압 A"
+            "ko": "전압 A",
+            "ar": "Voltage A"
           },
           "desc": {
             "en": "Voltage measured on input A. Active phases depend on single/three phase configuration.",
@@ -758,7 +800,8 @@
             "da": "Spænding målt på indgang A. Aktive faser afhænger af en-/trefasekonfigurationen.",
             "ru": "Напряжение на входе A. Активные фазы зависят от однофазной/трёхфазной конфигурации.",
             "pl": "Napięcie na wejściu A. Aktywne fazy zależą od konfiguracji jedno-/trójfazowej.",
-            "ko": "입력 A의 전압. 활성 위상은 단상/삼상 구성에 따라 다릅니다."
+            "ko": "입력 A의 전압. 활성 위상은 단상/삼상 구성에 따라 다릅니다.",
+            "ar": "Voltage measured on input A. Active phases depend on single/three phase configuration."
           }
         },
         "measure_twc_voltage.b": {
@@ -774,7 +817,8 @@
             "da": "Spænding B",
             "ru": "Напряжение B",
             "pl": "Napięcie B",
-            "ko": "전압 B"
+            "ko": "전압 B",
+            "ar": "Voltage B"
           },
           "desc": {
             "en": "Voltage measured on input B. Active phases depend on single/three phase configuration.",
@@ -788,7 +832,8 @@
             "da": "Spænding målt på indgang B. Aktive faser afhænger af en-/trefasekonfigurationen.",
             "ru": "Напряжение на входе B. Активные фазы зависят от однофазной/трёхфазной конфигурации.",
             "pl": "Napięcie na wejściu B. Aktywne fazy zależą od konfiguracji jedno-/trójfazowej.",
-            "ko": "입력 B의 전압. 활성 위상은 단상/삼상 구성에 따라 다릅니다."
+            "ko": "입력 B의 전압. 활성 위상은 단상/삼상 구성에 따라 다릅니다.",
+            "ar": "Voltage measured on input B. Active phases depend on single/three phase configuration."
           }
         },
         "measure_twc_voltage.c": {
@@ -804,7 +849,8 @@
             "da": "Spænding C",
             "ru": "Напряжение C",
             "pl": "Napięcie C",
-            "ko": "전압 C"
+            "ko": "전압 C",
+            "ar": "Voltage C"
           },
           "desc": {
             "en": "Voltage measured on input C. Active phases depend on single/three phase configuration.",
@@ -818,7 +864,8 @@
             "da": "Spænding målt på indgang C. Aktive faser afhænger af en-/trefasekonfigurationen.",
             "ru": "Напряжение на входе C. Активные фазы зависят от однофазной/трёхфазной конфигурации.",
             "pl": "Napięcie na wejściu C. Aktywne fazy zależą od konfiguracji jedno-/trójfazowej.",
-            "ko": "입력 C의 전압. 활성 위상은 단상/삼상 구성에 따라 다릅니다."
+            "ko": "입력 C의 전압. 활성 위상은 단상/삼상 구성에 따라 다릅니다.",
+            "ar": "Voltage measured on input C. Active phases depend on single/three phase configuration."
           }
         },
         "measure_twc_voltage.grid": {
@@ -834,7 +881,8 @@
             "da": "Netspænding",
             "ru": "Напряжение сети",
             "pl": "Napięcie sieci",
-            "ko": "전압 그리드"
+            "ko": "전압 그리드",
+            "ar": "Voltage Grid"
           },
           "desc": {
             "en": "Mains voltage from the power grid.",
@@ -848,7 +896,8 @@
             "da": "Netspænding fra elnettet.",
             "ru": "Напряжение сети от электросети.",
             "pl": "Napięcie sieciowe z sieci elektrycznej.",
-            "ko": "전력망의 주전원 전압."
+            "ko": "전력망의 주전원 전압.",
+            "ar": "Mains voltage from the power grid."
           }
         },
         "measure_frequency.grid": {
@@ -864,7 +913,8 @@
             "da": "Netfrekvens",
             "ru": "Частота сети",
             "pl": "Częstotliwość sieci",
-            "ko": "주파수 그리드"
+            "ko": "주파수 그리드",
+            "ar": "Frequency Grid"
           },
           "desc": {
             "en": "Mains frequency from the power grid (typically 50 or 60 Hz).",
@@ -878,7 +928,8 @@
             "da": "Netfrekvens fra elnettet (typisk 50 eller 60 Hz).",
             "ru": "Частота сети от электросети (обычно 50 или 60 Гц).",
             "pl": "Częstotliwość sieciowa z sieci elektrycznej (zwykle 50 lub 60 Hz).",
-            "ko": "전력망의 주전원 주파수 (일반적으로 50 또는 60 Hz)."
+            "ko": "전력망의 주전원 주파수 (일반적으로 50 또는 60 Hz).",
+            "ar": "Mains frequency from the power grid (typically 50 or 60 Hz)."
           }
         },
         "measure_twc_power.vehicle": {
@@ -894,7 +945,8 @@
             "da": "Køretøjssessions-effekt",
             "ru": "Мощность сеанса автомобиля",
             "pl": "Moc sesji pojazdu",
-            "ko": "차량 세션 전력"
+            "ko": "차량 세션 전력",
+            "ar": "Vehicle Session Power"
           },
           "desc": {
             "en": "Calculated real-time charging power for the current session.",
@@ -908,7 +960,8 @@
             "da": "Beregnet realtidsladningseffekt for den aktuelle session.",
             "ru": "Рассчитанная мощность зарядки в реальном времени для текущего сеанса.",
             "pl": "Obliczona moc ładowania w czasie rzeczywistym dla bieżącej sesji.",
-            "ko": "현재 세션의 실시간 충전 전력 계산값."
+            "ko": "현재 세션의 실시간 충전 전력 계산값.",
+            "ar": "Calculated real-time charging power for the current session."
           }
         },
         "meter_power.vehicle": {
@@ -923,7 +976,8 @@
             "es": "Energía de sesión del vehículo",
             "da": "Køretøjssessions-energi",
             "ru": "Энергия сеанса автомобиля",
-            "pl": "Energia sesji pojazdu"
+            "pl": "Energia sesji pojazdu",
+            "ar": "Vehicle Session Energy"
           },
           "desc": {
             "en": "Total energy delivered during the current charging session. Resets when the cable is reconnected.",
@@ -937,7 +991,8 @@
             "da": "Total energi leveret under den aktuelle ladesession. Nulstilles ved gentilslutning.",
             "ru": "Общая энергия за текущий сеанс зарядки. Сбрасывается при повторном подключении.",
             "pl": "Całkowita energia dostarczona podczas bieżącej sesji ładowania. Resetuje się przy ponownym podłączeniu.",
-            "ko": "현재 충전 세션 동안 전달된 총 에너지. 케이블 재연결 시 초기화됩니다."
+            "ko": "현재 충전 세션 동안 전달된 총 에너지. 케이블 재연결 시 초기화됩니다.",
+            "ar": "Total energy delivered during the current charging session. Resets when the cable is reconnected."
           }
         },
         "measure_current.vehicle": {
@@ -953,7 +1008,8 @@
             "da": "Køretøjssessions-strøm",
             "ru": "Ток сеанса автомобиля",
             "pl": "Prąd sesji pojazdu",
-            "ko": "차량 세션 전류"
+            "ko": "차량 세션 전류",
+            "ar": "Vehicle Session Current"
           },
           "desc": {
             "en": "Current amp setting in the car.",
@@ -967,7 +1023,8 @@
             "da": "Nuværende ampère-indstilling i bilen.",
             "ru": "Текущая настройка силы тока в автомобиле.",
             "pl": "Aktualne ustawienie natężenia w samochodzie.",
-            "ko": "차량의 현재 암페어 설정입니다."
+            "ko": "차량의 현재 암페어 설정입니다.",
+            "ar": "Current amp setting in the car."
           }
         },
         "meter_power.total": {
@@ -983,7 +1040,8 @@
             "da": "Total brugt energi",
             "ru": "Всего использовано энергии",
             "pl": "Całkowita zużyta energia",
-            "ko": "총 사용 에너지"
+            "ko": "총 사용 에너지",
+            "ar": "Total Used Energy"
           },
           "desc": {
             "en": "Total cumulative energy delivered by the Wall Connector over its lifetime.",
@@ -997,7 +1055,8 @@
             "da": "Total kumulativ energi leveret af Wall Connector i løbet af dens levetid.",
             "ru": "Общая накопленная энергия, отданная Wall Connector за всё время эксплуатации.",
             "pl": "Całkowita skumulowana energia dostarczona przez Wall Connector w ciągu jego eksploatacji.",
-            "ko": "Wall Connector가 수명 동안 전달한 총 누적 에너지."
+            "ko": "Wall Connector가 수명 동안 전달한 총 누적 에너지.",
+            "ar": "Total cumulative energy delivered by the Wall Connector over its lifetime."
           }
         },
         "evse_state": {
@@ -1013,7 +1072,8 @@
             "da": "EVSE-status",
             "ru": "Состояние EVSE",
             "pl": "Stan EVSE",
-            "ko": "EVSE 상태"
+            "ko": "EVSE 상태",
+            "ar": "حالة EVSE"
           },
           "desc": {
             "en": "EVSE state as a human-readable text value.",
@@ -1027,7 +1087,8 @@
             "da": "EVSE-status som læsbar tekstværdi.",
             "ru": "Состояние EVSE в виде читаемого текста.",
             "pl": "Stan EVSE jako czytelna wartość tekstowa.",
-            "ko": "EVSE 상태를 사람이 읽을 수 있는 텍스트 값으로 표시."
+            "ko": "EVSE 상태를 사람이 읽을 수 있는 텍스트 값으로 표시.",
+            "ar": "EVSE state as a human-readable text value."
           }
         },
         "measure_evse_state": {
@@ -1043,7 +1104,8 @@
             "da": "EVSE-status (kode)",
             "ru": "Состояние EVSE (код)",
             "pl": "Stan EVSE (kod)",
-            "ko": "EVSE 상태 (코드)"
+            "ko": "EVSE 상태 (코드)",
+            "ar": "حالة EVSE (رمز)"
           },
           "desc": {
             "en": "Numeric EVSE state code from the Wall Connector API.",
@@ -1057,7 +1119,8 @@
             "da": "Numerisk EVSE-statuskode fra Wall Connector API.",
             "ru": "Числовой код состояния EVSE из API Wall Connector.",
             "pl": "Numeryczny kod stanu EVSE z API Wall Connector.",
-            "ko": "Wall Connector API의 숫자 EVSE 상태 코드."
+            "ko": "Wall Connector API의 숫자 EVSE 상태 코드.",
+            "ar": "رمز حالة EVSE الرقمي من واجهة برمجة شاحن الحائط."
           }
         },
         "measure_voltage.thermopile": {
@@ -1077,7 +1140,8 @@
             "da": "Rå termopile-sensorspænding til registrering af indgangsterminaltemperatur.",
             "ru": "Необработанное напряжение термопары для определения температуры входных клемм.",
             "pl": "Surowe napięcie czujnika termostosu do wykrywania temperatury zacisków wejściowych.",
-            "ko": "입력 단자 온도를 감지하기 위한 서모파일 센서 원시 전압."
+            "ko": "입력 단자 온도를 감지하기 위한 서모파일 센서 원시 전압.",
+            "ar": "Raw thermopile sensor voltage used to detect input terminal temperature."
           },
           "title": {
             "en": "Thermopile Voltage",
@@ -1091,7 +1155,8 @@
             "da": "Termopilespænding",
             "ru": "Напряжение термопары",
             "pl": "Napięcie termostosu",
-            "ko": "서모파일 전압"
+            "ko": "서모파일 전압",
+            "ar": "Thermopile Voltage"
           }
         },
         "measure_snr": {
@@ -1107,7 +1172,8 @@
             "da": "Signal-støj-forhold",
             "ru": "Отношение сигнал/шум",
             "pl": "Stosunek sygnału do szumu",
-            "ko": "신호 대 잡음비"
+            "ko": "신호 대 잡음비",
+            "ar": "Signal-to-Noise Ratio"
           },
           "units": {
             "en": "dB"
@@ -1156,7 +1222,8 @@
             "da": "Indstillinger",
             "ru": "Настройки",
             "pl": "Ustawienia",
-            "ko": "설정"
+            "ko": "설정",
+            "ar": "الإعدادات"
           },
           "children": [
             {
@@ -1174,7 +1241,8 @@
                 "da": "Opdateringsfrekvens",
                 "ru": "Частота обновления",
                 "pl": "Częstotliwość aktualizacji",
-                "ko": "업데이트 빈도"
+                "ko": "업데이트 빈도",
+                "ar": "تكرار التحديث"
               },
               "value": 60,
               "min": 10,
@@ -1191,7 +1259,8 @@
                 "da": "sekunder",
                 "ru": "секунд",
                 "pl": "sekundy",
-                "ko": "초"
+                "ko": "초",
+                "ar": "ثوانٍ"
               },
               "hint": {
                 "en": "60 is recommended.",
@@ -1205,7 +1274,8 @@
                 "da": "60 anbefales.",
                 "ru": "рекомендуется 60.",
                 "pl": "Zaleca się 60.",
-                "ko": "60을 권장합니다."
+                "ko": "60을 권장합니다.",
+                "ar": "يُنصح بـ 60."
               }
             },
             {
@@ -1222,7 +1292,8 @@
                 "es": "Ajuste de voltaje fijo",
                 "da": "Fast spændingsjustering",
                 "ru": "Фиксированная регулировка напряжения",
-                "pl": "Stała regulacja napięcia"
+                "pl": "Stała regulacja napięcia",
+                "ar": "تعديل الجهد الثابت"
               },
               "value": 0,
               "min": 0,
@@ -1239,7 +1310,8 @@
                 "da": "spænding",
                 "ru": "напряжение",
                 "pl": "napięcie",
-                "ko": "전압"
+                "ko": "전압",
+                "ar": "جهد كهربائي"
               },
               "hint": {
                 "en": "Correct voltage readings with a fixed value adjustment, if the TWC reports are inaccurate.",
@@ -1253,7 +1325,8 @@
                 "da": "Korriger spændingsaflæsninger med en fast værdi-justering, hvis TWC-rapporterne er unøjagtige.",
                 "ru": "Исправьте показания напряжения с помощью регулировки фиксированного значения, если отчеты TWC неточны.",
                 "pl": "Skoryguj odczyty napięcia za pomocą regulacji stałej wartości, jeśli raporty TWC są niedokładne.",
-                "ko": "TWC 보고가 부정확한 경우 고정 값 조정으로 전압 판독값을 수정합니다."
+                "ko": "TWC 보고가 부정확한 경우 고정 값 조정으로 전압 판독값을 수정합니다.",
+                "ar": "صحّح قراءات الجهد بتعديل قيمة ثابتة، إذا كانت تقارير TWC غير دقيقة."
               }
             }
           ]
@@ -1272,7 +1345,8 @@
             "da": "Wi-Fi-status",
             "ru": "Статус Wi-Fi",
             "pl": "Status Wi-Fi",
-            "ko": "Wi-Fi 상태"
+            "ko": "Wi-Fi 상태",
+            "ar": "حالة Wi-Fi"
           },
           "children": [
             {
@@ -1291,7 +1365,8 @@
                 "da": "Tilsluttet",
                 "ru": "Подключено",
                 "pl": "Połączony",
-                "ko": "연결됨"
+                "ko": "연결됨",
+                "ar": "متصل"
               }
             },
             {
@@ -1310,7 +1385,8 @@
                 "da": "Tilsluttet internettet",
                 "ru": "Подключено к Интернету",
                 "pl": "Połączony z Internetem",
-                "ko": "인터넷에 연결됨"
+                "ko": "인터넷에 연결됨",
+                "ar": "متصل بالإنترنت"
               }
             },
             {
@@ -1329,7 +1405,8 @@
                 "da": "Lokal IP-adresse",
                 "ru": "Локальный IP-адрес",
                 "pl": "Lokalny adres IP",
-                "ko": "로컬 IP 주소"
+                "ko": "로컬 IP 주소",
+                "ar": "عنوان IP المحلي"
               }
             },
             {
@@ -1348,7 +1425,8 @@
                 "da": "MAC-adresse",
                 "ru": "MAC-адрес",
                 "pl": "Adres MAC",
-                "ko": "MAC 주소"
+                "ko": "MAC 주소",
+                "ar": "عنوان MAC"
               }
             },
             {
@@ -1367,7 +1445,8 @@
                 "da": "SSID",
                 "ru": "SSID",
                 "pl": "SSID",
-                "ko": "SSID"
+                "ko": "SSID",
+                "ar": "SSID"
               }
             },
             {
@@ -1386,7 +1465,8 @@
                 "da": "Signalstyrke",
                 "ru": "Уровень сигнала",
                 "pl": "Siła sygnału",
-                "ko": "신호 강도"
+                "ko": "신호 강도",
+                "ar": "قوة الإشارة"
               }
             },
             {
@@ -1405,7 +1485,8 @@
                 "da": "RSSI",
                 "ru": "RSSI",
                 "pl": "RSSI",
-                "ko": "RSSI"
+                "ko": "RSSI",
+                "ar": "RSSI"
               }
             },
             {
@@ -1424,7 +1505,8 @@
                 "da": "SNR",
                 "ru": "SNR",
                 "pl": "SNR",
-                "ko": "SNR"
+                "ko": "SNR",
+                "ar": "SNR"
               }
             }
           ]
@@ -1443,7 +1525,8 @@
             "da": "Vitaltegn",
             "ru": "Жизненно важные показатели",
             "pl": "Parametry życiowe",
-            "ko": "필수 데이터"
+            "ko": "필수 데이터",
+            "ar": "المؤشرات الحيوية"
           },
           "children": [
             {
@@ -1462,7 +1545,8 @@
                 "da": "Sessionsvarighed",
                 "ru": "Продолжительность сеанса",
                 "pl": "Czas trwania sesji",
-                "ko": "세션 기간"
+                "ko": "세션 기간",
+                "ar": "مدة الجلسة"
               }
             },
             {
@@ -1481,7 +1565,8 @@
                 "da": "Driftstid",
                 "ru": "Время работы",
                 "pl": "Czas pracy",
-                "ko": "업타임"
+                "ko": "업타임",
+                "ar": "وقت التشغيل"
               }
             },
             {
@@ -1500,7 +1585,8 @@
                 "da": "Forbindelsesstatus",
                 "ru": "Состояние соединения",
                 "pl": "Stan połączenia",
-                "ko": "연결 상태"
+                "ko": "연결 상태",
+                "ar": "حالة الاتصال"
               }
             },
             {
@@ -1519,7 +1605,8 @@
                 "da": "Konfigurationsstatus",
                 "ru": "Статус конфигурации",
                 "pl": "Status konfiguracji",
-                "ko": "구성 상태"
+                "ko": "구성 상태",
+                "ar": "حالة التكوين"
               }
             },
             {
@@ -1538,7 +1625,8 @@
                 "da": "Aktuelle alarmer",
                 "ru": "Текущие оповещения",
                 "pl": "Aktualne alerty",
-                "ko": "현재 알림"
+                "ko": "현재 알림",
+                "ar": "التنبيهات الحالية"
               }
             },
             {
@@ -1557,7 +1645,8 @@
                 "da": "EVSE-årsager til ikke klar",
                 "ru": "Причины неготовности EVSE",
                 "pl": "Powody braku gotowości EVSE",
-                "ko": "EVSE 준비되지 않은 이유"
+                "ko": "EVSE 준비되지 않은 이유",
+                "ar": "أسباب عدم جاهزية EVSE"
               }
             }
           ]
@@ -1576,7 +1665,8 @@
             "da": "Levetid",
             "ru": "Срок службы",
             "pl": "Żywotność",
-            "ko": "수명"
+            "ko": "수명",
+            "ar": "العمر الافتراضي"
           },
           "children": [
             {
@@ -1595,7 +1685,8 @@
                 "da": "Kontaktorscyklusser",
                 "ru": "Циклы контактора",
                 "pl": "Cykle stycznika",
-                "ko": "접촉기 사이클"
+                "ko": "접촉기 사이클",
+                "ar": "دورات المُلامِس"
               }
             },
             {
@@ -1614,7 +1705,8 @@
                 "da": "Kontaktorscyklusser belastet",
                 "ru": "Циклы контактора под нагрузкой",
                 "pl": "Cykle stycznika pod obciążeniem",
-                "ko": "부하된 접촉기 사이클"
+                "ko": "부하된 접촉기 사이클",
+                "ar": "دورات المُلامِس تحت الحمل"
               }
             },
             {
@@ -1633,7 +1725,8 @@
                 "da": "Stikcyklusser",
                 "ru": "Циклы разъема",
                 "pl": "Cykle złącza",
-                "ko": "커넥터 사이클"
+                "ko": "커넥터 사이클",
+                "ar": "دورات الموصل"
               }
             },
             {
@@ -1652,7 +1745,8 @@
                 "da": "Ladestarter",
                 "ru": "Запуски зарядки",
                 "pl": "Rozpoczęcia ładowania",
-                "ko": "충전 시작"
+                "ko": "충전 시작",
+                "ar": "بدايات الشحن"
               }
             },
             {
@@ -1671,7 +1765,8 @@
                 "da": "Termiske begrænsninger",
                 "ru": "Термические ограничения",
                 "pl": "Ograniczenia termiczne",
-                "ko": "열 롤백"
+                "ko": "열 롤백",
+                "ar": "تراجعات حرارية"
               }
             },
             {
@@ -1690,7 +1785,8 @@
                 "da": "Gennemsnitlig starttemperatur",
                 "ru": "Средняя температура пуска",
                 "pl": "Średnia temperatura rozruchu",
-                "ko": "평균 시작 온도"
+                "ko": "평균 시작 온도",
+                "ar": "متوسط درجة حرارة التشغيل"
               }
             },
             {
@@ -1709,7 +1805,8 @@
                 "da": "Total energi",
                 "ru": "Всего энергии",
                 "pl": "Całkowita energia",
-                "ko": "총 에너지"
+                "ko": "총 에너지",
+                "ar": "الطاقة الإجمالية"
               }
             },
             {
@@ -1728,7 +1825,8 @@
                 "da": "Total driftstid",
                 "ru": "Общее время работы",
                 "pl": "Całkowity czas pracy",
-                "ko": "총 업타임"
+                "ko": "총 업타임",
+                "ar": "إجمالي وقت التشغيل"
               }
             },
             {
@@ -1747,7 +1845,8 @@
                 "da": "Total ladetid",
                 "ru": "Общее время зарядки",
                 "pl": "Całkowity czas ładowania",
-                "ko": "총 충전 시간"
+                "ko": "총 충전 시간",
+                "ar": "إجمالي وقت الشحن"
               }
             },
             {
@@ -1766,7 +1865,8 @@
                 "da": "Antal alarmer",
                 "ru": "Количество оповещений",
                 "pl": "Liczba alertów",
-                "ko": "알림 횟수"
+                "ko": "알림 횟수",
+                "ar": "عدد التنبيهات"
               }
             }
           ]
@@ -1785,7 +1885,8 @@
             "da": "Version",
             "ru": "Версия",
             "pl": "Wersja",
-            "ko": "버전"
+            "ko": "버전",
+            "ar": "الإصدار"
           },
           "children": [
             {
@@ -1804,7 +1905,8 @@
                 "da": "Firmware-version",
                 "ru": "Версия прошивки",
                 "pl": "Wersja oprogramowania układowego",
-                "ko": "펌웨어 버전"
+                "ko": "펌웨어 버전",
+                "ar": "إصدار البرنامج الثابت"
               }
             },
             {
@@ -1823,7 +1925,8 @@
                 "da": "Git-gren",
                 "ru": "Ветка Git",
                 "pl": "Gałąź Git",
-                "ko": "Git 브랜치"
+                "ko": "Git 브랜치",
+                "ar": "فرع Git"
               }
             },
             {
@@ -1842,7 +1945,8 @@
                 "da": "Webtjeneste",
                 "ru": "Веб-сервис",
                 "pl": "Usługa internetowa",
-                "ko": "웹 서비스"
+                "ko": "웹 서비스",
+                "ar": "خدمة الويب"
               }
             },
             {
@@ -1861,7 +1965,8 @@
                 "da": "Reservedelsnummer",
                 "ru": "Артикул",
                 "pl": "Numer części",
-                "ko": "부품 번호"
+                "ko": "부품 번호",
+                "ar": "رقم القطعة"
               }
             },
             {
@@ -1880,7 +1985,8 @@
                 "da": "Serienummer",
                 "ru": "Серийный номер",
                 "pl": "Numer seryjny",
-                "ko": "일련 번호"
+                "ko": "일련 번호",
+                "ar": "الرقم التسلسلي"
               }
             }
           ]
@@ -1899,7 +2005,8 @@
             "da": "App Debug",
             "ru": "Отладка приложения",
             "pl": "Debugowanie aplikacji",
-            "ko": "앱 디버그"
+            "ko": "앱 디버그",
+            "ar": "تصحيح التطبيق"
           },
           "children": [
             {
@@ -1918,7 +2025,8 @@
                 "da": "Pollstatus",
                 "ru": "Статус опроса",
                 "pl": "Status odpytywania",
-                "ko": "폴링 상태"
+                "ko": "폴링 상태",
+                "ar": "حالة الاستطلاع"
               }
             },
             {
@@ -1937,7 +2045,8 @@
                 "da": "Seneste vellykkede poll",
                 "ru": "Последний успешный опрос",
                 "pl": "Ostatnie udane odpytywanie",
-                "ko": "마지막 성공적인 폴링"
+                "ko": "마지막 성공적인 폴링",
+                "ar": "آخر استطلاع ناجح"
               }
             },
             {
@@ -1956,7 +2065,8 @@
                 "da": "Seneste mislykkede poll",
                 "ru": "Последний неудачный опрос",
                 "pl": "Ostatnie nieudane odpytywanie",
-                "ko": "마지막 실패한 폴링"
+                "ko": "마지막 실패한 폴링",
+                "ar": "آخر استطلاع فاشل"
               }
             },
             {
@@ -1975,7 +2085,8 @@
                 "da": "Seneste fejl",
                 "ru": "Последняя ошибка",
                 "pl": "Ostatni błąd",
-                "ko": "마지막 오류"
+                "ko": "마지막 오류",
+                "ar": "آخر خطأ"
               }
             },
             {
@@ -1994,7 +2105,8 @@
                 "da": "Samlet antal polls",
                 "ru": "Всего опросов",
                 "pl": "Łączna liczba odpytywań",
-                "ko": "총 폴링 수"
+                "ko": "총 폴링 수",
+                "ar": "إجمالي الاستطلاعات"
               }
             },
             {
@@ -2013,7 +2125,8 @@
                 "da": "Samlet antal fejl",
                 "ru": "Всего ошибок",
                 "pl": "Łączna liczba błędów",
-                "ko": "총 실패 수"
+                "ko": "총 실패 수",
+                "ar": "Total Failures"
               }
             },
             {
@@ -2032,7 +2145,8 @@
                 "da": "Aktuel IP-adresse",
                 "ru": "Текущий IP-адрес",
                 "pl": "Aktualny adres IP",
-                "ko": "현재 IP 주소"
+                "ko": "현재 IP 주소",
+                "ar": "Current IP Address"
               }
             }
           ]
@@ -2055,7 +2169,8 @@
         "da": "Status",
         "ru": "Статус",
         "pl": "Status",
-        "ko": "상태"
+        "ko": "상태",
+        "ar": "الحالة"
       },
       "getable": true,
       "setable": false,
@@ -2075,7 +2190,8 @@
         "da": "EVSE-status",
         "ru": "Состояние EVSE",
         "pl": "Stan EVSE",
-        "ko": "EVSE 상태"
+        "ko": "EVSE 상태",
+        "ar": "حالة EVSE"
       },
       "type": "enum",
       "values": [
@@ -2093,7 +2209,8 @@
             "da": "Starter",
             "ru": "Запуск",
             "pl": "Uruchamianie",
-            "ko": "시작 중"
+            "ko": "시작 중",
+            "ar": "بدء التشغيل"
           }
         },
         {
@@ -2110,7 +2227,8 @@
             "da": "Intet køretøj tilsluttet",
             "ru": "Автомобиль не подключен",
             "pl": "Brak podłączonego pojazdu",
-            "ko": "차량이 연결되지 않음"
+            "ko": "차량이 연결되지 않음",
+            "ar": "لا يوجد مركبة متصلة"
           }
         },
         {
@@ -2127,7 +2245,8 @@
             "da": "Tilsluttet (ikke klar)",
             "ru": "Подключен (не готов)",
             "pl": "Połączony (niegotowy)",
-            "ko": "연결됨 (준비되지 않음)"
+            "ko": "연결됨 (준비되지 않음)",
+            "ar": "متصل (غير جاهز)"
           }
         },
         {
@@ -2143,7 +2262,8 @@
             "es": "Desconocido 3",
             "da": "Ukendt 3",
             "ru": "Неизвестно 3",
-            "pl": "Nieznany 3"
+            "pl": "Nieznany 3",
+            "ar": "غير معروف 3"
           }
         },
         {
@@ -2160,7 +2280,8 @@
             "da": "Tilsluttet (klar)",
             "ru": "Подключен (готово)",
             "pl": "Połączony (gotowy)",
-            "ko": "연결됨 (준비됨)"
+            "ko": "연결됨 (준비됨)",
+            "ar": "متصل (جاهز)"
           }
         },
         {
@@ -2176,7 +2297,8 @@
             "es": "Desconocido 5",
             "da": "Ukendt 5",
             "ru": "Неизвестно 5",
-            "pl": "Nieznany 5"
+            "pl": "Nieznany 5",
+            "ar": "غير معروف 5"
           }
         },
         {
@@ -2193,7 +2315,8 @@
             "da": "Forhandler",
             "ru": "Переговоры",
             "pl": "Negocjacje",
-            "ko": "협상 중"
+            "ko": "협상 중",
+            "ar": "جارٍ التفاوض"
           }
         },
         {
@@ -2210,7 +2333,8 @@
             "da": "Opladning færdig",
             "ru": "Зарядка завершена",
             "pl": "Ładowanie zakończone",
-            "ko": "충전 완료"
+            "ko": "충전 완료",
+            "ar": "اكتمل الشحن"
           }
         },
         {
@@ -2227,7 +2351,8 @@
             "da": "Fuldt opladet",
             "ru": "Полностью заряжен",
             "pl": "W pełni naładowany",
-            "ko": "완전 충전됨"
+            "ko": "완전 충전됨",
+            "ar": "مشحون بالكامل"
           }
         },
         {
@@ -2244,7 +2369,8 @@
             "da": "Venter på køretøj",
             "ru": "Ожидание автомобиля",
             "pl": "Oczekiwanie na pojazd",
-            "ko": "차량 대기 중"
+            "ko": "차량 대기 중",
+            "ar": "في انتظار المركبة"
           }
         },
         {
@@ -2261,7 +2387,8 @@
             "da": "Reduceret effekt",
             "ru": "Пониженная мощность",
             "pl": "Zredukowana moc",
-            "ko": "감소된 전력"
+            "ko": "감소된 전력",
+            "ar": "طاقة مخفضة"
           }
         },
         {
@@ -2278,7 +2405,8 @@
             "da": "Oplader",
             "ru": "Зарядка",
             "pl": "Ładowanie",
-            "ko": "충전 중"
+            "ko": "충전 중",
+            "ar": "جارٍ الشحن"
           }
         },
         {
@@ -2294,7 +2422,8 @@
             "es": "Desconocido 12",
             "da": "Ukendt 12",
             "ru": "Неизвестно 12",
-            "pl": "Nieznany 12"
+            "pl": "Nieznany 12",
+            "ar": "غير معروف 12"
           }
         },
         {
@@ -2310,7 +2439,8 @@
             "es": "Desconocido 13",
             "da": "Ukendt 13",
             "ru": "Неизвестно 13",
-            "pl": "Nieznany 13"
+            "pl": "Nieznany 13",
+            "ar": "غير معروف 13"
           }
         }
       ],
@@ -2333,7 +2463,8 @@
         "da": "EVSE-status (kode)",
         "ru": "Состояние EVSE (код)",
         "pl": "Stan EVSE (kod)",
-        "ko": "EVSE 상태 (코드)"
+        "ko": "EVSE 상태 (코드)",
+        "ar": "حالة EVSE (رمز)"
       },
       "type": "number",
       "decimals": 0,
@@ -2360,7 +2491,8 @@
         "da": "Frekvens",
         "ru": "Частота",
         "pl": "Częstotliwość",
-        "ko": "주파수"
+        "ko": "주파수",
+        "ar": "التردد"
       },
       "units": {
         "en": "Hz"
@@ -2384,13 +2516,15 @@
         "da": "Signal-støj-forhold",
         "ru": "Отношение сигнал/шум",
         "pl": "Stosunek sygnału do szumu",
-        "ko": "신호 대 잡음비"
+        "ko": "신호 대 잡음비",
+        "ar": "نسبة الإشارة إلى الضوضاء"
       },
       "units": {
         "en": "dB"
       },
       "desc": {
-        "en": "Signal-to-Noise Ratio (dB)"
+        "en": "Signal-to-Noise Ratio (dB)",
+        "ar": "نسبة الإشارة إلى الضوضاء (ديسيبل)"
       },
       "icon": "/assets/snr.svg",
       "chartType": "stepLine",
@@ -2414,7 +2548,8 @@
         "da": "Effekt",
         "ru": "Электроэнергия",
         "pl": "Moc",
-        "ko": "전력"
+        "ko": "전력",
+        "ar": "الطاقة"
       },
       "units": {
         "en": "W",
@@ -2433,7 +2568,8 @@
         "da": "Effekt i watt (W)",
         "ru": "Электроэнергия (Вт)",
         "pl": "Moc w watach (W)",
-        "ko": "와트(W) 단위 전력"
+        "ko": "와트(W) 단위 전력",
+        "ar": "الطاقة بالواط (واط)"
       },
       "options": {
         "isApproximated": {
@@ -2442,7 +2578,8 @@
           "desc": {
             "en": "This flag is used to determine that the device itself has no power measurement functionality, but that the driver calculates the energy use.",
             "ru": "Этот флаг используется для определения того, что само устройство не имеет функции измерения электроэнергии, но драйвер рассчитывает потребление энергии.",
-            "pl": "Flaga oznacza, że samo urządzenie nie ma funkcji pomiaru mocy, ale sterownik oblicza zużycie energii."
+            "pl": "Flaga oznacza, że samo urządzenie nie ma funkcji pomiaru mocy, ale sterownik oblicza zużycie energii.",
+            "ar": "يُستخدم هذا العلم لتحديد أن الجهاز نفسه لا يحتوي على وظيفة قياس الطاقة، لكن المشغّل يحسب استهلاك الطاقة."
           }
         }
       },
@@ -2467,7 +2604,8 @@
         "da": "Elektrisk spænding",
         "ru": "Вольтаж",
         "pl": "Napięcie",
-        "ko": "전압"
+        "ko": "전압",
+        "ar": "الجهد الكهربائي"
       },
       "units": {
         "en": "V",
@@ -2485,7 +2623,8 @@
         "da": "Volt (V)",
         "ru": "Вольтаж (Вольт)",
         "pl": "Napięcie (V)",
-        "ko": "전압 (V)"
+        "ko": "전압 (V)",
+        "ar": "الجهد الكهربائي (فولت)"
       },
       "icon": "/assets/voltage.svg",
       "insights": true,

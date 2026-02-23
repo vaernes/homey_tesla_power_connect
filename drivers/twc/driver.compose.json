@@ -11,7 +11,8 @@
     "da": "TWC Gen3",
     "ru": "TWC Gen3",
     "pl": "TWC Gen3",
-    "ko": "TWC Gen3"
+    "ko": "TWC Gen3",
+    "ar": "TWC Gen3"
   },
   "class": "evcharger",
   "discovery": "twc",
@@ -73,7 +74,8 @@
         "da": "Relæspolespænding",
         "ru": "Напряжение катушки реле",
         "pl": "Napięcie cewki przekaźnika",
-        "ko": "릴레이 코일 전압"
+        "ko": "릴레이 코일 전압",
+        "ar": "جهد ملف المرحّل"
       },
       "desc": {
         "en": "Voltage across the relay coil. Indicates if the contactor relay is energized.",
@@ -87,7 +89,8 @@
         "da": "Spænding over relæspolen. Angiver om kontaktoren er aktiveret.",
         "ru": "Напряжение на катушке реле. Указывает, возбуждён ли контактор.",
         "pl": "Napięcie na cewce przekaźnika. Wskazuje, czy stycznik jest zasilony.",
-        "ko": "릴레이 코일의 전압. 접촉기 릴레이가 통전되었는지 나타냅니다."
+        "ko": "릴레이 코일의 전압. 접촉기 릴레이가 통전되었는지 나타냅니다.",
+        "ar": "الجهد عبر ملف المرحّل. يُشير إلى ما إذا كان مرحّل المُلامِس مُمَدًّا بالطاقة."
       }
     },
     "measure_twc_voltage.prox_v": {
@@ -103,7 +106,8 @@
         "da": "Nærhedspilot",
         "ru": "Пилот приближения",
         "pl": "Pilot zbliżeniowy",
-        "ko": "근접 파일럿"
+        "ko": "근접 파일럿",
+        "ar": "مُوجّه القرب"
       },
       "desc": {
         "en": "Signals plug presence to the vehicle to prevent movement while connected.",
@@ -117,7 +121,8 @@
         "da": "Signalerer stiktilstedeværelse til køretøjet for at forhindre bevægelse.",
         "ru": "Сигнализирует о наличии вилки транспортному средству для предотвращения движения.",
         "pl": "Sygnalizuje obecność wtyczki pojazdu, aby zapobiec ruchowi.",
-        "ko": "플러그 연결 상태를 차량에 알려 이동을 방지합니다."
+        "ko": "플러그 연결 상태를 차량에 알려 이동을 방지합니다.",
+        "ar": "يُرسل إشارة بوجود القابس للمركبة لمنع الحركة أثناء الاتصال."
       }
     },
     "measure_twc_voltage.pilot_high_v": {
@@ -133,7 +138,8 @@
         "da": "Styrepilot høj",
         "ru": "Управляющий пилот высокий",
         "pl": "Pilot sterujący wysoki",
-        "ko": "제어 파일럿 하이"
+        "ko": "제어 파일럿 하이",
+        "ar": "إشارة التحكم العليا"
       },
       "desc": {
         "en": "Control Pilot high signal for negotiating charging level between vehicle and Wall Connector.",
@@ -147,7 +153,8 @@
         "da": "Styrepilot højsignal til forhandling af ladeniveau.",
         "ru": "Высокий сигнал управляющего пилота для согласования уровня зарядки.",
         "pl": "Wysoki sygnał pilota sterującego do negocjacji poziomu ładowania.",
-        "ko": "충전 수준 협상을 위한 제어 파일럿 하이 신호."
+        "ko": "충전 수준 협상을 위한 제어 파일럿 하이 신호.",
+        "ar": "إشارة التحكم العليا للتفاوض على مستوى الشحن بين المركبة وشاحن الحائط."
       }
     },
     "measure_twc_voltage.pilot_low_v": {
@@ -163,7 +170,8 @@
         "da": "Styrepilot lav",
         "ru": "Управляющий пилот низкий",
         "pl": "Pilot sterujący niski",
-        "ko": "제어 파일럿 로우"
+        "ko": "제어 파일럿 로우",
+        "ar": "إشارة التحكم الدنيا"
       },
       "desc": {
         "en": "Control Pilot low signal for negotiating charging level between vehicle and Wall Connector.",
@@ -177,7 +185,8 @@
         "da": "Styrepilot lavsignal til forhandling af ladeniveau.",
         "ru": "Низкий сигнал управляющего пилота для согласования уровня зарядки.",
         "pl": "Niski sygnał pilota sterującego do negocjacji poziomu ładowania.",
-        "ko": "충전 수준 협상을 위한 제어 파일럿 로우 신호."
+        "ko": "충전 수준 협상을 위한 제어 파일럿 로우 신호.",
+        "ar": "إشارة التحكم الدنيا للتفاوض على مستوى الشحن بين المركبة وشاحن الحائط."
       }
     },
     "alarm_twc_state.evse": {
@@ -193,7 +202,8 @@
         "da": "Ladestatus",
         "ru": "Статус зарядки",
         "pl": "Status ładowania",
-        "ko": "충전 상태"
+        "ko": "충전 상태",
+        "ar": "حالة الشحن"
       },
       "desc": {
         "en": "Human-readable EVSE charging state.",
@@ -207,7 +217,8 @@
         "da": "Læsbar EVSE-ladestatus.",
         "ru": "Читаемый статус зарядки EVSE.",
         "pl": "Czytelny stan ładowania EVSE.",
-        "ko": "사람이 읽을 수 있는 EVSE 충전 상태."
+        "ko": "사람이 읽을 수 있는 EVSE 충전 상태.",
+        "ar": "Human-readable EVSE charging state."
       }
     },
     "alarm_twc_state.contactor": {
@@ -223,7 +234,8 @@
         "da": "Kontaktor",
         "ru": "Контактор",
         "pl": "Stycznik",
-        "ko": "접촉기"
+        "ko": "접촉기",
+        "ar": "المُلامِس"
       },
       "desc": {
         "en": "Indicates if the load relay is closed. Closed = power on and available for the vehicle.",
@@ -237,7 +249,8 @@
         "da": "Angiver om lastrelæet er lukket. Lukket = strøm tændt og tilgængelig for køretøjet.",
         "ru": "Указывает, замкнуто ли реле нагрузки. Замкнуто = питание включено и доступно для транспортного средства.",
         "pl": "Wskazuje, czy przekaźnik obciążenia jest zamknięty. Zamknięty = zasilanie włączone i dostępne dla pojazdu.",
-        "ko": "부하 릴레이가 닫혀 있는지 나타냅니다. 닫힘 = 전원이 켜져 차량에 공급 가능."
+        "ko": "부하 릴레이가 닫혀 있는지 나타냅니다. 닫힘 = 전원이 켜져 차량에 공급 가능.",
+        "ar": "يُشير إلى ما إذا كان مرحّل الحمل مُغلقًا. مُغلق = الطاقة مُشغّلة ومتاحة للمركبة."
       }
     },
     "measure_temperature.handle": {
@@ -253,7 +266,8 @@
         "da": "Temperatur håndtag",
         "ru": "Температура рукоятки",
         "pl": "Temperatura uchwytu",
-        "ko": "온도 핸들"
+        "ko": "온도 핸들",
+        "ar": "Temperature Handle"
       },
       "desc": {
         "en": "Temperature of the charging handle. Monitors for overheating during charging.",
@@ -267,7 +281,8 @@
         "da": "Temperatur på ladehåndtaget. Overvåger overophedning under opladning.",
         "ru": "Температура зарядной рукоятки. Контролирует перегрев при зарядке.",
         "pl": "Temperatura uchwytu ładowania. Monitoruje przegrzanie podczas ładowania.",
-        "ko": "충전 핸들 온도. 충전 중 과열을 모니터링합니다."
+        "ko": "충전 핸들 온도. 충전 중 과열을 모니터링합니다.",
+        "ar": "درجة حرارة مقبض الشحن. يُراقب الحرارة الزائدة أثناء الشحن."
       }
     },
     "measure_temperature.charger": {
@@ -283,7 +298,8 @@
         "da": "Temperatur oplader",
         "ru": "Температура зарядного устройства",
         "pl": "Temperatura ładowarki",
-        "ko": "온도 충전기"
+        "ko": "온도 충전기",
+        "ar": "Temperature Charger"
       },
       "desc": {
         "en": "Average of MCU and PCBA temperatures.",
@@ -297,7 +313,8 @@
         "da": "Gennemsnit af MCU- og PCBA-temperaturer.",
         "ru": "Среднее значение температур MCU и PCBA.",
         "pl": "Średnia temperatur MCU i PCBA.",
-        "ko": "MCU와 PCBA 온도의 평균."
+        "ko": "MCU와 PCBA 온도의 평균.",
+        "ar": "Average of MCU and PCBA temperatures."
       }
     },
     "measure_temperature.pcba": {
@@ -313,7 +330,8 @@
         "da": "Temperatur PCBA",
         "ru": "Температура PCBA",
         "pl": "Temperatura PCBA",
-        "ko": "온도 PCBA"
+        "ko": "온도 PCBA",
+        "ar": "Temperature PCBA"
       },
       "desc": {
         "en": "Ambient temperature of the internal circuit board. Also used to calibrate the thermopile sensor.",
@@ -327,7 +345,8 @@
         "da": "Omgivelsestemperatur på det interne kredsløbskort. Bruges også til at kalibrere termopile-sensoren.",
         "ru": "Температура окружающей среды внутренней платы. Также используется для калибровки термопары.",
         "pl": "Temperatura otoczenia wewnętrznej płytki drukowanej. Używana również do kalibracji czujnika termostosu.",
-        "ko": "내부 회로 기판의 주변 온도. 서모파일 센서 교정에도 사용됩니다."
+        "ko": "내부 회로 기판의 주변 온도. 서모파일 센서 교정에도 사용됩니다.",
+        "ar": "درجة الحرارة المحيطة للوحة الدوائر الداخلية. تُستخدم أيضًا لمعايرة مستشعر المزدوج الحراري."
       }
     },
     "measure_temperature.mcu": {
@@ -343,7 +362,8 @@
         "da": "Temperatur MCU",
         "ru": "Температура MCU",
         "pl": "Temperatura MCU",
-        "ko": "온도 MCU"
+        "ko": "온도 MCU",
+        "ar": "Temperature MCU"
       },
       "desc": {
         "en": "Temperature of the microcontroller unit.",
@@ -357,7 +377,8 @@
         "da": "Temperatur på mikrokontrolleren.",
         "ru": "Температура микроконтроллера.",
         "pl": "Temperatura jednostki mikrokontrolera.",
-        "ko": "마이크로컨트롤러 유닛의 온도."
+        "ko": "마이크로컨트롤러 유닛의 온도.",
+        "ar": "درجة حرارة وحدة المتحكم الدقيق."
       }
     },
     "measure_current.a": {
@@ -373,7 +394,8 @@
         "da": "Strøm A",
         "ru": "Ток A",
         "pl": "Prąd A",
-        "ko": "전류 A"
+        "ko": "전류 A",
+        "ar": "Current A"
       },
       "desc": {
         "en": "Current drawn on input A. Active phases depend on single/three phase configuration.",
@@ -387,7 +409,8 @@
         "da": "Strøm på indgang A. Aktive faser afhænger af en-/trefasekonfigurationen.",
         "ru": "Ток на входе A. Активные фазы зависят от однофазной/трёхфазной конфигурации.",
         "pl": "Prąd na wejściu A. Aktywne fazy zależą od konfiguracji jedno-/trójfazowej.",
-        "ko": "입력 A의 전류. 활성 위상은 단상/삼상 구성에 따라 다릅니다."
+        "ko": "입력 A의 전류. 활성 위상은 단상/삼상 구성에 따라 다릅니다.",
+        "ar": "التيار المسحوب على الإدخال A. تعتمد المراحل النشطة على تكوين الطور الأحادي/الثلاثي."
       }
     },
     "measure_current.b": {
@@ -403,7 +426,8 @@
         "da": "Strøm B",
         "ru": "Ток B",
         "pl": "Prąd B",
-        "ko": "전류 B"
+        "ko": "전류 B",
+        "ar": "Current B"
       },
       "desc": {
         "en": "Current drawn on input B. Active phases depend on single/three phase configuration.",
@@ -417,7 +441,8 @@
         "da": "Strøm på indgang B. Aktive faser afhænger af en-/trefasekonfigurationen.",
         "ru": "Ток на входе B. Активные фазы зависят от однофазной/трёхфазной конфигурации.",
         "pl": "Prąd na wejściu B. Aktywne fazy zależą od konfiguracji jedno-/trójfazowej.",
-        "ko": "입력 B의 전류. 활성 위상은 단상/삼상 구성에 따라 다릅니다."
+        "ko": "입력 B의 전류. 활성 위상은 단상/삼상 구성에 따라 다릅니다.",
+        "ar": "التيار المسحوب على الإدخال B. تعتمد المراحل النشطة على تكوين الطور الأحادي/الثلاثي."
       }
     },
     "measure_current.c": {
@@ -433,7 +458,8 @@
         "da": "Strøm C",
         "ru": "Ток C",
         "pl": "Prąd C",
-        "ko": "전류 C"
+        "ko": "전류 C",
+        "ar": "Current C"
       },
       "desc": {
         "en": "Current drawn on input C. Active phases depend on single/three phase configuration.",
@@ -447,7 +473,8 @@
         "da": "Strøm på indgang C. Aktive faser afhænger af en-/trefasekonfigurationen.",
         "ru": "Ток на входе C. Активные фазы зависят от однофазной/трёхфазной конфигурации.",
         "pl": "Prąd na wejściu C. Aktywne fazy zależą od konfiguracji jedno-/trójfazowej.",
-        "ko": "입력 C의 전류. 활성 위상은 단상/삼상 구성에 따라 다릅니다."
+        "ko": "입력 C의 전류. 활성 위상은 단상/삼상 구성에 따라 다릅니다.",
+        "ar": "التيار المسحوب على الإدخال C. تعتمد المراحل النشطة على تكوين الطور الأحادي/الثلاثي."
       }
     },
     "measure_current.n": {
@@ -463,7 +490,8 @@
         "da": "Strøm N",
         "ru": "Ток N",
         "pl": "Prąd N",
-        "ko": "전류 N"
+        "ko": "전류 N",
+        "ar": "Current N"
       },
       "desc": {
         "en": "Current on the neutral conductor.",
@@ -477,7 +505,8 @@
         "da": "Strøm på nullederen.",
         "ru": "Ток на нулевом проводнике.",
         "pl": "Prąd na przewodzie neutralnym.",
-        "ko": "중성선의 전류."
+        "ko": "중성선의 전류.",
+        "ar": "Current on the neutral conductor."
       }
     },
     "measure_twc_voltage.a": {
@@ -493,7 +522,8 @@
         "da": "Spænding A",
         "ru": "Напряжение A",
         "pl": "Napięcie A",
-        "ko": "전압 A"
+        "ko": "전압 A",
+        "ar": "Voltage A"
       },
       "desc": {
         "en": "Voltage measured on input A. Active phases depend on single/three phase configuration.",
@@ -507,7 +537,8 @@
         "da": "Spænding målt på indgang A. Aktive faser afhænger af en-/trefasekonfigurationen.",
         "ru": "Напряжение на входе A. Активные фазы зависят от однофазной/трёхфазной конфигурации.",
         "pl": "Napięcie na wejściu A. Aktywne fazy zależą od konfiguracji jedno-/trójfazowej.",
-        "ko": "입력 A의 전압. 활성 위상은 단상/삼상 구성에 따라 다릅니다."
+        "ko": "입력 A의 전압. 활성 위상은 단상/삼상 구성에 따라 다릅니다.",
+        "ar": "Voltage measured on input A. Active phases depend on single/three phase configuration."
       }
     },
     "measure_twc_voltage.b": {
@@ -523,7 +554,8 @@
         "da": "Spænding B",
         "ru": "Напряжение B",
         "pl": "Napięcie B",
-        "ko": "전압 B"
+        "ko": "전압 B",
+        "ar": "Voltage B"
       },
       "desc": {
         "en": "Voltage measured on input B. Active phases depend on single/three phase configuration.",
@@ -537,7 +569,8 @@
         "da": "Spænding målt på indgang B. Aktive faser afhænger af en-/trefasekonfigurationen.",
         "ru": "Напряжение на входе B. Активные фазы зависят от однофазной/трёхфазной конфигурации.",
         "pl": "Napięcie na wejściu B. Aktywne fazy zależą od konfiguracji jedno-/trójfazowej.",
-        "ko": "입력 B의 전압. 활성 위상은 단상/삼상 구성에 따라 다릅니다."
+        "ko": "입력 B의 전압. 활성 위상은 단상/삼상 구성에 따라 다릅니다.",
+        "ar": "Voltage measured on input B. Active phases depend on single/three phase configuration."
       }
     },
     "measure_twc_voltage.c": {
@@ -553,7 +586,8 @@
         "da": "Spænding C",
         "ru": "Напряжение C",
         "pl": "Napięcie C",
-        "ko": "전압 C"
+        "ko": "전압 C",
+        "ar": "Voltage C"
       },
       "desc": {
         "en": "Voltage measured on input C. Active phases depend on single/three phase configuration.",
@@ -567,7 +601,8 @@
         "da": "Spænding målt på indgang C. Aktive faser afhænger af en-/trefasekonfigurationen.",
         "ru": "Напряжение на входе C. Активные фазы зависят от однофазной/трёхфазной конфигурации.",
         "pl": "Napięcie na wejściu C. Aktywne fazy zależą od konfiguracji jedno-/trójfazowej.",
-        "ko": "입력 C의 전압. 활성 위상은 단상/삼상 구성에 따라 다릅니다."
+        "ko": "입력 C의 전압. 활성 위상은 단상/삼상 구성에 따라 다릅니다.",
+        "ar": "Voltage measured on input C. Active phases depend on single/three phase configuration."
       }
     },
     "measure_twc_voltage.grid": {
@@ -583,7 +618,8 @@
         "da": "Netspænding",
         "ru": "Напряжение сети",
         "pl": "Napięcie sieci",
-        "ko": "전압 그리드"
+        "ko": "전압 그리드",
+        "ar": "Voltage Grid"
       },
       "desc": {
         "en": "Mains voltage from the power grid.",
@@ -597,7 +633,8 @@
         "da": "Netspænding fra elnettet.",
         "ru": "Напряжение сети от электросети.",
         "pl": "Napięcie sieciowe z sieci elektrycznej.",
-        "ko": "전력망의 주전원 전압."
+        "ko": "전력망의 주전원 전압.",
+        "ar": "Mains voltage from the power grid."
       }
     },
     "measure_frequency.grid": {
@@ -613,7 +650,8 @@
         "da": "Netfrekvens",
         "ru": "Частота сети",
         "pl": "Częstotliwość sieci",
-        "ko": "주파수 그리드"
+        "ko": "주파수 그리드",
+        "ar": "Frequency Grid"
       },
       "desc": {
         "en": "Mains frequency from the power grid (typically 50 or 60 Hz).",
@@ -627,7 +665,8 @@
         "da": "Netfrekvens fra elnettet (typisk 50 eller 60 Hz).",
         "ru": "Частота сети от электросети (обычно 50 или 60 Гц).",
         "pl": "Częstotliwość sieciowa z sieci elektrycznej (zwykle 50 lub 60 Hz).",
-        "ko": "전력망의 주전원 주파수 (일반적으로 50 또는 60 Hz)."
+        "ko": "전력망의 주전원 주파수 (일반적으로 50 또는 60 Hz).",
+        "ar": "Mains frequency from the power grid (typically 50 or 60 Hz)."
       }
     },
     "measure_twc_power.vehicle": {
@@ -643,7 +682,8 @@
         "da": "Køretøjssessions-effekt",
         "ru": "Мощность сеанса автомобиля",
         "pl": "Moc sesji pojazdu",
-        "ko": "차량 세션 전력"
+        "ko": "차량 세션 전력",
+        "ar": "Vehicle Session Power"
       },
       "desc": {
         "en": "Calculated real-time charging power for the current session.",
@@ -657,7 +697,8 @@
         "da": "Beregnet realtidsladningseffekt for den aktuelle session.",
         "ru": "Рассчитанная мощность зарядки в реальном времени для текущего сеанса.",
         "pl": "Obliczona moc ładowania w czasie rzeczywistym dla bieżącej sesji.",
-        "ko": "현재 세션의 실시간 충전 전력 계산값."
+        "ko": "현재 세션의 실시간 충전 전력 계산값.",
+        "ar": "Calculated real-time charging power for the current session."
       }
     },
     "meter_power.vehicle": {
@@ -672,7 +713,8 @@
         "es": "Energía de sesión del vehículo",
         "da": "Køretøjssessions-energi",
         "ru": "Энергия сеанса автомобиля",
-        "pl": "Energia sesji pojazdu"
+        "pl": "Energia sesji pojazdu",
+        "ar": "Vehicle Session Energy"
       },
       "desc": {
         "en": "Total energy delivered during the current charging session. Resets when the cable is reconnected.",
@@ -686,7 +728,8 @@
         "da": "Total energi leveret under den aktuelle ladesession. Nulstilles ved gentilslutning.",
         "ru": "Общая энергия за текущий сеанс зарядки. Сбрасывается при повторном подключении.",
         "pl": "Całkowita energia dostarczona podczas bieżącej sesji ładowania. Resetuje się przy ponownym podłączeniu.",
-        "ko": "현재 충전 세션 동안 전달된 총 에너지. 케이블 재연결 시 초기화됩니다."
+        "ko": "현재 충전 세션 동안 전달된 총 에너지. 케이블 재연결 시 초기화됩니다.",
+        "ar": "Total energy delivered during the current charging session. Resets when the cable is reconnected."
       }
     },
     "measure_current.vehicle": {
@@ -702,7 +745,8 @@
         "da": "Køretøjssessions-strøm",
         "ru": "Ток сеанса автомобиля",
         "pl": "Prąd sesji pojazdu",
-        "ko": "차량 세션 전류"
+        "ko": "차량 세션 전류",
+        "ar": "Vehicle Session Current"
       },
       "desc": {
         "en": "Current amp setting in the car.",
@@ -716,7 +760,8 @@
         "da": "Nuværende ampère-indstilling i bilen.",
         "ru": "Текущая настройка силы тока в автомобиле.",
         "pl": "Aktualne ustawienie natężenia w samochodzie.",
-        "ko": "차량의 현재 암페어 설정입니다."
+        "ko": "차량의 현재 암페어 설정입니다.",
+        "ar": "Current amp setting in the car."
       }
     },
     "meter_power.total": {
@@ -732,7 +777,8 @@
         "da": "Total brugt energi",
         "ru": "Всего использовано энергии",
         "pl": "Całkowita zużyta energia",
-        "ko": "총 사용 에너지"
+        "ko": "총 사용 에너지",
+        "ar": "Total Used Energy"
       },
       "desc": {
         "en": "Total cumulative energy delivered by the Wall Connector over its lifetime.",
@@ -746,7 +792,8 @@
         "da": "Total kumulativ energi leveret af Wall Connector i løbet af dens levetid.",
         "ru": "Общая накопленная энергия, отданная Wall Connector за всё время эксплуатации.",
         "pl": "Całkowita skumulowana energia dostarczona przez Wall Connector w ciągu jego eksploatacji.",
-        "ko": "Wall Connector가 수명 동안 전달한 총 누적 에너지."
+        "ko": "Wall Connector가 수명 동안 전달한 총 누적 에너지.",
+        "ar": "Total cumulative energy delivered by the Wall Connector over its lifetime."
       }
     },
     "evse_state": {
@@ -762,7 +809,8 @@
         "da": "EVSE-status",
         "ru": "Состояние EVSE",
         "pl": "Stan EVSE",
-        "ko": "EVSE 상태"
+        "ko": "EVSE 상태",
+        "ar": "حالة EVSE"
       },
       "desc": {
         "en": "EVSE state as a human-readable text value.",
@@ -776,7 +824,8 @@
         "da": "EVSE-status som læsbar tekstværdi.",
         "ru": "Состояние EVSE в виде читаемого текста.",
         "pl": "Stan EVSE jako czytelna wartość tekstowa.",
-        "ko": "EVSE 상태를 사람이 읽을 수 있는 텍스트 값으로 표시."
+        "ko": "EVSE 상태를 사람이 읽을 수 있는 텍스트 값으로 표시.",
+        "ar": "EVSE state as a human-readable text value."
       }
     },
     "measure_evse_state": {
@@ -792,7 +841,8 @@
         "da": "EVSE-status (kode)",
         "ru": "Состояние EVSE (код)",
         "pl": "Stan EVSE (kod)",
-        "ko": "EVSE 상태 (코드)"
+        "ko": "EVSE 상태 (코드)",
+        "ar": "حالة EVSE (رمز)"
       },
       "desc": {
         "en": "Numeric EVSE state code from the Wall Connector API.",
@@ -806,7 +856,8 @@
         "da": "Numerisk EVSE-statuskode fra Wall Connector API.",
         "ru": "Числовой код состояния EVSE из API Wall Connector.",
         "pl": "Numeryczny kod stanu EVSE z API Wall Connector.",
-        "ko": "Wall Connector API의 숫자 EVSE 상태 코드."
+        "ko": "Wall Connector API의 숫자 EVSE 상태 코드.",
+        "ar": "رمز حالة EVSE الرقمي من واجهة برمجة شاحن الحائط."
       }
     },
     "measure_voltage.thermopile": {
@@ -826,7 +877,8 @@
         "da": "Rå termopile-sensorspænding til registrering af indgangsterminaltemperatur.",
         "ru": "Необработанное напряжение термопары для определения температуры входных клемм.",
         "pl": "Surowe napięcie czujnika termostosu do wykrywania temperatury zacisków wejściowych.",
-        "ko": "입력 단자 온도를 감지하기 위한 서모파일 센서 원시 전압."
+        "ko": "입력 단자 온도를 감지하기 위한 서모파일 센서 원시 전압.",
+        "ar": "Raw thermopile sensor voltage used to detect input terminal temperature."
       },
       "title": {
         "en": "Thermopile Voltage",
@@ -840,7 +892,8 @@
         "da": "Termopilespænding",
         "ru": "Напряжение термопары",
         "pl": "Napięcie termostosu",
-        "ko": "서모파일 전압"
+        "ko": "서모파일 전압",
+        "ar": "Thermopile Voltage"
       }
     },
     "measure_snr": {
@@ -856,7 +909,8 @@
         "da": "Signal-støj-forhold",
         "ru": "Отношение сигнал/шум",
         "pl": "Stosunek sygnału do szumu",
-        "ko": "신호 대 잡음비"
+        "ko": "신호 대 잡음비",
+        "ar": "Signal-to-Noise Ratio"
       },
       "units": {
         "en": "dB"

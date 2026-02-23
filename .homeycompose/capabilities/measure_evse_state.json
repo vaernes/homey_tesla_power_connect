@@ -11,7 +11,8 @@
         "da": "EVSE-status (kode)",
         "ru": "Состояние EVSE (код)",
         "pl": "Stan EVSE (kod)",
-        "ko": "EVSE 상태 (코드)"
+        "ko": "EVSE 상태 (코드)",
+        "ar": "حالة EVSE (رمز)"
     },
     "type": "number",
     "decimals": 0,

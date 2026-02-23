@@ -12,7 +12,8 @@
     "da": "Effekt",
     "ru": "Электроэнергия",
     "pl": "Moc",
-    "ko": "전력"
+    "ko": "전력",
+    "ar": "الطاقة"
   },
   "units": {
     "en": "W",
@@ -31,7 +32,8 @@
     "da": "Effekt i watt (W)",
     "ru": "Электроэнергия (Вт)",
     "pl": "Moc w watach (W)",
-    "ko": "와트(W) 단위 전력"
+    "ko": "와트(W) 단위 전력",
+    "ar": "الطاقة بالواط (واط)"
   },
   "options": {
     "isApproximated": {
@@ -40,7 +42,8 @@
       "desc": {
         "en": "This flag is used to determine that the device itself has no power measurement functionality, but that the driver calculates the energy use.",
         "ru": "Этот флаг используется для определения того, что само устройство не имеет функции измерения электроэнергии, но драйвер рассчитывает потребление энергии.",
-        "pl": "Flaga oznacza, że samo urządzenie nie ma funkcji pomiaru mocy, ale sterownik oblicza zużycie energii."
+        "pl": "Flaga oznacza, że samo urządzenie nie ma funkcji pomiaru mocy, ale sterownik oblicza zużycie energii.",
+        "ar": "يُستخدم هذا العلم لتحديد أن الجهاز نفسه لا يحتوي على وظيفة قياس الطاقة، لكن المشغّل يحسب استهلاك الطاقة."
       }
     }
   },

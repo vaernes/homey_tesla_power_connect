@@ -1,6 +1,6 @@
 {
   "id": "tesla.wall.connector",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "compatibility": ">=12.4.5",
   "sdk": 3,
   "platforms": [
@@ -18,7 +18,8 @@
     "da": "Tesla Power Connect",
     "ru": "Tesla Power Connect",
     "pl": "Tesla Power Connect",
-    "ko": "Tesla Power Connect"
+    "ko": "Tesla Power Connect",
+    "ar": "Tesla Power Connect"
   },
   "description": {
     "en": "Stay charged, always connected.",
@@ -32,7 +33,8 @@
     "da": "Hold dig opladet, altid forbundet.",
     "ru": "Будьте заряжены, всегда на связи.",
     "pl": "Bądź naładowany, zawsze połączony.",
-    "ko": "충전 상태를 유지하고 항상 연결하십시오."
+    "ko": "충전 상태를 유지하고 항상 연결하십시오.",
+    "ar": "ابقَ مشحونًا، متصلًا دائمًا."
   },
   "category": [
     "energy"

@@ -12,7 +12,8 @@
     "da": "Elektrisk spænding",
     "ru": "Вольтаж",
     "pl": "Napięcie",
-    "ko": "전압"
+    "ko": "전압",
+    "ar": "الجهد الكهربائي"
   },
   "units": {
     "en": "V",
@@ -30,7 +31,8 @@
     "da": "Volt (V)",
     "ru": "Вольтаж (Вольт)",
     "pl": "Napięcie (V)",
-    "ko": "전압 (V)"
+    "ko": "전압 (V)",
+    "ar": "الجهد الكهربائي (فولت)"
   },
   "icon": "/assets/voltage.svg",
   "insights": true,

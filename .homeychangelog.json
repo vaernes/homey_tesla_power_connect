@@ -197,6 +197,11 @@
     "en": "Fixed Thermopile Voltage to display raw sensor value in µV and allow negative readings"
   },
   "4.1.0": {
-    "en": "Added descriptions to all capabilities and renamed Proximity Pilot and Control Pilot signals for clarity"
+    "en": "Added descriptions to all capabilities and renamed Proximity Pilot and Control Pilot signals for clarity",
+    "ar": "أُضيفت أوصاف لجميع القدرات وأُعيدت تسمية إشارات مُوجّه القرب ومُوجّه التحكم لمزيد من الوضوح"
+  },
+  "4.1.1": {
+    "en": "Added Arabic language support with RTL layout for pairing views",
+    "ar": "أُضيف دعم اللغة العربية مع تخطيط من اليمين إلى اليسار لعروض الإقران"
   }
 }

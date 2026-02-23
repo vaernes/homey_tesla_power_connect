@@ -12,13 +12,15 @@
         "da": "Signal-støj-forhold",
         "ru": "Отношение сигнал/шум",
         "pl": "Stosunek sygnału do szumu",
-        "ko": "신호 대 잡음비"
+        "ko": "신호 대 잡음비",
+        "ar": "نسبة الإشارة إلى الضوضاء"
     },
     "units": {
         "en": "dB"
     },
     "desc": {
-        "en": "Signal-to-Noise Ratio (dB)"
+        "en": "Signal-to-Noise Ratio (dB)",
+        "ar": "نسبة الإشارة إلى الضوضاء (ديسيبل)"
     },
     "icon": "/assets/snr.svg",
     "chartType": "stepLine",

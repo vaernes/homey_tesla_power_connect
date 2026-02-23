@@ -12,7 +12,8 @@
     "da": "!{{Oplader|Oplader ikke}}",
     "ru": "!{{Заряжается|Не заряжается}}",
     "pl": "!{{Ładuje|Nie ładuje}}",
-    "ko": "!{{충전 중|충전 중이 아님}}"
+    "ko": "!{{충전 중|충전 중이 아님}}",
+    "ar": "!{{يشحن|لا يشحن}}"
   },
   "titleFormatted": {
     "en": "!{{Is|Isn't}} charging",
@@ -26,7 +27,8 @@
     "da": "!{{Oplader|Oplader ikke}}",
     "ru": "!{{Заряжается|Не заряжается}}",
     "pl": "!{{Ładuje|Nie ładuje}}",
-    "ko": "!{{충전 중|충전 중이 아님}}"
+    "ko": "!{{충전 중|충전 중이 아님}}",
+    "ar": "!{{يشحن|لا يشحن}}"
   },
   "hint": {
     "en": "Checks if the charger is charging",
@@ -40,7 +42,8 @@
     "da": "Kontrollerer om opladeren oplader",
     "ru": "Проверяет, заряжается ли зарядное устройство",
     "pl": "Sprawdza, czy ładowarka ładuje",
-    "ko": "충전기가 충전 중인지 확인합니다"
+    "ko": "충전기가 충전 중인지 확인합니다",
+    "ar": "يتحقق مما إذا كان الشاحن يشحن"
   },
   "args": [
     {
