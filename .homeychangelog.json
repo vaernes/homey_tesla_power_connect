@@ -203,5 +203,8 @@
   "4.1.1": {
     "en": "Added Arabic language support with RTL layout for pairing views",
     "ar": "أُضيف دعم اللغة العربية مع تخطيط من اليمين إلى اليسار لعروض الإقران"
+  },
+  "4.2.0": {
+    "en": "Added Arabic localization"
   }
 }
