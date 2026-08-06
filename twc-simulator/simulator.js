@@ -113,14 +113,14 @@ const handlers = {
 };
 
 const server = http.createServer((req, res) => {
-  console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
-  const handler = handlers[req.url];
-  if (handler) {
-    handler(req, res);
-  } else {
-    res.writeHead(404);
-    res.end('Not Found');
-  }
+    console.log(`[${new Date().toISOString()}] ${req.socket.remoteAddress} - ${req.method} ${req.url}`);
+    const handler = handlers[req.url];
+    if (handler) {
+        handler(req, res);
+    } else {
+        res.writeHead(404);
+        res.end('Not Found');
+    }
 });
 
 server.listen(PORT, () => {

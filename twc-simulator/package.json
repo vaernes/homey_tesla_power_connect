@@ -4,7 +4,7 @@
     "description": "Tesla Wall Connector Simulator for Homey app testing",
     "main": "simulator.js",
     "scripts": {
-        "start": "node simulator.js",
+        "start": "sudo node simulator.js",
         "build": "npm install"
     },
     "dependencies": {
