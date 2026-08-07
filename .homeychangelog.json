@@ -209,5 +209,8 @@
   },
   "5.0.0": {
     "en": "Attempt to resolve charging-power discrepancies with improved power calculation."
+  },
+  "5.0.1": {
+    "en": "Added selectable supply types for more accurate charging-power calculations."
   }
 }
