@@ -206,5 +206,8 @@
   },
   "4.2.0": {
     "en": "Added Arabic localization"
+  },
+  "5.0.0": {
+    "en": "Attempt to resolve charging-power discrepancies with improved power calculation."
   }
 }
