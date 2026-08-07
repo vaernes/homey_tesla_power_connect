@@ -1340,24 +1340,36 @@
                 {
                   "id": "auto",
                   "label": {
-                    "en": "Automatic (vehicle aggregate)"
+                    "en": "Automatic"
                   }
                 },
                 {
-                  "id": "aggregate",
+                  "id": "single_phase",
                   "label": {
-                    "en": "Vehicle aggregate voltage x current"
+                    "en": "Single-phase"
                   }
                 },
                 {
-                  "id": "phase_sum",
+                  "id": "split_phase",
                   "label": {
-                    "en": "Measured phase sum"
+                    "en": "Split-phase"
+                  }
+                },
+                {
+                  "id": "three_phase_230_240",
+                  "label": {
+                    "en": "Three-phase 200-240 V"
+                  }
+                },
+                {
+                  "id": "three_phase_400",
+                  "label": {
+                    "en": "Three-phase 380-415 V"
                   }
                 }
               ],
               "hint": {
-                "en": "Automatic uses the Wall Connector's aggregate voltage and vehicle current. Use measured phase sum only for a verified three-phase installation."
+                "en": "Choose the supply connected to your Wall Connector. Automatic is recommended unless the reported power is incorrect. The three-phase options cover 200-240 V and 380-415 V supplies."
               }
             }
           ]
