@@ -7,19 +7,13 @@
     "node": ">=22"
   },
   "scripts": {
-    "build": "tsc",
-    "lint": "eslint --ext .js,.ts --ignore-path .gitignore ."
+    "build": "homey app build"
   },
   "devDependencies": {
-    "@tsconfig/node22": "^22.0.5",
+    "@tsconfig/node24": "^24.0.4",
     "@types/homey": "npm:homey-apps-sdk-v3-types@^0.3.12",
-    "@types/node": "^22.15.23",
-    "@typescript-eslint/eslint-plugin": "^8.18.1",
-    "@typescript-eslint/parser": "^8.18.1",
-    "eslint": "^8.57.1",
-    "eslint-config-athom": "^3.1.5",
-    "eslint-plugin-import": "^2.31.0",
-    "typescript": "^5.9.3"
+    "@types/node": "^26.1.0",
+    "typescript": "^6.0.3"
   },
   "repository": {
     "type": "git",
