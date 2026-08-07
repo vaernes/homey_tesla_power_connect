@@ -35,6 +35,7 @@ export enum Capability {
 export enum Settings {
     POLLING_INTERVAL = 'polling_interval',
     VOLTAGE_ADJUSTMENT = 'voltage_adjustment',
+    POWER_CALCULATION_MODE = 'power_calculation_mode',
     IP = 'ip',
     SERIAL_NUMBER = 'serial_number',
 }
@@ -47,6 +48,7 @@ export enum Debug {
     POLL_COUNT = 'debug_poll_count',
     FAILURE_COUNT = 'debug_failure_count',
     IP_ADDRESS = 'debug_ip_address',
+    POWER_SOURCE = 'debug_power_source',
 }
 
 export enum BooleanState {
@@ -123,6 +125,7 @@ export enum Log {
     IDENTITY_VERIFIED = 'Device identity verified (Serial: ',
     IDENTITY_FAILED = 'Identity verification failed (will retry next cycle)',
     SERIAL_MISMATCH = 'Serial Mismatch! Expected: ',
+    INCOMPLETE_PHASE_DATA = 'Charging power unavailable: incomplete or invalid phase voltage/current data',
 }
 
 export enum ApiEndpoint {

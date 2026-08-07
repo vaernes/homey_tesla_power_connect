@@ -10,6 +10,38 @@ const MODEL = 'wc3';
 const FIRMWARE = '25.10.0';
 const PART_NUMBER = '1111111-01-A';
 const NAME = `${PART_NUMBER}--${SERIAL}`;
+const TOPOLOGY = process.env.TWC_SIMULATOR_TOPOLOGY || 'single-phase';
+
+const VITALS_FIXTURES = {
+  'single-phase': {
+    grid_v: 230,
+    vehicle_current_a: 16,
+    voltageA_v: 230,
+    currentA_a: 16,
+  },
+  'split-phase': {
+    grid_v: 201,
+    vehicle_current_a: 32,
+    voltageA_v: 202.4,
+    currentA_a: 15.1,
+    voltageB_v: 202.3,
+    currentB_a: 17.1,
+    voltageC_v: 116,
+    currentC_a: 17.4,
+  },
+  'three-phase': {
+    grid_v: 230,
+    vehicle_current_a: 16,
+    voltageA_v: 230,
+    currentA_a: 16,
+    voltageB_v: 230,
+    currentB_a: 16,
+    voltageC_v: 230,
+    currentC_a: 16,
+  },
+};
+
+const vitalsFixture = VITALS_FIXTURES[TOPOLOGY] || VITALS_FIXTURES['single-phase'];
 
 // IP detection helper
 const getLocalIp = () => {
@@ -86,6 +118,7 @@ const handlers = {
       handle_temp_c: 22.3,
       input_thermopile_uv: 1234,
       current_alerts: [],
+      ...vitalsFixture,
     }));
   },
   '/api/1/wifi_status': (req, res) => {
@@ -113,14 +146,14 @@ const handlers = {
 };
 
 const server = http.createServer((req, res) => {
-    console.log(`[${new Date().toISOString()}] ${req.socket.remoteAddress} - ${req.method} ${req.url}`);
-    const handler = handlers[req.url];
-    if (handler) {
-        handler(req, res);
-    } else {
-        res.writeHead(404);
-        res.end('Not Found');
-    }
+  console.log(`[${new Date().toISOString()}] ${req.socket.remoteAddress} - ${req.method} ${req.url}`);
+  const handler = handlers[req.url];
+  if (handler) {
+    handler(req, res);
+  } else {
+    res.writeHead(404);
+    res.end('Not Found');
+  }
 });
 
 server.listen(PORT, () => {
@@ -129,6 +162,7 @@ server.listen(PORT, () => {
   console.log(`Serial: ${SERIAL}`);
   console.log(`Model: ${MODEL}`);
   console.log(`Firmware: ${FIRMWARE}`);
+  console.log(`Power topology fixture: ${TOPOLOGY}`);
 
   // Initial advertisement
   const initialIp = getLocalIp();

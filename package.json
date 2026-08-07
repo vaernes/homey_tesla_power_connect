@@ -7,7 +7,7 @@
     "node": ">=22"
   },
   "scripts": {
-    "build": "homey app build"
+    "build": "tsc"
   },
   "devDependencies": {
     "@tsconfig/node24": "^24.0.4",

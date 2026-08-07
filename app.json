@@ -1328,6 +1328,37 @@
                 "ko": "TWC 보고가 부정확한 경우 고정 값 조정으로 전압 판독값을 수정합니다.",
                 "ar": "صحّح قراءات الجهد بتعديل قيمة ثابتة، إذا كانت تقارير TWC غير دقيقة."
               }
+            },
+            {
+              "id": "power_calculation_mode",
+              "type": "dropdown",
+              "label": {
+                "en": "Power calculation"
+              },
+              "value": "auto",
+              "values": [
+                {
+                  "id": "auto",
+                  "label": {
+                    "en": "Automatic (vehicle aggregate)"
+                  }
+                },
+                {
+                  "id": "aggregate",
+                  "label": {
+                    "en": "Vehicle aggregate voltage x current"
+                  }
+                },
+                {
+                  "id": "phase_sum",
+                  "label": {
+                    "en": "Measured phase sum"
+                  }
+                }
+              ],
+              "hint": {
+                "en": "Automatic uses the Wall Connector's aggregate voltage and vehicle current. Use measured phase sum only for a verified three-phase installation."
+              }
             }
           ]
         },
@@ -2009,6 +2040,14 @@
             "ar": "تصحيح التطبيق"
           },
           "children": [
+            {
+              "id": "debug_power_source",
+              "type": "label",
+              "value": "Waiting for data",
+              "label": {
+                "en": "Power Calculation Source"
+              }
+            },
             {
               "id": "debug_poll_status",
               "type": "label",

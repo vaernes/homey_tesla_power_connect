@@ -30,6 +30,16 @@ interface VitalsData {
   evse_not_ready_reasons?: number[];
 }
 
+export interface PhaseMeasurement {
+  voltage?: number;
+  current?: number;
+}
+
+export interface AggregateMeasurement {
+  voltage?: number;
+  current?: number;
+}
+
 export class TWCVitals {
   private readonly data: VitalsData;
   public readonly vehicle_connected: boolean;
@@ -93,6 +103,21 @@ export class TWCVitals {
 
   public getVoltageC_v(): number {
     return this.data.voltageC_v || 0;
+  }
+
+  public getPhaseMeasurements(): PhaseMeasurement[] {
+    return [
+      { voltage: this.data.voltageA_v, current: this.data.currentA_a },
+      { voltage: this.data.voltageB_v, current: this.data.currentB_a },
+      { voltage: this.data.voltageC_v, current: this.data.currentC_a },
+    ];
+  }
+
+  public getAggregateMeasurement(): AggregateMeasurement {
+    return {
+      voltage: this.data.grid_v,
+      current: this.data.vehicle_current_a,
+    };
   }
 
   public getRelayCoilV(): number {

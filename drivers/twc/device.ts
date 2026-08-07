@@ -3,6 +3,7 @@ import { TWC } from '../../lib/twc';
 import { TWCVitals } from '../../lib/vitals';
 import { TWCVersion } from '../../lib/version';
 import { EVSEState, getEVSEStateString } from '../../lib/evsestate';
+import { calculatePower, PowerCalculationMode } from '../../lib/power';
 import {
   Capability, Settings, Debug, BooleanState, Flow,
   Unit, ChargeStatus, PollStatus, Log,
@@ -67,6 +68,8 @@ export class TWCDevice extends Homey.Device {
   private consecutiveFailures: number = 0;
   private totalPollCount: number = 0;
   private totalFailureCount: number = 0;
+  private lastPowerCalculationIssue: string | null = null;
+  private powerCalculationSource: string = 'Unknown';
 
   async onDeleted() {
     this.cleanupPolling();
@@ -185,7 +188,10 @@ export class TWCDevice extends Homey.Device {
         this.getChargerState();
       }, event.newSettings.polling_interval * 1000));
     }
-    if (event.changedKeys.indexOf(Settings.VOLTAGE_ADJUSTMENT) > -1) {
+    if (
+      event.changedKeys.indexOf(Settings.VOLTAGE_ADJUSTMENT) > -1
+      || event.changedKeys.indexOf(Settings.POWER_CALCULATION_MODE) > -1
+    ) {
       this.getChargerState();
     }
   }
@@ -227,11 +233,26 @@ export class TWCDevice extends Homey.Device {
   }
 
   private calculatePower(vit: TWCVitals): number {
-    // V2 calculation logic preferred as per review findings
-    const a = vit.getVoltageA_v() * vit.getCurrentA_a();
-    const b = vit.getVoltageB_v() * vit.getCurrentB_a();
-    const c = vit.getVoltageC_v() * vit.getCurrentC_a();
-    return a + b + c;
+    const aggregateMeasurement = vit.getAggregateMeasurement();
+    const configuredMode = this.getSetting(Settings.POWER_CALCULATION_MODE);
+    const mode = Object.values(PowerCalculationMode).includes(configuredMode)
+      ? configuredMode as PowerCalculationMode
+      : PowerCalculationMode.AUTO;
+    const result = calculatePower(
+      mode,
+      aggregateMeasurement.voltage,
+      aggregateMeasurement.current,
+      vit.getPhaseMeasurements(),
+    );
+    const issue = result.isComplete ? null : Log.INCOMPLETE_PHASE_DATA;
+    this.powerCalculationSource = result.mode;
+
+    if (issue !== this.lastPowerCalculationIssue) {
+      if (issue) this.log(issue);
+      this.lastPowerCalculationIssue = issue;
+    }
+
+    return result.power;
   }
 
   async isCharging(): Promise<boolean> {
@@ -557,6 +578,7 @@ export class TWCDevice extends Homey.Device {
         [Debug.POLL_COUNT]: this.totalPollCount.toString(),
         [Debug.FAILURE_COUNT]: this.totalFailureCount.toString(),
         [Debug.IP_ADDRESS]: this.api?.address || 'Unknown',
+        [Debug.POWER_SOURCE]: this.powerCalculationSource,
       });
 
       // --- Apply Batched Settings (Only if changed) ---
