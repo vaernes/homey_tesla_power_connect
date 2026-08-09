@@ -212,5 +212,8 @@
   },
   "5.0.1": {
     "en": "Added selectable supply types for more accurate charging-power calculations."
+  },
+  "5.0.2": {
+    "en": "The auto power calculation mode now dynamically detects your grid type."
   }
 }
