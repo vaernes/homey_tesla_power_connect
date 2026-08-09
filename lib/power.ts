@@ -25,7 +25,28 @@ export function calculatePower(
   mode: PowerCalculationMode,
   gridVoltage: number | undefined,
   vehicleCurrent: number | undefined,
+  phases?: { voltage?: number; current?: number }[],
 ): PowerCalculation {
+  if (mode === PowerCalculationMode.AUTO && phases && phases.length > 0) {
+    let totalPower = 0;
+    let hasValidPhase = false;
+
+    for (const phase of phases) {
+      if (isValidMeasurement(phase.voltage, phase.current)) {
+        totalPower += phase.voltage! * phase.current!;
+        hasValidPhase = true;
+      }
+    }
+
+    if (hasValidPhase) {
+      return {
+        power: totalPower,
+        isComplete: true,
+        mode,
+      };
+    }
+  }
+
   if (!isValidMeasurement(gridVoltage, vehicleCurrent)) {
     return { power: 0, isComplete: false, mode };
   }

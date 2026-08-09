@@ -242,6 +242,7 @@ export class TWCDevice extends Homey.Device {
       mode,
       aggregateMeasurement.voltage,
       aggregateMeasurement.current,
+      vit.getPhaseMeasurements(),
     );
     const issue = result.isComplete ? null : Log.INCOMPLETE_PHASE_DATA;
     this.powerCalculationSource = result.mode;

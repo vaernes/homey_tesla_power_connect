@@ -2,7 +2,21 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 import { calculatePower, PowerCalculationMode } from '../lib/power';
 
-test('uses aggregate telemetry for automatic power calculation', () => {
+test('uses per-phase telemetry for automatic power calculation if available', () => {
+  const result = calculatePower(PowerCalculationMode.AUTO, 201, 32, [
+    { voltage: 230, current: 16 },
+    { voltage: 230, current: 16 },
+    { voltage: 230, current: 16 },
+  ]);
+
+  assert.deepEqual(result, {
+    power: 11040,
+    isComplete: true,
+    mode: PowerCalculationMode.AUTO,
+  });
+});
+
+test('uses aggregate telemetry for automatic power calculation as fallback', () => {
   const result = calculatePower(PowerCalculationMode.AUTO, 201, 32);
 
   assert.deepEqual(result, {
