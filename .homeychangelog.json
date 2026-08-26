@@ -215,5 +215,8 @@
   },
   "5.0.2": {
     "en": "The auto power calculation mode now dynamically detects your grid type."
+  },
+  "5.1.0": {
+    "en": "Improved power calculations with selectable supply types, automatic grid detection, and translated settings."
   }
 }
