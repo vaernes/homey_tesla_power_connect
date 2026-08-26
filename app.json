@@ -1333,43 +1333,127 @@
               "id": "power_calculation_mode",
               "type": "dropdown",
               "label": {
-                "en": "Power calculation"
+                "en": "Power calculation",
+                "nl": "Vermogensberekening",
+                "de": "Leistungsberechnung",
+                "fr": "Calcul de puissance",
+                "it": "Calcolo della potenza",
+                "sv": "Effektberakning",
+                "no": "Effektberegning",
+                "es": "Cálculo de potencia",
+                "da": "Effektberegning",
+                "ru": "Расчёт мощности",
+                "pl": "Obliczanie mocy",
+                "ko": "전력 계산",
+                "ar": "حساب الطاقة"
               },
               "value": "auto",
               "values": [
                 {
                   "id": "auto",
                   "label": {
-                    "en": "Automatic"
+                    "en": "Automatic",
+                    "nl": "Automatisch",
+                    "de": "Automatisch",
+                    "fr": "Automatique",
+                    "it": "Automatico",
+                    "sv": "Automatisk",
+                    "no": "Automatisk",
+                    "es": "Automático",
+                    "da": "Automatisk",
+                    "ru": "Автоматически",
+                    "pl": "Automatycznie",
+                    "ko": "자동",
+                    "ar": "تلقائي"
                   }
                 },
                 {
                   "id": "single_phase",
                   "label": {
-                    "en": "Single-phase"
+                    "en": "Single-phase",
+                    "nl": "Eenfase",
+                    "de": "Einphasig",
+                    "fr": "Monophasé",
+                    "it": "Monofase",
+                    "sv": "Enfas",
+                    "no": "Énfase",
+                    "es": "Monofásico",
+                    "da": "Enfaset",
+                    "ru": "Однофазный",
+                    "pl": "Jednofazowe",
+                    "ko": "단상",
+                    "ar": "أحادي الطور"
                   }
                 },
                 {
                   "id": "split_phase",
                   "label": {
-                    "en": "Split-phase"
+                    "en": "Split-phase",
+                    "nl": "Gesplitste fase",
+                    "de": "Geteilte Phase",
+                    "fr": "Phase divisée",
+                    "it": "Fase divisa",
+                    "sv": "Delad fas",
+                    "no": "Delt fase",
+                    "es": "Fase dividida",
+                    "da": "Delt fase",
+                    "ru": "Расщеплённая фаза",
+                    "pl": "Faza dzielona",
+                    "ko": "분할 위상",
+                    "ar": "طور منقسم"
                   }
                 },
                 {
                   "id": "three_phase_230_240",
                   "label": {
-                    "en": "Three-phase 200-240 V"
+                    "en": "Three-phase 200-240 V",
+                    "nl": "Driefase 200-240 V",
+                    "de": "Dreiphasig 200-240 V",
+                    "fr": "Triphasé 200-240 V",
+                    "it": "Trifase 200-240 V",
+                    "sv": "Trefas 200-240 V",
+                    "no": "Trefase 200-240 V",
+                    "es": "Trifásico 200-240 V",
+                    "da": "Trefaset 200-240 V",
+                    "ru": "Трёхфазное 200-240 В",
+                    "pl": "Trójfazowe 200-240 V",
+                    "ko": "삼상 200-240 V",
+                    "ar": "ثلاثي الطور 200-240 فولت"
                   }
                 },
                 {
                   "id": "three_phase_400",
                   "label": {
-                    "en": "Three-phase 380-415 V"
+                    "en": "Three-phase 380-415 V",
+                    "nl": "Driefase 380-415 V",
+                    "de": "Dreiphasig 380-415 V",
+                    "fr": "Triphasé 380-415 V",
+                    "it": "Trifase 380-415 V",
+                    "sv": "Trefas 380-415 V",
+                    "no": "Trefase 380-415 V",
+                    "es": "Trifásico 380-415 V",
+                    "da": "Trefaset 380-415 V",
+                    "ru": "Трёхфазное 380-415 В",
+                    "pl": "Trójfazowe 380-415 V",
+                    "ko": "삼상 380-415 V",
+                    "ar": "ثلاثي الطور 380-415 فولت"
                   }
                 }
               ],
               "hint": {
-                "en": "Choose the supply connected to your Wall Connector. Automatic is recommended unless the reported power is incorrect. The three-phase options cover 200-240 V and 380-415 V supplies."
+                "en": "Choose the supply connected to your Wall Connector. Automatic is recommended unless the reported power is incorrect. The three-phase options cover 200-240 V and 380-415 V supplies.",
+                "nl": "Kies de voeding die op uw Wall Connector is aangesloten. Automatisch wordt aanbevolen, tenzij het gerapporteerde vermogen onjuist is. De driefaseopties zijn voor voedingen van 200-240 V en 380-415 V.",
+                "de": "Wählen Sie die an Ihren Wall Connector angeschlossene Stromversorgung. Automatisch wird empfohlen, sofern die gemeldete Leistung nicht falsch ist. Die dreiphasigen Optionen gelten für Stromversorgungen mit 200-240 V und 380-415 V.",
+                "fr": "Choisissez l'alimentation raccordée à votre Wall Connector. Le mode automatique est recommandé, sauf si la puissance indiquée est incorrecte. Les options triphasées couvrent les alimentations de 200-240 V et de 380-415 V.",
+                "it": "Scegli l'alimentazione collegata al tuo Wall Connector. L'opzione automatica è consigliata, a meno che la potenza riportata non sia errata. Le opzioni trifase coprono alimentazioni da 200-240 V e 380-415 V.",
+                "sv": "Välj den matning som är ansluten till din Wall Connector. Automatiskt rekommenderas om inte den rapporterade effekten är felaktig. Trefasalternativen omfattar matningar på 200-240 V och 380-415 V.",
+                "no": "Velg strømforsyningen som er koblet til Wall Connector. Automatisk anbefales med mindre den rapporterte effekten er feil. Trefasealternativene dekker strømforsyninger på 200-240 V og 380-415 V.",
+                "es": "Elige la alimentación conectada a tu Wall Connector. Se recomienda Automático a menos que la potencia indicada sea incorrecta. Las opciones trifásicas cubren alimentaciones de 200-240 V y 380-415 V.",
+                "da": "Vælg den strømforsyning, der er tilsluttet din Wall Connector. Automatisk anbefales, medmindre den viste effekt er forkert. Trefaseindstillingerne dækker strømforsyninger på 200-240 V og 380-415 V.",
+                "ru": "Выберите тип питания, подключённый к вашему Wall Connector. Рекомендуется автоматический режим, если только отображаемая мощность не является неверной. Трёхфазные варианты предназначены для сетей 200-240 В и 380-415 В.",
+                "pl": "Wybierz zasilanie podłączone do Wall Connector. Zalecany jest tryb automatyczny, chyba że raportowana moc jest nieprawidłowa. Opcje trójfazowe obsługują zasilanie 200-240 V i 380-415 V.",
+                "ko": "Wall Connector에 연결된 전원 방식을 선택하세요. 표시된 전력이 올바르지 않은 경우를 제외하고 자동을 권장합니다. 삼상 옵션은 200-240 V 및 380-415 V 전원에 해당합니다.",
+                "ar": "اختر مصدر الطاقة المتصل بـ Wall Connector. يُنصح بالوضع التلقائي ما لم تكن الطاقة المعروضة غير صحيحة. تغطي خيارات الطاقة ثلاثية الطور مصادر بجهد 200-240 فولت و380-415 فولت."
               }
             }
           ]
