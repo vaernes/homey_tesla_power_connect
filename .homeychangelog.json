@@ -218,5 +218,8 @@
   },
   "5.1.0": {
     "en": "Improved power calculations with selectable supply types, automatic grid detection, and translated settings."
+  },
+  "5.2.0": {
+    "en": "Updated driver icon created by Ivo Derksen (Athom)."
   }
 }
