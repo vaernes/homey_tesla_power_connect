@@ -4,16 +4,16 @@
   "license": "GPL-3.0-only",
   "main": "app.ts",
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "scripts": {
     "build": "tsc"
   },
   "devDependencies": {
-    "@tsconfig/node24": "^24.0.4",
+    "@tsconfig/node24": "^24.0.5",
     "@types/homey": "npm:homey-apps-sdk-v3-types@^0.3.12",
-    "@types/node": "^26.1.0",
-    "typescript": "^6.0.3"
+    "@types/node": "^26.4.1",
+    "typescript": "^7.0.2"
   },
   "repository": {
     "type": "git",
